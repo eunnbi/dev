@@ -14,3 +14,61 @@ a {
 * {
   box-sizing: border-box;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+li,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+main {
+  background-color: white;
+  flex-grow: 1;
+  padding: 3rem 3rem 5rem;
+  margin-left: 350px;
+  min-height: 100vh;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.8rem;
+  word-break: keep-all;
+}
+
+section {
+  margin-top: 5rem;
+}
+
+@media screen and (max-width: 1020px) {
+  main {
+    margin-left: 0;
+  }
+}
