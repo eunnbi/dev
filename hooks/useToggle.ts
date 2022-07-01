@@ -1,14 +1,17 @@
 import { useState } from "react";
 
-export const useToggle = (initialState: boolean) => {
-  const [state, setState] = useState(initialState);
+export const useToggle = (
+  initialState: boolean
+): [boolean, () => void, () => void] => {
+  const [toggle, setToggle] = useState(initialState);
 
-  const setToggle = () => {
-    setState(!state);
+  const onToggle = () => {
+    setToggle(!toggle);
   };
 
-  return {
-    toggle: state,
-    setToggle,
+  const onClose = () => {
+    setToggle(false);
   };
+
+  return [toggle, onToggle, onClose];
 };
