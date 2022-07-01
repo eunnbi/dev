@@ -8,6 +8,7 @@ const StyledButton = styled.button`
   padding: 0.5rem 1rem;
   border: 1px solid black;
   border-radius: 15px;
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
   &:hover {
     color: white;
     background-color: black;
