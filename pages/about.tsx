@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import CustomHead from "../components/common/CustomHead";
 import Heading from "../components/common/Heading";
-import DirectionalSection from "../components/Directional/DirectionalSection";
 import styles from "../styles/About.module.css";
 
 const About: NextPage = () => {
@@ -16,7 +15,6 @@ const About: NextPage = () => {
           Through questions❓, I am growing steadily🌱 and creating a web with
           good user experience.👥
         </p>
-        <DirectionalSection />
       </main>
     </>
   );
