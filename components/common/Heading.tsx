@@ -13,7 +13,7 @@ const StyledHeading = styled.div.attrs<StyledHeadingProps>(({ level }) => ({
   as: "h" + level,
 }))<StyledHeadingProps>`
   font-weight: bold;
-  font-size: ${({ level }) => `${11 * (5 - level)}px`};
+  font-size: ${({ level }) => `${4 - level}rem`};
   span {
     color: blueviolet;
   }
