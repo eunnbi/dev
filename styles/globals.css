@@ -46,29 +46,65 @@ button {
   border: none;
   background-color: transparent;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 1rem;
 }
 
 main {
   background-color: white;
   flex-grow: 1;
-  padding: 3rem 3rem 5rem;
+  padding: 3rem;
   margin-left: 350px;
   min-height: 100vh;
 }
 
 p {
-  font-size: 20px;
+  font-size: 1.3rem;
   line-height: 1.8rem;
   word-break: keep-all;
 }
 
-section {
-  margin-top: 5rem;
+@font-face {
+  font-family: "Sail";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../public/fonts/Sail-Regular.ttf") format("truetype");
+}
+
+::-webkit-scrollbar {
+  width: 5px; /* 세로축 스크롤바 길이 */
+  height: 5px; /* 가로축 스크롤바 길이 */
+}
+::-webkit-scrollbar-track {
+  background-color: lightblue;
+}
+::-webkit-scrollbar-track-piece {
+  background-color: white;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: lightgray;
 }
 
 @media screen and (max-width: 1020px) {
   main {
     margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  html {
+    font-size: 10px;
   }
 }
