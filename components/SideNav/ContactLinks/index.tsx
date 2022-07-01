@@ -1,5 +1,5 @@
-import { CONTACT_LINKS } from "../../../constants/contactLinks";
 import styled from "styled-components";
+import { CONTACT_LINKS } from "./contactLinks";
 
 const ContactLinkList = styled.ul`
   display: flex;
