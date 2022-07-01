@@ -1,7 +1,8 @@
 import { useState } from "react";
-import SideNav from "./SideNav";
-import NavToggleBtn from "./SideNav/NavToggleBtn";
+import SideNav from "../SideNav";
+import NavToggleBtn from "./NavToggleBtn";
 import styled from "styled-components";
+import { useToggle } from "../../hooks/useToggle";
 
 const StyledLayout = styled.div`
   display: flex;
@@ -17,13 +18,7 @@ const StyledLayout = styled.div`
 `;
 
 const Layout = ({ children }: React.PropsWithChildren) => {
-  const [toggle, setToggle] = useState(false);
-  const onToggle = () => {
-    setToggle(!toggle);
-  };
-  const closeNav = () => {
-    setToggle(false);
-  };
+  const [toggle, onToggle, closeNav] = useToggle(false);
   return (
     <StyledLayout>
       <SideNav showNav={toggle} closeNav={closeNav} />
