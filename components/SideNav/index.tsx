@@ -4,8 +4,8 @@ import ContactLinks from "./ContactLinks";
 import styled from "styled-components";
 
 const NavWrapper = styled.nav<{ showNav: boolean }>`
-  background-color: #6b2188;
-  width: 20rem;
+  background-color: #a452b1;
+  width: 19rem;
   display: flex;
   flex-direction: column;
   align-items: center;
