@@ -15,7 +15,7 @@ export const Period = styled.div`
   min-width: 10rem;
   text-align: right;
   flex-shrink: 0;
-  @media screen and (max-width: 1020px) {
+  @media ${({ theme }) => theme.device.laptop} {
     min-width: auto;
     width: 6rem;
     text-align: left;

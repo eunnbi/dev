@@ -6,7 +6,7 @@ const OutsideCircle = styled.div`
   left: -7px;
   width: 14px;
   height: 14px;
-  background-color: #e1c1ff;
+  background-color: ${({ theme }) => theme.color.lightPurple};
   border-radius: 50%;
   display: flex;
   justify-content: center;

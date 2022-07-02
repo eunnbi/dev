@@ -4,7 +4,7 @@ import ContactLinks from "./ContactLinks";
 import styled from "styled-components";
 
 const NavWrapper = styled.nav<{ showNav: boolean }>`
-  background-color: #936aa7;
+  background-color: ${({ theme }) => theme.color.purple};
   width: 17rem;
   display: flex;
   flex-direction: column;
@@ -12,7 +12,7 @@ const NavWrapper = styled.nav<{ showNav: boolean }>`
   position: fixed;
   height: 100vh;
   padding: 3rem 0;
-  @media screen and (max-width: 1020px) {
+  @media ${({ theme }) => theme.device.laptop} {
     top: 0;
     right: 0;
     bottom: 0;
