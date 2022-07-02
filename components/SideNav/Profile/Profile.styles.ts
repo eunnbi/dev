@@ -7,8 +7,8 @@ export const ProfileWrapper = styled.div`
 `;
 
 export const Image = styled.img`
-  width: 200px;
-  height: 200px;
+  width: 20vmin;
+  height: 20vmin;
   border-radius: 50%;
   box-shadow: 1px 3px 10px 0 rgba(0, 0, 0, 0.3);
   border: 2px solid #fff;
@@ -23,6 +23,8 @@ export const Title = styled.h1`
   margin: 10px 0;
   letter-spacing: 1px;
   font-family: Sail;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000; ;
 `;
 
 export const Text = styled.p`
