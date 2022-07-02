@@ -5,6 +5,8 @@ import {
 } from "react-icons/hi";
 import { MdMessage } from "react-icons/md";
 
+export const SIDE = ["top-left", "top-right", "bottom-left", "bottom-right"];
+
 export const KEYWORDS = [
   {
     id: 1,
@@ -14,6 +16,7 @@ export const KEYWORDS = [
       "최근에는 React Native에 관심이 생겨, 추후에 React Native를 이용하여 앱 개발에 도전할 것입니다.",
     ],
     icon: "🖥️  ",
+    side: SIDE[0],
   },
   {
     id: 2,
@@ -24,6 +27,7 @@ export const KEYWORDS = [
       "처음 쓰는 앱이라도 평소에 쓰던 것처럼 쉽게 사용할 수 있도록 UX가 좋은 앱을 만들겠습니다.",
     ],
     icon: "👥  ",
+    side: SIDE[1],
   },
   {
     id: 3,
@@ -34,11 +38,15 @@ export const KEYWORDS = [
       "저 또한 상대방의 분야를 잘 모른다는 것을 인정하고 경청합니다.`,",
     ],
     icon: "📢 ",
+    side: SIDE[2],
   },
   {
     id: 4,
     title: "Question",
     contents: [],
     icon: "🤔  ",
+    side: SIDE[3],
   },
 ];
+
+export type KeywordType = typeof KEYWORDS[0];

@@ -1,17 +1,12 @@
 import { KEYWORDS } from "../keywords";
 import KeywordItem from "../KeywordItem";
 import styled from "styled-components";
+import { useContext } from "react";
 
 const List = styled.ul`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  margin: 1rem 0;
-  max-width: 800px;
+  display: flex;
 `;
+
 const KeywordList = () => {
   return (
     <List>
@@ -21,6 +16,7 @@ const KeywordList = () => {
           title={keyword.title}
           contents={keyword.contents}
           icon={keyword.icon}
+          side={keyword.side}
         />
       ))}
     </List>

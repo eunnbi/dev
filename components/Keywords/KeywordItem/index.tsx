@@ -7,14 +7,15 @@ interface KeywordItemProps {
   title: string;
   contents: String[];
   icon: React.ReactNode;
+  side: string;
 }
 
-const KeywordItem = ({ title, contents, icon }: KeywordItemProps) => {
+const KeywordItem = ({ title, contents, icon, side }: KeywordItemProps) => {
   const ref = useRef<HTMLLIElement>(null);
   const { show, handleShowContent, handleCloseContent } = useContent(ref);
   return (
     <>
-      <Item ref={ref} onClick={handleShowContent}>
+      <Item ref={ref} onClick={handleShowContent} side={side}>
         {icon}
         {title}
       </Item>
