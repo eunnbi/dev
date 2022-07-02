@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const NavWrapper = styled.nav<{ showNav: boolean }>`
   background-color: #936aa7;
-  width: 19rem;
+  width: 17rem;
   display: flex;
   flex-direction: column;
   align-items: center;
