@@ -4,10 +4,7 @@ import { CONTACT_LINKS } from "./contactLinks";
 const ContactLinkList = styled.ul`
   display: flex;
   color: #fff;
-  font-size: 30px;
-  position: absolute;
-  bottom: 50px;
-
+  font-size: 1.9rem;
   .icon {
     margin: 0 10px;
   }
