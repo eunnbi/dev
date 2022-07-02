@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { SIDE } from "../keywords";
 
 export const Item = styled.li<{ side: string }>`
-  background-color: #6b2188;
+  background-color: #a452b1;
   position: absolute;
   border-radius: 30px;
   text-align: center;
@@ -42,7 +42,7 @@ const topStyle = css`
   top: -8rem;
   &:after {
     bottom: 0;
-    border-top-color: #6b2188;
+    border-top-color: #a452b1;
     border-bottom: 0;
     margin-bottom: -20px;
   }
@@ -52,7 +52,7 @@ const bottomStyle = css`
   bottom: -8rem;
   &:after {
     top: 0;
-    border-bottom-color: #6b2188;
+    border-bottom-color: #a452b1;
     border-top: 0;
     margin-top: -20px;
   }
