@@ -4,15 +4,14 @@ import ContactLinks from "./ContactLinks";
 import styled from "styled-components";
 
 const NavWrapper = styled.nav<{ showNav: boolean }>`
-  background: url("images/background.jpeg") 0 0 no-repeat;
-  background-size: cover;
-  width: 350px;
+  background-color: #6b2188;
+  width: 20rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 65px 0 0 0;
   position: fixed;
   height: 100vh;
+  padding: 3rem 0;
   @media screen and (max-width: 1020px) {
     top: 0;
     right: 0;
