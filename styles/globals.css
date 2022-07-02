@@ -53,7 +53,7 @@ main {
   background-color: white;
   flex-grow: 1;
   padding: 3rem;
-  margin-left: 350px;
+  margin-left: 20rem;
   min-height: 100vh;
 }
 
@@ -97,13 +97,13 @@ p {
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 500px), (max-height: 800px) {
   html {
     font-size: 13px;
   }
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 300px), (max-height: 700px) {
   html {
     font-size: 10px;
   }
