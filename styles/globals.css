@@ -57,6 +57,13 @@ main {
   min-height: 100vh;
 }
 
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 5rem 0;
+}
+
 p {
   font-size: 1.3rem;
   line-height: 1.8rem;
