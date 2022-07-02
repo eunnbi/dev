@@ -2,16 +2,15 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import CustomHead from "../components/common/CustomHead";
 import { Button } from "../components/common/Button";
-import KeywordList from "../components/Keywords/KeywordList";
 import styles from "../styles/Home.module.css";
+import KeywordsSection from "../components/Keywords/KeywordsSection";
 
 const Home: NextPage = () => {
   return (
     <>
       <CustomHead page="Home" />
       <main className={styles.main}>
-        <h1>Who is Eunnbi??</h1>
-        <KeywordList />
+        <KeywordsSection />
         <div className={styles.buttonBox}>
           <Button>
             <Link href="/about">
