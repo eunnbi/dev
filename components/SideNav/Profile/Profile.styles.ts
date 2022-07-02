@@ -8,8 +8,8 @@ export const ProfileWrapper = styled.div`
 
 export const ImageWrapper = styled.div`
   position: relative;
-  width: 20vmin;
-  height: 20vmin;
+  width: 17vmin;
+  height: 17vmin;
   border: 2px solid #fff;
   background-color: #fff;
   border-radius: 50%;
@@ -22,7 +22,7 @@ export const ImageWrapper = styled.div`
 export const Title = styled.h1`
   color: white;
   font-weight: bold;
-  font-size: 4rem;
+  font-size: 3.5rem;
   text-align: center;
   margin: 10px 0;
   letter-spacing: 1px;
