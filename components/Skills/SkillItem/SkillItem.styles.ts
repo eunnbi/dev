@@ -20,5 +20,6 @@ export const Label = styled.div`
   }
   span:last-child {
     color: rgba(0, 0, 0, 0.8);
+    font-weight: 500;
   }
 `;
