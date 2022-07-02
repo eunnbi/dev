@@ -12,6 +12,6 @@ export const List = styled.ul`
 export const Anchor = styled.a`
   transition: all 0.3s ease-in-out;
   &:hover {
-    color: blueviolet;
+    color: black;
   }
 `;
