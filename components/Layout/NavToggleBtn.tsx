@@ -6,11 +6,11 @@ const ToggleBtn = styled.button`
   top: 10px;
   right: 10px;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 3.2rem;
+  height: 3.2rem;
   background-color: blueviolet;
   color: #fff;
-  font-size: 30px;
+  font-size: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
