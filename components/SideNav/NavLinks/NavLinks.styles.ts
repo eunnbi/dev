@@ -6,7 +6,7 @@ export const List = styled.ul`
   justify-content: center;
   color: rgba(225, 225, 225, 0.5);
   font-size: 1.65rem;
-  margin-top: 5rem;
+  flex-grow: 1;
 `;
 
 export const Item = styled.li`
