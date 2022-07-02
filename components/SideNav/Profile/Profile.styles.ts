@@ -6,13 +6,17 @@ export const ProfileWrapper = styled.div`
   align-items: center;
 `;
 
-export const Image = styled.img`
+export const ImageWrapper = styled.div`
+  position: relative;
   width: 20vmin;
   height: 20vmin;
-  border-radius: 50%;
-  box-shadow: 1px 3px 10px 0 rgba(0, 0, 0, 0.3);
   border: 2px solid #fff;
   background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 1px 3px 10px 0 rgba(0, 0, 0, 0.3);
+  img {
+    border-radius: 50%;
+  }
 `;
 
 export const Title = styled.h1`
