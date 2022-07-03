@@ -3,7 +3,7 @@ import styled from "styled-components";
 const OutsideCircle = styled.div`
   position: absolute;
   top: 1.5rem;
-  left: -8px;
+  left: -7px;
   width: 14px;
   height: 14px;
   background-color: ${({ theme }) => theme.color.lightPurple};
@@ -15,7 +15,7 @@ const OutsideCircle = styled.div`
   @media ${({ theme }) => theme.device.mobile}, (max-height: 800px) {
     width: 10px;
     height: 10px;
-    left: -6px;
+    left: -5px;
   }
 `;
 
