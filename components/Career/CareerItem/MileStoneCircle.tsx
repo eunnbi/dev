@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 const OutsideCircle = styled.div`
   position: absolute;
-  top: 1.5rem;
-  left: -7px;
+  top: 1.4rem;
+  left: -8px;
   width: 14px;
   height: 14px;
   background-color: ${({ theme }) => theme.color.lightPurple};
@@ -11,6 +11,7 @@ const OutsideCircle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 `;
 
 const InsideCircle = styled.div`
