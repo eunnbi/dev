@@ -11,11 +11,12 @@ const NavWrapper = styled.nav<{ showNav: boolean }>`
   align-items: center;
   position: fixed;
   height: 100vh;
-  height: -webkit-fill-available;
   padding: 3rem 0;
   @media ${({ theme }) => theme.device.laptop} {
     top: 0;
     right: 0;
+    bottom: 0;
+    height: auto;
     transform: ${({ showNav }) =>
       showNav ? "translateX(0%)" : "translateX(100%)"};
     transition: all 0.3s ease-in-out;
