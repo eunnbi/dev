@@ -11,9 +11,9 @@ export const Item = styled.li`
 
 export const Period = styled.div`
   margin-top: 0.1rem;
-  padding: 1rem 15px 0 0;
+  padding: 1rem 1rem 0 0;
   font-weight: 500;
-  min-width: 10rem;
+  width: 10rem;
   text-align: right;
   flex-shrink: 0;
 
@@ -30,8 +30,7 @@ export const Period = styled.div`
 export const Content = styled.div`
   margin-top: 1px;
   position: relative;
-  padding: 1rem 0 2rem 15px;
-  border-left: 1px solid lightgray;
+  padding: 1rem 0 2rem 20px;
   p {
     margin-top: 0.5rem;
     font-size: 1.2rem;
