@@ -62,6 +62,12 @@ main {
   min-height: -webkit-fill-available;
 }
 
+@supports (-webkit-touch-callout: none) {
+  main {
+    min-height: -webkit-fill-available;
+  }
+}
+
 section {
   display: flex;
   flex-direction: column;
