@@ -22,7 +22,7 @@ export const Period = styled.div`
   }
   @media ${({ theme }) => theme.device.laptop} {
     min-width: auto;
-    width: 6rem;
+    width: 6.5rem;
     text-align: left;
   }
 `;
