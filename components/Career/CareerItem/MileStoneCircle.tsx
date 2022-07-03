@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const OutsideCircle = styled.div`
   position: absolute;
-  top: 1.4rem;
+  top: 1.5rem;
   left: -8px;
   width: 14px;
   height: 14px;
@@ -12,8 +12,10 @@ const OutsideCircle = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 1;
-  @media ${({ theme }) => theme.device.smallMobile} {
-    top: 1.3rem;
+  @media ${({ theme }) => theme.device.mobile}, (max-height: 800px) {
+    width: 10px;
+    height: 10px;
+    left: -6px;
   }
 `;
 
@@ -23,6 +25,11 @@ const InsideCircle = styled.div`
   border: 2px solid blueviolet;
   background-color: #fff;
   border-radius: 50%;
+  @media ${({ theme }) => theme.device.mobile}, (max-height: 800px) {
+    width: 6px;
+    height: 6px;
+    border-width: 1px;
+  }
 `;
 
 function MilestoneCircle() {
