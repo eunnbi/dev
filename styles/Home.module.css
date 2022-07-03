@@ -11,7 +11,9 @@
   gap: 4rem;
   overflow-y: hidden;
 }
-
+.main::-webkit-scrollbar {
+  display: none;
+}
 .main h1 {
   text-align: center;
   font-size: 3.5rem;
