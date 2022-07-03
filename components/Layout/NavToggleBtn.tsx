@@ -15,6 +15,7 @@ const ToggleBtn = styled.button`
   align-items: center;
   justify-content: center;
   z-index: 2;
+  padding: 0;
   @media ${({ theme }) => theme.device.laptop} {
     display: flex;
   }
