@@ -1,7 +1,3 @@
-html {
-  height: -webkit-fill-available;
-}
-
 html,
 body {
   padding: 0;
@@ -58,10 +54,6 @@ main {
   flex-grow: 1;
   padding: 3rem;
   margin-left: 20rem;
-  min-height: 100vh;
-  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
-    min-height: -webkit-fill-available;
-  }
 }
 
 section {
