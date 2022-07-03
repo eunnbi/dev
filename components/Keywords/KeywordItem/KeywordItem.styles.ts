@@ -3,7 +3,6 @@ import { SIDE } from "../keywords";
 
 export const Item = styled.li<{ side: string }>`
   background-color: #a452b1;
-  position: absolute;
   border-radius: 30px;
   text-align: center;
   padding: 1.3rem 1rem;
@@ -16,26 +15,6 @@ export const Item = styled.li<{ side: string }>`
   &:hover {
     transform: scale(1.2);
   }
-
-  @keyframes pop {
-  }
-  &:after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    border: 20px solid transparent;
-    left: 50%;
-    margin-left: -10px;
-  }
-  ${({ side }) =>
-    side === SIDE[0]
-      ? topLeftStyle
-      : side === SIDE[1]
-      ? topRightStyle
-      : side === SIDE[2]
-      ? bottomLeftStyle
-      : bottomRightStyle};
 `;
 
 const topStyle = css`
