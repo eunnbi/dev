@@ -12,6 +12,9 @@ const OutsideCircle = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 1;
+  @media ${({ theme }) => theme.device.smallMobile} {
+    top: 1.3rem;
+  }
 `;
 
 const InsideCircle = styled.div`
