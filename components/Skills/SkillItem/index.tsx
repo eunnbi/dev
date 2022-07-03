@@ -11,7 +11,13 @@ interface SkillItemProps {
 const SkillItem = ({ id, skill, percentage }: SkillItemProps) => {
   return (
     <Item>
-      <Image src={`/images/skills/${id}.png`} width={40} height={40} />
+      <Image
+        src={`/images/skills/${id}.png`}
+        width={40}
+        height={40}
+        placeholder="blur"
+        blurDataURL={`/images/skills/${id}.png`}
+      />
       <div className="SkillsItem-gauge">
         <div>
           <Label>
