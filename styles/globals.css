@@ -59,11 +59,7 @@ main {
   padding: 3rem;
   margin-left: 20rem;
   min-height: 100vh;
-  min-height: -webkit-fill-available;
-}
-
-@supports (-webkit-touch-callout: none) {
-  main {
+  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
     min-height: -webkit-fill-available;
   }
 }
