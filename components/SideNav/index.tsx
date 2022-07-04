@@ -4,18 +4,19 @@ import ContactLinks from "./ContactLinks";
 import styled from "styled-components";
 
 const NavWrapper = styled.nav<{ showNav: boolean }>`
-  background-color: #936aa7;
-  width: 19rem;
+  background-color: ${({ theme }) => theme.color.purple};
+  width: 17rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: fixed;
-  height: 100vh;
+  top: 0;
+  bottom: 0;
+  left: 0;
   padding: 3rem 0;
-  @media screen and (max-width: 1020px) {
-    top: 0;
+  @media ${({ theme }) => theme.device.laptop} {
+    left: auto;
     right: 0;
-    bottom: 0;
     transform: ${({ showNav }) =>
       showNav ? "translateX(0%)" : "translateX(100%)"};
     transition: all 0.3s ease-in-out;

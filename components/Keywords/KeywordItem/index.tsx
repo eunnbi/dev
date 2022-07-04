@@ -1,36 +1,29 @@
-import React, { useRef } from "react";
-import { Item, Content, Wrapper, Box } from "./KeywordItem.styles";
-import { IoClose } from "react-icons/io5";
-import { useContent } from "./useContent";
+import React from "react";
+import { Item, Content } from "./KeywordItem.styles";
 
 interface KeywordItemProps {
   title: string;
   contents: String[];
   icon: React.ReactNode;
-  side: string;
+  position: string;
 }
 
-const KeywordItem = ({ title, contents, icon, side }: KeywordItemProps) => {
-  const ref = useRef<HTMLLIElement>(null);
-  const { show, handleShowContent, handleCloseContent } = useContent(ref);
+const KeywordItem = ({ title, contents, icon, position }: KeywordItemProps) => {
   return (
-    <>
-      <Item ref={ref} onClick={handleShowContent} side={side}>
+    <Item position={position}>
+      <div>
         {icon}
         {title}
-      </Item>
-      <Wrapper show={show}>
-        <Box>
-          <IoClose onClick={handleCloseContent} />
-          {contents.map((content, index) => (
-            <Content key={index}>
-              <span>✔️</span>
-              <span>{content}</span>
-            </Content>
-          ))}
-        </Box>
-      </Wrapper>
-    </>
+      </div>
+      <Content>
+        {contents.map((content, index) => (
+          <p key={index}>
+            👉 <span></span>
+            {content}
+          </p>
+        ))}
+      </Content>
+    </Item>
   );
 };
 

@@ -1,5 +1,6 @@
+import Image from "next/image";
 import GaugeBar from "../GaugeBar";
-import { Item, Image, Label } from "./SkillItem.styles";
+import { Item, Label } from "./SkillItem.styles";
 
 interface SkillItemProps {
   id: number;
@@ -10,7 +11,13 @@ interface SkillItemProps {
 const SkillItem = ({ id, skill, percentage }: SkillItemProps) => {
   return (
     <Item>
-      <Image src={`images/skills/${id}.png`} />
+      <Image
+        src={`/images/skills/${id}.png`}
+        width={40}
+        height={40}
+        placeholder="blur"
+        blurDataURL={`/images/skills/${id}.png`}
+      />
       <div className="SkillsItem-gauge">
         <div>
           <Label>
