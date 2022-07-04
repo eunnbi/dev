@@ -28,4 +28,7 @@ export const ProjectDetails = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  .project-period {
+    font-size: 1.05rem;
+  }
 `;
