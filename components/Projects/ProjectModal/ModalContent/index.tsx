@@ -29,7 +29,7 @@ const ModalContent = ({ project }: { project: ProjectType }) => {
         <article>
           <h3>Review</h3>
           <p>{project.review}</p>
-          <a href={project.reviewLink} target="_blank">
+          <a href={project.reviewLink} target="_blank" rel="noreferrer">
             🚀 <span>{project.title} 회고글 보러 가기</span>
           </a>
         </article>
