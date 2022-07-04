@@ -26,12 +26,12 @@ const ProjectLinks = ({ github, link }: ProjectLinksProps) => {
   return (
     <ProjectLinkList>
       <li>
-        <ProjectLink href={github} target="_blank">
+        <ProjectLink href={github} target="_blank" rel="noreferrer">
           <BsGithub />
         </ProjectLink>
       </li>
       <li>
-        <ProjectLink href={link} target="_blank">
+        <ProjectLink href={link} target="_blank" rel="noreferrer">
           <BsLink45Deg />
         </ProjectLink>
       </li>
