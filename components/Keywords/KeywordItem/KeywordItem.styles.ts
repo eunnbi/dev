@@ -17,7 +17,7 @@ export const Item = styled.li<{ position: string }>`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
   transition: all 0.3s ease-in-out;
   opacity: ${({ position }) => (position === "current" ? 1 : 0)};
   transform: ${({ position }) =>
@@ -28,12 +28,15 @@ export const Item = styled.li<{ position: string }>`
       : `translateX(100%)`};
 `;
 
-export const Content = styled.p`
-  font-size: 1.1rem;
+export const Content = styled.div`
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  p {
+    font-size: 1.1rem;
+  }
   span {
-    display: block;
-    width: 0.7rem;
+    display: inline-block;
+    width: 0.5rem;
   }
 `;
