@@ -16,12 +16,10 @@ export const Period = styled.div`
   width: 10rem;
   text-align: right;
   flex-shrink: 0;
-
   p {
     font-size: 1rem;
   }
   @media ${({ theme }) => theme.device.laptop} {
-    min-width: auto;
     width: 6.5rem;
     text-align: left;
   }
