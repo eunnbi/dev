@@ -31,7 +31,9 @@ export const Item = styled.li<{ position: string }>`
 export const Content = styled.p`
   font-size: 1.1rem;
   display: flex;
-  span:first-child {
-    margin-right: 10px;
+  align-items: center;
+  span {
+    display: block;
+    width: 0.7rem;
   }
 `;
