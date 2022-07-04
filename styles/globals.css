@@ -69,6 +69,10 @@ p {
   word-break: keep-all;
 }
 
+img {
+  object-fit: cover;
+}
+
 @font-face {
   font-family: "Sail";
   font-style: normal;
