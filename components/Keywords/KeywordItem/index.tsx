@@ -18,7 +18,7 @@ const KeywordItem = ({ title, contents, icon, position }: KeywordItemProps) => {
       <Content>
         {contents.map((content, index) => (
           <p key={index}>
-            ✔️ <span></span>
+            👉 <span></span>
             {content}
           </p>
         ))}
