@@ -15,11 +15,14 @@ const KeywordItem = ({ title, contents, icon, position }: KeywordItemProps) => {
         {icon}
         {title}
       </div>
-      {contents.map((content, index) => (
-        <Content key={index}>
-          ✔️ <span></span> {content}
-        </Content>
-      ))}
+      <Content>
+        {contents.map((content, index) => (
+          <p key={index}>
+            ✔️ <span></span>
+            {content}
+          </p>
+        ))}
+      </Content>
     </Item>
   );
 };
