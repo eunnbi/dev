@@ -24,7 +24,7 @@ const ModalContent = ({ project }: { project: ProjectType }) => {
         <article>
           <h3>Member</h3>
           <p>{project.member}</p>
-          <p>{project.role}</p>
+          {project.role && <p>{project.role}</p>}
         </article>
         <article>
           <h3>Review</h3>
