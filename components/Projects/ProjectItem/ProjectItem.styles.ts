@@ -8,8 +8,17 @@ export const Item = styled.li`
   &:hover {
     transform: scale(1.1);
   }
+`;
+
+export const ImageWrapper = styled.div`
+  width: 100%;
+  position: relative;
+  & > span {
+    position: unset !important;
+  }
   img {
-    width: 100%;
+    height: auto !important;
+    position: relative !important;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
   }
