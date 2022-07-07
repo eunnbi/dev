@@ -18,9 +18,28 @@ const device = {
   smallMobile: `screen and (max-width: ${deviceSizes.smallMobile})`,
 };
 
-const theme = {
+export const lightTheme = {
+  color: {
+    ...color,
+    bgColor: "#fff",
+    textColor: "#000",
+    shadowColor: "rgba(0, 0, 0, 0.15)",
+    violet: "blueviolet",
+    navColor: "#936aa7",
+  },
+  name: "light",
   device,
-  color,
 };
 
-export default theme;
+export const darkTheme = {
+  color: {
+    ...color,
+    bgColor: "#252525",
+    textColor: "#fff",
+    shadowColor: "#000",
+    violet: "#D391FA",
+    navColor: "#623775",
+  },
+  name: "dark",
+  device,
+};
