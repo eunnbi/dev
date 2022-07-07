@@ -46,7 +46,7 @@ export const PROJECTS = [
     reviewLink: "https://github.com/eunnbi/movie-app/blob/main/STUDY.md",
     github: "https://github.com/eunnbi/movie-app",
     link: "https://eunnbi.github.io/movie-app/",
-    tags: ["React를 이용한 첫 프로젝트", "React Query로의 전환"],
+    tags: ["첫 React 프로젝트", "React Query로의 전환"],
   },
   {
     id: 2,
@@ -81,6 +81,35 @@ export const PROJECTS = [
   {
     id: 3,
     title: "Bookmark 프로젝트",
+    images: [
+      "/images/projects/2.PNG",
+      "/images/projects/2.PNG",
+      "/images/projects/2.PNG",
+    ],
+    period: "2022.06 ~",
+    overview: "설명 추가",
+    feStacks: [
+      "TypeScript",
+      "React",
+      "Redux",
+      "React Query",
+      "Styled Components",
+    ],
+    beStacks: [],
+    deployStacks: ["Netlify"],
+    member: "개인 프로젝트",
+    review: `컴포넌트 설계와 디자이너 부재 등 여러 아쉬움이 있었지만 좋은 사람들과 함께 
+        첫 프로젝트를 완주했다는 것이 행운이라고 생각한다. 프론트 팀을 이끈 사람으로서 
+        나의 부족한 점을 많이 발견했으나 그 만큼 내가 더 성장할 수 있다는 뜻이기 때문에 매우 값진 경험이었다.🤩`,
+    reviewLink:
+      "https://velog.io/@eunnbi/Project-%EB%AA%A8%EC%95%84%EB%AA%A8%EC%95%84-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-2",
+    github: "https://github.com/eunnbi/bookmark",
+    link: "https://eunnbi-bookmark.netlify.app/",
+    tags: ["React Component Pattern", "Mobile First Design"],
+  },
+  {
+    id: 4,
+    title: "petBook 프로젝트",
     images: [
       "/images/projects/2.PNG",
       "/images/projects/2.PNG",
