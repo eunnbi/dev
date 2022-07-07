@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Item = styled.li`
-  box-shadow: 1px 3px 15px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: ${({ theme }) => `1px 5px 10px ${theme.color.shadowColor}`};
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;

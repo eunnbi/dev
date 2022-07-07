@@ -8,7 +8,7 @@ const TagWrapper = styled.ul`
 
 const TagItem = styled.li`
   border: 1px solid lightgray;
-  box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: ${({ theme }) => `1px 5px 10px ${theme.color.shadowColor}`};
   padding: 0.5rem 1rem;
   border-radius: 20px;
 `;

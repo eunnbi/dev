@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { ThemeContext } from "styled-components";
 
 export const ModalWrapper = styled.div`
   position: fixed;
@@ -14,7 +14,7 @@ export const ModalWrapper = styled.div`
 `;
 
 export const Modal = styled.section`
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.color.bgColor};
   padding: 2rem;
   position: relative;
   max-width: 1500px;

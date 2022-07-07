@@ -9,6 +9,9 @@ const Button = styled.button`
   font-size: 2rem;
   font-weight: bold;
   transition: transform 0.3s ease-in-out;
+  svg {
+    color: ${({ theme }) => theme.color.textColor};
+  }
   &:hover {
     transform: scale(1.5);
   }

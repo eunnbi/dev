@@ -1,5 +1,5 @@
 import StackTag from "./StackTag";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 
 const StackList = styled.ul`
   display: flex;
@@ -21,18 +21,31 @@ const ProjectStacks = ({
   beStacks,
   deployStacks,
 }: ProjectStacksProps) => {
+  const { name } = useTheme();
   return (
     <article>
       <h3>Stack</h3>
       <StackList>
         {feStacks.map((stack, index) => (
-          <StackTag key={index} text={stack} color={"EDE1EC"} />
+          <StackTag
+            key={index}
+            text={stack}
+            color={name === "light" ? "EDE1EC" : "a17c9e"}
+          />
         ))}
         {beStacks.map((stack, index) => (
-          <StackTag key={index} text={stack} color={"E3EFD9"} />
+          <StackTag
+            key={index}
+            text={stack}
+            color={name === "light" ? "E3EFD9" : "9ba891"}
+          />
         ))}
         {deployStacks.map((stack, index) => (
-          <StackTag key={index} text={stack} color={"DCE6EE"} />
+          <StackTag
+            key={index}
+            text={stack}
+            color={name === "light" ? "DCE6EE" : "9bb3c7"}
+          />
         ))}
       </StackList>
     </article>

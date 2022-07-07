@@ -19,7 +19,8 @@ export const Label = styled.div`
     font-weight: bold;
   }
   span:last-child {
-    color: rgba(0, 0, 0, 0.8);
+    color: ${({ theme }) => theme.color.textColor};
     font-weight: 500;
+    opacity: 0.9;
   }
 `;
