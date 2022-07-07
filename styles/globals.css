@@ -50,7 +50,6 @@ button {
 }
 
 main {
-  background-color: white;
   flex-grow: 1;
   padding: 3rem;
   margin-left: 17rem;
