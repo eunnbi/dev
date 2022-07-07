@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import CareerSection from "../components/Career/CareerSection";
 import CustomHead from "../components/common/CustomHead";
 import Heading from "../components/common/Heading";
-import MyInfoSection from "../components/MylInfo/MyInfoSection";
+import MyInfoSection from "../components/MyInfo/MyInfoSection";
 import SkillsSection from "../components/Skills/SkillsSection";
 import styles from "../styles/About.module.css";
 

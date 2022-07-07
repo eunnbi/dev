@@ -23,7 +23,7 @@ const InsideCircle = styled.div`
   width: 10px;
   height: 10px;
   border: 2px solid blueviolet;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.color.bgColor};
   border-radius: 50%;
   @media ${({ theme }) => theme.device.mobile}, (max-height: 800px) {
     width: 6px;

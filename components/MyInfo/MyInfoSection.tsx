@@ -17,7 +17,7 @@ const Info = styled.div`
 `;
 
 const Label = styled.p`
-  color: blueviolet;
+  color: ${({ theme }) => theme.color.violet};
   font-weight: 500;
   margin-bottom: 0.5rem;
 `;

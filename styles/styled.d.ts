@@ -10,9 +10,14 @@ declare module "styled-components" {
     };
     color: {
       lightPurple: string;
-
       darkPurple: string;
       purple: string;
+      bgColor: string;
+      textColor: string;
+      shadowColor: string;
+      violet: string;
+      navColor: string;
     };
+    name: string;
   }
 }

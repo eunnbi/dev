@@ -15,7 +15,7 @@ const StyledHeading = styled.div.attrs<StyledHeadingProps>(({ level }) => ({
   font-weight: bold;
   font-size: ${({ level }) => `${4 - level}rem`};
   span {
-    color: blueviolet;
+    color: ${({ theme }) => theme.color.violet};
   }
 `;
 

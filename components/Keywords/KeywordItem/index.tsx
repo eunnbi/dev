@@ -11,10 +11,10 @@ interface KeywordItemProps {
 const KeywordItem = ({ title, contents, icon, position }: KeywordItemProps) => {
   return (
     <Item position={position}>
-      <div>
+      <h3>
         {icon}
         {title}
-      </div>
+      </h3>
       <Content>
         {contents.map((content, index) => (
           <p key={index}>

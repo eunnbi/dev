@@ -50,7 +50,6 @@ button {
 }
 
 main {
-  background-color: white;
   flex-grow: 1;
   padding: 3rem;
   margin-left: 17rem;
@@ -67,6 +66,10 @@ p {
   font-size: 1.3rem;
   line-height: 1.8rem;
   word-break: keep-all;
+}
+
+img {
+  object-fit: cover;
 }
 
 @font-face {

@@ -12,12 +12,11 @@ export const Item = styled.li<{ position: string }>`
   font-weight: 500;
   transition: all 0.2s ease-in-out;
   width: 100%;
-  padding: 0 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 2.5rem;
   transition: all 0.3s ease-in-out;
   opacity: ${({ position }) => (position === "current" ? 1 : 0)};
   transform: ${({ position }) =>
@@ -26,6 +25,9 @@ export const Item = styled.li<{ position: string }>`
       : position === "prev"
       ? `translateX(-100%)`
       : `translateX(100%)`};
+  h3 {
+    font-weight: 500;
+  }
 `;
 
 export const Content = styled.div`
@@ -33,7 +35,7 @@ export const Content = styled.div`
   flex-direction: column;
   gap: 1.5rem;
   p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
   span {
     display: inline-block;

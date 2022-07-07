@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ListWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.5rem;
   align-items: center;
   justify-content: center;
   svg {

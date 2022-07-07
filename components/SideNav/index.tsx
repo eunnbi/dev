@@ -4,7 +4,7 @@ import ContactLinks from "./ContactLinks";
 import styled from "styled-components";
 
 const NavWrapper = styled.nav<{ showNav: boolean }>`
-  background-color: ${({ theme }) => theme.color.purple};
+  background-color: ${({ theme }) => theme.color.navColor};
   width: 17rem;
   display: flex;
   flex-direction: column;

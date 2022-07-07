@@ -8,7 +8,7 @@
   flex-direction: column;
   justify-content: center;
   overflow-y: hidden;
-  gap: 2.5rem;
+  gap: 5rem;
 }
 .main::-webkit-scrollbar {
   display: none;
