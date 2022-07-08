@@ -2,9 +2,10 @@ import { IoClose } from "react-icons/io5";
 import styled from "styled-components";
 
 const Button = styled.button`
+  padding: 0;
   position: absolute;
-  top: 10px;
-  right: 5px;
+  top: 0.7rem;
+  right: 0.5rem;
   background: none;
   font-size: 2rem;
   font-weight: bold;
