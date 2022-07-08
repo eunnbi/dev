@@ -10,7 +10,7 @@ const Button = styled.button`
   font-weight: bold;
   transition: transform 0.3s ease-in-out;
   svg {
-    color: ${({ theme }) => theme.color.textColor};
+    color: ${({ theme }) => theme.color.violet};
   }
   &:hover {
     transform: scale(1.5);
