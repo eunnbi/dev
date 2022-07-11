@@ -14,7 +14,7 @@ export const ListWrapper = styled.div`
 `;
 
 export const List = styled.ul`
-  height: 300px;
+  height: 320px;
   position: relative;
   overflow: hidden;
   width: 100%;
