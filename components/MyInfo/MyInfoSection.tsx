@@ -28,8 +28,8 @@ const MyInfoSection = () => {
       {MY_INFO.map((info, index) => (
         <Info key={index}>
           <Label>{info.label}</Label>
-          {info.label === "E-mail" ? (
-            <a href={`mailto:${info.value}`} title="메일 보내기">
+          {info.link !== "" ? (
+            <a href={info.link} target="_blank" rel="noreferrer">
               <p>{info.value}</p>
             </a>
           ) : (
