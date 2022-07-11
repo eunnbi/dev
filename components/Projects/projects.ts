@@ -105,7 +105,7 @@ export const PROJECTS = [
       "https://velog.io/@eunnbi/Project-%EB%AA%A8%EC%95%84%EB%AA%A8%EC%95%84-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-2",
     github: "https://github.com/eunnbi/bookmark",
     link: "https://eunnbi-bookmark.netlify.app/",
-    tags: ["React Component Pattern", "Mobile First Design"],
+    tags: ["React Component Pattern", "Mobile First Design", "첫 백엔드 개발"],
   },
   {
     id: 4,
@@ -134,6 +134,6 @@ export const PROJECTS = [
       "https://velog.io/@eunnbi/Project-%EB%AA%A8%EC%95%84%EB%AA%A8%EC%95%84-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-2",
     github: "https://github.com/eunnbi/bookmark",
     link: "https://eunnbi-bookmark.netlify.app/",
-    tags: ["React Component Pattern", "Mobile First Design"],
+    tags: ["첫 NextJS 프로젝트", "디자이너와의 협업"],
   },
 ];
