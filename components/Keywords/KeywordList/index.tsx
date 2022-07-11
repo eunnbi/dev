@@ -15,9 +15,7 @@ const KeywordList = () => {
         {KEYWORDS.map((keyword, index) => (
           <KeywordItem
             key={keyword.id}
-            title={keyword.title}
-            contents={keyword.contents}
-            icon={keyword.icon}
+            keyword={keyword}
             position={
               index === position.current
                 ? "current"
