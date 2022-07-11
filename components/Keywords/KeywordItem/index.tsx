@@ -1,14 +1,14 @@
 import React from "react";
-import { Item, Content } from "./KeywordItem.styles";
+import { IKeyword } from "../keywords";
+import { Item, Content, Anchor } from "./KeywordItem.styles";
 
 interface KeywordItemProps {
-  title: string;
-  contents: String[];
-  icon: React.ReactNode;
+  keyword: IKeyword;
   position: string;
 }
 
-const KeywordItem = ({ title, contents, icon, position }: KeywordItemProps) => {
+const KeywordItem = ({ keyword, position }: KeywordItemProps) => {
+  const { icon, title, contents, references } = keyword;
   return (
     <Item position={position}>
       <h3>
@@ -17,12 +17,23 @@ const KeywordItem = ({ title, contents, icon, position }: KeywordItemProps) => {
       </h3>
       <Content>
         {contents.map((content, index) => (
-          <p key={index}>
-            👉 <span></span>
-            {content}
-          </p>
+          <p key={index}>{content}</p>
         ))}
       </Content>
+      {references.length !== 0 && (
+        <Content>
+          {references.map((reference, index) => (
+            <Anchor
+              key={index}
+              href={reference.link}
+              target="_blank"
+              rel="noreferrer"
+            >
+              ✏️ {reference.name}
+            </Anchor>
+          ))}
+        </Content>
+      )}
     </Item>
   );
 };
