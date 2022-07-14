@@ -25,10 +25,17 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={isLightTheme ? lightTheme : darkTheme}>
       <GlobalStyle />
-      <Layout>
-        <ThemeButton changeTheme={changeTheme} isLightTheme={isLightTheme} />
-        <Component {...pageProps} />
-      </Layout>
+      {pageProps.id ? (
+        <>
+          <ThemeButton changeTheme={changeTheme} isLightTheme={isLightTheme} />
+          <Component {...pageProps} />
+        </>
+      ) : (
+        <Layout>
+          <ThemeButton changeTheme={changeTheme} isLightTheme={isLightTheme} />
+          <Component {...pageProps} />
+        </Layout>
+      )}
     </ThemeProvider>
   );
 }
