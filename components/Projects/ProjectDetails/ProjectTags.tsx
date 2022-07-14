@@ -15,13 +15,13 @@ const TagItem = styled.li`
 `;
 
 interface ProjectTagsProp {
-  tags: string[];
+  tags: string[] | undefined;
 }
 
 const ProjectTags = ({ tags }: ProjectTagsProp) => {
   return (
     <TagWrapper>
-      {tags.map((tag, index) => (
+      {tags?.map((tag, index) => (
         <TagItem key={index}>
           <span>✨</span> {tag}
         </TagItem>

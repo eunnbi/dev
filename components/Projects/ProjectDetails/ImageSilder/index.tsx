@@ -3,7 +3,7 @@ import { useSilder } from "../../../../hooks/useSlider";
 import { ImageList, ImageItem, Slider } from "./ImageSilder.styles";
 
 const ImageSlider = ({ images }: { images: string[] }) => {
-  const { position, movePrev, moveNext } = useSilder(images.length);
+  const { position, moveNext, movePrev } = useSilder(images.length);
   const { current, prev } = position;
   return (
     <Slider>
