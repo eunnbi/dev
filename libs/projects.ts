@@ -26,7 +26,7 @@ export function getProjectsData() {
               나의 부족한 점을 많이 발견했으나 그 만큼 내가 더 성장할 수 있다는 뜻이기 때문에 매우 값진 경험이었다.🤩`,
       reviewLink: "https://github.com/eunnbi/movie-app/blob/main/STUDY.md",
       github: "https://github.com/eunnbi/movie-app",
-      link: "https://eunnbi.github.io/movie-app/",
+      link: "https://eunnbi.github.io/world-movie/",
       tags: ["첫 React 프로젝트", "React Query로의 전환"],
     },
     {
