@@ -1,18 +1,17 @@
-import { useCallback, useContext } from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { ProjectType } from "../projects";
-import { ModalsDispatchContext } from "../../../context/ModalsContext";
-import ProjectModal from "../ProjectModal";
-import ProjectTags from "../ProjectTags";
-import ProjectLinks from "../ProjectLinks";
+import ProjectTags from "../ProjectDetails/ProjectTags";
+import ProjectLinks from "../ProjectDetails/ProjectLinks";
 import { Item, Info, ImageWrapper } from "./ProjectItem.styles";
 
 const ProjectItem = ({ project }: { project: ProjectType }) => {
-  const { openModal } = useContext(ModalsDispatchContext);
-  const onClick = useCallback((e: any) => {
+  const router = useRouter();
+  const onClick = (e: any) => {
     if (e.target.tagName === "svg") return;
-    openModal(ProjectModal, project);
-  }, []);
+    router.push(`/projects/${project.id}`);
+  };
+
   return (
     <Item onClick={onClick}>
       <ImageWrapper>
