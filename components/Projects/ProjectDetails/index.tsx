@@ -1,15 +1,15 @@
-import { ProjectType } from "../../projects";
-import ImageSlider from "../ImageSilder";
-import ProjectLinks from "../../ProjectLinks";
-import ProjectStacks from "../ProjectStacks";
-import ProjectTags from "../../ProjectTags";
-import { ContentWrapper, ProjectDetails } from "./ModalContent.styles";
+import { ProjectType } from "../projects";
+import ImageSlider from "./ImageSilder";
+import ProjectTags from "./ProjectTags";
+import ProjectStacks from "./ProjectStacks";
+import ProjectLinks from "./ProjectLinks";
+import { DetailsWrapper, ProjectContent } from "./ProjectDetails.styles";
 
-const ModalContent = ({ project }: { project: ProjectType }) => {
+const ProjectDetails = ({ project }: { project: ProjectType }) => {
   return (
-    <ContentWrapper>
+    <DetailsWrapper>
       <ImageSlider images={project.images} />
-      <ProjectDetails>
+      <ProjectContent>
         <p className="project-period">⏰ {project.period}</p>
         <ProjectTags tags={project.tags} />
         <article>
@@ -34,9 +34,9 @@ const ModalContent = ({ project }: { project: ProjectType }) => {
           </a>
         </article>
         <ProjectLinks github={project.github} link={project.link} />
-      </ProjectDetails>
-    </ContentWrapper>
+      </ProjectContent>
+    </DetailsWrapper>
   );
 };
 
-export default ModalContent;
+export default ProjectDetails;

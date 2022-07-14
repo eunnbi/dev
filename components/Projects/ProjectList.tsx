@@ -1,7 +1,6 @@
-import { PROJECTS } from "./projects";
-import Modals from "../common/Modals";
 import ProjectItem from "./ProjectItem";
 import styled from "styled-components";
+import { getProjectsData } from "../../libs/projects";
 
 const List = styled.ul`
   display: grid;
@@ -11,15 +10,13 @@ const List = styled.ul`
 `;
 
 const ProjectList = () => {
+  const projects = getProjectsData();
   return (
-    <>
-      <List>
-        {PROJECTS.map((project) => (
-          <ProjectItem key={project.id} project={project} />
-        ))}
-      </List>
-      <Modals />
-    </>
+    <List>
+      {projects.map((project) => (
+        <ProjectItem key={project.id} project={project} />
+      ))}
+    </List>
   );
 };
 

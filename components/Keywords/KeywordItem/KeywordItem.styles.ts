@@ -42,3 +42,11 @@ export const Content = styled.div`
     width: 0.5rem;
   }
 `;
+
+export const Anchor = styled.a`
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    text-decoration: underline;
+  }
+`;

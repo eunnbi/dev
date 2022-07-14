@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
-export const ContentWrapper = styled.div`
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
+export const DetailsWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   article {
     display: flex;
     flex-direction: column;
@@ -18,13 +17,15 @@ export const ContentWrapper = styled.div`
       text-decoration: underline;
     }
   }
-  @media screen and (max-width: 1300px) {
+  @media screen and (max-width: 1500px) {
+    display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 2rem;
   }
 `;
 
-export const ProjectDetails = styled.div`
+export const ProjectContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;

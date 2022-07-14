@@ -6,7 +6,7 @@ import MyInfoSection from "../components/MyInfo/MyInfoSection";
 import SkillsSection from "../components/Skills/SkillsSection";
 import styles from "../styles/About.module.css";
 
-const About: NextPage = () => {
+const AboutPage: NextPage = () => {
   return (
     <>
       <CustomHead page="About" />
@@ -28,4 +28,4 @@ const About: NextPage = () => {
   );
 };
 
-export default About;
+export default AboutPage;

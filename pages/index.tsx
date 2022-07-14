@@ -3,7 +3,7 @@ import CustomHead from "../components/common/CustomHead";
 import styles from "../styles/Home.module.css";
 import KeywordList from "../components/Keywords/KeywordList";
 
-const Home: NextPage = () => {
+const HomePage: NextPage = () => {
   return (
     <>
       <CustomHead page="Home" />
@@ -15,4 +15,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default HomePage;
