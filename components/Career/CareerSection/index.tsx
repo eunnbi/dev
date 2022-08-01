@@ -1,5 +1,5 @@
-import Heading from "../common/Heading";
-import CareerList from "./CareerList";
+import Heading from "../../common/Heading";
+import CareerList from "../CareerList";
 
 const CareerSection = () => {
   return (
