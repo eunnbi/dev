@@ -1,14 +1,10 @@
 import Image from "next/image";
 import GaugeBar from "../GaugeBar";
-import { Item, Label } from "./SkillItem.styles";
+import { SkillType } from "../skills";
+import { Item, Label, Heading } from "./SkillItem.styles";
+import { BsLink45Deg } from "react-icons/bs";
 
-interface SkillItemProps {
-  id: number;
-  skill: string;
-  percentage: number;
-}
-
-const SkillItem = ({ id, skill, percentage }: SkillItemProps) => {
+const SkillItem = ({ id, tech, percentage, link }: SkillType) => {
   return (
     <Item>
       <Image
@@ -20,10 +16,17 @@ const SkillItem = ({ id, skill, percentage }: SkillItemProps) => {
       />
       <div className="SkillsItem-gauge">
         <div>
-          <Label>
-            <span>{skill}</span>
+          <Heading>
+            <Label>
+              <span>{tech}</span>
+              {link && (
+                <a href={link} target="_blank" rel="noreferrer">
+                  <BsLink45Deg />
+                </a>
+              )}
+            </Label>
             <span>{percentage}%</span>
-          </Label>
+          </Heading>
           <GaugeBar gauge={percentage} />
         </div>
       </div>
