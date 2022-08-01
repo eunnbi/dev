@@ -24,3 +24,10 @@ export const CAREER = [
     period: "2022.06 ~ ",
   },
 ];
+
+export interface ICareer {
+  id: number;
+  title: string;
+  content: string;
+  period: string;
+}
