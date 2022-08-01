@@ -11,7 +11,12 @@ export interface ProjectType {
   images: string[];
   member: string;
   role?: string;
-  review: string;
-  reviewLink: string;
+  review: Review;
   tags: string[];
+}
+
+interface Review {
+  text: string;
+  link: string;
+  linkName: string;
 }
