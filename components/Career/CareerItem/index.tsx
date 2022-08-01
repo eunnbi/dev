@@ -1,12 +1,9 @@
 import Heading from "../../common/Heading";
 import MilestoneCircle from "./MileStoneCircle";
 import { Item, Period, Content } from "./CareerItem.styles";
+import { ICareer } from "../../../constants/career";
 
-interface CareerItemProps {
-  title: string;
-  period: string;
-  content: string;
-}
+type CareerItemProps = Pick<ICareer, "content" | "period" | "title">;
 
 const CareerItem = ({ title, period, content }: CareerItemProps) => {
   return (
