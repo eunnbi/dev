@@ -35,7 +35,7 @@ export const MY_INFO = [
   },
   {
     label: "Dev Blog",
-    value: "@eunnbi.log",
+    value: "https://velog.io/@eunnbi",
     link: "https://velog.io/@eunnbi",
   },
 ];
