@@ -8,8 +8,9 @@ const SkillList = ({ skills }: { skills: SkillType[] }) => {
         <SkillItem
           key={skill.id}
           id={skill.id}
-          skill={skill.tech}
+          tech={skill.tech}
           percentage={skill.percentage}
+          link={skill?.link}
         />
       ))}
     </ul>
