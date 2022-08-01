@@ -1,8 +1,17 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const DetailsWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+export const DetailsWrapper = styled.div<{ imagesLength: number }>`
+  ${({ imagesLength }) =>
+    imagesLength === 0
+      ? css`
+          max-width: 800px;
+          width: 100%;
+          margin: 0 auto;
+        `
+      : css`
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        `}
   article {
     display: flex;
     flex-direction: column;
