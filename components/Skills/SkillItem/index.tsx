@@ -1,10 +1,10 @@
 import Image from "next/image";
 import GaugeBar from "../GaugeBar";
-import { SkillType } from "../skills";
+import { ISkill } from "../../../constants/skills";
 import { Item, Label, Heading } from "./SkillItem.styles";
 import { BsLink45Deg } from "react-icons/bs";
 
-const SkillItem = ({ id, tech, percentage, link }: SkillType) => {
+const SkillItem = ({ id, tech, percentage, link }: ISkill) => {
   return (
     <Item>
       <Image

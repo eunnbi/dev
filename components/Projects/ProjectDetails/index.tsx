@@ -1,4 +1,4 @@
-import { ProjectType } from "../projects";
+import { ProjectType } from "../../../constants/projects";
 import ImageSlider from "./ImageSilder";
 import ProjectTags from "./ProjectTags";
 import ProjectStacks from "./ProjectStacks";

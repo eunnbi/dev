@@ -1,7 +1,7 @@
 import SkillItem from "../SkillItem";
-import { SkillType } from "../skills";
+import { ISkill } from "../../../constants/skills";
 
-const SkillList = ({ skills }: { skills: SkillType[] }) => {
+const SkillList = ({ skills }: { skills: ISkill[] }) => {
   return (
     <ul>
       {skills.map((skill) => (

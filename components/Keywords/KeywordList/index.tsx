@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { KEYWORDS } from "../keywords";
+import { KEYWORDS } from "../../../constants/keywords";
 import KeywordItem from "../KeywordItem";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { ListWrapper, List } from "./KeywordList.styles";
