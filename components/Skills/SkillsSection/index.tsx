@@ -1,6 +1,10 @@
-import Heading from "../common/Heading";
-import { SKILLS_LANG, SKILLS_LIB, SKILLS_TOOLS } from "./skills";
-import SkillList from "./SkillList";
+import Heading from "../../common/Heading";
+import {
+  SKILLS_LANG,
+  SKILLS_LIB,
+  SKILLS_TOOLS,
+} from "../../../constants/skills";
+import SkillList from "../SkillList";
 
 const SkillsSection = () => {
   return (

@@ -37,12 +37,12 @@ const ProjectStacks = ({
           </Tag>
         ))}
         {beStacks?.map((stack, index) => (
-          <Tag key={index} color={name === "light" ? "E3EFD9" : "9ba891"}>
+          <Tag key={index} color={name === "light" ? "E3EFD9" : "8b9981"}>
             {stack}
           </Tag>
         ))}
         {deployStacks?.map((stack, index) => (
-          <Tag key={index} color={name === "light" ? "DCE6EE" : "9bb3c7"}>
+          <Tag key={index} color={name === "light" ? "DCE6EE" : "8aa4ba"}>
             {stack}
           </Tag>
         ))}

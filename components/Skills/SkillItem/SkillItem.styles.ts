@@ -11,16 +11,25 @@ export const Item = styled.li`
   }
 `;
 
-export const Label = styled.div`
+export const Heading = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 5px;
-  span:first-child {
-    font-weight: bold;
-  }
   span:last-child {
     color: ${({ theme }) => theme.color.textColor};
     font-weight: 500;
     opacity: 0.9;
+  }
+`;
+
+export const Label = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  svg {
+    margin-top: 3px;
+  }
+  span:first-child {
+    font-weight: bold;
   }
 `;

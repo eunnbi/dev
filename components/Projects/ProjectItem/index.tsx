@@ -1,14 +1,15 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { ProjectType } from "../projects";
+import { IProject } from "../../../constants/projects";
 import ProjectTags from "../ProjectDetails/ProjectTags";
 import ProjectLinks from "../ProjectDetails/ProjectLinks";
 import { Item, Info, ImageWrapper } from "./ProjectItem.styles";
 
-const ProjectItem = ({ project }: { project: ProjectType }) => {
+const ProjectItem = ({ project }: { project: IProject }) => {
   const router = useRouter();
   const onClick = (e: any) => {
-    if (e.target.tagName === "svg") return;
+    const { tagName } = e.target;
+    if (tagName === "a" || tagName === "svg" || tagName === "path") return;
     router.push(`/projects/${project.id}`);
   };
 
@@ -16,11 +17,15 @@ const ProjectItem = ({ project }: { project: ProjectType }) => {
     <Item onClick={onClick}>
       <ImageWrapper>
         <Image
-          src={project.images[0]}
+          src={
+            project.images.length === 0
+              ? "/images/projects/project-default.png"
+              : project.images[0]
+          }
           alt="project thumbnail"
           layout="fill"
           placeholder="blur"
-          blurDataURL={project.images[0]}
+          blurDataURL="/images/projects/project-default.png"
         />
       </ImageWrapper>
       <Info>

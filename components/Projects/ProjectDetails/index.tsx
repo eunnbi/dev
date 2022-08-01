@@ -1,14 +1,16 @@
-import { ProjectType } from "../projects";
+import { IProject } from "../../../constants/projects";
 import ImageSlider from "./ImageSilder";
 import ProjectTags from "./ProjectTags";
 import ProjectStacks from "./ProjectStacks";
 import ProjectLinks from "./ProjectLinks";
 import { DetailsWrapper, ProjectContent } from "./ProjectDetails.styles";
 
-const ProjectDetails = ({ project }: { project: ProjectType }) => {
+const ProjectDetails = ({ project }: { project: IProject }) => {
   return (
-    <DetailsWrapper>
-      <ImageSlider images={project.images} />
+    <DetailsWrapper imagesLength={project.images.length}>
+      {project.images.length === 0 ? null : (
+        <ImageSlider images={project.images} />
+      )}
       <ProjectContent>
         <p className="project-period">⏰ {project.period}</p>
         <ProjectTags tags={project.tags} />
@@ -26,13 +28,15 @@ const ProjectDetails = ({ project }: { project: ProjectType }) => {
           <p>{project.member}</p>
           {project.role && <p>{project.role}</p>}
         </article>
-        <article>
-          <h3>Review</h3>
-          <p>{project.review}</p>
-          <a href={project.reviewLink} target="_blank" rel="noreferrer">
-            🚀 <span>{project.title} 회고글 보러 가기</span>
-          </a>
-        </article>
+        {project.review.text && (
+          <article>
+            <h3>Review</h3>
+            <p>{project.review.text}</p>
+            <a href={project.review.link} target="_blank" rel="noreferrer">
+              🚀 <span>{project.review.linkName}</span>
+            </a>
+          </article>
+        )}
         <ProjectLinks github={project.github} link={project.link} />
       </ProjectContent>
     </DetailsWrapper>

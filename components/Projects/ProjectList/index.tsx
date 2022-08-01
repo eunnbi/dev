@@ -1,6 +1,6 @@
-import ProjectItem from "./ProjectItem";
+import ProjectItem from "../ProjectItem";
 import styled from "styled-components";
-import { getProjectsData } from "../../libs/projects";
+import { PROJECTS } from "../../../constants/projects";
 
 const List = styled.ul`
   display: grid;
@@ -10,10 +10,9 @@ const List = styled.ul`
 `;
 
 const ProjectList = () => {
-  const projects = getProjectsData();
   return (
     <List>
-      {projects.map((project) => (
+      {PROJECTS.map((project) => (
         <ProjectItem key={project.id} project={project} />
       ))}
     </List>

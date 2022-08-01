@@ -1,5 +1,5 @@
 import React from "react";
-import { IKeyword } from "../keywords";
+import { IKeyword } from "../../../constants/keywords";
 import { Item, Content, Anchor } from "./KeywordItem.styles";
 
 interface KeywordItemProps {
