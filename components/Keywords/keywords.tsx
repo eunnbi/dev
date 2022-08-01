@@ -1,19 +1,17 @@
-import {
-  HiOutlineDesktopComputer,
-  HiOutlineUserCircle,
-  HiQuestionMarkCircle,
-} from "react-icons/hi";
-import { MdMessage } from "react-icons/md";
-
 export const KEYWORDS = [
   {
     id: 1,
-    title: "Frontend",
+    title: "Web Frontend",
     contents: [
       "Typescript와 함께 ReactJS 라이브러리를 주로 다루고 있습니다.",
-      "최근에는 NextJS 프레임워크를 공부하며 프로젝트를 진행하고 있습니다",
+      "최근에는 NextJS 프레임워크를 공부하고 있습니다.",
     ],
-    references: [],
+    references: [
+      {
+        link: "https://velog.io/@eunnbi/series",
+        name: "프론트엔드 개발 공부 내용 보러가기",
+      },
+    ],
     icon: "🖥️  ",
   },
   {
@@ -31,7 +29,7 @@ export const KEYWORDS = [
     title: "Communication",
     contents: [
       "협업 과정에서 원활한 의사소통이 이루어지도록 노력합니다.",
-      "경청의 자세를 바탕으로 명확한 의사전달을 중요시합니다.",
+      "경청의 자세와 명확한 의사전달을 중요시합니다.",
     ],
     references: [
       {
@@ -40,13 +38,6 @@ export const KEYWORDS = [
       },
     ],
     icon: "📢 ",
-  },
-  {
-    id: 4,
-    title: "Question",
-    contents: [],
-    references: [],
-    icon: "🤔  ",
   },
 ];
 
