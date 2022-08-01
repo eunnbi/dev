@@ -1,11 +1,11 @@
-import { ProjectType } from "../../../constants/projects";
+import { IProject } from "../../../constants/projects";
 import ImageSlider from "./ImageSilder";
 import ProjectTags from "./ProjectTags";
 import ProjectStacks from "./ProjectStacks";
 import ProjectLinks from "./ProjectLinks";
 import { DetailsWrapper, ProjectContent } from "./ProjectDetails.styles";
 
-const ProjectDetails = ({ project }: { project: ProjectType }) => {
+const ProjectDetails = ({ project }: { project: IProject }) => {
   return (
     <DetailsWrapper imagesLength={project.images.length}>
       {project.images.length === 0 ? null : (
