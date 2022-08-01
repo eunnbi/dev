@@ -8,8 +8,14 @@ export const CAREER = [
   {
     id: 2,
     title: "J2KB 6th & MoaMoa Project",
-    content: "✌️ Unicorn 2nd place",
+    content: "✌️ Uni-con 2nd place",
     period: "2022.03 ~ 2022.04",
+  },
+  {
+    id: 3,
+    title: "Link Memo Project",
+    content: "",
+    period: "2022.06 ~ 2022.07",
   },
   {
     id: 3,
