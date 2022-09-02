@@ -132,7 +132,7 @@ export const PROJECTS = [
     },
     github: "https://github.com/eunnbi/link-memo",
     link: "https://link-memo.netlify.app/",
-    tags: ["React Component Pattern", "Mobile First Design", "첫 백엔드 개발"],
+    tags: ["React Component Pattern", "Mobile First Design"],
   },
   {
     id: 4,
