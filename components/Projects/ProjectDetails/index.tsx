@@ -28,7 +28,8 @@ const ProjectDetails = ({ project }: { project: IProject }) => {
           <p>{project.member}</p>
           {project.role && <p>{project.role}</p>}
         </article>
-        {project.review.text && (
+        {(project.review.text ||
+          (project.review.link && project.review.linkName)) && (
           <article>
             <h3>Review</h3>
             <p>{project.review.text}</p>
