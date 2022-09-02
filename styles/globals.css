@@ -1,4 +1,5 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/static/pretendard.css");
+@import url("https://fonts.googleapis.com/css2?family=Sail&display=swap");
 
 html,
 body {
@@ -71,13 +72,6 @@ p {
 
 img {
   object-fit: cover;
-}
-
-@font-face {
-  font-family: "Sail";
-  font-style: normal;
-  font-weight: normal;
-  src: url("../public/fonts/Sail-Regular.ttf") format("truetype");
 }
 
 ::-webkit-scrollbar {
