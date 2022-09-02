@@ -23,6 +23,12 @@ export const CAREER = [
     content: "",
     period: "2022.06 ~ ",
   },
+  {
+    id: 4,
+    title: "KU hackathon - AIMECO",
+    content: "🖐️ 5th place out of 18 teams",
+    period: "2022.08",
+  },
 ];
 
 export interface ICareer {
