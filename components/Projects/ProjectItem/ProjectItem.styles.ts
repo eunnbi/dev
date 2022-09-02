@@ -32,6 +32,7 @@ export const Info = styled.div`
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  border-top: 1px solid lightgray;
   > ul {
     justify-content: center;
     &:last-child {
