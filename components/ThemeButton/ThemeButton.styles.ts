@@ -27,6 +27,6 @@ export const Circle = styled.div<{ isLightTheme: boolean }>`
   height: 1.5rem;
   background-color: #fff;
   border-radius: 50%;
-  transform: ${({ isLightTheme }) => !isLightTheme && `translateY(100%)`};
+  transform: ${({ isLightTheme }) => isLightTheme && `translateY(100%)`};
   transition: all 0.3s ease-in-out;
 `;

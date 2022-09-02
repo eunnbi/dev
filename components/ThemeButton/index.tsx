@@ -10,8 +10,8 @@ const ThemeButton = ({ isLightTheme, changeTheme }: ThemeButtonProps) => {
   return (
     <Button onClick={changeTheme} isLightTheme={isLightTheme}>
       <Circle isLightTheme={isLightTheme} />
-      <IoMoon />
       <IoSunny />
+      <IoMoon />
     </Button>
   );
 };
