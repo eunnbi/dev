@@ -15,7 +15,7 @@ const ImageSlider = ({ images }: { images: string[] }) => {
             position={
               index === current ? "current" : index === prev ? "prev" : "next"
             }
-            src={image}
+            src={`/images/projects/${image}`}
           />
         ))}
       </ImageList>

@@ -20,7 +20,7 @@ const ProjectItem = ({ project }: { project: IProject }) => {
           src={
             project.images.length === 0
               ? "/images/projects/project-default.png"
-              : project.images[0]
+              : `/images/projects/${project.images[0]}`
           }
           alt="project thumbnail"
           layout="fill"
