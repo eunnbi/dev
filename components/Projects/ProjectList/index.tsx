@@ -1,16 +1,16 @@
 import ProjectItem from "../ProjectItem";
 import styled from "styled-components";
-import { PROJECTS } from "../../../constants/projects";
+import { PROJECTS, FILTERS } from "../../../constants/projects";
 
 interface ProjectListProps {
-  selectedId: number;
+  selectedFilter: string;
 }
 
-const ProjectList = ({ selectedId }: ProjectListProps) => {
+const ProjectList = ({ selectedFilter }: ProjectListProps) => {
   let projects = PROJECTS;
-  if (selectedId === 1) {
+  if (selectedFilter === FILTERS[1]) {
     projects = projects.filter((project) => project.personal);
-  } else if (selectedId === 2) {
+  } else if (selectedFilter === FILTERS[2]) {
     projects = projects.filter((project) => !project.personal);
   }
   return (
