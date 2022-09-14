@@ -1,21 +1,21 @@
 import type { NextPage } from "next";
-import { useState } from "react";
 import styled from "styled-components";
 import CustomHead from "../../components/common/CustomHead";
 import Heading from "../../components/common/Heading";
 import ProjectFilter from "../../components/Projects/ProjectFilter";
 import ProjectList from "../../components/Projects/ProjectList";
+import { FILTERS } from "../../constants/projects";
+import { useFilterHash } from "../../hooks/useFilterHash";
 
 const ProjectsPage: NextPage = () => {
-  const [selectedId, setSelectedId] = useState(0);
-  const onSelect = (id: number) => setSelectedId(id);
+  const { filter, selectFilter } = useFilterHash(FILTERS, "/projects");
   return (
     <>
       <CustomHead page="Projects" />
       <Main>
         <Heading>Projects</Heading>
-        <ProjectFilter selectedId={selectedId} onSelect={onSelect} />
-        <ProjectList selectedId={selectedId} />
+        <ProjectFilter selectedFilter={filter} onSelect={selectFilter} />
+        <ProjectList selectedFilter={filter} />
       </Main>
     </>
   );
