@@ -2,18 +2,18 @@ import styled, { css } from "styled-components";
 import { FILTERS } from "../../../constants/projects";
 
 interface ProjectFilterProps {
-  selectedId: number;
-  onSelect: (id: number) => void;
+  selectedFilter: string;
+  onSelect: (hash: string) => void;
 }
 
-const ProjectFilter = ({ selectedId, onSelect }: ProjectFilterProps) => {
+const ProjectFilter = ({ selectedFilter, onSelect }: ProjectFilterProps) => {
   return (
     <Filters>
       {FILTERS.map((filter, index) => (
         <FilterButton
           key={index}
-          isSelected={selectedId === index}
-          onClick={() => onSelect(index)}
+          isSelected={selectedFilter === filter}
+          onClick={() => onSelect(filter)}
         >
           {filter}
         </FilterButton>
