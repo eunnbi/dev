@@ -6,6 +6,18 @@ export const GlobalStyle = createGlobalStyle`
         color: ${({ theme }) => theme.color.textColor};
         transition: all 0.3s ease-in-out;
     }
+    ::-webkit-scrollbar {
+        width: 5px; /* 세로축 스크롤바 길이 */
+        height: 5px; /* 가로축 스크롤바 길이 */
+    }
+    ::-webkit-scrollbar-track-piece {
+        background-color: ${({ theme }) => theme.color.bgColor};
+    }
+    ::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+        background-color: lightgray;
+    }
+
     @media ${({ theme }) => theme.device.laptop}{
         main {
             margin-left: 0;
