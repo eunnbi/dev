@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import CustomHead from "../components/common/CustomHead";
 import styles from "../styles/Home.module.css";
-import KeywordSlider from "../components/keywords/KeywordsSlider";
+import KeywordSlider from "../components/keywords/KeywordSlider";
 
 const HomePage: NextPage = () => {
   return (
