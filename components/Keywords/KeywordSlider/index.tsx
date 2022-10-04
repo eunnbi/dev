@@ -1,15 +1,15 @@
 import KeywordList from "./KeywordList";
-import ControlButtons from "./ControlButtons";
 import { useSlider } from "../../../hooks/useSlider";
 import { KEYWORDS } from "../../../constants/keywords";
 import styled from "styled-components";
+import SliderControlButtons from "../../common/SliderControlButtons";
 
 const KeywordSlider = () => {
   const { position, moveNext, movePrev } = useSlider(KEYWORDS.length);
   return (
     <Slider>
       <KeywordList position={position} />
-      <ControlButtons moveNext={moveNext} movePrev={movePrev} />
+      <SliderControlButtons moveNext={moveNext} movePrev={movePrev} />
     </Slider>
   );
 };
