@@ -1,5 +1,6 @@
 import { CONTACT_LINKS } from "./contactLinks";
 import { List, Anchor } from "./ContactLinks.styles";
+import React from "react";
 
 const ContactLinks = () => {
   return (
@@ -15,4 +16,4 @@ const ContactLinks = () => {
   );
 };
 
-export default ContactLinks;
+export default React.memo(ContactLinks);

@@ -3,6 +3,23 @@ import NavLinks from "./NavLinks";
 import ContactLinks from "./ContactLinks";
 import styled from "styled-components";
 
+interface SideNavProps {
+  showNav: boolean;
+  closeNav: () => void;
+}
+
+const SideNav = ({ showNav, closeNav }: SideNavProps) => {
+  return (
+    <NavWrapper showNav={showNav}>
+      <Profile />
+      <NavLinks closeNav={closeNav} />
+      <ContactLinks />
+    </NavWrapper>
+  );
+};
+
+export default SideNav;
+
 const NavWrapper = styled.nav<{ showNav: boolean }>`
   background-color: ${({ theme }) => theme.color.navColor};
   width: 17rem;
@@ -23,20 +40,3 @@ const NavWrapper = styled.nav<{ showNav: boolean }>`
     z-index: 1;
   }
 `;
-
-interface SideNavProps {
-  showNav: boolean;
-  closeNav: () => void;
-}
-
-const SideNav = ({ showNav, closeNav }: SideNavProps) => {
-  return (
-    <NavWrapper showNav={showNav}>
-      <Profile />
-      <NavLinks closeNav={closeNav} />
-      <ContactLinks />
-    </NavWrapper>
-  );
-};
-
-export default SideNav;

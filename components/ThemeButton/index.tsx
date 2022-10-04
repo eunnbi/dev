@@ -1,12 +1,10 @@
 import { IoMoon, IoSunny } from "react-icons/io5";
+import { useTheme } from "../../hooks/useTheme";
 import { Button, Circle } from "./ThemeButton.styles";
+import React from "react";
 
-interface ThemeButtonProps {
-  isLightTheme: boolean;
-  changeTheme: () => void;
-}
-
-const ThemeButton = ({ isLightTheme, changeTheme }: ThemeButtonProps) => {
+const ThemeButton = () => {
+  const { isLightTheme, changeTheme } = useTheme();
   return (
     <Button onClick={changeTheme} isLightTheme={isLightTheme}>
       <Circle isLightTheme={isLightTheme} />
@@ -16,4 +14,4 @@ const ThemeButton = ({ isLightTheme, changeTheme }: ThemeButtonProps) => {
   );
 };
 
-export default ThemeButton;
+export default React.memo(ThemeButton);

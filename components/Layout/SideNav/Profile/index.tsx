@@ -1,4 +1,5 @@
 import Image from "next/image";
+import React from "react";
 import { ProfileWrapper, ImageWrapper, Title, Text } from "./Profile.styles";
 
 const Profile = () => {
@@ -14,11 +15,10 @@ const Profile = () => {
           blurDataURL="/images/me.png"
         />
       </ImageWrapper>
-
       <Title>Eunnbi</Title>
       <Text>Frontend Developer</Text>
     </ProfileWrapper>
   );
 };
 
-export default Profile;
+export default React.memo(Profile);
