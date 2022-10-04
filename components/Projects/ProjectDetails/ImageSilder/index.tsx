@@ -1,9 +1,9 @@
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import { useSilder } from "../../../../hooks/useSlider";
+import { useSlider } from "../../../../hooks/useSlider";
 import { ImageList, ImageItem, Slider } from "./ImageSilder.styles";
 
 const ImageSlider = ({ images }: { images: string[] }) => {
-  const { position, moveNext, movePrev } = useSilder(images.length);
+  const { position, moveNext, movePrev } = useSlider(images.length);
   const { current, prev } = position;
   return (
     <Slider>
