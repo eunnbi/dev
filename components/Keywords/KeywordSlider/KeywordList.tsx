@@ -2,11 +2,6 @@ import { KEYWORDS } from "../../../constants/keywords";
 import KeywordItem from "../KeywordItem";
 import styled from "styled-components";
 
-interface Position {
-  current: number;
-  prev: number;
-}
-
 const KeywordList = ({ position }: { position: Position }) => {
   return (
     <List>

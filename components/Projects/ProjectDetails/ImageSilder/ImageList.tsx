@@ -1,4 +1,3 @@
-import { Position } from "../../../../types/slider";
 import styled from "styled-components";
 
 interface ImageListProps {
