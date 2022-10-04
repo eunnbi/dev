@@ -2,7 +2,7 @@ import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import ProjectDetails from "../../components/Projects/ProjectDetails";
 import CustomHead from "../../components/common/CustomHead";
 import ProjectHeading from "../../components/Projects/ProjectDetails/ProjectHeading";
-import { getProjectsData } from "../../libs/projects";
+import { PROJECTS } from "../../constants/projects";
 import styles from "../../styles/Project.module.css";
 
 const ProjectPage: NextPage = ({
@@ -22,8 +22,7 @@ const ProjectPage: NextPage = ({
 export default ProjectPage;
 
 export const getStaticPaths = async () => {
-  const projects = getProjectsData();
-  const paths = projects.map((project) => ({
+  const paths = PROJECTS.map((project) => ({
     params: { id: String(project.id) },
   }));
 
@@ -32,8 +31,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const id = context.params!.id;
-  const projects = getProjectsData();
-  const project = projects.find((project) => String(project.id) === id);
+  const project = PROJECTS.find((project) => String(project.id) === id);
   return {
     props: {
       id,
