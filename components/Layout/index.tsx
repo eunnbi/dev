@@ -1,5 +1,4 @@
-import { useState } from "react";
-import SideNav from "../SideNav";
+import SideNav from "./SideNav";
 import NavToggleBtn from "./NavToggleBtn";
 import styled from "styled-components";
 import { useToggle } from "../../hooks/useToggle";
