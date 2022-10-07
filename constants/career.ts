@@ -18,13 +18,13 @@ export const CAREER = [
     period: "2022.06 ~ 2022.07",
   },
   {
-    id: 3,
+    id: 4,
     title: "PetBook Project",
-    content: "",
+    content: "In progress 🚀",
     period: "2022.06 ~ ",
   },
   {
-    id: 4,
+    id: 5,
     title: "KU hackathon - AIMECO",
     content: "🖐️ 5th place out of 18 teams",
     period: "2022.08",
