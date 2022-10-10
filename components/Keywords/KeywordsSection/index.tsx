@@ -18,10 +18,14 @@ export default KeywordsSection;
 
 const Section = styled.section`
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin: 5rem 0;
+  @media ${({ theme }) => theme.device.mobile} {
+    flex-direction: column-reverse;
+    justify-content: center;
+    gap: 3rem;
+  }
 `;
 
 const ImageWrapper = styled(NextImageWrapper)`
@@ -29,4 +33,6 @@ const ImageWrapper = styled(NextImageWrapper)`
   height: 30vw;
   max-width: 250px;
   max-height: 250px;
+  min-width: 150px;
+  min-height: 150px;
 `;
