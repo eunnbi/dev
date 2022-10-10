@@ -1,12 +1,10 @@
-import Heading from "../../common/Heading";
+import SectionHeading from "../../common/SectionHeading";
 import CareerList from "../CareerList";
 
 const CareerSection = () => {
   return (
     <section>
-      <Heading level={2}>
-        Career &amp; <span>Experience</span>
-      </Heading>
+      <SectionHeading title="Career & Experience" />
       <CareerList />
     </section>
   );
