@@ -1,35 +1,32 @@
 import styled from "styled-components";
+import { NextImageWrapper } from "../../common/NextImageWrapper.styled";
 
 export const Item = styled.li`
-  max-width: 470px;
-  margin: 2rem 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
-  .SkillsItem-gauge {
-    flex-grow: 1;
-  }
+  gap: 10px;
 `;
 
-export const Heading = styled.div`
-  display: flex;
-  justify-content: space-between;
+export const ImageWrapper = styled(NextImageWrapper)`
+  width: 20vw;
+  height: 20vw;
+  max-width: 100px;
+  max-height: 100px;
+`;
+
+export const Heading = styled.h4`
+  text-align: center;
   margin-bottom: 5px;
-  span:last-child {
-    color: ${({ theme }) => theme.color.textColor};
-    font-weight: 500;
-    opacity: 0.9;
-  }
 `;
 
-export const Label = styled.div`
+export const Info = styled.div`
+  width: 100%;
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  svg {
-    margin-top: 3px;
-  }
-  span:first-child {
-    font-weight: bold;
-  }
+  flex-direction: column;
+`;
+
+export const GaugeBarWrapper = styled.div`
+  width: 50%;
+  margin: 0 auto;
 `;

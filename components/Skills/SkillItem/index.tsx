@@ -1,35 +1,23 @@
 import Image from "next/image";
 import GaugeBar from "../GaugeBar";
 import { ISkill } from "../../../constants/skills";
-import { Item, Label, Heading } from "./SkillItem.styles";
-import { BsLink45Deg } from "react-icons/bs";
+import { Item, Heading, Info, ImageWrapper } from "./SkillItem.styles";
 
 const SkillItem = ({ id, tech, percentage, link }: ISkill) => {
   return (
     <Item>
-      <Image
-        src={`/images/skills/${id}.png`}
-        width={40}
-        height={40}
-        placeholder="blur"
-        blurDataURL={`/images/skills/${id}.png`}
-      />
-      <div className="SkillsItem-gauge">
-        <div>
-          <Heading>
-            <Label>
-              <span>{tech}</span>
-              {link && (
-                <a href={link} target="_blank" rel="noreferrer">
-                  <BsLink45Deg />
-                </a>
-              )}
-            </Label>
-            <span>{percentage}%</span>
-          </Heading>
-          <GaugeBar gauge={percentage} />
-        </div>
-      </div>
+      <ImageWrapper>
+        <Image
+          src={`/images/skills/${id}.png`}
+          layout="fill"
+          placeholder="blur"
+          blurDataURL={`/images/skills/${id}.png`}
+        />
+      </ImageWrapper>
+
+      <Info>
+        <Heading>{tech}</Heading>
+      </Info>
     </Item>
   );
 };
