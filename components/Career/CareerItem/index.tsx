@@ -1,21 +1,15 @@
-import Heading from "../../common/Heading";
 import MilestoneCircle from "./MileStoneCircle";
 import { Item, Period, Content } from "./CareerItem.styles";
 import { ICareer } from "../../../constants/career";
 
-type CareerItemProps = Pick<ICareer, "content" | "period" | "title">;
+type CareerItemProps = Pick<ICareer, "content" | "period">;
 
-const CareerItem = ({ title, period, content }: CareerItemProps) => {
+const CareerItem = ({ period, content }: CareerItemProps) => {
   return (
     <Item>
-      <Period>
-        <p>{period}</p>
-      </Period>
-      <Content>
-        <Heading level={3}>{title}</Heading>
-        <p>{content}</p>
-        <MilestoneCircle />
-      </Content>
+      <Period>{period}</Period>
+      <Content>{content}</Content>
+      {/*<MilestoneCircle />*/}
     </Item>
   );
 };
