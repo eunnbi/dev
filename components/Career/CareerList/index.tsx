@@ -8,12 +8,10 @@ const CareerList = () => {
       {CAREER.map((career) => (
         <CareerItem
           key={career.id}
-          title={career.title}
           content={career.content}
           period={career.period}
         />
       ))}
-      <Divider />
     </List>
   );
 };
