@@ -7,7 +7,7 @@ interface CustomHeadProps {
 const CustomHead = ({ page }: CustomHeadProps) => {
   return (
     <Head>
-      <title>{page} | Eunbi&apos;s Portfolio</title>
+      <title>{page} | Eunnbi.dev</title>
     </Head>
   );
 };
