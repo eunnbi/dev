@@ -1,9 +1,10 @@
 import SkillItem from "../SkillItem";
+import styled from "styled-components";
 import { ISkill } from "../../../constants/skills";
 
 const SkillList = ({ skills }: { skills: ISkill[] }) => {
   return (
-    <ul>
+    <List>
       {skills.map((skill) => (
         <SkillItem
           key={skill.id}
@@ -13,8 +14,14 @@ const SkillList = ({ skills }: { skills: ISkill[] }) => {
           link={skill?.link}
         />
       ))}
-    </ul>
+    </List>
   );
 };
 
 export default SkillList;
+
+const List = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+`;
