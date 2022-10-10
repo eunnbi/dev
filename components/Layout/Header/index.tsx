@@ -31,8 +31,8 @@ export default Header;
 const StyledHeader = styled.header`
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
+  left: 15px;
+  right: 15px;
   z-index: 10;
   height: 60px;
   background-color: #fff;
