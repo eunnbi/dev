@@ -1,15 +1,17 @@
-import ProjectFilter from "./ProjectFilter";
-import ProjectList from "./ProjectList";
+import ProjectFilter from "../ProjectFilter";
+import ProjectList from "../ProjectList";
 import { useFilterHash } from "../../../hooks/useFilterHash";
 import { FILTERS } from "../../../constants/projects";
 import styled from "styled-components";
+import SectionHeading from "../../common/SectionHeading";
 
 const ProjectSection = () => {
-  const { filter, selectFilter } = useFilterHash(FILTERS, "/projects");
+  const { filterIndex, selectFilter } = useFilterHash(FILTERS, "/projects");
   return (
     <Section>
-      <ProjectFilter selectedFilter={filter} onSelect={selectFilter} />
-      <ProjectList selectedFilter={filter} />
+      <SectionHeading title="Projects" />
+      <ProjectFilter filterIndex={filterIndex} onSelect={selectFilter} />
+      <ProjectList filterIndex={filterIndex} />
     </Section>
   );
 };
@@ -17,5 +19,8 @@ const ProjectSection = () => {
 export default ProjectSection;
 
 const Section = styled.section`
-  margin: 0;
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 `;
