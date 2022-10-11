@@ -9,17 +9,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <RecoilRoot>
       <CustomThemeProvider>
-        {pageProps.id ? (
-          <>
-            <ThemeButton />
-            <Component {...pageProps} />
-          </>
-        ) : (
-          <Layout>
-            <ThemeButton />
-            <Component {...pageProps} />
-          </Layout>
-        )}
+        <Layout headerExist={pageProps.id ? false : true}>
+          <ThemeButton />
+          <Component {...pageProps} />
+        </Layout>
       </CustomThemeProvider>
     </RecoilRoot>
   );
