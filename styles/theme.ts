@@ -20,12 +20,13 @@ const device = {
 
 export const lightTheme = {
   color: {
-    ...color,
     bgColor: "#fff",
     textColor: "#000",
-    shadowColor: "rgba(0, 0, 0, 0.15)",
-    violet: "blueviolet",
-    navColor: "#936aa7",
+    shadowColor: "rgba(0, 0, 0, 0.5)",
+    tabTextColor: "#6e6d7a",
+    tabHoverTextColor: "#0d0c22",
+    tabSelectedBgColor: "rgba(13, 12, 34, 0.05)",
+    chipBgColor: "#f3f3f4",
   },
   name: "light",
   device,
@@ -33,12 +34,13 @@ export const lightTheme = {
 
 export const darkTheme = {
   color: {
-    ...color,
     bgColor: "#252525",
     textColor: "#fff",
     shadowColor: "#000",
-    violet: "#D391FA",
-    navColor: "#623775",
+    tabTextColor: "#768390",
+    tabHoverTextColor: "#acbac7",
+    tabSelectedBgColor: "#373e47",
+    chipBgColor: "#323a42",
   },
   name: "dark",
   device,

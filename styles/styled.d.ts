@@ -9,14 +9,13 @@ declare module "styled-components" {
       laptop: string;
     };
     color: {
-      lightPurple: string;
-      darkPurple: string;
-      purple: string;
       bgColor: string;
       textColor: string;
       shadowColor: string;
-      violet: string;
-      navColor: string;
+      tabTextColor: string;
+      tabHoverTextColor: string;
+      tabSelectedBgColor: string;
+      chipBgColor: string;
     };
     name: string;
   }
