@@ -46,6 +46,9 @@ const Section = styled.section`
   flex-direction: column;
   gap: 1rem;
   align-items: center;
+  a {
+    color: ${({ theme }) => theme.color.textColor};
+  }
 `;
 
 const ImageWrapper = styled(NextImageWrapper)`
