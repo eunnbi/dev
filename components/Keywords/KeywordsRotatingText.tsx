@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import ReactRotatingText from "react-rotating-text";
-import { KEYWORDS } from "../../../constants/keywords";
+import { KEYWORDS } from "../../constants/keywords";
 
 interface KeywordsRotatingTextProps {
   fontSize: string;
