@@ -1,5 +1,5 @@
-import SectionHeading from "../../common/SectionHeading";
-import CareerList from "../CareerList";
+import SectionHeading from "../common/SectionHeading";
+import CareerList from "./CareerList";
 import styled from "styled-components";
 
 const CareerSection = () => {
