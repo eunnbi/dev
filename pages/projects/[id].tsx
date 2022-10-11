@@ -1,8 +1,8 @@
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
-import ProjectDetails from "../../components/Projects/ProjectDetailSection";
+import ProjectDetails from "../../components/projects/ProjectDetailSection";
 import CustomHead from "../../components/common/CustomHead";
-import ProjectHeader from "../../components/Projects/ProjectHeader";
-import { PROJECTS } from "../../constants/projects";
+import ProjectHeader from "../../components/projects/ProjectHeader";
+import { PROJECTS } from "../../data/projects";
 import styled from "styled-components";
 
 const ProjectPage: NextPage = ({
