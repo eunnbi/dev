@@ -1,21 +1,6 @@
 import { BsLink45Deg, BsGithub } from "react-icons/bs";
 import styled from "styled-components";
 
-const ProjectLinkList = styled.ul`
-  display: flex;
-  gap: 1.3rem;
-  a {
-    display: block;
-  }
-  svg {
-    font-size: 1.8rem;
-    transition: all 0.3s ease-in-out;
-    &:hover {
-      color: blueviolet;
-    }
-  }
-`;
-
 interface ProjectLinksProps {
   github: string;
   link: string;
@@ -23,7 +8,7 @@ interface ProjectLinksProps {
 
 const ProjectLinks = ({ github, link }: ProjectLinksProps) => {
   return (
-    <ProjectLinkList>
+    <Links>
       {github && (
         <li>
           <a href={github} target="_blank" rel="noreferrer">
@@ -38,8 +23,20 @@ const ProjectLinks = ({ github, link }: ProjectLinksProps) => {
           </a>
         </li>
       )}
-    </ProjectLinkList>
+    </Links>
   );
 };
 
 export default ProjectLinks;
+
+const Links = styled.ul`
+  display: flex;
+  gap: 1.3rem;
+  a {
+    display: block;
+  }
+  svg {
+    font-size: 1.5rem;
+    color: gray;
+  }
+`;
