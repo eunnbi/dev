@@ -37,6 +37,6 @@ const Links = styled.ul`
   }
   svg {
     font-size: 1.5rem;
-    color: gray;
+    color: #a8a8a8;
   }
 `;
