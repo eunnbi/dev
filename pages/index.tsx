@@ -1,18 +1,28 @@
 import type { NextPage } from "next";
 import CustomHead from "../components/common/CustomHead";
-import styles from "../styles/Home.module.css";
-import KeywordSlider from "../components/Keywords/KeywordSlider";
+import KeywordsSection from "../components/Keywords/KeywordsSection";
+import styled from "styled-components";
 
 const HomePage: NextPage = () => {
   return (
     <>
       <CustomHead page="Home" />
-      <main className={styles.main}>
-        <h1>Who is Eunnbi??</h1>
-        <KeywordSlider />
-      </main>
+      <Main>
+        <KeywordsSection />
+      </Main>
     </>
   );
 };
 
 export default HomePage;
+
+const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: hidden;
+  min-height: 85vh;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
