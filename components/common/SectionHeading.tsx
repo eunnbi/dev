@@ -18,7 +18,6 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 32px;
   h2 {
     padding-bottom: 5px;
     border-bottom: 4px solid #000;
