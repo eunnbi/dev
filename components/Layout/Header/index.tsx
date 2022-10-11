@@ -39,7 +39,8 @@ const StyledHeader = styled.header`
   right: 15px;
   z-index: 10;
   height: 60px;
-  background-color: #fff;
+  color: ${({ theme }) => theme.color.textColor};
+  background-color: ${({ theme }) => theme.color.bgColor};
   @media ${({ theme }) => theme.device.mobile} {
     left: 0;
     right: 0;
@@ -75,7 +76,8 @@ const Nav = styled.nav<{ show: boolean }>`
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  background-color: #fff;
+  color: ${({ theme }) => theme.color.textColor};
+  background-color: ${({ theme }) => theme.color.bgColor};
   @media ${({ theme }) => theme.device.mobile} {
     display: ${({ show }) => (show ? "flex" : "none")};
     flex-direction: column;
