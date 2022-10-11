@@ -14,7 +14,7 @@ const CareerItem = ({ period, content }: CareerItemProps) => {
 
 export default CareerItem;
 
-export const Item = styled.li`
+const Item = styled.li`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,12 +26,12 @@ export const Item = styled.li`
   }
 `;
 
-export const Period = styled.p`
+const Period = styled.p`
   font-size: 1rem;
   color: #828282;
 `;
 
-export const Content = styled.p`
+const Content = styled.p`
   text-align: center;
   font-size: 1.2rem;
 `;
