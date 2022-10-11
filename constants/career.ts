@@ -1,32 +1,22 @@
 export const CAREER = [
   {
     id: 1,
-    title: "Sungkyunkwan University",
-    content: "🎓 Bachelor of Statistics and Software",
+    content: "🎓 성균관대학교 통계학과/소프트웨어학과 재학",
     period: "2020.03 ~",
   },
   {
     id: 2,
-    title: "J2KB 6th & MoaMoa Project",
-    content: "✌️ Uni-con 2nd place",
+    content: "J2KB 6기 & MoaMoa Project (Uni-con 2등 수상 ✌️)",
     period: "2022.03 ~ 2022.04",
   },
   {
     id: 3,
-    title: "Link Memo Project",
-    content: "",
-    period: "2022.06 ~ 2022.07",
-  },
-  {
-    id: 4,
-    title: "PetBook Project",
-    content: "In progress 🚀",
+    content: "PetBook 서비스 개발 중 🐇",
     period: "2022.06 ~ ",
   },
   {
-    id: 5,
-    title: "KU hackathon - AIMECO",
-    content: "🖐️ 5th place out of 18 teams",
+    id: 4,
+    content: "고려대학교 해커톤 참여 및 5등 수상 🐯",
     period: "2022.08",
   },
 ];
