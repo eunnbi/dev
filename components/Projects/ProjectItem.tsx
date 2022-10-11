@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { IProject } from "../../../constants/projects";
-import ProjectTags from "../ProjectDetails/ProjectTags";
-import ProjectLinks from "../ProjectDetails/ProjectLinks";
-import { Item, Info, ImageWrapper } from "./ProjectItem.styles";
+import { IProject } from "../../constants/projects";
+import ProjectTags from "./ProjectTags";
+import ProjectLinks from "./ProjectLinks";
+import styled from "styled-components";
+import { NextImageWrapper } from "../common/NextImageWrapper.styled";
 
 const ProjectItem = ({ project }: { project: IProject }) => {
   const router = useRouter();
@@ -15,6 +16,10 @@ const ProjectItem = ({ project }: { project: IProject }) => {
 
   return (
     <Item onClick={onClick}>
+      <Row>
+        <h2>{project.title}</h2>
+        <ProjectLinks github={project.github} link={project.link} />
+      </Row>
       <ImageWrapper>
         <Image
           src={
@@ -28,12 +33,35 @@ const ProjectItem = ({ project }: { project: IProject }) => {
           blurDataURL="/images/projects/project-default.png"
         />
       </ImageWrapper>
-      <Info>
-        <h2>{project.title}</h2>
+      <div>
         <ProjectTags tags={project.tags} />
-        <ProjectLinks github={project.github} link={project.link} />
-      </Info>
+      </div>
     </Item>
   );
 };
 export default ProjectItem;
+
+const Item = styled.li`
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+`;
+
+const ImageWrapper = styled(NextImageWrapper)`
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: ${({ theme }) => `1px 5px 15px ${theme.color.shadowColor}`};
+  border-radius: 5px;
+  img {
+    border-radius: 5px;
+  }
+`;
+
+const Row = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;

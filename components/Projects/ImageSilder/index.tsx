@@ -1,14 +1,19 @@
-import { useSlider } from "../../../../hooks/useSlider";
-import SliderControlButtons from "../../../common/SliderControlButtons";
+import { useSlider } from "../../../hooks/useSlider";
 import ImageList from "./ImageList";
 import styled from "styled-components";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const ImageSlider = ({ images }: { images: string[] }) => {
   const { position, moveNext, movePrev } = useSlider(images.length);
   return (
     <Slider>
+      <button>
+        <FiChevronLeft onClick={movePrev} />
+      </button>
       <ImageList images={images} position={position} />
-      <SliderControlButtons moveNext={moveNext} movePrev={movePrev} />
+      <button>
+        <FiChevronRight onClick={moveNext} />
+      </button>
     </Slider>
   );
 };
@@ -17,12 +22,11 @@ export default ImageSlider;
 
 const Slider = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 5px;
+  width: 100%;
   svg {
-    font-size: 2rem;
-    margin: 0 1rem;
+    font-size: 1.5rem;
     cursor: pointer;
   }
 `;

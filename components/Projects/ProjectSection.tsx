@@ -1,9 +1,9 @@
-import ProjectFilter from "../ProjectFilter";
-import ProjectList from "../ProjectList";
-import { useFilterHash } from "../../../hooks/useFilterHash";
-import { FILTERS } from "../../../constants/projects";
+import ProjectFilter from "./ProjectFilter";
+import ProjectList from "./ProjectList";
+import { useFilterHash } from "../../hooks/useFilterHash";
+import { FILTERS } from "../../constants/projects";
 import styled from "styled-components";
-import SectionHeading from "../../common/SectionHeading";
+import SectionHeading from "../common/SectionHeading";
 
 const ProjectSection = () => {
   const { filterIndex, selectFilter } = useFilterHash(FILTERS, "/projects");
@@ -22,5 +22,5 @@ const Section = styled.section`
   margin: 30px 0;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
 `;

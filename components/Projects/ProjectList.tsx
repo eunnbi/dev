@@ -1,6 +1,6 @@
-import ProjectItem from "../ProjectItem";
+import ProjectItem from "./ProjectItem";
 import styled from "styled-components";
-import { PROJECTS, FILTERS } from "../../../constants/projects";
+import { PROJECTS, FILTERS } from "../../constants/projects";
 
 interface ProjectListProps {
   filterIndex: number;

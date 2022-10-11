@@ -23,7 +23,7 @@ const IconBox = styled.div`
   }
 `;
 
-const ProjectHeading = ({ title }: { title: string }) => {
+const ProjectHeader = ({ title }: { title: string }) => {
   const router = useRouter();
   return (
     <Wrapper>
@@ -35,4 +35,4 @@ const ProjectHeading = ({ title }: { title: string }) => {
   );
 };
 
-export default ProjectHeading;
+export default ProjectHeader;

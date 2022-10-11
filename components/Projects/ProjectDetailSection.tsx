@@ -1,17 +1,17 @@
-import { IProject } from "../../../constants/projects";
+import { IProject } from "../../constants/projects";
 import ImageSlider from "./ImageSilder";
 import ProjectTags from "./ProjectTags";
 import ProjectStacks from "./ProjectStacks";
 import ProjectLinks from "./ProjectLinks";
-import { DetailsWrapper, ProjectContent } from "./ProjectDetails.styles";
+import styled from "styled-components";
 
-const ProjectDetails = ({ project }: { project: IProject }) => {
+const ProjectDetailSection = ({ project }: { project: IProject }) => {
   return (
-    <DetailsWrapper>
+    <Section>
       {project.images.length === 0 ? null : (
         <ImageSlider images={project.images} />
       )}
-      <ProjectContent>
+      <Wrapper>
         <p className="project-period">⏰ {project.period}</p>
         <ProjectTags tags={project.tags} />
         <article>
@@ -39,9 +39,40 @@ const ProjectDetails = ({ project }: { project: IProject }) => {
           </article>
         )}
         <ProjectLinks github={project.github} link={project.link} />
-      </ProjectContent>
-    </DetailsWrapper>
+      </Wrapper>
+    </Section>
   );
 };
 
-export default ProjectDetails;
+export default ProjectDetailSection;
+
+const Section = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    h3 {
+      font-size: 1.25rem;
+    }
+    p {
+      font-size: 1.1rem;
+    }
+    a:hover span {
+      text-decoration: underline;
+    }
+  }
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  .project-period {
+    font-size: 1.05rem;
+  }
+`;

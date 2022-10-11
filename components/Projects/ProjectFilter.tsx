@@ -1,6 +1,6 @@
 import { SyntheticEvent } from "react";
 import styled, { css } from "styled-components";
-import { FILTERS } from "../../../constants/projects";
+import { FILTERS } from "../../constants/projects";
 import { Tabs, Tab } from "@mui/material";
 import { useCallback } from "react";
 
