@@ -1,4 +1,4 @@
-import { CAREER } from "../../constants/career";
+import { CAREER } from "../../data/career";
 import CareerItem from "./CareerItem";
 
 const CareerList = () => {

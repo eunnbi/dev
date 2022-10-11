@@ -1,7 +1,7 @@
 import ProjectFilter from "./ProjectFilter";
 import ProjectList from "./ProjectList";
 import { useFilterHash } from "../../hooks/useFilterHash";
-import { FILTERS } from "../../constants/projects";
+import { FILTERS } from "../../data/projects";
 import styled from "styled-components";
 import SectionHeading from "../common/SectionHeading";
 

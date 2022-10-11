@@ -1,4 +1,4 @@
-import { SKILLS_LANG, SKILLS_LIB, SKILLS_TOOLS } from "../../constants/skills";
+import { SKILLS_LANG, SKILLS_LIB, SKILLS_TOOLS } from "../../data/skills";
 import SkillList from "./SkillList";
 import SectionHeading from "../common/SectionHeading";
 import styled from "styled-components";

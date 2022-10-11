@@ -1,4 +1,4 @@
-import { IProject } from "../../constants/projects";
+import { IProject } from "../../data/projects";
 import ImageSlider from "./ImageSilder";
 import ProjectTags from "./ProjectTags";
 import ProjectStacks from "./ProjectStacks";

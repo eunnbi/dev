@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ICareer } from "../../constants/career";
+import { ICareer } from "../../data/career";
 
 type CareerItemProps = Pick<ICareer, "content" | "period">;
 

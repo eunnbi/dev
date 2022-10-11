@@ -1,4 +1,4 @@
-import { ISkill } from "../../constants/skills";
+import { ISkill } from "../../data/skills";
 import Image from "next/image";
 import styled from "styled-components";
 import { NextImageWrapper } from "../common/NextImageWrapper.styled";

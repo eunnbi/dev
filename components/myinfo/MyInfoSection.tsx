@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Image from "next/image";
 import { useCallback } from "react";
-import { MY_INFO_LINKS } from "../../constants/info";
+import { MY_INFO_LINKS } from "../../data/info";
 import { NextImageWrapper } from "../common/NextImageWrapper.styled";
 import KeywordsRotatingText from "../Keywords/KeywordsRotatingText";
 import { Tooltip, IconButton } from "@mui/material";

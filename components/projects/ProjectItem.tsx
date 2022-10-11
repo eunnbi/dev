@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { IProject } from "../../constants/projects";
+import { IProject } from "../../data/projects";
 import ProjectTags from "./ProjectTags";
 import ProjectLinks from "./ProjectLinks";
 import styled from "styled-components";

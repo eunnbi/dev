@@ -1,6 +1,6 @@
 import SkillItem from "./SkillItem";
 import styled from "styled-components";
-import { ISkill } from "../../constants/skills";
+import { ISkill } from "../../data/skills";
 
 const SkillList = ({ skills }: { skills: ISkill[] }) => {
   return (
