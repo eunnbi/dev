@@ -7,7 +7,7 @@ import { DetailsWrapper, ProjectContent } from "./ProjectDetails.styles";
 
 const ProjectDetails = ({ project }: { project: IProject }) => {
   return (
-    <DetailsWrapper imagesLength={project.images.length}>
+    <DetailsWrapper>
       {project.images.length === 0 ? null : (
         <ImageSlider images={project.images} />
       )}

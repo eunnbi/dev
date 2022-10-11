@@ -1,17 +1,10 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
-export const DetailsWrapper = styled.div<{ imagesLength: number }>`
-  ${({ imagesLength }) =>
-    imagesLength === 0
-      ? css`
-          max-width: 800px;
-          width: 100%;
-          margin: 0 auto;
-        `
-      : css`
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-        `}
+export const DetailsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
   article {
     display: flex;
     flex-direction: column;
@@ -25,12 +18,6 @@ export const DetailsWrapper = styled.div<{ imagesLength: number }>`
     a:hover span {
       text-decoration: underline;
     }
-  }
-  @media screen and (max-width: 1500px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
   }
 `;
 
