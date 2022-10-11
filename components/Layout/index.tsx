@@ -1,12 +1,18 @@
 import styled from "styled-components";
 import Header from "./Header";
 
-const Layout = ({ children }: React.PropsWithChildren) => {
+interface LayoutProps {
+  headerExist: boolean;
+}
+
+const Layout = ({
+  children,
+  headerExist,
+}: React.PropsWithChildren<LayoutProps>) => {
   return (
     <Wrapper>
-      <Header />
+      {headerExist && <Header />}
       {children}
-      {/*<NavToggleBtn showNav={toggle} setShowNav={onToggle} />*/}
     </Wrapper>
   );
 };
