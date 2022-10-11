@@ -1,4 +1,4 @@
-export const KEYWORDS = [
+export const KEYWORDS1 = [
   {
     id: 1,
     title: "Web Frontend",
@@ -62,3 +62,9 @@ interface Reference {
   link?: string;
   name?: string;
 }
+
+export const KEYWORDS = [
+  "꾸준히 성장하는",
+  "서비스에 공감하는",
+  "문제 해결을 좋아하는",
+];
