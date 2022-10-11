@@ -1,9 +1,9 @@
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
-import ProjectDetails from "../../components/Projects/ProjectDetails";
+import ProjectDetails from "../../components/Projects/ProjectDetailSection";
 import CustomHead from "../../components/common/CustomHead";
-import ProjectHeading from "../../components/Projects/ProjectDetails/ProjectHeading";
+import ProjectHeader from "../../components/Projects/ProjectHeader";
 import { PROJECTS } from "../../constants/projects";
-import styles from "../../styles/Project.module.css";
+import styled from "styled-components";
 
 const ProjectPage: NextPage = ({
   project,
@@ -11,15 +11,23 @@ const ProjectPage: NextPage = ({
   return (
     <>
       <CustomHead page={project.title} />
-      <main className={styles.main}>
-        <ProjectHeading title={project.title} />
+      <Main>
+        <ProjectHeader title={project.title} />
         <ProjectDetails project={project} />
-      </main>
+      </Main>
     </>
   );
 };
 
 export default ProjectPage;
+
+const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  align-items: center;
+  padding-top: 1.5rem;
+`;
 
 export const getStaticPaths = async () => {
   const paths = PROJECTS.map((project) => ({
