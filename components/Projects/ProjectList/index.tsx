@@ -3,14 +3,14 @@ import styled from "styled-components";
 import { PROJECTS, FILTERS } from "../../../constants/projects";
 
 interface ProjectListProps {
-  selectedFilter: string;
+  filterIndex: number;
 }
 
-const ProjectList = ({ selectedFilter }: ProjectListProps) => {
+const ProjectList = ({ filterIndex }: ProjectListProps) => {
   let projects = PROJECTS;
-  if (selectedFilter === FILTERS[1]) {
+  if (FILTERS[filterIndex] === FILTERS[1]) {
     projects = projects.filter((project) => project.personal);
-  } else if (selectedFilter === FILTERS[2]) {
+  } else if (FILTERS[filterIndex] === FILTERS[2]) {
     projects = projects.filter((project) => !project.personal);
   }
   return (
@@ -25,8 +25,8 @@ const ProjectList = ({ selectedFilter }: ProjectListProps) => {
 export default ProjectList;
 
 const List = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(0vw, 500px));
+  display: flex;
+  flex-direction: column;
   gap: 7rem;
   justify-content: center;
 `;
