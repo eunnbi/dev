@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   align-items: center;
   h2 {
     padding-bottom: 5px;
-    border-bottom: 4px solid #000;
+    border-bottom: ${({ theme }) => `4px solid ${theme.color.textColor}`};
     font-size: 1.8rem;
   }
 `;
