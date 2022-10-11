@@ -1,31 +1,28 @@
 import type { NextPage } from "next";
 import CareerSection from "../components/Career/CareerSection";
 import CustomHead from "../components/common/CustomHead";
-import Heading from "../components/common/Heading";
 import MyInfoSection from "../components/MyInfo/MyInfoSection";
-import SkillsSection from "../components/Skills/SkillsSection";
-import styles from "../styles/About.module.css";
+import SkillsSection from "../components/Skills/SkillSection";
+import styled from "styled-components";
 
 const AboutPage: NextPage = () => {
   return (
     <>
       <CustomHead page="About" />
-      <main>
-        <Heading>
-          About <span>Me</span>
-        </Heading>
-        <p className={styles.introduction}>
-          Through questions❓, I am growing steadily🌱 and creating a web with
-          good user experience.👥
-        </p>
+      <Main>
         <MyInfoSection />
-        <div className={styles.row}>
-          <SkillsSection />
-          <CareerSection />
-        </div>
-      </main>
+        <CareerSection />
+        <SkillsSection />
+      </Main>
     </>
   );
 };
 
 export default AboutPage;
+
+const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  margin-top: 80px;
+`;
