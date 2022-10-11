@@ -1,4 +1,18 @@
 import styled from "styled-components";
+import { ICareer } from "../../constants/career";
+
+type CareerItemProps = Pick<ICareer, "content" | "period">;
+
+const CareerItem = ({ period, content }: CareerItemProps) => {
+  return (
+    <Item>
+      <Period>{period}</Period>
+      <Content>{content}</Content>
+    </Item>
+  );
+};
+
+export default CareerItem;
 
 export const Item = styled.li`
   display: flex;
