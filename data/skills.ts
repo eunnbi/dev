@@ -1,10 +1,3 @@
-export interface ISkill {
-  id: number;
-  tech: string;
-  percentage: number;
-  link?: string;
-}
-
 export const SKILLS_LANG = [
   {
     id: 1,

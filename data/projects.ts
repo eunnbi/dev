@@ -1,27 +1,3 @@
-export interface IProject {
-  id: number;
-  title: string;
-  period: string;
-  feStacks: string[];
-  deployStacks: string[];
-  beStacks: string[];
-  overview: string;
-  github: string;
-  link: string;
-  images: string[];
-  member: string;
-  role?: string;
-  review: Review;
-  tags: string[];
-  personal: boolean;
-}
-
-interface Review {
-  text: string;
-  link: string;
-  linkName: string;
-}
-
 export const PROJECTS = [
   {
     id: 1,
