@@ -1,18 +1,11 @@
 import ProjectItem from "./ProjectItem";
 import styled from "styled-components";
-import { PROJECTS, FILTERS } from "../../data/projects";
 
 interface ProjectListProps {
-  filterIndex: number;
+  projects: ProjectItem[];
 }
 
-const ProjectList = ({ filterIndex }: ProjectListProps) => {
-  let projects = PROJECTS;
-  if (FILTERS[filterIndex] === FILTERS[1]) {
-    projects = projects.filter((project) => project.personal);
-  } else if (FILTERS[filterIndex] === FILTERS[2]) {
-    projects = projects.filter((project) => !project.personal);
-  }
+const ProjectList = ({ projects }: ProjectListProps) => {
   return (
     <List>
       {projects.map((project) => (
@@ -29,4 +22,5 @@ const List = styled.ul`
   flex-direction: column;
   gap: 7rem;
   justify-content: center;
+  margin-top: 30px;
 `;
