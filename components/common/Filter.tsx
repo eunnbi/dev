@@ -37,10 +37,9 @@ const Wrapper = styled.div`
 
 const CustomTabs = styled(Tabs)`
   .MuiTab-root {
-    height: 40px;
     min-height: auto;
     min-width: auto;
-    padding: 5px 1rem;
+    padding: 1rem;
     color: ${({ theme }) => theme.color.tabTextColor};
     font-weight: 500;
     transition: all 200ms ease;
