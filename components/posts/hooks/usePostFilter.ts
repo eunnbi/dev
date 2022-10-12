@@ -22,7 +22,8 @@ export const usePostFilter = () => {
   }, []);
 
   useEffect(() => {
-    const hash = router.asPath.split("#")[1];
+    const hash = decodeURI(router.asPath.split("#")[1]);
+    console.log(hash);
     if (hash) {
       setFilterIndex(categories.findIndex((element) => element === hash));
     } else {
