@@ -1,4 +1,6 @@
-export const PROJECTS = [
+export const FILTERS = ["All", "Personal", "Team"];
+
+export const PROJECTS: ProjectItem[] = [
   {
     id: 1,
     title: "World Movie 프로젝트",
@@ -28,7 +30,7 @@ export const PROJECTS = [
     github: "https://github.com/eunnbi/world-movie",
     link: "https://eunnbi.github.io/world-movie/",
     tags: ["첫 React 프로젝트", "React Query로의 전환"],
-    personal: true,
+    category: FILTERS[1],
   },
   {
     id: 2,
@@ -70,7 +72,7 @@ export const PROJECTS = [
     github: "https://github.com/Asset-management-service/frontend",
     link: "https://moamoadev.shop/",
     tags: ["첫 협업 프로젝트", "가계부와 커뮤니티의 만남"],
-    personal: false,
+    category: FILTERS[2],
   },
   {
     id: 3,
@@ -101,7 +103,7 @@ export const PROJECTS = [
     github: "https://github.com/eunnbi/link-memo",
     link: "https://link-memo.netlify.app/",
     tags: ["React Component Pattern", "Mobile First Design"],
-    personal: true,
+    category: FILTERS[1],
   },
   {
     id: 4,
@@ -130,7 +132,7 @@ export const PROJECTS = [
     github: "https://github.com/K-Slave",
     link: "",
     tags: ["첫 NextJS 프로젝트", "디자이너와의 협업"],
-    personal: false,
+    category: FILTERS[2],
   },
   {
     id: 5,
@@ -158,8 +160,6 @@ export const PROJECTS = [
     github: "https://github.com/woog2roid/devel5pers-connecthon",
     link: "https://devel5per-connecthon.herokuapp.com/",
     tags: ["zero에서 하나의 서비스 만들기까지", "서버리스 웹 어플리케이션"],
-    personal: false,
+    category: FILTERS[2],
   },
 ];
-
-export const FILTERS = ["All", "Personal", "Team"];
