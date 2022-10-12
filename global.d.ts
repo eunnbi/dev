@@ -41,7 +41,7 @@ declare interface ProjectItem {
     linkName: string;
   };
   tags: string[];
-  personal: boolean;
+  category: string;
 }
 
 declare interface SkillItem {
