@@ -1,11 +1,10 @@
-import { IProject } from "../../data/projects";
-import ImageSlider from "./ImageSilder";
+import ImageSlider from "./ImageSlider";
 import ProjectTags from "./ProjectTags";
 import ProjectStacks from "./ProjectStacks";
 import ProjectLinks from "./ProjectLinks";
 import styled from "styled-components";
 
-const ProjectDetailSection = ({ project }: { project: IProject }) => {
+const ProjectDetailSection = ({ project }: { project: ProjectItem }) => {
   return (
     <Section>
       {project.images.length === 0 ? null : (

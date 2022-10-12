@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { ICareer } from "../../data/career";
 
-type CareerItemProps = Pick<ICareer, "content" | "period">;
+type CareerItemProps = Pick<CareerItem, "content" | "period">;
 
 const CareerItem = ({ period, content }: CareerItemProps) => {
   return (

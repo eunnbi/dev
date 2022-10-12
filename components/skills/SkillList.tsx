@@ -1,18 +1,11 @@
 import SkillItem from "./SkillItem";
 import styled from "styled-components";
-import { ISkill } from "../../data/skills";
 
-const SkillList = ({ skills }: { skills: ISkill[] }) => {
+const SkillList = ({ skills }: { skills: SkillItem[] }) => {
   return (
     <List>
       {skills.map((skill) => (
-        <SkillItem
-          key={skill.id}
-          id={skill.id}
-          tech={skill.tech}
-          percentage={skill.percentage}
-          link={skill?.link}
-        />
+        <SkillItem key={skill.id} id={skill.id} tech={skill.tech} />
       ))}
     </List>
   );

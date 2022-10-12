@@ -1,9 +1,8 @@
-import { ISkill } from "../../data/skills";
 import Image from "next/image";
 import styled from "styled-components";
 import { NextImageWrapper } from "../common/NextImageWrapper.styled";
 
-const SkillItem = ({ id, tech }: ISkill) => {
+const SkillItem = ({ id, tech }: SkillItem) => {
   return (
     <Item>
       <ImageWrapper>
