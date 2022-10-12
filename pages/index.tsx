@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import CustomHead from "../components/common/CustomHead";
-import KeywordsSection from "../components/Keywords/KeywordsSection";
+import KeywordsSection from "../components/keywords/KeywordsSection";
 import styled from "styled-components";
 
 const HomePage: NextPage = () => {

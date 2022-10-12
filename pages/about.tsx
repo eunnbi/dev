@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
-import CareerSection from "../components/Career/CareerSection";
+import CareerSection from "../components/career/CareerSection";
 import CustomHead from "../components/common/CustomHead";
-import MyInfoSection from "../components/MyInfo/MyInfoSection";
-import SkillsSection from "../components/Skills/SkillSection";
+import MyInfoSection from "../components/myinfo/MyInfoSection";
+import SkillsSection from "../components/skills/SkillSection";
 import styled from "styled-components";
 
 const AboutPage: NextPage = () => {
