@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 
 interface SectionHeadingProps {
@@ -12,7 +13,7 @@ const SectionHeading = ({ title }: SectionHeadingProps) => {
   );
 };
 
-export default SectionHeading;
+export default React.memo(SectionHeading);
 
 const Wrapper = styled.div`
   display: flex;
