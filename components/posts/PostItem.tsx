@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { convertDateFormat } from "../../lib/date";
 const PostItem = ({ post }: { post: Post }) => {
   const { title, date, category, preview } = post;
   return (
@@ -6,7 +7,7 @@ const PostItem = ({ post }: { post: Post }) => {
       <h3>{title}</h3>
       <Preview>{preview}</Preview>
       <Bottom>
-        <p>{date}</p>
+        <p>{convertDateFormat(date)}</p>
         <p>{category}</p>
       </Bottom>
     </Item>
