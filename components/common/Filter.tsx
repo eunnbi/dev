@@ -39,11 +39,12 @@ const CustomTabs = styled(Tabs)`
   .MuiTab-root {
     min-height: auto;
     min-width: auto;
-    padding: 1rem;
+    padding: 0.8rem;
     color: ${({ theme }) => theme.color.tabTextColor};
     font-weight: 500;
     transition: all 200ms ease;
     font-family: Pretendard, sans-serif;
+    font-size: 1rem;
 
     :hover {
       color: ${({ theme }) => theme.color.tabHoverTextColor};
