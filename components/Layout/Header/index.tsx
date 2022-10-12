@@ -1,6 +1,7 @@
-import Link from "next/link";
+import React from "react";
 import styled from "styled-components";
-import NavToggleBtn from "./NavToggleBtn";
+import Nav from "./Nav";
+import HeaderCenter from "./HeaderCenter";
 import { useToggle } from "../../../hooks/useToggle";
 
 const Header = () => {
@@ -8,29 +9,14 @@ const Header = () => {
   return (
     <StyledHeader>
       <Wrapper>
-        <Center>
-          <Link href="/">
-            <a>eunnbi.dev</a>
-          </Link>
-          <NavToggleBtn onToggle={onToggle} />
-        </Center>
-        <Nav show={show}>
-          <Link href="/about">
-            <a>About</a>
-          </Link>
-          <Link href="/projects">
-            <a>Projects</a>
-          </Link>
-          <Link href="/posts">
-            <a>Posts</a>
-          </Link>
-        </Nav>
+        <HeaderCenter onToggle={onToggle} />
+        <Nav show={show} />
       </Wrapper>
     </StyledHeader>
   );
 };
 
-export default Header;
+export default React.memo(Header);
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -61,31 +47,5 @@ const Wrapper = styled.div`
   @media ${({ theme }) => theme.device.mobile} {
     flex-direction: column;
     padding: 0 15px;
-  }
-`;
-
-const Center = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const Nav = styled.nav<{ show: boolean }>`
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  color: ${({ theme }) => theme.color.textColor};
-  background-color: ${({ theme }) => theme.color.bgColor};
-  @media ${({ theme }) => theme.device.mobile} {
-    display: ${({ show }) => (show ? "flex" : "none")};
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    border-bottom: 1px solid lightgray;
-    padding-bottom: 1.5rem;
   }
 `;
