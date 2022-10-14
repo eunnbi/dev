@@ -1,12 +1,11 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { IProject } from "../../data/projects";
 import ProjectTags from "./ProjectTags";
 import ProjectLinks from "./ProjectLinks";
 import styled from "styled-components";
 import { NextImageWrapper } from "../common/NextImageWrapper.styled";
 
-const ProjectItem = ({ project }: { project: IProject }) => {
+const ProjectItem = ({ project }: { project: ProjectItem }) => {
   const router = useRouter();
   const onClick = (e: any) => {
     const { tagName } = e.target;
