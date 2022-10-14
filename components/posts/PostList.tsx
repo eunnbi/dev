@@ -18,7 +18,7 @@ export default PostList;
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 15px;
+  margin-top: 20px;
   & > p {
     align-self: flex-end;
     font-size: 1rem;
