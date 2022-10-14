@@ -22,13 +22,14 @@ export const usePostFilter = () => {
   }, []);
 
   useEffect(() => {
-    const hash = decodeURI(router.asPath.split("#")[1]);
-    console.log(hash);
-    if (hash) {
-      setFilterIndex(categories.findIndex((element) => element === hash));
-    } else {
+    const hash = router.asPath.split("#")[1];
+    if (hash === undefined) {
       setFilterIndex(0);
+      return;
     }
+    setFilterIndex(
+      categories.findIndex((element) => element === decodeURI(hash))
+    );
   }, [router.asPath]);
 
   return { filterIndex, selectFilter };
