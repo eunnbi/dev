@@ -8,6 +8,7 @@ declare interface PostMetadata {
   title: string;
   category: string;
   preview: string;
+  emoji: string;
 }
 
 declare type Post = PostMetadata & {
