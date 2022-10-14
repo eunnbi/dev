@@ -1,11 +1,11 @@
-import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
+import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import ProjectDetails from "../../components/projects/ProjectDetailSection";
 import CustomHead from "../../components/common/CustomHead";
 import ProjectHeader from "../../components/projects/ProjectHeader";
 import { PROJECTS } from "../../data/projects";
 import styled from "styled-components";
 
-const ProjectPage: NextPage = ({
+const ProjectPage = ({
   project,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
@@ -37,9 +37,11 @@ export const getStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps = async (context: GetStaticPropsContext) => {
   const id = context.params!.id;
-  const project = PROJECTS.find((project) => String(project.id) === id);
+  const project = PROJECTS.find(
+    (project) => String(project.id) === id
+  ) as ProjectItem;
   return {
     props: {
       id,
