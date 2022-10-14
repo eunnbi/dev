@@ -17,6 +17,6 @@ declare module "styled-components" {
       tabSelectedBgColor: string;
       chipBgColor: string;
     };
-    name: string;
+    name: "light" | "dark";
   }
 }
