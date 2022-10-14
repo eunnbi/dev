@@ -4,7 +4,7 @@ import SectionHeading from "../common/SectionHeading";
 import styled from "styled-components";
 import { usePosts } from "./hooks/usePosts";
 
-const PostSection = () => {
+const PostsSection = () => {
   const posts = usePosts();
   return (
     <Section>
@@ -20,7 +20,7 @@ const PostSection = () => {
   );
 };
 
-export default PostSection;
+export default PostsSection;
 
 const Section = styled.section`
   display: flex;
