@@ -7,14 +7,14 @@ import { usePostInfo } from "./hooks/usePostInfo";
 import { useTheme } from "styled-components";
 
 const Markdown = () => {
-  const { content } = usePostInfo();
+  const { current } = usePostInfo();
   const { name } = useTheme();
   return (
     <ReactMarkdown
       className={
         name === "light" ? "markdown-body light" : "markdown-body dark"
       }
-      children={content}
+      children={current.content}
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[rehypeRaw]}
       components={{
