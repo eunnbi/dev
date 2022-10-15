@@ -3,7 +3,8 @@ import { convertDateFormat } from "../../lib/date";
 import { usePostInfo } from "./hooks/usePostInfo";
 
 const PostHeader = () => {
-  const { title, category, date, emoji } = usePostInfo();
+  const { current } = usePostInfo();
+  const { emoji, title, date, category } = current;
   return (
     <Wrapper>
       <span className="emoji">{emoji}</span>
