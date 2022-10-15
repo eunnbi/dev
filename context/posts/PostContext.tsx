@@ -1,3 +1,3 @@
 import { createContext } from "react";
 
-export const PostContext = createContext({} as Post);
+export const PostContext = createContext({} as PostContextType);
