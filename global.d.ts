@@ -16,6 +16,12 @@ declare type Post = PostMetadata & {
   content: string;
 };
 
+declare type PostContextType = {
+  current: Post;
+  prev: Pick<Post, "title" | "id"> | null;
+  next: Pick<Post, "title" | "id"> | null;
+};
+
 declare interface CareerItem {
   id: number;
   title: string;
