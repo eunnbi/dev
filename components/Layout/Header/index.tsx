@@ -19,18 +19,10 @@ const Header = () => {
 export default React.memo(Header);
 
 const StyledHeader = styled.header`
-  position: fixed;
-  top: 0;
-  left: 15px;
-  right: 15px;
   z-index: 10;
   height: 60px;
   color: ${({ theme }) => theme.color.textColor};
   background-color: ${({ theme }) => theme.color.bgColor};
-  @media ${({ theme }) => theme.device.mobile} {
-    left: 0;
-    right: 0;
-  }
 `;
 
 const Wrapper = styled.div`
@@ -44,8 +36,10 @@ const Wrapper = styled.div`
   font-size: 1.3rem;
   font-weight: bold;
   justify-content: space-between;
+  @media screen and (max-width: 720px) {
+    padding: 0 15px;
+  }
   @media ${({ theme }) => theme.device.mobile} {
     flex-direction: column;
-    padding: 0 15px;
   }
 `;
