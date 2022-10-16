@@ -28,7 +28,7 @@ export const lightTheme = {
     tabSelectedBgColor: "rgba(13, 12, 34, 0.05)",
     chipBgColor: "#f3f3f4",
   },
-  name: "light",
+  name: "light" as const,
   device,
 };
 
@@ -42,6 +42,6 @@ export const darkTheme = {
     tabSelectedBgColor: "#373e47",
     chipBgColor: "#323a42",
   },
-  name: "dark",
+  name: "dark" as const,
   device,
 };
