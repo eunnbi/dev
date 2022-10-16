@@ -13,6 +13,7 @@ const MyInfoSection = () => {
           layout="fill"
           placeholder="blur"
           blurDataURL="/images/profile.png"
+          alt="profile"
         />
       </ImageWrapper>
       <KeywordsRotatingText fontSize="2rem" textAlign="center" />

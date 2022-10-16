@@ -8,7 +8,7 @@ const KeywordsSection = () => {
     <Section>
       <KeywordsRotatingText />
       <ImageWrapper>
-        <Image src="/images/profile.png" layout="fill" />
+        <Image src="/images/profile.png" layout="fill" alt="profile" />
       </ImageWrapper>
     </Section>
   );
