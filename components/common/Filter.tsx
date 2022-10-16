@@ -42,6 +42,7 @@ const CustomTabs = styled(Tabs)`
     padding: 0.8rem;
     font-weight: 500;
     transition: all 200ms ease;
+    color: ${({ theme }) => theme.color.tabTextColor};
     font-family: Pretendard, sans-serif;
     font-size: 1rem;
 
