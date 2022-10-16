@@ -22,6 +22,9 @@ const ToggleBtn = styled.button`
   align-items: center;
   justify-content: center;
   padding: 0;
+  svg {
+    color: ${({ theme }) => theme.color.textColor};
+  }
   @media ${({ theme }) => theme.device.mobile} {
     display: flex;
   }
