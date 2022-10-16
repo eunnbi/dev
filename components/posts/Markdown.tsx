@@ -15,7 +15,6 @@ const Markdown = () => {
       className={
         name === "light" ? "markdown-body light" : "markdown-body dark"
       }
-      children={current.content}
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[rehypeRaw, rehypeSlug]}
       components={{
@@ -47,7 +46,9 @@ const Markdown = () => {
           return <h3 id={id}>{children}</h3>;
         },
       }}
-    />
+    >
+      {current.content}
+    </ReactMarkdown>
   );
 };
 
