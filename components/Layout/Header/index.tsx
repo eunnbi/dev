@@ -27,6 +27,7 @@ const StyledHeader = styled.header`
 
 const Wrapper = styled.div`
   position: relative;
+  z-index: 10;
   display: flex;
   width: 100%;
   height: 100%;
