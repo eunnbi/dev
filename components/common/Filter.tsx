@@ -40,20 +40,17 @@ const CustomTabs = styled(Tabs)`
     min-height: auto;
     min-width: auto;
     padding: 0.8rem;
-    color: ${({ theme }) => theme.color.tabTextColor};
     font-weight: 500;
     transition: all 200ms ease;
     font-family: Pretendard, sans-serif;
     font-size: 1rem;
 
     :hover {
-      color: ${({ theme }) => theme.color.tabHoverTextColor};
       transition: all 200ms ease;
     }
   }
   .Mui-selected {
     background-color: ${({ theme }) => theme.color.tabSelectedBgColor};
-    color: ${({ theme }) => theme.color.tabHoverTextColor};
     font-weight: 600;
     border-radius: 8px;
   }
