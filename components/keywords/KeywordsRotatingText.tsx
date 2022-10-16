@@ -29,6 +29,9 @@ const Text = styled.p<{ fontSize: string; textAlign: string }>`
   text-align: ${({ textAlign }) => textAlign};
   line-height: 1.2;
   font-weight: 200;
+  @media ${({ theme }) => theme.device.mobile} {
+    text-align: center;
+  }
 `;
 
 KeywordsRotatingText.defaultProps = {
