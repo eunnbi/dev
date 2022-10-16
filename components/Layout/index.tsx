@@ -10,10 +10,10 @@ const Layout = ({
   headerExist,
 }: React.PropsWithChildren<LayoutProps>) => {
   return (
-    <Wrapper>
+    <>
       {headerExist && <Header />}
-      {children}
-    </Wrapper>
+      <Wrapper>{children}</Wrapper>
+    </>
   );
 };
 
