@@ -12,8 +12,6 @@ declare module "styled-components" {
       bgColor: string;
       textColor: string;
       shadowColor: string;
-      tabTextColor: string;
-      tabHoverTextColor: string;
       tabSelectedBgColor: string;
       chipBgColor: string;
     };
