@@ -51,6 +51,7 @@ const CustomTabs = styled(Tabs)`
     }
   }
   .Mui-selected {
+    color: #1976d2;
     background-color: ${({ theme }) => theme.color.tabSelectedBgColor};
     font-weight: 600;
     border-radius: 8px;
