@@ -20,7 +20,7 @@ const Section = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 5rem 0;
+  transform: translateY(-60px);
   @media ${({ theme }) => theme.device.mobile} {
     flex-direction: column-reverse;
     justify-content: center;
