@@ -29,7 +29,7 @@ const Item = styled.li`
   h3 {
     font-weight: bold;
     margin-bottom: 7px;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     line-height: 1.4;
   }
   p {
@@ -42,7 +42,7 @@ const Item = styled.li`
 
 const Preview = styled.p`
   margin-bottom: 10px;
-  line-height: 20px;
+  line-height: 21px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
