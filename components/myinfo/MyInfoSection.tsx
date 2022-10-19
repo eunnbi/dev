@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import Image from "next/image";
-import { NextImageWrapper } from "../common/NextImageWrapper.styled";
-import KeywordsRotatingText from "../keywords/KeywordsRotatingText";
 import MyInfoLinks from "./MyInfoLinks";
+import { NextImageWrapper } from "@components/common/NextImageWrapper.styled";
+import KeywordsRotatingText from "@components/keywords/KeywordsRotatingText";
 
 const MyInfoSection = () => {
   return (

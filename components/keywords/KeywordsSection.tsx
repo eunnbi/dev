@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styled from "styled-components";
-import { NextImageWrapper } from "../common/NextImageWrapper.styled";
 import KeywordsRotatingText from "./KeywordsRotatingText";
+import { NextImageWrapper } from "@components/common/NextImageWrapper.styled";
 
 const KeywordsSection = () => {
   return (

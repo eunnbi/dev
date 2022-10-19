@@ -1,8 +1,8 @@
 import PostFilter from "./PostFilter";
 import PostList from "./PostList";
-import Heading from "../common/Heading";
 import styled from "styled-components";
 import { usePosts } from "./hooks/usePosts";
+import Heading from "@components/common/Heading";
 
 const PostsSection = () => {
   const posts = usePosts();

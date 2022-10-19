@@ -1,4 +1,4 @@
-import Heading from "../common/Heading";
+import Heading from "@components/common/Heading";
 import CareerList from "./CareerList";
 import styled from "styled-components";
 
