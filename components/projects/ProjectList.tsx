@@ -7,20 +7,19 @@ interface ProjectListProps {
 
 const ProjectList = ({ projects }: ProjectListProps) => {
   return (
-    <List>
+    <Wrapper>
       {projects.map((project) => (
         <ProjectItem key={project.id} project={project} />
       ))}
-    </List>
+    </Wrapper>
   );
 };
 
 export default ProjectList;
 
-const List = styled.ul`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 7rem;
   justify-content: center;
-  margin-top: 30px;
 `;

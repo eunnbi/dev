@@ -1,12 +1,12 @@
 import { SKILLS_LANG, SKILLS_LIB, SKILLS_TOOLS } from "@data/skills";
 import SkillList from "./SkillList";
-import SectionHeading from "../common/SectionHeading";
 import styled from "styled-components";
+import Heading from "@components/common/Heading";
 
 const SkillsSection = () => {
   return (
     <Section>
-      <SectionHeading title="Tech Skills" />
+      <Heading title="Tech Skills" />
       <div>
         <article>
           <h3>Language</h3>

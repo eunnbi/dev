@@ -11,9 +11,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <RecoilRoot>
       <CustomThemeProvider>
+        <TopButton />
+        <ThemeButton />
         <Layout headerExist={pageProps.id ? false : true}>
-          <TopButton />
-          <ThemeButton />
           <Component {...pageProps} />
         </Layout>
       </CustomThemeProvider>

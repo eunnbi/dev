@@ -53,12 +53,6 @@ button {
   font-family: Pretendard, sans-serif;
 }
 
-main {
-  width: 100%;
-  max-width: 720px;
-  margin: 0 auto;
-}
-
 p {
   line-height: 1.8rem;
   word-break: keep-all;

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styled from "styled-components";
-import { NextImageWrapper } from "../common/NextImageWrapper.styled";
+import { NextImageWrapper } from "@components/common/NextImageWrapper.styled";
 
 const SkillItem = ({ id, tech }: SkillItem) => {
   return (
