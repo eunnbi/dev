@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styled from "styled-components";
-import { NextImageWrapper } from "../common/NextImageWrapper.styled";
-import MyInfoLinks from "../myinfo/MyInfoLinks";
+import { NextImageWrapper } from "@components/common/NextImageWrapper.styled";
+import MyInfoLinks from "@components/myinfo/MyInfoLinks";
 
 const AuthorInfo = () => {
   return (

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styled from "styled-components";
-import { NextImageWrapper } from "../common/NextImageWrapper.styled";
 import KeywordsRotatingText from "./KeywordsRotatingText";
+import { NextImageWrapper } from "@components/common/NextImageWrapper.styled";
 
 const KeywordsSection = () => {
   return (
@@ -20,7 +20,7 @@ const Section = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 5rem 0;
+  transform: translateY(-60px);
   @media ${({ theme }) => theme.device.mobile} {
     flex-direction: column-reverse;
     justify-content: center;

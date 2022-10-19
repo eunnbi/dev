@@ -1,15 +1,15 @@
 import PostFilter from "./PostFilter";
 import PostList from "./PostList";
-import SectionHeading from "../common/SectionHeading";
 import styled from "styled-components";
 import { usePosts } from "./hooks/usePosts";
+import Heading from "@components/common/Heading";
 
 const PostsSection = () => {
   const posts = usePosts();
   return (
     <Section>
       <div>
-        <SectionHeading title="Posts" />
+        <Heading title="Posts" />
         <p>{posts.length} posts</p>
       </div>
       <div>

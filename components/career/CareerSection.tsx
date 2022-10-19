@@ -1,11 +1,11 @@
-import SectionHeading from "../common/SectionHeading";
+import Heading from "@components/common/Heading";
 import CareerList from "./CareerList";
 import styled from "styled-components";
 
 const CareerSection = () => {
   return (
     <Section>
-      <SectionHeading title="Career & Experience" />
+      <Heading title="Career & Experience" />
       <CareerList />
     </Section>
   );

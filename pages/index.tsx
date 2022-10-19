@@ -21,7 +21,7 @@ const Main = styled.main`
   flex-direction: column;
   justify-content: center;
   overflow-y: hidden;
-  min-height: 85vh;
+  height: calc(100vh - 60px);
   &::-webkit-scrollbar {
     display: none;
   }

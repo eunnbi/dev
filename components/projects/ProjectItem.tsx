@@ -18,7 +18,7 @@ const ProjectItem = ({ project }: { project: ProjectItem }) => {
       : `/images/projects/${project.images[0]}`;
 
   return (
-    <Item onClick={onClick}>
+    <Article onClick={onClick}>
       <Row>
         <h2>{project.title}</h2>
         <ProjectLinks github={project.github} link={project.link} />
@@ -35,12 +35,12 @@ const ProjectItem = ({ project }: { project: ProjectItem }) => {
       <div>
         <ProjectTags tags={project.tags} />
       </div>
-    </Item>
+    </Article>
   );
 };
 export default ProjectItem;
 
-const Item = styled.li`
+const Article = styled.article`
   border-radius: 5px;
   cursor: pointer;
   display: flex;
