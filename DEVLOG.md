@@ -6,6 +6,7 @@
 
 - `dynamic routing`된 페이지의 경우 `getStaticPaths`와 `getStaticProps`를 이용하여 Pre-rendering (`Static Generation`)
 - `Pre-rendering`에 필요한 데이터들은 `data` 폴더에서 관리
+- `pages` 단위에서 주입된 데이터가 하위 컴포넌트에서 사용할 수 있도록 `context api` 이용하여 `props drilling` 문제 해결
 
 ### Typescript
 
