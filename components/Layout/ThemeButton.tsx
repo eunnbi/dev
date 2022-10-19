@@ -1,5 +1,5 @@
 import { IoMoon, IoSunny } from "react-icons/io5";
-import { useTheme } from "../../hooks/useTheme";
+import { useTheme } from "@hooks/useTheme";
 import styled from "styled-components";
 import React from "react";
 

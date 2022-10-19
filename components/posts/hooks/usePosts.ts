@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { useRecoilValue } from "recoil";
-import { CategoriesContext } from "../../../context/posts/CategoriesContext";
-import { PostsContext } from "../../../context/posts/PostsContext";
-import { postFilterIndex } from "../../../store/postFilter";
+import { CategoriesContext } from "@context/posts/CategoriesContext";
+import { PostsContext } from "@context/posts/PostsContext";
+import { postFilterIndex } from "@store/postFilter";
 
 export const usePosts = () => {
   const filterIndex = useRecoilValue(postFilterIndex);

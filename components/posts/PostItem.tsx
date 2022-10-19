@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import styled from "styled-components";
-import { convertDateFormat } from "../../lib/date";
+import { convertDateFormat } from "@lib/date";
 
 const PostItem = ({ post }: { post: Post }) => {
   const router = useRouter();

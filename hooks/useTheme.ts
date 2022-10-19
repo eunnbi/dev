@@ -1,6 +1,6 @@
 import { useRecoilState } from "recoil";
 import { useEffect } from "react";
-import { themeState } from "../store/themeState";
+import { themeState } from "@store/themeState";
 
 const THEME = "theme";
 

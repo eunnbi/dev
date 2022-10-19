@@ -3,8 +3,8 @@ import { useRouter } from "next/router";
 import styled from "styled-components";
 import Nav from "./Nav";
 import HeaderCenter from "./HeaderCenter";
-import { useToggle } from "../../../hooks/useToggle";
-import { useClickOutside } from "../../../hooks/useClickOutside";
+import { useToggle } from "@hooks/useToggle";
+import { useClickOutside } from "@hooks/useClickOutside";
 
 const Header = () => {
   const router = useRouter();

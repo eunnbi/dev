@@ -1,9 +1,9 @@
 import { InferGetServerSidePropsType } from "next";
-import CustomHead from "../../components/common/CustomHead";
-import PostsSection from "../../components/posts/PostsSection";
-import { CategoriesContext } from "../../context/posts/CategoriesContext";
-import { PostsContext } from "../../context/posts/PostsContext";
-import { getSortedPostsData } from "../../lib/posts";
+import CustomHead from "@components/common/CustomHead";
+import PostsSection from "@components/posts/PostsSection";
+import { CategoriesContext } from "@context/posts/CategoriesContext";
+import { PostsContext } from "@context/posts/PostsContext";
+import { getSortedPostsData } from "@lib/posts";
 
 const PostsPage = ({
   posts,
