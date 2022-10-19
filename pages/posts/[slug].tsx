@@ -7,7 +7,10 @@ import { getPostData, getPostsSlug, getSortedPostsData } from "../../lib/posts";
 const PostPage = (data: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
-      <CustomHead page={data.current.title} />
+      <CustomHead
+        page={data.current.title}
+        description={data.current.preview}
+      />
       <main>
         <PostContext.Provider value={data}>
           <PostSection />
