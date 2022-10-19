@@ -12,6 +12,10 @@ const ProjectItem = ({ project }: { project: ProjectItem }) => {
     if (tagName === "a" || tagName === "svg" || tagName === "path") return;
     router.push(`/projects/${project.id}`);
   };
+  const imageSrc =
+    project.images.length === 0
+      ? "/images/projects/project-default.png"
+      : `/images/projects/${project.images[0]}`;
 
   return (
     <Item onClick={onClick}>
@@ -21,15 +25,11 @@ const ProjectItem = ({ project }: { project: ProjectItem }) => {
       </Row>
       <ImageWrapper>
         <Image
-          src={
-            project.images.length === 0
-              ? "/images/projects/project-default.png"
-              : `/images/projects/${project.images[0]}`
-          }
+          src={imageSrc}
           alt="project thumbnail"
           layout="fill"
           placeholder="blur"
-          blurDataURL="/images/projects/project-default.png"
+          blurDataURL={imageSrc}
         />
       </ImageWrapper>
       <div>
