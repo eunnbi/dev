@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-interface SectionHeadingProps {
+interface HeadingProps {
   title: string;
 }
 
-const SectionHeading = ({ title }: SectionHeadingProps) => {
+const Heading = ({ title }: HeadingProps) => {
   return (
     <Wrapper>
       <h2>{title}</h2>
@@ -13,7 +13,7 @@ const SectionHeading = ({ title }: SectionHeadingProps) => {
   );
 };
 
-export default React.memo(SectionHeading);
+export default React.memo(Heading);
 
 const Wrapper = styled.div`
   display: flex;
