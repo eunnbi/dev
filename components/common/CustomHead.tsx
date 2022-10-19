@@ -26,6 +26,7 @@ const CustomHead = ({ page, description, image }: CustomHeadProps) => {
         property="og:image"
         content={image ? `/images/${image}` : "/images/og-image.png"}
       />
+      <link rel="apple-touch-icon" href="/logo192.png" />
     </Head>
   );
 };
