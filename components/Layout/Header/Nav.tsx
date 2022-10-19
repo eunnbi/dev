@@ -29,11 +29,17 @@ const StyledNav = styled.nav<{ show: boolean }>`
   @media ${({ theme }) => theme.device.mobile} {
     display: ${({ show }) => (show ? "flex" : "none")};
     flex-direction: column;
+    gap: 0;
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
     border-bottom: 1px solid lightgray;
-    padding-bottom: 1.5rem;
+    a {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 1rem 0;
+    }
   }
 `;

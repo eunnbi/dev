@@ -11,8 +11,9 @@ const PostHeader = () => {
 
       <h1>{title}</h1>
       <div>
-        <p>{convertDateFormat(date)}</p>
         <span>{category}</span>
+        <span>/</span>
+        <span>{convertDateFormat(date)}</span>
       </div>
     </Wrapper>
   );
@@ -32,7 +33,8 @@ const Wrapper = styled.div`
   }
   & > div {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
     color: #a8a8a8;
     line-height: 1.5;
     font-weight: 500;
