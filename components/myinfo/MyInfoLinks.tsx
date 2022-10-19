@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import { Tooltip, IconButton } from "@mui/material";
-import { MY_INFO_LINKS } from "../../data/info";
+import { MY_INFO_LINKS } from "@data/info";
 import { BsGithub } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
 import styled from "styled-components";

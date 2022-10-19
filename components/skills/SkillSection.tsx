@@ -1,4 +1,4 @@
-import { SKILLS_LANG, SKILLS_LIB, SKILLS_TOOLS } from "../../data/skills";
+import { SKILLS_LANG, SKILLS_LIB, SKILLS_TOOLS } from "@data/skills";
 import SkillList from "./SkillList";
 import SectionHeading from "../common/SectionHeading";
 import styled from "styled-components";
@@ -13,7 +13,7 @@ const SkillsSection = () => {
           <SkillList skills={SKILLS_LANG} />
         </article>
         <article>
-          <h3>Libarary &amp; Framework</h3>
+          <h3>Library &amp; Framework</h3>
           <SkillList skills={SKILLS_LIB} />
         </article>
         <article>

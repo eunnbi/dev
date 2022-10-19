@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import { useEffect, useCallback, useContext } from "react";
 import { useRecoilState } from "recoil";
-import { CategoriesContext } from "../../../context/posts/CategoriesContext";
-import { postFilterIndex } from "../../../store/postFilter";
+import { CategoriesContext } from "@context/posts/CategoriesContext";
+import { postFilterIndex } from "@store/postFilter";
 
 export const usePostFilter = () => {
   const router = useRouter();

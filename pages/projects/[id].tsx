@@ -1,8 +1,8 @@
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import ProjectDetails from "../../components/projects/ProjectDetailSection";
-import CustomHead from "../../components/common/CustomHead";
-import ProjectHeader from "../../components/projects/ProjectHeader";
-import { PROJECTS } from "../../data/projects";
+import CustomHead from "@components/common/CustomHead";
+import ProjectHeader from "@components/projects/ProjectHeader";
+import { PROJECTS } from "@data/projects";
 import styled from "styled-components";
 
 const ProjectPage = ({

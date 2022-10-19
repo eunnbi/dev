@@ -1,8 +1,8 @@
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
-import CustomHead from "../../components/common/CustomHead";
-import PostSection from "../../components/posts/PostSection";
-import { PostContext } from "../../context/posts/PostContext";
-import { getPostData, getPostsSlug, getSortedPostsData } from "../../lib/posts";
+import CustomHead from "@components/common/CustomHead";
+import PostSection from "@components/posts/PostSection";
+import { PostContext } from "@context/posts/PostContext";
+import { getPostData, getPostsSlug, getSortedPostsData } from "@lib/posts";
 
 const PostPage = (data: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (

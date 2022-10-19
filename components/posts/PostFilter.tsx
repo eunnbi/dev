@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { usePostFilter } from "./hooks/usePostFilter";
-import { CategoriesContext } from "../../context/posts/CategoriesContext";
+import { CategoriesContext } from "@context/posts/CategoriesContext";
 import Filter from "../common/Filter";
 
 const PostFilter = () => {
