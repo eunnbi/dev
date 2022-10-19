@@ -3,6 +3,7 @@
 ## ~ 2022.10.19
 
 ### NextJS
+
 - `dynamic routing`된 페이지의 경우 `getStaticPaths`와 `getStaticProps`를 이용하여 Pre-rendering (`Static Generation`)
 - `Pre-rendering`에 필요한 데이터들은 `data` 폴더에서 관리
 
@@ -15,7 +16,7 @@
 
 - 타입스크립트 타입들은 `global.d.ts`에서 관리
   - 전에는 `types` 폴더를 만들어서 관리했는데 타입 선언이 필요한 경우 import해야 하는 번거로움이 있었음.
-  - 이제 `global.d.ts`에서 관리하니 import 없이 바로 타입을 사용할 수 있음. 
+  - 이제 `global.d.ts`에서 관리하니 import 없이 바로 타입을 사용할 수 있음.
 
 ### SEO
 
@@ -28,4 +29,10 @@
 - 현재 `vercel`에서 배포중
 - `preview deployments`를 막기 위해 `shell script` 작성 및 `Ignored Build Step` 설정
 - [How do I use the "Ignored Build Step" field on Vercel?
-You can enable the "Ignored Build Step](https://vercel.com/guides/how-do-i-use-the-ignored-build-step-field-on-vercel)
+  You can enable the "Ignored Build Step](https://vercel.com/guides/how-do-i-use-the-ignored-build-step-field-on-vercel)
+
+### 📝 Tasks
+
+- [ ] `semantic tag` 공부 및 적용
+- [ ] 아이폰 사파리 `height: 100vh` 버그 해결
+- [ ] 블로그 옮기기
