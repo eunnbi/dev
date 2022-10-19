@@ -10,7 +10,15 @@ const ProjectPage = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
-      <CustomHead page={project.title} />
+      <CustomHead
+        page={project.title}
+        description={project.overview}
+        image={
+          project.images.length === 0
+            ? undefined
+            : `/images/projects/${project.images[0]}`
+        }
+      />
       <Main>
         <ProjectHeader title={project.title} />
         <ProjectDetails project={project} />
