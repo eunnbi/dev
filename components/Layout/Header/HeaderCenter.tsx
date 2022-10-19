@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import NavToggleBtn from "./NavToggleBtn";
@@ -13,7 +14,7 @@ const HeaderCenter = ({ onToggle }: { onToggle: () => void }) => {
   );
 };
 
-export default HeaderCenter;
+export default React.memo(HeaderCenter);
 
 const Center = styled.div`
   width: 100%;

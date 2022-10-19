@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { useRouter } from "next/router";
 import styled from "styled-components";
 import Nav from "./Nav";
 import HeaderCenter from "./HeaderCenter";
 import { useToggle } from "../../../hooks/useToggle";
+import { useClickOutside } from "../../../hooks/useClickOutside";
 
 const Header = () => {
-  const [show, onToggle] = useToggle(false);
+  const router = useRouter();
+  const ref = useRef<HTMLElement | null>(null);
+  const [show, onToggle, onClose] = useToggle(false);
+  useClickOutside(ref, onClose);
+  useEffect(() => {
+    onClose();
+  }, [router.pathname]);
   return (
-    <StyledHeader>
+    <StyledHeader ref={ref}>
       <Wrapper>
         <HeaderCenter onToggle={onToggle} />
         <Nav show={show} />
