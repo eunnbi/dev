@@ -7,19 +7,19 @@ interface HeadingProps {
 
 const Heading = ({ title }: HeadingProps) => {
   return (
-    <Wrapper>
-      <h2>{title}</h2>
-    </Wrapper>
+    <H2>
+      <span>{title}</span>
+    </H2>
   );
 };
 
 export default React.memo(Heading);
 
-const Wrapper = styled.div`
+const H2 = styled.h2`
   display: flex;
   justify-content: center;
   align-items: center;
-  h2 {
+  span {
     padding-bottom: 5px;
     border-bottom: ${({ theme }) => `4px solid ${theme.color.textColor}`};
     font-size: 1.8rem;
