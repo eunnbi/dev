@@ -1,12 +1,10 @@
 import { BsLink45Deg, BsGithub } from "react-icons/bs";
 import styled from "styled-components";
 
-interface ProjectLinksProps {
-  github: string;
-  link: string;
-}
-
-const ProjectLinks = ({ github, link }: ProjectLinksProps) => {
+const ProjectLinks = ({
+  github,
+  link,
+}: Pick<ProjectItem, "github" | "link">) => {
   return (
     <Links>
       {github && (

@@ -1,13 +1,9 @@
 import styled from "styled-components";
 
-interface ProjectTagsProp {
-  tags: string[] | undefined;
-}
-
-const ProjectTags = ({ tags }: ProjectTagsProp) => {
+const ProjectTags = ({ tags }: Pick<ProjectItem, "tags">) => {
   return (
     <TagWrapper>
-      {tags?.map((tag, index) => (
+      {tags.map((tag, index) => (
         <TagItem key={index}>
           <span></span> {tag}
         </TagItem>
