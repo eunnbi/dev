@@ -40,6 +40,7 @@
 - 블로그를 옮길수록 이미지 파일이 많아질 것이라고 예상됨. 그래서 이미지 파일 최적화 방식을 찾아봐야 함.
 
 - project 관련 데이터 관리 방식을 바꿔야 할 것 같음. (json 파일로 관리)
+- [Next.js: Reading and Display Data from a Local JSON File](https://www.kindacode.com/article/next-js-reading-and-display-data-from-a-local-json-file/)
 
 - meta 태그와 SEO에 대해 더 공부해서 페이지별 meta data 개선
 
