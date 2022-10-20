@@ -41,8 +41,13 @@
 
 - project 관련 데이터 관리 방식을 바꿔야 할 것 같음. (post 관련 데이터처럼)
 
+- meta 태그와 SEO에 대해 더 공부해서 페이지별 meta data 개선
+
 ## 📝 Tasks
 
 - [ ] `semantic tag` 공부 및 적용
 - [x] 아이폰 사파리 `height: 100vh` 버그 해결
 - [ ] 블로그 옮기기
+- [ ] meta 태그, SEO 공부 및 적용
+- [ ] projects data 관리 방식 개선
+- [ ] image cdn 서버 알아보기
