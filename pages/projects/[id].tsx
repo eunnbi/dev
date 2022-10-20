@@ -1,7 +1,6 @@
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
-import ProjectDetails from "../../components/projects/ProjectDetailSection";
+import ProjectDetailMain from "@components/projects/ProjectDetailMain";
 import CustomHead from "@components/common/CustomHead";
-import ProjectHeader from "@components/projects/ProjectHeader";
 import { PROJECTS } from "@data/projects";
 import styled from "styled-components";
 
@@ -19,10 +18,7 @@ const ProjectPage = ({
             : `/images/projects/${project.images[0]}`
         }
       />
-      <Main>
-        <ProjectHeader title={project.title} />
-        <ProjectDetails project={project} />
-      </Main>
+      <ProjectDetailMain project={project} />
     </>
   );
 };
