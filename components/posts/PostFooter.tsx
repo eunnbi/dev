@@ -2,36 +2,32 @@ import styled from "styled-components";
 import { usePostInfo } from "./hooks/usePostInfo";
 import { FiArrowRight, FiArrowLeft } from "react-icons/fi";
 import Link from "next/link";
-import AuthorInfo from "./AuthorInfo";
 
 const PostFooter = () => {
   const { prev, next } = usePostInfo();
   return (
-    <div>
-      {/*<AuthorInfo />*/}
-      <Bottom>
-        {prev ? (
-          <Link href={`/posts/${prev.id}`}>
-            <Box>
-              <FiArrowLeft />
-              <p>{prev.title}</p>
-            </Box>
-          </Link>
-        ) : (
-          <div></div>
-        )}
-        {next ? (
-          <Link href={`/posts/${next.id}`}>
-            <Box>
-              <p>{next.title}</p>
-              <FiArrowRight />
-            </Box>
-          </Link>
-        ) : (
-          <div></div>
-        )}
-      </Bottom>
-    </div>
+    <Bottom>
+      {prev ? (
+        <Link href={`/posts/${prev.id}`}>
+          <Box>
+            <FiArrowLeft />
+            <p>{prev.title}</p>
+          </Box>
+        </Link>
+      ) : (
+        <div></div>
+      )}
+      {next ? (
+        <Link href={`/posts/${next.id}`}>
+          <Box>
+            <p>{next.title}</p>
+            <FiArrowRight />
+          </Box>
+        </Link>
+      ) : (
+        <div></div>
+      )}
+    </Bottom>
   );
 };
 
