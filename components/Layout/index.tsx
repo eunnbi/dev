@@ -13,8 +13,10 @@ const Layout = ({ children }: React.PropsWithChildren) => {
 export default Layout;
 
 const LayoutBox = styled.div`
-  padding: 0 15px;
   width: 100%;
   max-width: 720px;
   margin: 0 auto;
+  @media screen and (max-width: 720px) {
+    padding: 0 15px;
+  }
 `;
