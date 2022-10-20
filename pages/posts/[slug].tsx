@@ -1,6 +1,6 @@
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import CustomHead from "@components/common/CustomHead";
-import PostSection from "@components/posts/PostSection";
+import PostMain from "@components/posts/PostMain";
 import { PostContext } from "@context/posts/PostContext";
 import { getPostData, getPostsSlug, getSortedPostsData } from "@lib/posts";
 
@@ -11,11 +11,9 @@ const PostPage = (data: InferGetStaticPropsType<typeof getStaticProps>) => {
         page={data.current.title}
         description={data.current.preview}
       />
-      <main>
-        <PostContext.Provider value={data}>
-          <PostSection />
-        </PostContext.Provider>
-      </main>
+      <PostContext.Provider value={data}>
+        <PostMain />
+      </PostContext.Provider>
     </>
   );
 };

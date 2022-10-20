@@ -5,21 +5,21 @@ import PostHeader from "./PostHeader";
 import PostToc from "./PostToc";
 import Utterances from "./Utterances";
 
-const PostSection = () => {
+const PostMain = () => {
   return (
-    <Section>
+    <Main>
       <PostHeader />
       <Markdown />
       <PostToc />
       <PostFooter />
       <Utterances />
-    </Section>
+    </Main>
   );
 };
 
-export default PostSection;
+export default PostMain;
 
-const Section = styled.section`
+const Main = styled.main`
   margin: 30px 0;
   display: flex;
   flex-direction: column;
