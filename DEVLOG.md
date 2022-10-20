@@ -31,11 +31,15 @@
 - `preview deployments`를 막기 위해 `shell script` 작성 및 `Ignored Build Step` 설정
 - [How do I use the "Ignored Build Step" field on Vercel?
   You can enable the "Ignored Build Step](https://vercel.com/guides/how-do-i-use-the-ignored-build-step-field-on-vercel)
-  
-  
+
 ## 2022.10.20
-- 아이폰 사파리 `height: 100vh` 버그 문제 해결 
+
+- 아이폰 사파리 `height: 100vh` 버그 문제 해결
 - 🐛 [bug issue](https://github.com/eunnbi/dev/issues/5)
+
+- 블로그를 옮길수록 이미지 파일이 많아질 것이라고 예상됨. 그래서 이미지 파일 최적화 방식을 찾아봐야 함.
+
+- project 관련 데이터 관리 방식을 바꿔야 할 것 같음. (post 관련 데이터처럼)
 
 ## 📝 Tasks
 
