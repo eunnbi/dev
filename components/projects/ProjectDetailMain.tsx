@@ -4,7 +4,7 @@ import ProjectStacks from "./ProjectStacks";
 import ProjectLinks from "./ProjectLinks";
 import styled from "styled-components";
 
-const ProjectDetailMain = ({ project }: { project: ProjectItem }) => {
+const ProjectDetailMain = ({ project }: { project: Project }) => {
   return (
     <Main>
       <h1>{project.title}</h1>

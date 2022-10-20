@@ -1,11 +1,7 @@
 import ProjectItem from "./ProjectItem";
 import styled from "styled-components";
 
-interface ProjectListProps {
-  projects: ProjectItem[];
-}
-
-const ProjectList = ({ projects }: ProjectListProps) => {
+const ProjectList = ({ projects }: { projects: Project[] }) => {
   return (
     <Wrapper>
       {projects.map((project) => (

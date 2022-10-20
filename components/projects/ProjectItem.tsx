@@ -5,7 +5,7 @@ import ProjectLinks from "./ProjectLinks";
 import styled from "styled-components";
 import { NextImageWrapper } from "../common/NextImageWrapper.styled";
 
-const ProjectItem = ({ project }: { project: ProjectItem }) => {
+const ProjectItem = ({ project }: { project: Project }) => {
   const router = useRouter();
   const onClick = (e: any) => {
     const { tagName } = e.target;

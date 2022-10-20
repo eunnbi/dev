@@ -1,7 +1,7 @@
 import SkillItem from "./SkillItem";
 import styled from "styled-components";
 
-const SkillList = ({ skills }: { skills: SkillItem[] }) => {
+const SkillList = ({ skills }: { skills: Skill[] }) => {
   return (
     <List>
       {skills.map((skill) => (

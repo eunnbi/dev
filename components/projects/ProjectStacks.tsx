@@ -4,7 +4,7 @@ const ProjectStacks = ({
   feStacks,
   beStacks,
   deployStacks,
-}: Pick<ProjectItem, "feStacks" | "beStacks" | "deployStacks">) => {
+}: Pick<Project, "feStacks" | "beStacks" | "deployStacks">) => {
   const { name } = useTheme();
   return (
     <article>

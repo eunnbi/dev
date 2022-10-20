@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
-type CareerItemProps = Pick<CareerItem, "content" | "period">;
-
-const CareerItem = ({ period, content }: CareerItemProps) => {
+const CareerItem = ({
+  period,
+  content,
+}: Pick<Career, "content" | "period">) => {
   return (
     <Item>
       <Period>{period}</Period>

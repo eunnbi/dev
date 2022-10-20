@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ProjectTags = ({ tags }: Pick<ProjectItem, "tags">) => {
+const ProjectTags = ({ tags }: Pick<Project, "tags">) => {
   return (
     <TagWrapper>
       {tags.map((tag, index) => (
