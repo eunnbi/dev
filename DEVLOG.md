@@ -31,9 +31,14 @@
 - `preview deployments`를 막기 위해 `shell script` 작성 및 `Ignored Build Step` 설정
 - [How do I use the "Ignored Build Step" field on Vercel?
   You can enable the "Ignored Build Step](https://vercel.com/guides/how-do-i-use-the-ignored-build-step-field-on-vercel)
+  
+  
+## 2022.10.20
+- 아이폰 사파리 `height: 100vh` 버그 문제 해결 
+- 🐛 [bug issue](https://github.com/eunnbi/dev/issues/5)
 
-### 📝 Tasks
+## 📝 Tasks
 
 - [ ] `semantic tag` 공부 및 적용
-- [ ] 아이폰 사파리 `height: 100vh` 버그 해결
+- [x] 아이폰 사파리 `height: 100vh` 버그 해결
 - [ ] 블로그 옮기기
