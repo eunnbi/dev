@@ -48,7 +48,7 @@ declare interface ProjectItem {
     linkName: string;
   };
   tags: string[];
-  category: string;
+  category: "Personal" | "Team";
 }
 
 declare interface SkillItem {
