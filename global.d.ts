@@ -22,14 +22,14 @@ declare type PostContextType = {
   next: Pick<Post, "title" | "id"> | null;
 };
 
-declare interface CareerItem {
+declare interface Career {
   id: number;
   title: string;
   content: string;
   period: string;
 }
 
-declare interface ProjectItem {
+declare interface Project {
   id: number;
   title: string;
   period: string;
@@ -51,7 +51,7 @@ declare interface ProjectItem {
   category: "Personal" | "Team";
 }
 
-declare interface SkillItem {
+declare interface Skill {
   id: number;
   tech: string;
 }
