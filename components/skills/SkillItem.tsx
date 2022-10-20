@@ -14,9 +14,7 @@ const SkillItem = ({ id, tech }: SkillItem) => {
           alt={tech}
         />
       </ImageWrapper>
-      <div>
-        <h4>{tech}</h4>
-      </div>
+      <h4>{tech}</h4>
     </Item>
   );
 };
