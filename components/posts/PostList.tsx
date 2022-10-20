@@ -3,30 +3,18 @@ import PostItem from "./PostItem";
 
 const PostList = ({ posts }: { posts: Post[] }) => {
   return (
-    <Wrapper>
-      <List>
-        {posts.map((post, index) => (
-          <PostItem key={index} post={post} />
-        ))}
-      </List>
-    </Wrapper>
+    <List>
+      {posts.map((post, index) => (
+        <PostItem key={index} post={post} />
+      ))}
+    </List>
   );
 };
 
 export default PostList;
 
-const Wrapper = styled.div`
+const List = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
-  & > p {
-    align-self: flex-end;
-    font-size: 1rem;
-  }
-`;
-
-const List = styled.ul`
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  gap: 1.2rem;
 `;
