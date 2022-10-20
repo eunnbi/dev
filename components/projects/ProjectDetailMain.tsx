@@ -4,9 +4,10 @@ import ProjectStacks from "./ProjectStacks";
 import ProjectLinks from "./ProjectLinks";
 import styled from "styled-components";
 
-const ProjectDetailSection = ({ project }: { project: ProjectItem }) => {
+const ProjectDetailMain = ({ project }: { project: ProjectItem }) => {
   return (
-    <Section>
+    <Main>
+      <h1>{project.title}</h1>
       {project.images.length === 0 ? null : (
         <ImageSlider images={project.images} />
       )}
@@ -39,18 +40,23 @@ const ProjectDetailSection = ({ project }: { project: ProjectItem }) => {
         )}
         <ProjectLinks github={project.github} link={project.link} />
       </Wrapper>
-    </Section>
+    </Main>
   );
 };
 
-export default ProjectDetailSection;
+export default ProjectDetailMain;
 
-const Section = styled.section`
+const Main = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
   width: 100%;
+  margin: 40px 0;
+  h1 {
+    font-size: 2.2rem;
+    text-align: center;
+  }
   article {
     display: flex;
     flex-direction: column;
