@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <CustomThemeProvider>
         <TopButton />
         <ThemeButton />
-        <Layout headerExist={pageProps.id ? false : true}>
+        <Layout>
           <Component {...pageProps} />
         </Layout>
       </CustomThemeProvider>
