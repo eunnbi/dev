@@ -1,0 +1,26 @@
+{
+  "title": "World Movie 프로젝트",
+  "images": ["1.png", "4.png", "2.png", "3.png"],
+  "period": "2022.01 (1차 완성), 2022.06 (반응형 디자인 적용)",
+  "overview": "전 세계 영화 정보 제공 애플리케이션입니다. 카테고리 별로 (현재 상영중인 영화, 인기 있는 영화, 평점 높은 영화) 영화 정보를 제공합니다. 검색 기능을 통해 사용자가 좋아하는 영화를 찾을 수 있고, 좋아하는 영화는 즐겨찾기에 추가할 수 있습니다.",
+  "feStacks": [
+    "JavaScript",
+    "React",
+    "React Router",
+    "React Query",
+    "Styled Components",
+    "Sass"
+  ],
+  "beStacks": [],
+  "deployStacks": ["GitHub pages"],
+  "member": "개인 프로젝트",
+  "review": {
+    "text": "React를 이용한 첫 프로젝트라서 부족한 점이 많지만, 배운 내용들을 꾸준히 기록하면서 React와 친해지려고 노력했다. 우아한 테크 세미나를 듣고 나서 Redux와 Redux Thunk 대신 React Query를 처음으로 사용해보았다. Server state를 관리하는 것에 적합한 라이브러리를 발견했고, 앞으로도 React Query를 꾸준히 쓸 것이다.",
+    "link": "https://github.com/eunnbi/movie-app/blob/main/STUDY.md",
+    "linkName": "World Movie 프로젝트하면서 배운 것들"
+  },
+  "github": "https://github.com/eunnbi/world-movie",
+  "link": "https://eunnbi.github.io/world-movie/",
+  "tags": ["첫 React 프로젝트", "React Query로의 전환"],
+  "category": "Personal"
+}
