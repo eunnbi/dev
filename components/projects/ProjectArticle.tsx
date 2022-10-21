@@ -5,23 +5,23 @@ import ProjectLinks from "./ProjectLinks";
 import styled from "styled-components";
 import { NextImageWrapper } from "../common/NextImageWrapper.styled";
 
-const ProjectItem = ({ project }: { project: Project }) => {
+const ProjectArticle = ({ title, images, tags, github, link, id }: Project) => {
   const router = useRouter();
   const onClick = (e: any) => {
     const { tagName } = e.target;
     if (tagName === "a" || tagName === "svg" || tagName === "path") return;
-    router.push(`/projects/${project.id}`);
+    router.push(`/projects/${id}`);
   };
   const imageSrc =
-    project.images.length === 0
+    images.length === 0
       ? "/images/projects/project-default.png"
-      : `/images/projects/${project.images[0]}`;
+      : `/images/projects/${images[0]}`;
 
   return (
     <Article onClick={onClick}>
       <Row>
-        <h2>{project.title}</h2>
-        <ProjectLinks github={project.github} link={project.link} />
+        <h2>{title}</h2>
+        <ProjectLinks github={github} link={link} />
       </Row>
       <ImageWrapper>
         <Image
@@ -33,12 +33,12 @@ const ProjectItem = ({ project }: { project: Project }) => {
         />
       </ImageWrapper>
       <div>
-        <ProjectTags tags={project.tags} />
+        <ProjectTags tags={tags} />
       </div>
     </Article>
   );
 };
-export default ProjectItem;
+export default ProjectArticle;
 
 const Article = styled.article`
   border-radius: 5px;
