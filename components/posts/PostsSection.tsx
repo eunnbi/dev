@@ -1,14 +1,14 @@
-import PostFilter from "./PostFilter";
-import PostList from "./PostList";
 import styled from "styled-components";
 import { usePosts } from "@hooks/usePosts";
+import PostArticle from "./PostArticle";
 
 const PostsSection = () => {
   const posts = usePosts();
   return (
     <Section>
-      <PostFilter />
-      <PostList posts={posts} />
+      {posts.map(post => (
+        <PostArticle key={post.id} {...post} />
+      ))}
     </Section>
   );
 };
@@ -18,6 +18,6 @@ export default PostsSection;
 const Section = styled.section`
   display: flex;
   flex-direction: column;
-  margin-top: 2.5rem;
-  gap: 20px;
+  gap: 1.2rem;
+  margin-top: 2rem;
 `;
