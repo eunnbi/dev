@@ -1,6 +1,6 @@
 export const FILTERS = ["All", "Personal", "Team"];
 
-export const PROJECTS: ProjectItem[] = [
+export const PROJECTS: Project[] = [
   {
     id: 1,
     title: "World Movie 프로젝트",
