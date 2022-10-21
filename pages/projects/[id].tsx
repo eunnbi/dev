@@ -45,7 +45,7 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
   const id = context.params!.id;
   const project = PROJECTS.find(
     (project) => String(project.id) === id
-  ) as ProjectItem;
+  ) as Project;
   return {
     props: {
       id,
