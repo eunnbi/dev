@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
-interface ImageListProps {
+interface ImageListProps extends Pick<Project, "images"> {
   position: Position;
-  images: string[];
 }
 
 const ImageList = ({ position, images }: ImageListProps) => {
