@@ -1,11 +1,12 @@
 import { useContext } from "react";
-import { usePostFilter } from "./hooks/usePostFilter";
 import { CategoriesContext } from "@context/posts/CategoriesContext";
 import Filter from "@components/common/Filter";
+import { useFilterIndex, useChangeFilter } from "@hooks/useFilter";
 
 const PostFilter = () => {
   const categories = useContext(CategoriesContext);
-  const { filterIndex, selectFilter } = usePostFilter();
+  const filterIndex = useFilterIndex(categories);
+  const selectFilter = useChangeFilter("/posts");
 
   return (
     <Filter
