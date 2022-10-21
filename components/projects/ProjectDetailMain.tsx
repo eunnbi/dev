@@ -4,41 +4,44 @@ import ProjectStacks from "./ProjectStacks";
 import ProjectLinks from "./ProjectLinks";
 import styled from "styled-components";
 
-const ProjectDetailMain = ({ project }: { project: Project }) => {
+const ProjectDetailMain = ({
+  title,
+  images,
+  period,
+  tags,
+  overview,
+  stacks,
+  participation,
+  review,
+  links
+}: Project) => {
   return (
     <Main>
-      <h1>{project.title}</h1>
-      {project.images.length === 0 ? null : (
-        <ImageSlider images={project.images} />
-      )}
+      <h1>{title}</h1>
+      {images.length === 0 ? null : <ImageSlider images={images} />}
       <Section>
-        <p className="project-period">⏰ {project.period}</p>
-        <ProjectTags tags={project.tags} />
+        <p className="project-period">⏰ {period}</p>
+        <ProjectTags tags={tags} />
         <article>
           <h3>Overview</h3>
-          <p>{project.overview}</p>
+          <p>{overview}</p>
         </article>
-        <ProjectStacks
-          feStacks={project.feStacks}
-          beStacks={project.beStacks}
-          deployStacks={project.deployStacks}
-        />
+        <ProjectStacks stacks={stacks} />
         <article>
           <h3>Member</h3>
-          <p>{project.member}</p>
-          {project.role && <p>{project.role}</p>}
+          <p>{participation.member}</p>
+          {participation.role && <p>{participation.role}</p>}
         </article>
-        {(project.review.text ||
-          (project.review.link && project.review.linkName)) && (
+        {(review.text || (review.link && review.linkName)) && (
           <article>
             <h3>Review</h3>
-            <p>{project.review.text}</p>
-            <a href={project.review.link} target="_blank" rel="noreferrer">
-              🚀 <span>{project.review.linkName}</span>
+            <p>{review.text}</p>
+            <a href={review.link} target="_blank" rel="noreferrer">
+              🚀 <span>{review.linkName}</span>
             </a>
           </article>
         )}
-        <ProjectLinks github={project.github} link={project.link} />
+        <ProjectLinks links={links} />
       </Section>
     </Main>
   );
