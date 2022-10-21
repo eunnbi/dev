@@ -18,7 +18,7 @@ const ProjectPage = ({
             : `/images/projects/${project.images[0]}`
         }
       />
-      <ProjectDetailMain project={project} />
+      <ProjectDetailMain {...project} />
     </>
   );
 };
