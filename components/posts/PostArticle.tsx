@@ -2,24 +2,23 @@ import { useRouter } from "next/router";
 import styled from "styled-components";
 import { convertDateFormat } from "@lib/date";
 
-const PostItem = ({ post }: { post: Post }) => {
+const PostArticle = ({ id, title, date, category, preview }: Post) => {
   const router = useRouter();
-  const { id, title, date, category, preview } = post;
   return (
-    <Item onClick={() => router.push(`/posts/${id}`)}>
+    <Article onClick={() => router.push(`/posts/${id}`)}>
       <h3>{title}</h3>
       <Preview>{preview}</Preview>
       <Bottom>
         <p>{convertDateFormat(date)}</p>
         <p>{category}</p>
       </Bottom>
-    </Item>
+    </Article>
   );
 };
 
-export default PostItem;
+export default PostArticle;
 
-const Item = styled.li`
+const Article = styled.article`
   display: flex;
   flex-direction: column;
   cursor: pointer;
