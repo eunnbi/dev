@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { convertDateFormat } from "@lib/date";
-import { usePostInfo } from "./hooks/usePostInfo";
+import { usePostInfo } from "@hooks/usePostInfo";
 
 const PostHeader = () => {
   const { current } = usePostInfo();

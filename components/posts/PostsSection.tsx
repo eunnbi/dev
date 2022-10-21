@@ -1,7 +1,7 @@
 import PostFilter from "./PostFilter";
 import PostList from "./PostList";
 import styled from "styled-components";
-import { usePosts } from "./hooks/usePosts";
+import { usePosts } from "@hooks/usePosts";
 
 const PostsSection = () => {
   const posts = usePosts();

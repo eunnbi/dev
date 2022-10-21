@@ -1,5 +1,5 @@
 import React from "react";
-import { usePostInfo } from "./hooks/usePostInfo";
+import { usePostInfo } from "@hooks/usePostInfo";
 import Toc from "react-toc";
 import styled from "styled-components";
 

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { usePostInfo } from "./hooks/usePostInfo";
+import { usePostInfo } from "@hooks/usePostInfo";
 import { FiArrowRight, FiArrowLeft } from "react-icons/fi";
 import Link from "next/link";
 
