@@ -33,22 +33,28 @@ declare interface Project {
   id: number;
   title: string;
   period: string;
-  feStacks: string[];
-  deployStacks: string[];
-  beStacks: string[];
   overview: string;
-  github: string;
-  link: string;
   images: string[];
-  member: string;
-  role?: string;
+  tags: string[];
+  category: "Personal" | "Team";
+  stacks: {
+    feStacks: string[];
+    deployStacks: string[];
+    beStacks: string[];
+  };
+  links: {
+    github: string;
+    siteUrl: string;
+  };
+  participation: {
+    member: string;
+    role?: string;
+  };
   review: {
     text: string;
     link: string;
     linkName: string;
   };
-  tags: string[];
-  category: "Personal" | "Team";
 }
 
 declare interface Skill {
