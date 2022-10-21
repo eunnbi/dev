@@ -7,21 +7,21 @@ import { PostsContext } from "@context/posts/PostsContext";
 import { getSortedPostsData } from "@lib/posts";
 import styled from "styled-components";
 import Notice from "@components/posts/Notice";
+import PostFilter from "@components/posts/PostFilter";
 
 const PostsPage = ({
   posts,
-  categories,
+  categories
 }: InferGetServerSidePropsType<typeof getStaticProps>) => {
-  //console.log(posts, categories);
   return (
     <>
       <CustomHead page="Posts" />
       <Main>
-        <Notice />
         <Heading title="Posts" />
         <p>{posts.length} posts</p>
         <CategoriesContext.Provider value={categories}>
           <PostsContext.Provider value={posts}>
+            <PostFilter />
             <PostsSection />
           </PostsContext.Provider>
         </CategoriesContext.Provider>
@@ -35,18 +35,18 @@ export default PostsPage;
 const Main = styled.main`
   display: flex;
   flex-direction: column;
-  margin: 30px 0;
+  margin: 30px 0 60px;
   & > p {
     text-align: center;
     font-weight: 500;
     font-size: 1.1rem;
-    margin-top: 10px;
+    margin: 10px 0 2rem;
   }
 `;
 
 export const getStaticProps = async () => {
   const posts = getSortedPostsData();
-  const categories = posts.map((post) => post.category);
+  const categories = posts.map(post => post.category);
   return {
     props: {
       posts,
@@ -54,8 +54,8 @@ export const getStaticProps = async () => {
         "All",
         ...categories.filter(
           (category, index) => categories.indexOf(category) === index
-        ),
-      ],
-    },
+        )
+      ]
+    }
   };
 };
