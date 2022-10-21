@@ -7,7 +7,7 @@ const postsDirectory = path.join(process.cwd(), "data", "posts");
 export const getSortedPostsData = (category: string = ""): Post[] => {
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames
-    .map((fileName) => {
+    .map(fileName => {
       const id = fileName.replace(/\.md$/, "");
       const fullPath = path.join(postsDirectory, fileName);
       const fileContents = fs.readFileSync(fullPath, "utf-8");
@@ -17,10 +17,10 @@ export const getSortedPostsData = (category: string = ""): Post[] => {
       return {
         id,
         ...metadata,
-        content,
+        content
       };
     })
-    .filter((post) => (category ? post.category === category : true));
+    .filter(post => (category ? post.category === category : true));
   // Sort posts by date
   return allPostsData.sort(({ date: a }, { date: b }) => {
     if (a < b) {
@@ -33,14 +33,15 @@ export const getSortedPostsData = (category: string = ""): Post[] => {
   });
 };
 
-export const getPostsSlug = () => {
+export const getPostSlugs = () => {
   const fileNames = fs.readdirSync(postsDirectory);
-  const slugs = fileNames.map((fileName) => {
+  const slugs = fileNames.map(fileName => {
     const slug = fileName.replace(/\.md$/, "");
     return { params: { slug } };
   });
   return slugs;
 };
+
 export const getPostData = (slug: string): Post => {
   const fullPath = path.join(postsDirectory, `${slug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf-8");
@@ -52,6 +53,6 @@ export const getPostData = (slug: string): Post => {
   return {
     id: slug,
     ...metadata,
-    content,
+    content
   };
 };
