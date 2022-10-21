@@ -6,6 +6,7 @@ import { CategoriesContext } from "@context/posts/CategoriesContext";
 import { PostsContext } from "@context/posts/PostsContext";
 import { getSortedPostsData } from "@lib/posts";
 import styled from "styled-components";
+import Notice from "@components/posts/Notice";
 
 const PostsPage = ({
   posts,
@@ -16,6 +17,7 @@ const PostsPage = ({
     <>
       <CustomHead page="Posts" />
       <Main>
+        <Notice />
         <Heading title="Posts" />
         <p>{posts.length} posts</p>
         <CategoriesContext.Provider value={categories}>
