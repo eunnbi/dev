@@ -5,7 +5,7 @@ import ProjectLinks from "./ProjectLinks";
 import styled from "styled-components";
 import { NextImageWrapper } from "../common/NextImageWrapper.styled";
 
-const ProjectArticle = ({ title, images, tags, github, link, id }: Project) => {
+const ProjectArticle = ({ title, images, tags, links, id }: Project) => {
   const router = useRouter();
   const onClick = (e: any) => {
     const { tagName } = e.target;
@@ -21,7 +21,7 @@ const ProjectArticle = ({ title, images, tags, github, link, id }: Project) => {
     <Article onClick={onClick}>
       <Row>
         <h2>{title}</h2>
-        <ProjectLinks github={github} link={link} />
+        <ProjectLinks links={links} />
       </Row>
       <ImageWrapper>
         <Image
