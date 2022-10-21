@@ -195,9 +195,11 @@
 }
 
 .markdown-body img {
+  display: block;
   border-style: none;
   max-width: 100%;
   box-sizing: content-box;
+  margin: 0 auto;
 }
 
 .markdown-body code,
