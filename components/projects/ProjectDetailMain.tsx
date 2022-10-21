@@ -11,7 +11,7 @@ const ProjectDetailMain = ({ project }: { project: Project }) => {
       {project.images.length === 0 ? null : (
         <ImageSlider images={project.images} />
       )}
-      <Wrapper>
+      <Section>
         <p className="project-period">⏰ {project.period}</p>
         <ProjectTags tags={project.tags} />
         <article>
@@ -39,7 +39,7 @@ const ProjectDetailMain = ({ project }: { project: Project }) => {
           </article>
         )}
         <ProjectLinks github={project.github} link={project.link} />
-      </Wrapper>
+      </Section>
     </Main>
   );
 };
@@ -57,6 +57,15 @@ const Main = styled.main`
     font-size: 2.2rem;
     text-align: center;
   }
+`;
+
+const Section = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  .project-period {
+    font-size: 1.05rem;
+  }
   article {
     display: flex;
     flex-direction: column;
@@ -70,14 +79,5 @@ const Main = styled.main`
     a:hover span {
       text-decoration: underline;
     }
-  }
-`;
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  .project-period {
-    font-size: 1.05rem;
   }
 `;
