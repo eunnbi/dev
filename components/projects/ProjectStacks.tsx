@@ -1,10 +1,7 @@
 import styled, { useTheme } from "styled-components";
 
-const ProjectStacks = ({
-  feStacks,
-  beStacks,
-  deployStacks,
-}: Pick<Project, "feStacks" | "beStacks" | "deployStacks">) => {
+const ProjectStacks = ({ stacks }: Pick<Project, "stacks">) => {
+  const { feStacks, beStacks, deployStacks } = stacks;
   const { name } = useTheme();
   return (
     <article>
