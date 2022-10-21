@@ -7,7 +7,6 @@ import styled from "styled-components";
 const HomePage: NextPage = () => {
   useEffect(() => {
     const vh = window.innerHeight * 0.01;
-    console.log(vh);
     document.documentElement.style.setProperty("--vh", `${vh}px`);
   }, []);
   return (
