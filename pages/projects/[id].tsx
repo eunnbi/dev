@@ -1,11 +1,11 @@
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import ProjectDetailMain from "@components/projects/ProjectDetailMain";
 import CustomHead from "@components/common/CustomHead";
-import { PROJECTS } from "@data/projects";
 import styled from "styled-components";
+import { getProjectData, getProjectIds } from "@lib/projects";
 
 const ProjectPage = ({
-  project,
+  project
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
@@ -25,31 +25,17 @@ const ProjectPage = ({
 
 export default ProjectPage;
 
-const Main = styled.main`
-  display: flex;
-  flex-direction: column;
-  gap: 3.5rem;
-  align-items: center;
-  padding-top: 1.5rem;
-`;
-
 export const getStaticPaths = async () => {
-  const paths = PROJECTS.map((project) => ({
-    params: { id: String(project.id) },
-  }));
-
+  const paths = getProjectIds();
   return { paths, fallback: false };
 };
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const id = context.params!.id;
-  const project = PROJECTS.find(
-    (project) => String(project.id) === id
-  ) as Project;
+  const project = getProjectData(id as string);
   return {
     props: {
-      id,
-      project,
-    },
+      project
+    }
   };
 };
