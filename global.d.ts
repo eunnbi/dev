@@ -30,7 +30,7 @@ declare interface Career {
 }
 
 declare interface Project {
-  id: number;
+  id: string;
   title: string;
   period: string;
   overview: string;
