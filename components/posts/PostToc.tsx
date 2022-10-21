@@ -5,7 +5,11 @@ import styled from "styled-components";
 
 const PostToc = () => {
   const { current } = usePostInfo();
-  return <CustomToc markdownText={current.content} lowestHeadingLevel={3} />;
+  return (
+    <section>
+      <CustomToc markdownText={current.content} lowestHeadingLevel={3} />
+    </section>
+  );
 };
 
 export default PostToc;

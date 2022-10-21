@@ -6,7 +6,7 @@ import Link from "next/link";
 const PostFooter = () => {
   const { prev, next } = usePostInfo();
   return (
-    <Bottom>
+    <Section>
       {prev ? (
         <Link href={`/posts/${prev.id}`}>
           <Box>
@@ -27,13 +27,13 @@ const PostFooter = () => {
       ) : (
         <div></div>
       )}
-    </Bottom>
+    </Section>
   );
 };
 
 export default PostFooter;
 
-const Bottom = styled.div`
+const Section = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
