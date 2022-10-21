@@ -1,21 +1,19 @@
 import styled from "styled-components";
 import Image from "next/image";
 import MyInfoLinks from "./MyInfoLinks";
-import { NextImageWrapper } from "@components/common/NextImageWrapper.styled";
 import KeywordsRotatingText from "@components/keywords/KeywordsRotatingText";
 
 const MyInfoSection = () => {
   return (
     <Section>
-      <ImageWrapper>
-        <Image
-          src="/images/profile.png"
-          layout="fill"
-          placeholder="blur"
-          blurDataURL="/images/profile.png"
-          alt="profile"
-        />
-      </ImageWrapper>
+      <Image
+        src="/images/profile.png"
+        placeholder="blur"
+        blurDataURL="/images/profile.png"
+        alt="profile"
+        width={100}
+        height={100}
+      />
       <KeywordsRotatingText fontSize="2rem" textAlign="center" />
       <MyInfoLinks />
     </Section>
@@ -29,9 +27,4 @@ const Section = styled.section`
   flex-direction: column;
   gap: 1rem;
   align-items: center;
-`;
-
-const ImageWrapper = styled(NextImageWrapper)`
-  width: 100px;
-  height: 100px;
 `;

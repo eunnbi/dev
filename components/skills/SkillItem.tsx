@@ -33,6 +33,7 @@ const Item = styled.li`
 `;
 
 const ImageWrapper = styled(NextImageWrapper)`
+  position: relative;
   width: 20vw;
   height: 20vw;
   max-width: 100px;

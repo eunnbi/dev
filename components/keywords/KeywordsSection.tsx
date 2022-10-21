@@ -8,7 +8,7 @@ const KeywordsSection = () => {
     <Section>
       <KeywordsRotatingText />
       <ImageWrapper>
-        <Image src="/images/profile.png" layout="fill" alt="profile" />
+        <Image src="/images/profile.png" layout="fill" alt="profile" priority />
       </ImageWrapper>
     </Section>
   );
@@ -29,6 +29,7 @@ const Section = styled.section`
 `;
 
 const ImageWrapper = styled(NextImageWrapper)`
+  position: relative;
   width: 30vw;
   height: 30vw;
   max-width: 250px;
