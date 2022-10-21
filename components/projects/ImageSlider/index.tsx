@@ -3,7 +3,7 @@ import ImageList from "./ImageList";
 import styled from "styled-components";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
-const ImageSlider = ({ images }: { images: string[] }) => {
+const ImageSlider = ({ images }: Pick<Project, "images">) => {
   const { position, moveNext, movePrev } = useSlider(images.length);
   return (
     <SliderSection>
