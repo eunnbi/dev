@@ -13,6 +13,7 @@ const MyInfoSection = () => {
         alt="profile"
         width={100}
         height={100}
+        objectFit="contain"
       />
       <KeywordsRotatingText fontSize="2rem" textAlign="center" />
       <MyInfoLinks />
