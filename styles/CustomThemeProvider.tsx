@@ -1,5 +1,5 @@
 import { ThemeProvider } from "styled-components";
-import { themeState } from "stores/themeState";
+import { themeState } from "@stores/themeState";
 import { useRecoilValue } from "recoil";
 import { lightTheme, darkTheme } from "./theme";
 import { GlobalStyle } from "./GlobalStyle";
