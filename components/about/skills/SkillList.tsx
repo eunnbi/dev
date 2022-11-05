@@ -1,6 +1,22 @@
-import Image from "next/image";
 import styled from "styled-components";
+import Image from "next/image";
 import { NextImageWrapper } from "@components/common/NextImageWrapper.styled";
+
+const SkillList = ({ skills }: { skills: Skill[] }) => {
+  return (
+    <List>
+      {skills.map(skill => (
+        <SkillItem key={skill.id} id={skill.id} tech={skill.tech} />
+      ))}
+    </List>
+  );
+};
+
+const List = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+`;
 
 const SkillItem = ({ id, tech }: Skill) => {
   return (
@@ -18,8 +34,6 @@ const SkillItem = ({ id, tech }: Skill) => {
     </Item>
   );
 };
-
-export default SkillItem;
 
 const Item = styled.li`
   display: flex;
@@ -39,3 +53,5 @@ const ImageWrapper = styled(NextImageWrapper)`
   max-width: 100px;
   max-height: 100px;
 `;
+
+export default SkillList;
