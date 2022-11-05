@@ -25,7 +25,9 @@ const Main = styled.main`
   justify-content: center;
   overflow-y: hidden;
   height: calc(100vh - 60px);
-  height: calc(var(--vh, 1vh) * 100 - 60px);
+  @media ${({ theme }) => theme.device.mobile} {
+    height: calc(var(--vh, 1vh) * 100 - 60px);
+  }
   &::-webkit-scrollbar {
     display: none;
   }
