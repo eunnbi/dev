@@ -18,7 +18,7 @@ const Markdown = () => {
         }
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeRaw, rehypeSlug]}
-        transformImageUri={src => `/images/posts/${src}`}
+        transformImageUri={src => `/images/posts/${current.id}/${src}`}
         components={{
           code({ node, inline, className, children, ...props }) {
             const match = /language-(\w+)/.exec(className || "");
