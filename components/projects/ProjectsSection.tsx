@@ -73,6 +73,7 @@ const ImageWrapper = styled(NextImageWrapper)`
   position: relative;
   box-shadow: ${({ theme }) => `1px 5px 15px ${theme.color.shadowColor}`};
   border-radius: 5px;
+  max-height: 455px;
   img {
     border-radius: 5px;
   }
