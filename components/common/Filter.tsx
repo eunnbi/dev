@@ -2,17 +2,18 @@ import { SyntheticEvent } from "react";
 import styled from "styled-components";
 import { Tabs, Tab } from "@mui/material";
 import { useCallback } from "react";
+import { SetterOrUpdater } from "recoil";
 
 interface FilterProps {
   filters: string[];
-  filterIndex: number;
-  selectFilter: (filter: string) => void;
+  filterIndex: FilterIndex;
+  setFilterIndex: SetterOrUpdater<FilterIndex>;
 }
 
-const Filter = ({ filters, filterIndex, selectFilter }: FilterProps) => {
+const Filter = ({ filters, filterIndex, setFilterIndex }: FilterProps) => {
   const onChange = useCallback(
     (e: SyntheticEvent<Element, Event>, value: number) => {
-      selectFilter(filters[value]);
+      setFilterIndex(value);
     },
     []
   );
@@ -20,7 +21,7 @@ const Filter = ({ filters, filterIndex, selectFilter }: FilterProps) => {
     <Wrapper>
       <CustomTabs value={filterIndex} onChange={onChange} variant="scrollable">
         {filters.map((filter, index) => (
-          <Tab label={filter} key={index} />
+          <Tab label={filter} key={index} value={index} />
         ))}
       </CustomTabs>
     </Wrapper>
