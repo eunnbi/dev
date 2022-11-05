@@ -1,18 +1,19 @@
 import { useContext } from "react";
 import { CategoriesContext } from "@contexts/posts/CategoriesContext";
 import Filter from "@components/common/Filter";
-import { useFilterIndex, useChangeFilter } from "@hooks/useFilter";
+import { useSetRecoilState } from "recoil";
+import { postFilterState } from "@stores/postFilterState";
+import { usePostFilterIndex } from "@hooks/useFilterIndex";
 
 const PostFilter = () => {
   const categories = useContext(CategoriesContext);
-  const filterIndex = useFilterIndex(categories);
-  const selectFilter = useChangeFilter("/posts");
-
+  const filterIndex = usePostFilterIndex();
+  const setFilterIndex = useSetRecoilState(postFilterState);
   return (
     <Filter
       filters={categories}
       filterIndex={filterIndex}
-      selectFilter={selectFilter}
+      setFilterIndex={setFilterIndex}
     />
   );
 };

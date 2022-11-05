@@ -1,14 +1,19 @@
 import styled from "styled-components";
 import KeywordsRotatingText from "./KeywordsRotatingText";
 import Image from "next/image";
-import { NextImageWrapper } from "@components/common/NextImageWrapper.styled";
 
 const KeywordsSection = () => {
   return (
     <Section>
       <KeywordsRotatingText />
       <ImageWrapper>
-        <Image src="/images/profile.png" layout="fill" alt="profile" priority />
+        <Image
+          src="/images/profile.png"
+          layout="fill"
+          alt="profile"
+          objectFit="contain"
+          priority
+        />
       </ImageWrapper>
     </Section>
   );
@@ -26,7 +31,7 @@ const Section = styled.section`
   }
 `;
 
-const ImageWrapper = styled(NextImageWrapper)`
+const ImageWrapper = styled.div`
   position: relative;
   width: 30vw;
   height: 30vw;

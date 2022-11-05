@@ -3,4 +3,6 @@ interface Position {
   prev: number;
 }
 
+type FilterIndex = number;
+
 declare module "react-rotating-text";
