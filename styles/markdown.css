@@ -199,7 +199,7 @@
   border-style: none;
   max-width: 100%;
   box-sizing: content-box;
-  margin: 0 auto;
+  margin: 16px auto;
 }
 
 .markdown-body code,
