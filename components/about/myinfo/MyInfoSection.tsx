@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Image from "next/image";
 import MyInfoLinks from "./MyInfoLinks";
-import KeywordsRotatingText from "@components/keywords/KeywordsRotatingText";
+import KeywordsRotatingText from "@components/about/keywords/KeywordsRotatingText";
 
 const MyInfoSection = () => {
   return (

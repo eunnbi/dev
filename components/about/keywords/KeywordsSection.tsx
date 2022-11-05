@@ -1,6 +1,6 @@
-import Image from "next/image";
 import styled from "styled-components";
 import KeywordsRotatingText from "./KeywordsRotatingText";
+import Image from "next/image";
 import { NextImageWrapper } from "@components/common/NextImageWrapper.styled";
 
 const KeywordsSection = () => {
@@ -13,8 +13,6 @@ const KeywordsSection = () => {
     </Section>
   );
 };
-
-export default KeywordsSection;
 
 const Section = styled.section`
   display: flex;
@@ -37,3 +35,5 @@ const ImageWrapper = styled(NextImageWrapper)`
   min-width: 150px;
   min-height: 150px;
 `;
+
+export default KeywordsSection;

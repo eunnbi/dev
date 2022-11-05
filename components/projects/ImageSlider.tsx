@@ -1,6 +1,41 @@
+import { useSlider } from "@hooks/useSlider";
 import styled from "styled-components";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
-interface ImageListProps extends Pick<Project, "images"> {
+interface ImageSlierProps {
+  images: string[];
+}
+
+const ImageSlider = ({ images }: ImageSlierProps) => {
+  const { position, moveNext, movePrev } = useSlider(images.length);
+  return (
+    <SliderSection>
+      <button>
+        <FiChevronLeft onClick={movePrev} />
+      </button>
+      <ImageList images={images} position={position} />
+      <button>
+        <FiChevronRight onClick={moveNext} />
+      </button>
+    </SliderSection>
+  );
+};
+
+const SliderSection = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  svg {
+    color: ${({ theme }) => theme.color.textColor};
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+`;
+
+// ---------------------------------------------------
+
+interface ImageListProps extends ImageSlierProps {
   position: Position;
 }
 
@@ -18,14 +53,12 @@ const ImageList = ({ position, images }: ImageListProps) => {
               ? "prev"
               : "next"
           }
-          src={`/images/projects/${image}`}
+          src={image}
         />
       ))}
     </List>
   );
 };
-
-export default ImageList;
 
 const List = styled.ul`
   width: 100%;
@@ -53,3 +86,5 @@ const ImageItem = styled.img<{ position: string; index: number }>`
       ? `translateX(${-(index * 100) - 100}%)`
       : `translateX(${-(index * 100) + 100}%)`};
 `;
+
+export default ImageSlider;

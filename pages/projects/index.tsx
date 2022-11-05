@@ -4,8 +4,8 @@ import Heading from "@components/common/Heading";
 import ProjectsSection from "@components/projects/ProjectsSection";
 import styled from "styled-components";
 import { getSortedProjectsData } from "@lib/projects";
-import { CategoriesContext } from "@context/projects/CategoriesContext";
-import { ProjectsContext } from "@context/projects/ProjectsContext";
+import { CategoriesContext } from "@contexts/projects/CategoriesContext";
+import { ProjectsContext } from "@contexts/projects/ProjectsContext";
 import ProjectFilter from "@components/projects/ProjectFilter";
 
 const ProjectsPage = ({

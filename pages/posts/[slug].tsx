@@ -1,8 +1,13 @@
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import CustomHead from "@components/common/CustomHead";
-import PostMain from "@components/posts/PostMain";
-import { PostContext } from "@context/posts/PostContext";
+import { PostContext } from "@contexts/posts/PostContext";
 import { getPostData, getPostSlugs, getSortedPostsData } from "@lib/posts";
+import PostHeader from "@components/posts/PostHeader";
+import PostToc from "@components/posts/PostToc";
+import Markdown from "@components/posts/Markdown";
+import PostFooter from "@components/posts/PostFooter";
+import Utterances from "@components/posts/Utterances";
+import styled from "styled-components";
 
 const PostPage = (data: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
@@ -12,11 +17,24 @@ const PostPage = (data: InferGetStaticPropsType<typeof getStaticProps>) => {
         description={data.current.preview}
       />
       <PostContext.Provider value={data}>
-        <PostMain />
+        <Main>
+          <PostHeader />
+          <Markdown />
+          <PostToc />
+          <PostFooter />
+          <Utterances />
+        </Main>
       </PostContext.Provider>
     </>
   );
 };
+
+const Main = styled.main`
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+`;
 
 export default PostPage;
 

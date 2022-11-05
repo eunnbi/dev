@@ -2,8 +2,8 @@ import { InferGetServerSidePropsType } from "next";
 import Heading from "@components/common/Heading";
 import CustomHead from "@components/common/CustomHead";
 import PostsSection from "@components/posts/PostsSection";
-import { CategoriesContext } from "@context/posts/CategoriesContext";
-import { PostsContext } from "@context/posts/PostsContext";
+import { CategoriesContext } from "@contexts/posts/CategoriesContext";
+import { PostsContext } from "@contexts/posts/PostsContext";
 import { getSortedPostsData } from "@lib/posts";
 import styled from "styled-components";
 import Notice from "@components/posts/Notice";
@@ -30,8 +30,6 @@ const PostsPage = ({
   );
 };
 
-export default PostsPage;
-
 const Main = styled.main`
   display: flex;
   flex-direction: column;
@@ -43,6 +41,8 @@ const Main = styled.main`
     margin: 10px 0 2rem;
   }
 `;
+
+export default PostsPage;
 
 export const getStaticProps = async () => {
   const posts = getSortedPostsData();

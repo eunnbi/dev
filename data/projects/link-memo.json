@@ -1,7 +1,7 @@
 {
   "title": "Link Memo 프로젝트",
-  "images": ["5.png", "6.png", "7.png", "8.png", "9.png"],
   "period": "2022.06 ~ 2022.07",
+  "imageCnt": 5,
   "tags": ["React Component Pattern", "Mobile First Design"],
   "category": "Personal",
   "overview": "나에게 도움이 되는 자료의 링크 주소나 나중에 볼 링크 주소를 메모 형식으로 저장하고 관리할 수 있는 애플리케이션입니다. 링크 주소를 나만의 카테고리별로 저장할 수 있고, 검색 기능을 통해 저장된 링크 주소 메모를 쉽게 찾을 수 있습니다. 자주 방문하는 링크 주소는 즐겨찾기에 추가할 수 있습니다.",
