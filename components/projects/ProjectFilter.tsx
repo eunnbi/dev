@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import Filter from "@components/common/Filter";
-import { CategoriesContext } from "@context/projects/CategoriesContext";
+import { CategoriesContext } from "@contexts/projects/CategoriesContext";
 import { useFilterIndex, useChangeFilter } from "@hooks/useFilter";
 
 const ProjectFilter = () => {
