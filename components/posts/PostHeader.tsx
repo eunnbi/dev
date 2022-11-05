@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { convertDateFormat } from "@lib/date";
-import { usePostInfo } from "./hooks/usePostInfo";
+import { usePostInfo } from "@hooks/usePostInfo";
 
 const PostHeader = () => {
   const { current } = usePostInfo();
   const { emoji, title, date, category } = current;
   return (
-    <Wrapper>
+    <Section>
       <span className="emoji">{emoji}</span>
 
       <h1>{title}</h1>
@@ -15,13 +15,13 @@ const PostHeader = () => {
         <span>/</span>
         <span>{convertDateFormat(date)}</span>
       </div>
-    </Wrapper>
+    </Section>
   );
 };
 
 export default PostHeader;
 
-const Wrapper = styled.div`
+const Section = styled.section`
   display: flex;
   flex-direction: column;
   gap: 5px;

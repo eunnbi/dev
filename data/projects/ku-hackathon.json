@@ -1,0 +1,26 @@
+{
+  "title": "고려대학교 여름 해커톤 (AIMECO)",
+  "period": "2022.08.19 ~ 2022.08.21",
+  "imageCnt": 6,
+  "tags": ["zero에서 하나의 서비스 만들기까지", "서버리스 웹 어플리케이션"],
+  "category": "Team",
+  "overview": "환경 보호 운동을 하나의 문화로 만들기 위한 서비스입니다. 배지 시스템을 도입하여 작은 실천부터 환경 보호 관련 행사 참여까지 유도하고, 활동을 통해 얻은 배지를 SNS에 공유할 수 있습니다.  Gamification을 통해 선의의 경쟁심을 부추기며 환경 보호 실천에 재미와 성취감을 느낄 수 있습니다.  이뿐만 아니라 뉴스 및 저널 / 도서관에서 최근 환경 관련 이슈와 다양한 환경 보호 실천 방법에 대한 유용한 정보를 제공합니다. 이후 피드와 팔로우 기능을 도입하여 전 세계 사람들의 환경 보호 실천을 공유할 수 있는 커뮤니티 플랫폼으로 서비스를 확장할 계획입니다. 또한, Eco-friendly한 브랜딩을 원하는 기업 / 기관들과의 행사 공동 주최나 홍보도 진행하여 대체 불가능한 환경 보호 운동 커뮤니티 플랫폼으로 나아갈 것 입니다.",
+  "stacks": {
+    "feStacks": ["Typescript", "NextJS", "Recoil", "Mui", "Emotion"],
+    "beStacks": ["Supabase"],
+    "deployStacks": ["Netlify"]
+  },
+  "participation": {
+    "member": "기획자 1명 / 개발자 4명",
+    "role": "👉 본 프로젝트에서 개발자 포지션을 맡았습니다."
+  },
+  "review": {
+    "text": "3일 동안 zero부터 하나의 서비스를 만드는 귀중한 경험을 했다. 서비스를 만들 때 Specialization과 사용자의 동기부여를 어떻게 할 것인지 방법에 대해 고민하는 것이 중요하는 것을 배웠다.  처음으로 Gamification 요소를 적용한 서비스를 만들어보면서 흥미로웠고, Gamification 요소를 적용한 좋은 웹 서비스에 대해 알아보고 싶다. 프론트 개발자로서 처음 서버리스 웹을 만들어보았고, 서버리스 웹 어플리케이션에 대해 궁금해져서 자세히 알아봐야겠다. 최종적으로 18팀 중 5등이라는 좋은 성과를 얻어서 기뻤다. 😁",
+    "link": "https://velog.io/@eunnbi/2022-%EA%B3%A0%EB%A0%A4%EB%8C%80%ED%95%99%EA%B5%90-%EC%97%AC%EB%A6%84-%ED%95%B4%EC%BB%A4%ED%86%A4-%ED%9B%84%EA%B8%B0",
+    "linkName": "2022 고려대학교 여름 해커톤 후기"
+  },
+  "links": {
+    "github": "https://github.com/woog2roid/devel5pers-connecthon",
+    "siteUrl": "https://devel5per-connecthon.herokuapp.com/"
+  }
+}

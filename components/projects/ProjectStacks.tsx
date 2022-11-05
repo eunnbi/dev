@@ -1,5 +1,40 @@
 import styled, { useTheme } from "styled-components";
 
+const ProjectStacks = ({ stacks }: Pick<Project, "stacks">) => {
+  const { feStacks, beStacks, deployStacks } = stacks;
+  const { name } = useTheme();
+  return (
+    <article>
+      <h3>Stack</h3>
+      <StackList>
+        {feStacks.length === 0
+          ? undefined
+          : feStacks.map((stack, index) => (
+              <Tag key={index} color={name === "light" ? "EDE1EC" : "a17c9e"}>
+                {stack}
+              </Tag>
+            ))}
+        {beStacks.length === 0
+          ? undefined
+          : beStacks?.map((stack, index) => (
+              <Tag key={index} color={name === "light" ? "E3EFD9" : "8b9981"}>
+                {stack}
+              </Tag>
+            ))}
+        {deployStacks.length === 0
+          ? undefined
+          : deployStacks?.map((stack, index) => (
+              <Tag key={index} color={name === "light" ? "DCE6EE" : "8aa4ba"}>
+                {stack}
+              </Tag>
+            ))}
+      </StackList>
+    </article>
+  );
+};
+
+export default ProjectStacks;
+
 const StackList = styled.ul`
   display: flex;
   flex-wrap: wrap;
@@ -14,41 +49,3 @@ const Tag = styled.div<{ color: string }>`
   border-radius: 5px;
   background-color: ${({ color }) => `#${color}`};
 `;
-
-interface ProjectStacksProps {
-  feStacks?: string[];
-  beStacks?: string[];
-  deployStacks?: string[];
-}
-
-const ProjectStacks = ({
-  feStacks,
-  beStacks,
-  deployStacks,
-}: ProjectStacksProps) => {
-  const { name } = useTheme();
-  return (
-    <article>
-      <h3>Stack</h3>
-      <StackList>
-        {feStacks?.map((stack, index) => (
-          <Tag key={index} color={name === "light" ? "EDE1EC" : "a17c9e"}>
-            {stack}
-          </Tag>
-        ))}
-        {beStacks?.map((stack, index) => (
-          <Tag key={index} color={name === "light" ? "E3EFD9" : "8b9981"}>
-            {stack}
-          </Tag>
-        ))}
-        {deployStacks?.map((stack, index) => (
-          <Tag key={index} color={name === "light" ? "DCE6EE" : "8aa4ba"}>
-            {stack}
-          </Tag>
-        ))}
-      </StackList>
-    </article>
-  );
-};
-
-export default ProjectStacks;

@@ -1,0 +1,31 @@
+{
+  "title": "Link Memo 프로젝트",
+  "period": "2022.06 ~ 2022.07",
+  "imageCnt": 5,
+  "tags": ["React Component Pattern", "Mobile First Design"],
+  "category": "Personal",
+  "overview": "나에게 도움이 되는 자료의 링크 주소나 나중에 볼 링크 주소를 메모 형식으로 저장하고 관리할 수 있는 애플리케이션입니다. 링크 주소를 나만의 카테고리별로 저장할 수 있고, 검색 기능을 통해 저장된 링크 주소 메모를 쉽게 찾을 수 있습니다. 자주 방문하는 링크 주소는 즐겨찾기에 추가할 수 있습니다.",
+  "stacks": {
+    "feStacks": [
+      "TypeScript",
+      "React",
+      "Redux",
+      "React Query",
+      "Styled Components"
+    ],
+    "beStacks": ["Python", "Flask", "PostgreSQL"],
+    "deployStacks": ["Netlify", "AWS Lambda"]
+  },
+  "participation": {
+    "member": "개인 프로젝트"
+  },
+  "review": {
+    "text": "모아모아 프로젝트 이후 컴포넌트 설계에 대한 부족함을 느껴 리액트 컴포넌트 설계에 대해 공부도 할겸 이 프로젝트를 시작했다. Component & Hooks Pattern을 이용하고, 컴포넌트의 의존성을 분석하며 컴포넌트를 설계했다. \"관심사 분리\"에 많은 신경을 썼고,  \"관심사 분리\"가 왜 중요한지 다시 리마인드 할 수 있었다. React는 개발자의 자율성이 높은 라이브러리라서 컴포넌트를 다양한 방식으로 설계할 수 있다.  하지만, 자율성이 부여된 만큼 컴포넌트 설계와 성능에 신경을 써야 하고, 클린코드를 작성해야 한다는 책임감을 가져야 한다는 것을 느꼈다. 😁",
+    "link": "https://velog.io/@eunnbi/Project-Link-Memo-Project-%ED%9A%8C%EA%B3%A0",
+    "linkName": "Link Memo 프로젝트 회고글 보러가기"
+  },
+  "links": {
+    "github": "https://github.com/eunnbi/link-memo",
+    "siteUrl": "https://link-memo.netlify.app/"
+  }
+}

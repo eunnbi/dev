@@ -10,10 +10,14 @@ const CustomHead = ({ page, description, image }: CustomHeadProps) => {
   return (
     <Head>
       <title>{page}</title>
-      <meta property="author" content="강은비" />
+      <meta name="author" content="강은비" />
       <meta
-        property="description"
+        name="description"
         content={description ? description : "은비의 개발 성장 일지"}
+      />
+      <meta
+        name="keywords"
+        content="개발자, 웹, 프론트엔드, 블로그, 프로젝트"
       />
       <meta
         property="og:description"

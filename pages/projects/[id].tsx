@@ -1,59 +1,118 @@
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
-import ProjectDetails from "../../components/projects/ProjectDetailSection";
 import CustomHead from "@components/common/CustomHead";
-import ProjectHeader from "@components/projects/ProjectHeader";
-import { PROJECTS } from "@data/projects";
 import styled from "styled-components";
+import { getProjectData, getProjectIds } from "@lib/projects";
+import ImageSlider from "@components/projects/ImageSlider";
+import ProjectLinks from "@components/projects/ProjectLinks";
+import ProjectStacks from "@components/projects/ProjectStacks";
+import ProjectTags from "@components/projects/ProjectTags";
 
 const ProjectPage = ({
-  project,
+  project
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const {
+    id,
+    title,
+    period,
+    imageCnt,
+    overview,
+    tags,
+    stacks,
+    review,
+    participation,
+    links
+  } = project;
+  const images = Array(imageCnt)
+    .fill(1)
+    .map((elem, index) => `/images/projects/${id}/${elem + index}.png`);
   return (
     <>
       <CustomHead
-        page={project.title}
-        description={project.overview}
-        image={
-          project.images.length === 0
-            ? undefined
-            : `/images/projects/${project.images[0]}`
-        }
+        page={title}
+        description={overview}
+        image={imageCnt === 0 ? undefined : `/images/projects/${id}/1.png`}
       />
       <Main>
-        <ProjectHeader title={project.title} />
-        <ProjectDetails project={project} />
+        <h1>{title}</h1>
+        {images.length === 0 ? null : <ImageSlider images={images} />}
+        <Section>
+          <p className="project-period">⏰ {period}</p>
+          <ProjectTags tags={tags} />
+          <article>
+            <h3>Overview</h3>
+            <p>{overview}</p>
+          </article>
+          <ProjectStacks stacks={stacks} />
+          <article>
+            <h3>Member</h3>
+            <p>{participation.member}</p>
+            {participation.role && <p>{participation.role}</p>}
+          </article>
+          {(review.text || (review.link && review.linkName)) && (
+            <article>
+              <h3>Review</h3>
+              <p>{review.text}</p>
+              <a href={review.link} target="_blank" rel="noreferrer">
+                🚀 <span>{review.linkName}</span>
+              </a>
+            </article>
+          )}
+          <ProjectLinks links={links} />
+        </Section>
       </Main>
     </>
   );
 };
 
-export default ProjectPage;
-
 const Main = styled.main`
   display: flex;
   flex-direction: column;
-  gap: 3.5rem;
   align-items: center;
-  padding-top: 1.5rem;
+  gap: 3rem;
+  width: 100%;
+  margin: 40px 0;
+  h1 {
+    font-size: 2.2rem;
+    text-align: center;
+  }
 `;
 
-export const getStaticPaths = async () => {
-  const paths = PROJECTS.map((project) => ({
-    params: { id: String(project.id) },
-  }));
+const Section = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  .project-period {
+    font-size: 1.05rem;
+  }
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    h3 {
+      font-size: 1.25rem;
+    }
+    p {
+      font-size: 1.1rem;
+    }
+    a:hover span {
+      text-decoration: underline;
+    }
+  }
+`;
 
+export default ProjectPage;
+
+export const getStaticPaths = async () => {
+  const paths = getProjectIds();
   return { paths, fallback: false };
 };
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const id = context.params!.id;
-  const project = PROJECTS.find(
-    (project) => String(project.id) === id
-  ) as ProjectItem;
+  const project = getProjectData(id as string);
   return {
     props: {
-      id,
-      project,
-    },
+      project
+    }
   };
 };

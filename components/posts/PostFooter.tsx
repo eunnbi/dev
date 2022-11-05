@@ -1,43 +1,39 @@
 import styled from "styled-components";
-import { usePostInfo } from "./hooks/usePostInfo";
+import { usePostInfo } from "@hooks/usePostInfo";
 import { FiArrowRight, FiArrowLeft } from "react-icons/fi";
 import Link from "next/link";
-import AuthorInfo from "./AuthorInfo";
 
 const PostFooter = () => {
   const { prev, next } = usePostInfo();
   return (
-    <div>
-      {/*<AuthorInfo />*/}
-      <Bottom>
-        {prev ? (
-          <Link href={`/posts/${prev.id}`}>
-            <Box>
-              <FiArrowLeft />
-              <p>{prev.title}</p>
-            </Box>
-          </Link>
-        ) : (
-          <div></div>
-        )}
-        {next ? (
-          <Link href={`/posts/${next.id}`}>
-            <Box>
-              <p>{next.title}</p>
-              <FiArrowRight />
-            </Box>
-          </Link>
-        ) : (
-          <div></div>
-        )}
-      </Bottom>
-    </div>
+    <Section>
+      {prev ? (
+        <Link href={`/posts/${prev.id}`}>
+          <Box>
+            <FiArrowLeft />
+            <p>{prev.title}</p>
+          </Box>
+        </Link>
+      ) : (
+        <div></div>
+      )}
+      {next ? (
+        <Link href={`/posts/${next.id}`}>
+          <Box>
+            <p>{next.title}</p>
+            <FiArrowRight />
+          </Box>
+        </Link>
+      ) : (
+        <div></div>
+      )}
+    </Section>
   );
 };
 
 export default PostFooter;
 
-const Bottom = styled.div`
+const Section = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;

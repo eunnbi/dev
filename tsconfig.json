@@ -19,9 +19,9 @@
       "@components/*": ["components/*"],
       "@data/*": ["data/*"],
       "@hooks/*": ["hooks/*"],
-      "@store/*": ["store/*"],
+      "@stores/*": ["stores/*"],
       "@lib/*": ["lib/*"],
-      "@context/*": ["context/*"],
+      "@contexts/*": ["contexts/*"],
       "@styles/*": ["styles/*"]
     }
   },

@@ -38,8 +38,8 @@ preview: "🚗 Framework 코드의 품질, 필수적인 코드, 알고리즘, �
 
 <br/><br/>
 
-![framework vs library (1)](framework-vs-library-1.png)
-![framework vs library (2)](framework-vs-library-2.png)
+![framework vs library (1)](1.png)
+![framework vs library (2)](2.png)
 
 <br/><br/>
 

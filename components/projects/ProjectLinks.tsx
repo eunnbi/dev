@@ -1,12 +1,8 @@
 import { BsLink45Deg, BsGithub } from "react-icons/bs";
 import styled from "styled-components";
 
-interface ProjectLinksProps {
-  github: string;
-  link: string;
-}
-
-const ProjectLinks = ({ github, link }: ProjectLinksProps) => {
+const ProjectLinks = ({ links }: Pick<Project, "links">) => {
+  const { github, siteUrl } = links;
   return (
     <Links>
       {github && (
@@ -16,9 +12,9 @@ const ProjectLinks = ({ github, link }: ProjectLinksProps) => {
           </a>
         </li>
       )}
-      {link && (
+      {siteUrl && (
         <li>
-          <a href={link} target="_blank" rel="noreferrer">
+          <a href={siteUrl} target="_blank" rel="noreferrer">
             <BsLink45Deg />
           </a>
         </li>

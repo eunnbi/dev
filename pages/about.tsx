@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
-import CareerSection from "../components/career/CareerSection";
+import CareerSection from "../components/about/career/CareerSection";
 import CustomHead from "@components/common/CustomHead";
-import MyInfoSection from "@components/myinfo/MyInfoSection";
-import SkillsSection from "@components/skills/SkillSection";
+import MyInfoSection from "@components/about/myinfo/MyInfoSection";
+import SkillsSection from "@components/about/skills/SkillSection";
 import styled from "styled-components";
 
 const AboutPage: NextPage = () => {
@@ -24,5 +24,5 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   gap: 80px;
-  margin-top: 60px;
+  margin: 30px 0;
 `;

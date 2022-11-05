@@ -1,27 +1,22 @@
 import styled from "styled-components";
 import Header from "./Header";
 
-interface LayoutProps {
-  headerExist: boolean;
-}
-
-const Layout = ({
-  children,
-  headerExist,
-}: React.PropsWithChildren<LayoutProps>) => {
+const Layout = ({ children }: React.PropsWithChildren) => {
   return (
     <>
-      {headerExist && <Header />}
-      <Wrapper>{children}</Wrapper>
+      <Header />
+      <LayoutBox>{children}</LayoutBox>
     </>
   );
 };
 
 export default Layout;
 
-const Wrapper = styled.div`
-  padding: 0 15px;
+const LayoutBox = styled.div`
   width: 100%;
   max-width: 720px;
   margin: 0 auto;
+  @media screen and (max-width: 720px) {
+    padding: 0 15px;
+  }
 `;

@@ -1,0 +1,32 @@
+{
+  "title": "PetBook 프로젝트",
+  "period": "2022.06 ~ (진행중)",
+  "imageCnt": 0,
+  "tags": ["첫 NextJS 프로젝트", "디자이너와의 협업"],
+  "category": "Team",
+  "overview": "이색 반려동물과 함께하는 집사님들을 위한 정보제공 포털 및 커뮤니티 서비스를 목표로 하고 있습니다. 주변에서 우리 아이와 같은 반려동물 친구를 찾거나, 찾기 힘들었던 전문 종합 동물 병원을 쉽게 찾아보실 수 있는 서비스를 제공합니다. 또한, 집사님들의 노하우를 공유할 있는 게시판 공간을 제공하여 이색 반려동물의 정보를 찾는 것에 대한 어려움을 해소할 수 있습니다.",
+  "stacks": {
+    "feStacks": [
+      "TypeScript",
+      "React",
+      "Redux",
+      "React Query",
+      "Styled Components"
+    ],
+    "beStacks": ["Spring Framework", "MySQL", "Redis"],
+    "deployStacks": ["Netlify", "Heroku"]
+  },
+  "participation": {
+    "member": "백엔드 3명 / 프론트엔드 3명 / 디자이너 1명",
+    "role": "👉 본 프로젝트에서 프론트엔드 포지션을 맡았습니다."
+  },
+  "review": {
+    "text": "",
+    "link": "",
+    "linkName": ""
+  },
+  "links": {
+    "github": "https://github.com/K-Slave",
+    "siteUrl": ""
+  }
+}
