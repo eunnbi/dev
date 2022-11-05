@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { CategoriesContext } from "@context/posts/CategoriesContext";
+import { CategoriesContext } from "@contexts/posts/CategoriesContext";
 import Filter from "@components/common/Filter";
 import { useFilterIndex, useChangeFilter } from "@hooks/useFilter";
 
