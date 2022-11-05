@@ -45,7 +45,7 @@
 - meta 태그와 SEO에 대해 더 공부해서 페이지별 meta data 개선
 
 ## 2022.11.05
-- projects data를 json 파일로 관리
+- projects data를 `json` 파일로 관리
 
 - 데이터 모델별 이미지가 많아짐에 따라 [이미지 경로 규칙](https://github.com/eunnbi/dev/issues/6)을 정함
 - `next/image`를 통해 이미지 최적화에 더 신경 쓸 예정
@@ -61,4 +61,5 @@
 - [ ] `semantic tag` 공부 및 적용
 - [ ] meta 태그, SEO 공부 및 적용
 - [ ] 블로그 옮기기
+- [ ] nextjs 13 마이그레이션
 
