@@ -49,6 +49,7 @@ const Article = styled.article`
   h3 {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 5px;
     font-weight: bold;
     margin-bottom: 7px;
@@ -65,7 +66,7 @@ const Article = styled.article`
 
 const Preview = styled.p`
   margin-bottom: 10px;
-  line-height: 21px;
+  line-height: 1.3125rem;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
