@@ -133,3 +133,12 @@ function generateError(message: string, code: number): never {
   throw { message: message, errorCode: code };
 }
 ```
+
+<br/>
+
+# 10. undefined, null
+
+```ts
+const a: undefined = undefined;
+const b: null = null;
+```
