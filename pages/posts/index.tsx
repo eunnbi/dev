@@ -16,6 +16,7 @@ const PostsPage = ({
   return (
     <>
       <CustomHead page="Posts" />
+      <Notice />
       <Main>
         <Heading title="Posts" />
         <p>{posts.length} posts</p>

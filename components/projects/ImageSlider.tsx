@@ -1,4 +1,4 @@
-import { useSlider } from "@hooks/useSlider";
+import { useSlider } from "@hooks/common/useSlider";
 import styled from "styled-components";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 

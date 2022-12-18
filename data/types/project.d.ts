@@ -1,4 +1,5 @@
 interface Project {
+  order: number;
   id: string;
   title: string;
   period: string;

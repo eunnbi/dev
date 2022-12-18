@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ProjectsContext } from "@contexts/projects/ProjectsContext";
 import { CategoriesContext } from "@contexts/projects/CategoriesContext";
-import { useProjectFilterIndex } from "./useFilterIndex";
+import { useProjectFilterIndex } from "./common/useFilterIndex";
 
 export const useProjects = () => {
   const projects = useContext(ProjectsContext);
