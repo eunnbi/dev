@@ -23,10 +23,13 @@ const Section = styled.section`
 
 // ---------------------------------------------------
 
-const PostArticle = ({ id, title, date, category, preview }: Post) => {
+const PostArticle = ({ id, title, date, category, preview, emoji }: Post) => {
   return (
     <Article onClick={() => Router.push(`/posts/${id}`)}>
-      <h3>{title}</h3>
+      <h3>
+        <span>{emoji}</span>
+        {title}
+      </h3>
       <Preview>{preview}</Preview>
       <Bottom>
         <p>{convertDateFormat(date)}</p>
@@ -44,6 +47,9 @@ const Article = styled.article`
   padding: 1rem;
   border-radius: 6px;
   h3 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
     font-weight: bold;
     margin-bottom: 7px;
     font-size: 1.4rem;
