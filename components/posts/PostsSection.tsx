@@ -27,8 +27,8 @@ const PostArticle = ({ id, title, date, category, preview, emoji }: Post) => {
   return (
     <Article onClick={() => Router.push(`/posts/${id}`)}>
       <h3>
-        <span>{emoji}</span>
-        {title}
+        {emoji}
+        <span>{title}</span>
       </h3>
       <Preview>{preview}</Preview>
       <Bottom>
@@ -58,7 +58,7 @@ const Article = styled.article`
   p {
     font-size: 0.9rem;
   }
-  &:hover h3 {
+  &:hover h3 > span {
     text-decoration: underline;
   }
 `;
