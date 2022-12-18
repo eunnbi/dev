@@ -12,8 +12,16 @@ export const getSortedProjectsData = (): Project[] => {
     const data: Project = { id, ...JSON.parse(jsonData) };
     return data;
   });
-  // Sort posts by date
-  return allProjectsData;
+  // Sort projects by order
+  return allProjectsData.sort(({ order: a }, { order: b }) => {
+    if (a < b) {
+      return -1;
+    } else if (a > b) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
 };
 
 export const getProjectIds = () => {
