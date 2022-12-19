@@ -391,7 +391,7 @@
 .markdown-body ul,
 .markdown-body ol,
 .markdown-body li {
-  list-style: inherit;
+  list-style: auto;
 }
 
 .markdown-body ul,
