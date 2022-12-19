@@ -31,6 +31,7 @@ const ProjectPage = ({
         page={title}
         description={overview}
         image={imageCnt === 0 ? undefined : `/images/projects/${id}/1.png`}
+        keywords={tags}
       />
       <Main>
         <h1>{title}</h1>
