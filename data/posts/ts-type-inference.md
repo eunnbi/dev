@@ -164,10 +164,13 @@ x = mixed[1]; // ok
 
 - 타입 넓히기의 반대가 타입 좁히기이다.
 - **변수의 타입이 넓은 타입으로부터 좁은 타입으로 정의되는 과정**을 말한다.
+- 타입스크립트 컴파일러가 더 명확하게 타입을 예측할 수 있도록 한다.
+- **타입 가드**라고도 한다.
 
-가장 대표적인 타입 좁히기가 **null 체크**이다.
+대표적인 타입 좁히기 방법으로는 **조건문**이나 **typeof 연산자**를 이용하는 것이다.
 
 ```typescript
+// 조건문을 이용한 null 체크
 const el = document.getElementById("foo"); // el: HTMLElement | null
 if (el) {
   // el: HTMLElement
@@ -188,7 +191,7 @@ if (typeof el === "object") {
 }
 ```
 
-- 유니온 타입에서 null을 제외하려고 했지만, 잘못된 방법을 이용했다.
+- 유니온 타입에서 `null`을 제외하려고 했지만, 잘못된 방법을 이용했다.
 - 자바스크립트에서 `typeof null`이 `object`이기 때문에 조건문에서 `null` 타입이 제외되지 않았다.
 
 ```typescript
@@ -199,7 +202,7 @@ function foo(x?: number | string | null) {
 }
 ```
 
-- 변수 `x`의 타입을 `null | undefined`로 좁힐려고 했으나 빈 문자열과 0도 false가 되기 때문에, 타입이 좁혀지지 않았다.
+- 변수 `x`의 타입을 `null | undefined`로 좁힐려고 했으나 *빈 문자열*과 *0*도 false가 되기 때문에, 타입이 좁혀지지 않았다.
 
 **instanceof** 연산자를 이용하여 타입 좁히기를 수행할 수 있다.
 
@@ -214,7 +217,7 @@ function contains(text: string, search: string | RegExp) {
 }
 ```
 
-**속성체크**를 통해 타입을 좁힐 수 있다.
+`in` 연산자를 이용한 **속성체크**를 통해 타입을 좁힐 수 있다.
 
 ```typescript
 interface A {
@@ -234,15 +237,6 @@ function pickAB(ab: A | B) {
     console.log(ab.b);
   }
   // ab: A | B
-}
-```
-
-`Array.isArray`와 같은 **일부 내장 함수**로도 타입을 좁힐 수 있다.
-
-```typescript
-function contains(text: string, terms: string | string[]) {
-  const termList = Array.isArray(terms) ? terms : [terms];
-  // termList: string[]
 }
 ```
 
@@ -269,6 +263,15 @@ function handleEvent(e: AppEvent) {
     case "upload":
     // e: UploadEvent
   }
+}
+```
+
+`Array.isArray`와 같은 **일부 내장 함수**로도 타입을 좁힐 수 있다.
+
+```typescript
+function contains(text: string, terms: string | string[]) {
+  const termList = Array.isArray(terms) ? terms : [terms];
+  // termList: string[]
 }
 ```
 
