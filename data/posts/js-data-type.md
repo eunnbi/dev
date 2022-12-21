@@ -149,11 +149,38 @@ obj2 = { c: 20, d: "ddd" }; // 새로운 객체를 생성하여 변수 obj2에 �
 - **기본형 데이터를 인자로 전달할 때** 일어난다.
 - 값을 복사하여 전달했기 때문에 함수 실행 도중 인자의 값을 바꾸더라도 변경 사항이 원래의 데이터에 적용되지 않는다.
 
+```js
+const myInt = 1;
+
+function increase(value) {
+  return (value += 1);
+}
+
+console.log(myInt); // 1
+console.log(increase(myInt)); // 2
+console.log(myInt); // 1
+```
+
 #### Pass by Reference (참조에 의한 전달)
 
 - 인자로 넘기는 값의 메모리 주소를 함수에 전달한다.
 - **참조형 데이터를 인자로 전달할 때** 일어난다.
 - 메모리 상의 주소를 전달했기 때문에 함수 실행 도중 해당 값에 대한 수정 사항이 원래의 데이터에 그대로 적용된다.
+
+```js
+const myCar = {
+  maker: "bmw",
+  color: "red"
+};
+
+function changeColor(car) {
+  car.color = "blue";
+}
+
+console.log(myCar); // {maker : "bmw", color : "red"}
+changeColor(myCar);
+console.log(myCar); // {maker : "bmw", color : "blue"}
+```
 
 <br/>
 
