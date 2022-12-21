@@ -23,10 +23,13 @@ const Section = styled.section`
 
 // ---------------------------------------------------
 
-const PostArticle = ({ id, title, date, category, preview }: Post) => {
+const PostArticle = ({ id, title, date, category, preview, emoji }: Post) => {
   return (
     <Article onClick={() => Router.push(`/posts/${id}`)}>
-      <h3>{title}</h3>
+      <h3>
+        {emoji}
+        <span>{title}</span>
+      </h3>
       <Preview>{preview}</Preview>
       <Bottom>
         <p>{convertDateFormat(date)}</p>
@@ -44,6 +47,10 @@ const Article = styled.article`
   padding: 1rem;
   border-radius: 6px;
   h3 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
     font-weight: bold;
     margin-bottom: 7px;
     font-size: 1.4rem;
@@ -52,14 +59,14 @@ const Article = styled.article`
   p {
     font-size: 0.9rem;
   }
-  &:hover h3 {
+  &:hover h3 > span {
     text-decoration: underline;
   }
 `;
 
 const Preview = styled.p`
   margin-bottom: 10px;
-  line-height: 21px;
+  line-height: 1.3125rem;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;

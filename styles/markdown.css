@@ -388,10 +388,12 @@
   border-left: 0.25em solid var(--color-border-default);
 }
 
-.markdown-body ul,
-.markdown-body ol,
-.markdown-body li {
-  list-style: inherit;
+.markdown-body ul li {
+  list-style-type: disc;
+}
+
+.markdown-body ol li {
+  list-style-type: decimal;
 }
 
 .markdown-body ul,
@@ -730,6 +732,10 @@
 .markdown-body ol ul {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.markdown-body ul ul li {
+  list-style-type: circle;
 }
 
 .markdown-body li > p {

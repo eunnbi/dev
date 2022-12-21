@@ -18,6 +18,7 @@ const Markdown = () => {
         }
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeRaw, rehypeSlug]}
+        linkTarget={"_blank"}
         transformImageUri={src => `/images/posts/${current.id}/${src}`}
         components={{
           code({ node, inline, className, children, ...props }) {
