@@ -38,15 +38,27 @@ const Markdown = () => {
           },
           h1({ children }) {
             const id = String(children[0]).replaceAll(" ", "-").toLowerCase();
-            return <h1 id={id}>{children}</h1>;
+            return (
+              <h1 id={id}>
+                <a href={`#${id}`}>{children}</a>
+              </h1>
+            );
           },
           h2({ children }) {
             const id = String(children[0]).replaceAll(" ", "-").toLowerCase();
-            return <h2 id={id}>{children}</h2>;
+            return (
+              <h2 id={id}>
+                <a href={`#${id}`}>{children}</a>
+              </h2>
+            );
           },
           h3({ children }) {
             const id = String(children[0]).replaceAll(" ", "-").toLowerCase();
-            return <h3 id={id}>{children}</h3>;
+            return (
+              <h3 id={id}>
+                <a href={`#${id}`}>{children}</a>
+              </h3>
+            );
           }
         }}
       >
