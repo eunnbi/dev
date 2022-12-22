@@ -4,7 +4,6 @@ import ProjectTags from "./ProjectTags";
 import ProjectLinks from "./ProjectLinks";
 import styled from "styled-components";
 import Router from "next/router";
-import { NextImageWrapper } from "../common/NextImageWrapper.styled";
 
 const ProjectsSection = () => {
   const projects = useProjects();
@@ -47,14 +46,12 @@ const ProjectArticle = ({ title, imageCnt, tags, links, id }: Project) => {
         <Image
           src={imageSrc}
           alt="project thumbnail"
-          layout="fill"
+          fill
           placeholder="blur"
           blurDataURL={imageSrc}
         />
       </ImageWrapper>
-      <div>
-        <ProjectTags tags={tags} />
-      </div>
+      <ProjectTags tags={tags} />
     </Article>
   );
 };
@@ -64,18 +61,21 @@ const Article = styled.article`
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2rem;
 `;
 
-const ImageWrapper = styled(NextImageWrapper)`
+const ImageWrapper = styled.div`
   width: 90%;
+  height: 60vw;
   margin: 0 auto;
   position: relative;
   box-shadow: ${({ theme }) => `1px 5px 15px ${theme.color.shadowColor}`};
   border-radius: 5px;
-  max-height: 455px;
+  max-height: 450px;
   img {
     border-radius: 5px;
+    object-fit: cover;
   }
 `;
 
@@ -83,6 +83,7 @@ const Row = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 90%;
 `;
 
 export default ProjectsSection;

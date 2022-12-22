@@ -23,6 +23,18 @@ const bob = { name: "Bob" } as Person; // 단언
 
 <br/>
 
+> **`<>` 연산자를 이용한 형변환 (Type Casting)**
+>
+> ```js
+> const smith = <Person>{ name: "Smith" };
+> ```
+>
+> ```js
+> let input = <HTMLInputElement>document.querySelector('input>[type="text"]'); // Element | null => HTMLInputElement
+> ```
+
+<br/>
+
 ## 둘 중에 어느 방법을 택해야 할까? 🤔
 
 ```typescript

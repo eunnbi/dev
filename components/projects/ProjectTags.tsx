@@ -4,9 +4,7 @@ const ProjectTags = ({ tags }: Pick<Project, "tags">) => {
   return (
     <TagWrapper>
       {tags.map((tag, index) => (
-        <TagItem key={index}>
-          <span></span> {tag}
-        </TagItem>
+        <TagItem key={index}>{tag}</TagItem>
       ))}
     </TagWrapper>
   );

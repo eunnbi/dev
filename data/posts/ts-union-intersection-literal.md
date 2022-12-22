@@ -94,52 +94,55 @@ function introduce(someone: Person | Developer) {
 
 1.  `in` 연산자 이용하여 속성 확인하기
 
-    > ```typescript
-    > function introduce(someone: Person | Developer) {
-    >   if ("name" in someone) {
-    >     someone.name; // O 정상 동작
-    >   }
-    > }
-    > ```
+    ```typescript
+    function introduce(someone: Person | Developer) {
+      if ("name" in someone) {
+        someone.name; // O 정상 동작
+      }
+    }
+    ```
 
 2.  `tagged union` (태그 기법)
 
-    > ```typescript
-    > interface Person {
-    >   name: string;
-    >   age: number;
-    >   kind: "person";
-    > }
-    >
-    > interface Developer {
-    >   name: string;
-    >   skill: string;
-    >   kind: "developer";
-    > }
-    >
-    > function introduce(someone: Person | Developer) {
-    >   if (someone.kind == "developer") {
-    >     someone.skill; // O 정상동작
-    >   }
-    > }
-    > ```
+    ```typescript
+    interface Person {
+      name: string;
+      age: number;
+      kind: "person";
+    }
+
+    interface Developer {
+      name: string;
+      skill: string;
+      kind: "developer";
+    }
+
+    function introduce(someone: Person | Developer) {
+      if (someone.kind == "developer") {
+        someone.skill; // O 정상동작
+      }
+    }
+    ```
 
 3.  `class`<br/>
     `interface`는 타입으로만 사용할 수 있지만, `class`는 타입과 값으로 모두 사용할 수 있다.
-    > ```typescript
-    > class Person {
-    >   constructor(public name: string, public age: number) {}
-    > }
-    > class Developer {
-    >   constructor(public name: string, public skill: string) {}
-    > }
-    >
-    > function introduce(someone: Person | Developer) {
-    >   if (someone instanceof Developer) {
-    >     someone.skill; // O 정상동작
-    >   }
-    > }
-    > ```
+
+    ```typescript
+    class Person {
+      constructor(public name: string, public age: number) {}
+    }
+    class Developer {
+      constructor(public name: string, public skill: string) {}
+    }
+
+    function introduce(someone: Person | Developer) {
+      if (someone instanceof Developer) {
+        someone.skill; // O 정상동작
+      }
+    }
+    ```
+
+> [타입 좁히기 (타입 가드)에 대해 더 알아보기](https://www.eunnbi.dev/posts/ts-type-inference#3.-%ED%83%80%EC%9E%85-%EC%A2%81%ED%9E%88%EA%B8%B0)
 
 <br/>
 
