@@ -22,7 +22,7 @@ const PostPage = (data: InferGetStaticPropsType<typeof getStaticProps>) => {
         <Main>
           <PostHeader />
           <Markdown />
-          <PostToc />
+          {/*<PostToc />*/}
           <PostFooter />
           <Utterances />
         </Main>
