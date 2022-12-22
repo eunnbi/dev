@@ -1,8 +1,9 @@
 import type { NextPage } from "next";
+import Image from "next/image";
 import { useEffect } from "react";
 import CustomHead from "@components/common/CustomHead";
-import KeywordsSection from "@components/about/keywords/KeywordsSection";
 import styled from "styled-components";
+import KeywordsRotatingText from "@components/common/KeywordsRotatingText";
 
 const HomePage: NextPage = () => {
   useEffect(() => {
@@ -13,7 +14,12 @@ const HomePage: NextPage = () => {
     <>
       <CustomHead page="Home" />
       <Main>
-        <KeywordsSection />
+        <Section>
+          <KeywordsRotatingText />
+          <ImageWrapper>
+            <Image src="/images/profile.png" alt="profile" fill priority />
+          </ImageWrapper>
+        </Section>
       </Main>
     </>
   );
@@ -30,6 +36,31 @@ const Main = styled.main`
   }
   &::-webkit-scrollbar {
     display: none;
+  }
+`;
+
+const Section = styled.section`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transform: translateY(-60px);
+  @media ${({ theme }) => theme.device.mobile} {
+    flex-direction: column-reverse;
+    justify-content: center;
+    gap: 3rem;
+  }
+`;
+
+const ImageWrapper = styled.div`
+  position: relative;
+  width: 30vw;
+  height: 30vw;
+  max-width: 250px;
+  max-height: 250px;
+  min-width: 150px;
+  min-height: 150px;
+  img {
+    object-fit: contain;
   }
 `;
 
