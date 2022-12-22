@@ -45,6 +45,7 @@
 - meta 태그와 SEO에 대해 더 공부해서 페이지별 meta data 개선
 
 ## 2022.11.05
+
 - projects data를 `json` 파일로 관리
 
 - 데이터 모델별 이미지가 많아짐에 따라 [이미지 경로 규칙](https://github.com/eunnbi/dev/issues/6)을 정함
@@ -54,12 +55,26 @@
 
 > 잠시 멈추고 방학되면 다시 개발 시작!
 
+## 2022.12.22
+
+- 최신 버전으로 업데이트!
+  ```cmd
+  npm i next@latest react@latest react-dom@latest eslint-config-next@latest
+  # or
+  yarn add next@latest react@latest react-dom@latest eslint-config-next@latest
+  # or
+  pnpm up next react react-dom eslint-config-next --latest
+  ```
+  - `Link` 컴포넌트와 `Image` 컴포넌트 리팩터링 (레거시 코드 수정)
+  - `app` 디렉토리는 아직 `Beta` 버전이라서 보류
+- `babel` 대신 `swc` 사용
+- 자바스크립트와 타입스크립트 관련 블로그들 옮기는 중, 12월 이내로 완료 예정
+
 ## 📝 Tasks
 
 - [x] 아이폰 사파리 `height: 100vh` 버그 해결
 - [x] projects data 관리 방식 개선
-- [ ] `semantic tag` 공부 및 적용
 - [ ] meta 태그, SEO 공부 및 적용
-- [ ] 블로그 옮기기
-- [ ] nextjs 13 마이그레이션
-
+- [ ] `semantic tag` 공부 및 적용
+- [ ] 블로그 옮기기 (-ing)
+- [ ] nextjs 13 마이그레이션 (-ing)
