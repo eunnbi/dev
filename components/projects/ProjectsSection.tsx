@@ -47,14 +47,12 @@ const ProjectArticle = ({ title, imageCnt, tags, links, id }: Project) => {
         <Image
           src={imageSrc}
           alt="project thumbnail"
-          layout="fill"
+          fill
           placeholder="blur"
           blurDataURL={imageSrc}
         />
       </ImageWrapper>
-      <div>
-        <ProjectTags tags={tags} />
-      </div>
+      <ProjectTags tags={tags} />
     </Article>
   );
 };
@@ -64,6 +62,7 @@ const Article = styled.article`
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2rem;
 `;
 
@@ -83,6 +82,7 @@ const Row = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 90%;
 `;
 
 export default ProjectsSection;
