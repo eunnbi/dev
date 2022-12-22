@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import Image from "next/image";
-import { useEffect } from "react";
 import CustomHead from "@components/common/CustomHead";
 import styled from "styled-components";
 import KeywordsRotatingText from "@components/common/KeywordsRotatingText";
