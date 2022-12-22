@@ -8,13 +8,11 @@ const PostHeader = () => {
   return (
     <Section>
       <span className="emoji">{emoji}</span>
-
-      <h1>{title}</h1>
       <div>
-        <span>{category}</span>
-        <span>/</span>
-        <span>{convertDateFormat(date)}</span>
+        <h1>{title}</h1>
+        <span className="category">{category}</span>
       </div>
+      <span className="date">{convertDateFormat(date)}</span>
     </Section>
   );
 };
@@ -24,7 +22,6 @@ export default PostHeader;
 const Section = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 5px;
   padding-bottom: 10px;
   border-bottom: 1px solid lightgray;
   h1 {
@@ -34,13 +31,22 @@ const Section = styled.section`
   & > div {
     display: flex;
     align-items: center;
-    gap: 10px;
-    color: #a8a8a8;
-    line-height: 1.5;
-    font-weight: 500;
+    gap: 0.8rem;
   }
   .emoji {
     font-size: 5rem;
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
+  }
+  .category {
+    background-color: ${({ theme }) => theme.color.tabSelectedBgColor};
+    color: ${({ theme }) => theme.color.tabTextColor};
+    padding: 0.1rem 0.5rem;
+    border-radius: 10px;
+    font-size: 0.8rem;
+  }
+  .date {
+    color: #a8a8a8;
+    font-weight: 500;
+    margin-top: 0.5rem;
   }
 `;
