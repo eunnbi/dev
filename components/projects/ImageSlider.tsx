@@ -1,31 +1,55 @@
 import { useSlider } from "@hooks/common/useSlider";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 interface ImageSlierProps {
   images: string[];
 }
 
+const getPosittion = (index: number, positionIndex: PositionIndex) => {
+  return index === positionIndex.current
+    ? "current"
+    : index === positionIndex.prev
+    ? "prev"
+    : "next";
+};
+
 const ImageSlider = ({ images }: ImageSlierProps) => {
-  const { position, moveNext, movePrev } = useSlider(images.length);
+  const { positionIndex, moveNext, movePrev } = useSlider(images.length);
   return (
     <SliderSection>
-      <button>
-        <FiChevronLeft onClick={movePrev} />
-      </button>
-      <ImageList images={images} position={position} />
-      <button>
-        <FiChevronRight onClick={moveNext} />
-      </button>
+      <div>
+        <button type="button" onClick={movePrev}>
+          <FiChevronLeft />
+        </button>
+        <ImageList images={images} positionIndex={positionIndex} />
+        <button type="button" onClick={moveNext}>
+          <FiChevronRight />
+        </button>
+      </div>
+      <div>
+        {images.map((image, index) => (
+          <PageButton
+            key={image}
+            position={getPosittion(index, positionIndex)}
+          />
+        ))}
+      </div>
     </SliderSection>
   );
 };
 
 const SliderSection = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
   width: 100%;
+  & > div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
   svg {
     color: ${({ theme }) => theme.color.textColor};
     font-size: 1.5rem;
@@ -33,26 +57,29 @@ const SliderSection = styled.div`
   }
 `;
 
+const PageButton = styled.button<{ position: Position }>`
+  width: ${({ position }) => (position === "current" ? "1rem" : "0.5rem")};
+  height: 0.5rem;
+  cursor: auto;
+  background-color: ${({ position }) =>
+    position === "current" ? "#000" : "lightgray"};
+  border-radius: ${({ position }) => (position === "current" ? "16px" : "50%")};
+`;
+
 // ---------------------------------------------------
 
 interface ImageListProps extends ImageSlierProps {
-  position: Position;
+  positionIndex: PositionIndex;
 }
 
-const ImageList = ({ position, images }: ImageListProps) => {
+const ImageList = ({ positionIndex, images }: ImageListProps) => {
   return (
     <List>
       {images.map((image, index) => (
         <ImageItem
-          key={index}
+          key={image}
           index={index}
-          position={
-            index === position.current
-              ? "current"
-              : index === position.prev
-              ? "prev"
-              : "next"
-          }
+          position={getPosittion(index, positionIndex)}
           src={image}
         />
       ))}
@@ -74,7 +101,7 @@ const List = styled.ul`
   }
 `;
 
-const ImageItem = styled.img<{ position: string; index: number }>`
+const ImageItem = styled.img<{ position: Position; index: number }>`
   object-fit: contain;
   width: 100%;
   transition: all 0.3s ease-in-out;
