@@ -4,9 +4,17 @@ interface CustomHeadProps {
   page: string;
   description?: string;
   image?: string;
+  keywords?: string[];
 }
 
-const CustomHead = ({ page, description, image }: CustomHeadProps) => {
+const BASE_KEYWORDS = ["개발자", "웹", "프론트엔드", "블로그", "프로젝트"];
+
+const CustomHead = ({
+  page,
+  description,
+  image,
+  keywords
+}: CustomHeadProps) => {
   return (
     <Head>
       <title>{page}</title>
@@ -17,7 +25,11 @@ const CustomHead = ({ page, description, image }: CustomHeadProps) => {
       />
       <meta
         name="keywords"
-        content="개발자, 웹, 프론트엔드, 블로그, 프로젝트"
+        content={
+          keywords
+            ? [...BASE_KEYWORDS, ...keywords].join(", ")
+            : BASE_KEYWORDS.join(", ")
+        }
       />
       <meta
         property="og:description"

@@ -3,7 +3,7 @@ emoji: 💬
 title: 자주 쓰는 Git 명령어
 date: "2022-10-20"
 category: Git
-preview: "1. 새로운 git repository 생성 및 초기화 git init 2. 원격 저장소 확인 및 추가 git remote -v git remote add name repo-url #### 보통 origin으로 추가 3. 브랜치 생성 #### 로컬 브랜치 생성 git checkout -b branch-name #### 리모트 브랜치 생성 git push origin branch-name 4. 브랜치 삭제 #### 로컬 브랜치 삭제 git branch -D branch-name #### 리모트 브랜치 삭제 git push origin --delete branch-name"
+preview: "1. 새로운 git repository 생성 및 초기화 git init 2. 원격 저장소 확인 및 추가 git remote -v git remote add name repo-url 보통 origin으로 추가 3. 브랜치 생성 로컬 브랜치 생성 git checkout -b branch-name 리모트 브랜치 생성 git push origin branch-name 4. 브랜치 삭제 로컬 브랜치 삭제 git branch -D branch-name 리모트 브랜치 삭제 git push origin --delete branch-name"
 ---
 
 ## 1. 새로운 git repository 생성 및 초기화

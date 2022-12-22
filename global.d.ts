@@ -1,7 +1,9 @@
-interface Position {
+interface PositionIndex {
   current: number;
   prev: number;
 }
+
+type Position = "current" | "prev" | "next";
 
 type FilterIndex = number;
 

@@ -23,6 +23,6 @@ export default AboutPage;
 const Main = styled.main`
   display: flex;
   flex-direction: column;
-  gap: 80px;
-  margin: 30px 0;
+  gap: 5rem;
+  margin: 2rem 0;
 `;

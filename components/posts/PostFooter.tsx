@@ -8,22 +8,18 @@ const PostFooter = () => {
   return (
     <Section>
       {prev ? (
-        <Link href={`/posts/${prev.id}`}>
-          <Box>
-            <FiArrowLeft />
-            <p>{prev.title}</p>
-          </Box>
-        </Link>
+        <Box href={`/posts/${prev.id}`}>
+          <FiArrowLeft />
+          <p>{prev.title}</p>
+        </Box>
       ) : (
         <div></div>
       )}
       {next ? (
-        <Link href={`/posts/${next.id}`}>
-          <Box>
-            <p>{next.title}</p>
-            <FiArrowRight />
-          </Box>
-        </Link>
+        <Box href={`/posts/${next.id}`}>
+          <p>{next.title}</p>
+          <FiArrowRight />
+        </Box>
       ) : (
         <div></div>
       )}
@@ -39,7 +35,7 @@ const Section = styled.section`
   align-items: center;
 `;
 
-const Box = styled.a`
+const Box = styled(Link)`
   display: flex;
   align-items: center;
   gap: 10px;

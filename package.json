@@ -15,10 +15,10 @@
     "@mui/styled-engine-sc": "^5.10.6",
     "fs": "^0.0.1-security",
     "gray-matter": "^4.0.3",
-    "next": "12.1.6",
+    "next": "^13.0.7",
     "path": "^0.12.7",
-    "react": "18.1.0",
-    "react-dom": "18.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-markdown": "^8.0.3",
     "react-rotating-text": "^1.4.1",
@@ -38,7 +38,7 @@
     "@types/react-syntax-highlighter": "^15.5.5",
     "@types/styled-components": "^5.1.25",
     "eslint": "8.17.0",
-    "eslint-config-next": "12.1.6",
+    "eslint-config-next": "^13.0.7",
     "typescript": "4.7.3"
   }
 }

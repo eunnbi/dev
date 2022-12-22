@@ -5,15 +5,9 @@ import React from "react";
 const Nav = ({ show }: { show: boolean }) => {
   return (
     <StyledNav show={show}>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-      <Link href="/projects">
-        <a>Projects</a>
-      </Link>
-      <Link href="/posts">
-        <a>Posts</a>
-      </Link>
+      <Link href="/about">About</Link>
+      <Link href="/projects">Projects</Link>
+      <Link href="/posts">Posts</Link>
     </StyledNav>
   );
 };
