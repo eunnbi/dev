@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Image from "next/image";
-import { NextImageWrapper } from "@components/common/NextImageWrapper.styled";
 
 const SkillList = ({ skills }: { skills: Skill[] }) => {
   return (
@@ -24,7 +23,7 @@ const SkillItem = ({ id, tech }: Skill) => {
       <ImageWrapper>
         <Image
           src={`/images/skills/${id}.png`}
-          layout="fill"
+          fill
           placeholder="blur"
           blurDataURL={`/images/skills/${id}.png`}
           alt={tech}
@@ -46,7 +45,7 @@ const Item = styled.li`
   }
 `;
 
-const ImageWrapper = styled(NextImageWrapper)`
+const ImageWrapper = styled.div`
   position: relative;
   width: 20vw;
   height: 20vw;
