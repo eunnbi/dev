@@ -6,13 +6,19 @@ import styled from "styled-components";
 const PostToc = () => {
   const { current } = usePostInfo();
   return (
-    <section>
+    <Section>
       <CustomToc markdownText={current.content} lowestHeadingLevel={3} />
-    </section>
+    </Section>
   );
 };
 
 export default PostToc;
+
+const Section = styled.section`
+  @media screen and (max-width: 1400px) {
+    display: none;
+  }
+`;
 
 const CustomToc = styled(Toc)`
   position: fixed;
@@ -26,8 +32,5 @@ const CustomToc = styled(Toc)`
   }
   li {
     padding-bottom: 10px;
-  }
-  @media screen and (max-width: 1400px) {
-    display: none;
   }
 `;
