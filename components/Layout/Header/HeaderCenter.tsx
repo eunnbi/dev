@@ -6,9 +6,7 @@ import NavToggleBtn from "./NavToggleBtn";
 const HeaderCenter = ({ onToggle }: { onToggle: () => void }) => {
   return (
     <Center>
-      <Link href="/">
-        <a>eunnbi.dev</a>
-      </Link>
+      <Link href="/">eunnbi.dev</Link>
       <NavToggleBtn onToggle={onToggle} />
     </Center>
   );
