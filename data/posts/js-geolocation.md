@@ -36,11 +36,10 @@ preview: "Geolocation API 사용자의 현재 위치를 가져오는 API - succe
 
 - 첫 번째 인자로 접근하고자 하는 `URL`, 두 번째 인자로 옵션 객체를 받고 `Promise` 객체를 반환한다.
 - 반환된 객체는 API 호출이 성공했을 경우 응답 객체 (`response`)를 `resolve`하고, 실패했을 경우 예외 객체(`error`)를 `reject`한다.
+- `response.json()`: 응답 객체로부터 `JSON` 포맷의 응답 전문을 자바스크립트 객체로 변환하여 얻을 수 있다.
 
 ```javascript
 fetch(url)
   .then(response => response.json())
   .then(data => console.log(data));
 ```
-
-- `response.json()`: 응답 객체로부터 `JSON` 포맷의 응답 전문을 자바스크립트 객체로 변환하여 얻을 수 있다.
