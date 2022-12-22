@@ -6,10 +6,6 @@ import styled from "styled-components";
 import KeywordsRotatingText from "@components/common/KeywordsRotatingText";
 
 const HomePage: NextPage = () => {
-  useEffect(() => {
-    const vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
-  }, []);
   return (
     <>
       <CustomHead page="Home" />
@@ -31,11 +27,11 @@ const Main = styled.main`
   justify-content: center;
   overflow-y: hidden;
   height: calc(100vh - 60px);
-  @media ${({ theme }) => theme.device.mobile} {
-    height: calc(var(--vh, 1vh) * 100 - 60px);
-  }
   &::-webkit-scrollbar {
     display: none;
+  }
+  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+    height: -webkit-fill-available;
   }
 `;
 
