@@ -15,7 +15,7 @@ const PostPage = (data: InferGetStaticPropsType<typeof getStaticProps>) => {
       <CustomHead
         page={data.current.title}
         description={data.current.preview}
-        image={`/images/posts/${data.current.id}/thumbnail.png`}
+        image={`/images/posts/thumbnail/${data.current.id}.png`}
         keywords={[data.current.category]}
       />
       <PostContext.Provider value={data}>
