@@ -1,9 +1,9 @@
 ---
 emoji: 💛
-title: VanilaJS, jQuery, React, Vue 특징
+title: VanillaJS, jQuery, React, Vue 특징
 date: "2021-11-01"
 category: Javascript
-preview: "Vanilla JS - 프레임워크 또는 라이브러리가 적용되지 않은 순수한 자바스크립트를 의미한다. - Vanilla : 스페인어로 콩을 뜻함 => '핵심, 근본이 되는'이라는 의미를 담고 있음. - Vanilla JS: 핵심이 되는, 아무것도 포함되지 않은 순수 자바스크립트 Vanilla Javscript는 왜 화두가 되었을까? - 바로 웹 개발 환경의 생태계의 변화! - 이전 웹 개발 환경에서는 Javascript가 여러 브라우저 (Chorome, Firefox 등등)에서 일관되게 동작하기 위해서 표준을 우회하는 코드를 작성해야 했다. - jQuery는 이러한 문제를 손쉽게 해결했다. - 하지만 지금의 웹 개발 환경에서는 발전된 ECMAScript 명세와 최신 브라우저를 바탕으로 표준 자바스크립트만으로도 쉽게 개발할 수 있어, 이전과 달리 Vanila JS의 중요성이 높아졌다."
+preview: "Vanilla JS - 프레임워크 또는 라이브러리가 적용되지 않은 순수한 자바스크립트를 의미한다. - Vanilla : 스페인어로 콩을 뜻함 => '핵심, 근본이 되는'이라는 의미를 담고 있음. - Vanilla JS: 핵심이 되는, 아무것도 포함되지 않은 순수 자바스크립트 Vanilla Javscript는 왜 화두가 되었을까? - 바로 웹 개발 환경의 생태계의 변화! - 이전 웹 개발 환경에서는 Javascript가 여러 브라우저 (Chorome, Firefox 등등)에서 일관되게 동작하기 위해서 표준을 우회하는 코드를 작성해야 했다. - jQuery는 이러한 문제를 손쉽게 해결했다. - 하지만 지금의 웹 개발 환경에서는 발전된 ECMAScript 명세와 최신 브라우저를 바탕으로 표준 자바스크립트만으로도 쉽게 개발할 수 있어, 이전과 달리 Vanilla JS의 중요성이 높아졌다."
 ---
 
 # Vanilla JS
@@ -19,7 +19,7 @@ preview: "Vanilla JS - 프레임워크 또는 라이브러리가 적용되지 �
 **바로 웹 개발 환경의 생태계의 변화!**
 
 - 이전 웹 개발 환경에서는 Javascript가 여러 브라우저에서 일관되게 동작되기 위해서 표준을 우회하는 코드를 작성해야 했다. `jQuery`를 이용해 이러한 문제를 손쉽게 해결했다.
-- 하지만 지금의 웹 개발 환경에서는 발전된 ECMAScript 명세와 웹 표준을 반영한 브라우저의 점유율 증가를 바탕으로 표준 자바스크립트만으로도 쉽게 개발할 수 있어, 이전과 달리 Vanila JS의 중요성이 높아졌다.
+- 하지만 지금의 웹 개발 환경에서는 발전된 ECMAScript 명세와 웹 표준을 반영한 브라우저의 점유율 증가를 바탕으로 표준 자바스크립트만으로도 쉽게 개발할 수 있어, 이전과 달리 Vanilla JS의 중요성이 높아졌다.
 
 <br/>
 
@@ -34,10 +34,10 @@ preview: "Vanilla JS - 프레임워크 또는 라이브러리가 적용되지 �
 - 크로스 브라우징을 지원한다.
   > 크로스 브라우징: 브라우저 종류 상관없이 웹 사이트가 동일하게 보여지고 동작하는 통일성을 말한다.
 
-## Vanila JS vs jQuery
+## Vanilla JS vs jQuery
 
-- VanilaJS와 jQuery는 동적인 웹 페이지를 만드는 데 사용된다.
-- Vanila JS는 프로그래밍 언어이고 jQuery는 Javascript를 사용하여 수행되는 작업을 단순화하도록 설계된 오픈 소스 라이브러리이다.
+- VanillaJS와 jQuery는 동적인 웹 페이지를 만드는 데 사용된다.
+- Vanilla JS는 프로그래밍 언어이고 jQuery는 Javascript를 사용하여 수행되는 작업을 단순화하도록 설계된 오픈 소스 라이브러리이다.
 
 ## jQuery의 인기가 낮아지는 원인
 
