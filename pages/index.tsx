@@ -3,8 +3,13 @@ import Image from "next/image";
 import CustomHead from "@components/common/CustomHead";
 import styled from "styled-components";
 import KeywordsRotatingText from "@components/common/KeywordsRotatingText";
+import { useEffect } from "react";
 
 const HomePage: NextPage = () => {
+  useEffect(() => {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  }, []);
   return (
     <>
       <CustomHead page="Home" />
@@ -29,8 +34,8 @@ const Main = styled.main`
   &::-webkit-scrollbar {
     display: none;
   }
-  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
-    height: -webkit-fill-available;
+  @media ${({ theme }) => theme.device.tablet} {
+    height: calc(var(--vh, 1vh) * 100 - 60px);
   }
 `;
 

@@ -1,27 +1,27 @@
 import { useState, useEffect, useCallback } from "react";
 
 export const useSlider = (length: number) => {
-  const [position, setPosition] = useState({
+  const [positionIndex, setPositionIndex] = useState({
     prev: length - 1,
-    current: 0,
+    current: 0
   });
 
   const movePrev = useCallback(() => {
-    setPosition((position) => {
+    setPositionIndex(position => {
       const current = (position.current - 1 + length) % length;
       return {
         prev: current === 0 ? length - 1 : current - 1,
-        current,
+        current
       };
     });
   }, []);
 
   const moveNext = useCallback(() => {
-    setPosition((position) => {
+    setPositionIndex(position => {
       const current = (position.current + 1) % length;
       return {
         prev: current === 0 ? length - 1 : current - 1,
-        current,
+        current
       };
     });
   }, []);
@@ -29,11 +29,11 @@ export const useSlider = (length: number) => {
   useEffect(() => {
     let timeId = setInterval(() => moveNext(), 5000);
     return () => clearInterval(timeId);
-  }, [position]);
+  }, [positionIndex]);
 
   return {
-    position,
+    positionIndex,
     movePrev,
-    moveNext,
+    moveNext
   };
 };
