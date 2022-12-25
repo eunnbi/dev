@@ -1,44 +1,41 @@
+import { IconButton, Tooltip } from "@mui/material";
 import { BsLink45Deg, BsGithub } from "react-icons/bs";
 import styled from "styled-components";
 
 const ProjectLinks = ({ links }: Pick<Project, "links">) => {
   const { github, siteUrl } = links;
   return (
-    <Links>
+    <Box>
       {github && (
-        <li>
-          <a
+        <Tooltip title="github">
+          <IconButton
             href={github}
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrrer"
             aria-label="깃허브 링크"
           >
             <BsGithub />
-          </a>
-        </li>
+          </IconButton>
+        </Tooltip>
       )}
       {siteUrl && (
-        <li>
-          <a
+        <Tooltip title="website">
+          <IconButton
             href={siteUrl}
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrrer"
             aria-label="배포 사이트 링크"
           >
             <BsLink45Deg />
-          </a>
-        </li>
+          </IconButton>
+        </Tooltip>
       )}
-    </Links>
+    </Box>
   );
 };
 
-const Links = styled.ul`
+const Box = styled.div`
   display: flex;
-  gap: 1.3rem;
-  a {
-    display: block;
-  }
   svg {
     font-size: 1.5rem;
     color: #a8a8a8;
