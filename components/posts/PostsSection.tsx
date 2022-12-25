@@ -78,7 +78,7 @@ const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #a8a8a8;
+  color: #979797;
 `;
 
 export default PostsSection;

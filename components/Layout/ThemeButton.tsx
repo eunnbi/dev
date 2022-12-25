@@ -6,13 +6,15 @@ import React from "react";
 const ThemeButton = () => {
   const { isLightTheme, changeTheme } = useTheme();
   return (
-    <Button onClick={changeTheme}>
+    <Button
+      onClick={changeTheme}
+      type="button"
+      aria-label="다크 테마, 라이트 테마 바꾸는 버튼"
+    >
       {isLightTheme ? <IoSunny /> : <IoMoon />}
     </Button>
   );
 };
-
-export default React.memo(ThemeButton);
 
 const Button = styled.button`
   position: fixed;
@@ -29,3 +31,5 @@ const Button = styled.button`
     color: white;
   }
 `;
+
+export default React.memo(ThemeButton);

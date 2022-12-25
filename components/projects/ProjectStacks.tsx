@@ -5,7 +5,7 @@ const ProjectStacks = ({ stacks }: Pick<Project, "stacks">) => {
   const { name } = useTheme();
   return (
     <article>
-      <h3>Stack</h3>
+      <h2>Stack</h2>
       <StackList>
         {feStacks.length === 0
           ? undefined
@@ -33,19 +33,16 @@ const ProjectStacks = ({ stacks }: Pick<Project, "stacks">) => {
   );
 };
 
-export default ProjectStacks;
-
 const StackList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  img {
-    padding: 0 0.5rem;
-  }
 `;
 
-const Tag = styled.div<{ color: string }>`
+const Tag = styled.li<{ color: string }>`
   padding: 0.1rem 0.5rem;
   border-radius: 5px;
   background-color: ${({ color }) => `#${color}`};
 `;
+
+export default ProjectStacks;

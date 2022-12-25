@@ -12,8 +12,6 @@ const Nav = ({ show }: { show: boolean }) => {
   );
 };
 
-export default React.memo(Nav);
-
 const StyledNav = styled.nav<{ show: boolean }>`
   display: flex;
   align-items: center;
@@ -37,3 +35,5 @@ const StyledNav = styled.nav<{ show: boolean }>`
     }
   }
 `;
+
+export default React.memo(Nav);

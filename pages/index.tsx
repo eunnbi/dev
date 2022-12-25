@@ -17,7 +17,12 @@ const HomePage: NextPage = () => {
         <Section>
           <KeywordsRotatingText />
           <ImageWrapper>
-            <Image src="/images/profile.png" alt="profile" fill priority />
+            <Image
+              src="/images/profile.png"
+              alt="강은비의 프로필 미모티콘"
+              fill
+              priority
+            />
           </ImageWrapper>
         </Section>
       </Main>

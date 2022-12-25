@@ -27,8 +27,6 @@ const PostFooter = () => {
   );
 };
 
-export default PostFooter;
-
 const Section = styled.section`
   display: flex;
   justify-content: space-between;
@@ -46,3 +44,5 @@ const Box = styled(Link)`
   font-weight: 500;
   font-size: 0.9rem;
 `;
+
+export default PostFooter;
