@@ -5,11 +5,15 @@ import styled from "styled-components";
 const TopButton = () => {
   const onClick = useCallback(() => {
     window.scrollTo({
-      top: 0,
+      top: 0
     });
   }, []);
   return (
-    <Button onClick={onClick}>
+    <Button
+      onClick={onClick}
+      aria-label="스크롤을 위로 옮기는 버튼"
+      type="button"
+    >
       <IoChevronUpOutline />
     </Button>
   );
