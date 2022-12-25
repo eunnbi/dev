@@ -13,8 +13,6 @@ const Heading = ({ title }: HeadingProps) => {
   );
 };
 
-export default React.memo(Heading);
-
 const H2 = styled.h2`
   display: flex;
   justify-content: center;
@@ -25,3 +23,5 @@ const H2 = styled.h2`
     font-size: 1.8rem;
   }
 `;
+
+export default React.memo(Heading);

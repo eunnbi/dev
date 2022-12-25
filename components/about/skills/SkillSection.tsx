@@ -25,8 +25,6 @@ const SkillsSection = () => {
   );
 };
 
-export default SkillsSection;
-
 const Section = styled.section`
   margin-bottom: 80px;
   display: flex;
@@ -40,3 +38,5 @@ const Section = styled.section`
     }
   }
 `;
+
+export default SkillsSection;

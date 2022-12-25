@@ -10,8 +10,6 @@ const Layout = ({ children }: React.PropsWithChildren) => {
   );
 };
 
-export default Layout;
-
 const LayoutBox = styled.div`
   width: 100%;
   max-width: 720px;
@@ -20,3 +18,5 @@ const LayoutBox = styled.div`
     padding: 0 15px;
   }
 `;
+
+export default Layout;

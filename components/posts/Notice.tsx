@@ -8,14 +8,16 @@ const Notice = () => {
     <Box>
       <p>현재 블로그 이전 중입니다.</p>
       👉<a href="https://velog.io/@eunnbi"> 전 블로그 보러가기</a>
-      <button onClick={() => setShow(false)}>
+      <button
+        onClick={() => setShow(false)}
+        type="button"
+        aria-label="닫기 버튼"
+      >
         <IoClose />
       </button>
     </Box>
   ) : null;
 };
-
-export default Notice;
 
 const Box = styled.div`
   position: fixed;
@@ -42,3 +44,5 @@ const Box = styled.div`
   @media ${({ theme }) => theme.device.tablet} {
   }
 `;
+
+export default Notice;

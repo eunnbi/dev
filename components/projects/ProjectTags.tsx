@@ -10,8 +10,6 @@ const ProjectTags = ({ tags }: Pick<Project, "tags">) => {
   );
 };
 
-export default ProjectTags;
-
 const TagWrapper = styled.ul`
   display: flex;
   flex-wrap: wrap;
@@ -24,3 +22,5 @@ const TagItem = styled.li`
   border-radius: 10px;
   font-weight: 500;
 `;
+
+export default ProjectTags;

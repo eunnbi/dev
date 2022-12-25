@@ -8,7 +8,7 @@ const MyInfoSection = () => {
     <Section>
       <Image
         src="/images/profile.png"
-        alt="profile"
+        alt="강은비의 프로필 미모티콘"
         width={100}
         height={100}
         priority
@@ -19,8 +19,6 @@ const MyInfoSection = () => {
   );
 };
 
-export default MyInfoSection;
-
 const Section = styled.section`
   display: flex;
   flex-direction: column;
@@ -30,3 +28,5 @@ const Section = styled.section`
     object-fit: contain;
   }
 `;
+
+export default MyInfoSection;
