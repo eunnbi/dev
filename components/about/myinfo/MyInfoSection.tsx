@@ -19,8 +19,6 @@ const MyInfoSection = () => {
   );
 };
 
-export default MyInfoSection;
-
 const Section = styled.section`
   display: flex;
   flex-direction: column;
@@ -30,3 +28,5 @@ const Section = styled.section`
     object-fit: contain;
   }
 `;
+
+export default MyInfoSection;

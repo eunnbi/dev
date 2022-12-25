@@ -25,8 +25,6 @@ const MyInfoLinks = () => {
   );
 };
 
-export default MyInfoLinks;
-
 const Links = styled.div`
   display: flex;
   align-items: center;
@@ -36,3 +34,5 @@ const Links = styled.div`
     padding: 0;
   }
 `;
+
+export default MyInfoLinks;
