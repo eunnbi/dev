@@ -74,7 +74,7 @@
 
 - [x] 아이폰 사파리 `height: 100vh` 버그 해결
 - [x] projects data 관리 방식 개선
-- [ ] meta 태그, SEO 공부 및 적용
+- [x] meta 태그, SEO 공부
 - [ ] `semantic tag` 공부 및 적용
 - [ ] 블로그 옮기기 (-ing)
 - [ ] nextjs 13 마이그레이션 (-ing)
