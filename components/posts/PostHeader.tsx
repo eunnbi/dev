@@ -36,14 +36,14 @@ const Section = styled.section`
     margin-bottom: 1.5rem;
   }
   .category {
-    background-color: ${({ theme }) => theme.color.tabSelectedBgColor};
+    background-color: ${({ theme }) => theme.color.chipBgColor};
     color: ${({ theme }) => theme.color.tabTextColor};
     padding: 0.1rem 0.5rem;
     border-radius: 10px;
     font-size: 0.8rem;
   }
   .date {
-    color: #a8a8a8;
+    color: #979797;
     font-weight: 500;
     margin-top: 0.5rem;
   }
