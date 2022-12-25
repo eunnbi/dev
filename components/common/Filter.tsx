@@ -28,8 +28,6 @@ const Filter = ({ filters, filterIndex, setFilterIndex }: FilterProps) => {
   );
 };
 
-export default Filter;
-
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -66,3 +64,5 @@ const CustomTabs = styled(Tabs)`
     display: none;
   }
 `;
+
+export default Filter;
