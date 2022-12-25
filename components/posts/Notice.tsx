@@ -19,8 +19,6 @@ const Notice = () => {
   ) : null;
 };
 
-export default Notice;
-
 const Box = styled.div`
   position: fixed;
   top: 10px;
@@ -46,3 +44,5 @@ const Box = styled.div`
   @media ${({ theme }) => theme.device.tablet} {
   }
 `;
+
+export default Notice;

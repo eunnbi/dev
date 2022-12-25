@@ -17,8 +17,6 @@ const PostHeader = () => {
   );
 };
 
-export default PostHeader;
-
 const Section = styled.section`
   display: flex;
   flex-direction: column;
@@ -50,3 +48,5 @@ const Section = styled.section`
     margin-top: 0.5rem;
   }
 `;
+
+export default PostHeader;

@@ -24,8 +24,6 @@ const Header = () => {
   );
 };
 
-export default React.memo(Header);
-
 const StyledHeader = styled.header`
   z-index: 10;
   height: 60px;
@@ -52,3 +50,5 @@ const Wrapper = styled.div`
     flex-direction: column;
   }
 `;
+
+export default React.memo(Header);

@@ -14,8 +14,6 @@ const NavToggleBtn = ({ onToggle }: NavToggleBtnProps) => {
   );
 };
 
-export default React.memo(NavToggleBtn);
-
 const ToggleBtn = styled.button`
   display: none;
   font-size: 2rem;
@@ -29,3 +27,5 @@ const ToggleBtn = styled.button`
     display: flex;
   }
 `;
+
+export default React.memo(NavToggleBtn);

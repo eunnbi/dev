@@ -12,8 +12,6 @@ const HeaderCenter = ({ onToggle }: { onToggle: () => void }) => {
   );
 };
 
-export default React.memo(HeaderCenter);
-
 const Center = styled.div`
   width: 100%;
   height: 100%;
@@ -21,3 +19,5 @@ const Center = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
+
+export default React.memo(HeaderCenter);

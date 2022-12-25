@@ -33,8 +33,6 @@ const ProjectLinks = ({ links }: Pick<Project, "links">) => {
   );
 };
 
-export default ProjectLinks;
-
 const Links = styled.ul`
   display: flex;
   gap: 1.3rem;
@@ -46,3 +44,5 @@ const Links = styled.ul`
     color: #a8a8a8;
   }
 `;
+
+export default ProjectLinks;

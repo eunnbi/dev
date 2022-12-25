@@ -16,8 +16,6 @@ const ThemeButton = () => {
   );
 };
 
-export default React.memo(ThemeButton);
-
 const Button = styled.button`
   position: fixed;
   bottom: 10px;
@@ -33,3 +31,5 @@ const Button = styled.button`
     color: white;
   }
 `;
+
+export default React.memo(ThemeButton);

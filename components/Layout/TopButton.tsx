@@ -19,8 +19,6 @@ const TopButton = () => {
   );
 };
 
-export default React.memo(TopButton);
-
 const Button = styled.button`
   position: fixed;
   bottom: 60px;
@@ -34,3 +32,5 @@ const Button = styled.button`
     color: ${({ theme }) => theme.color.textColor};
   }
 `;
+
+export default React.memo(TopButton);
