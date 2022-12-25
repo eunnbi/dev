@@ -9,8 +9,8 @@ const ProjectsSection = () => {
   const projects = useProjects();
   return (
     <Section>
-      {projects.map(project => (
-        <ProjectArticle {...project} key={project.id} />
+      {projects.map((project, index) => (
+        <ProjectArticle {...project} index={index} key={project.id} />
       ))}
     </Section>
   );
@@ -25,7 +25,11 @@ const Section = styled.section`
 
 // ---------------------------------------------------------
 
-const ProjectArticle = ({ title, imageCnt, tags, links, id }: Project) => {
+interface Props extends Project {
+  index: number;
+}
+
+const ProjectArticle = ({ title, imageCnt, tags, links, id, index }: Props) => {
   const onClick = (e: any) => {
     const { tagName } = e.target;
     if (tagName === "a" || tagName === "svg" || tagName === "path") return;
@@ -45,10 +49,11 @@ const ProjectArticle = ({ title, imageCnt, tags, links, id }: Project) => {
       <ImageWrapper>
         <Image
           src={imageSrc}
-          alt="project thumbnail"
+          alt="프로젝트 썸네일"
           fill
           placeholder="blur"
           blurDataURL={imageSrc}
+          priority={index === 0 ? true : false}
         />
       </ImageWrapper>
       <ProjectTags tags={tags} />

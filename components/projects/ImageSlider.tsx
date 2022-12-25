@@ -1,5 +1,6 @@
 import { useSlider } from "@hooks/common/useSlider";
 import styled, { css } from "styled-components";
+import Image from "next/image";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 interface ImageSlierProps {
@@ -19,17 +20,25 @@ const ImageSlider = ({ images }: ImageSlierProps) => {
   return (
     <SliderSection>
       <div>
-        <button type="button" onClick={movePrev}>
+        <button
+          type="button"
+          onClick={movePrev}
+          aria-label="이미지 슬라이더 이전 버튼"
+        >
           <FiChevronLeft />
         </button>
         <ImageList images={images} positionIndex={positionIndex} />
-        <button type="button" onClick={moveNext}>
+        <button
+          type="button"
+          onClick={moveNext}
+          aria-label="이미지 슬라이더 다음 버튼"
+        >
           <FiChevronRight />
         </button>
       </div>
       <div>
         {images.map((image, index) => (
-          <PageButton
+          <PageBullet
             key={image}
             position={getPosittion(index, positionIndex)}
           />
@@ -50,6 +59,11 @@ const SliderSection = styled.div`
     align-items: center;
     gap: 5px;
   }
+  & > div:first-child {
+    width: 100%;
+    gap: 0;
+    justify-content: center;
+  }
   svg {
     color: ${({ theme }) => theme.color.textColor};
     font-size: 1.5rem;
@@ -57,10 +71,9 @@ const SliderSection = styled.div`
   }
 `;
 
-const PageButton = styled.button<{ position: Position }>`
+const PageBullet = styled.span<{ position: Position }>`
   width: ${({ position }) => (position === "current" ? "1rem" : "0.5rem")};
   height: 0.5rem;
-  cursor: auto;
   background-color: ${({ position }) =>
     position === "current" ? "#000" : "lightgray"};
   border-radius: ${({ position }) => (position === "current" ? "16px" : "50%")};
@@ -76,34 +89,34 @@ const ImageList = ({ positionIndex, images }: ImageListProps) => {
   return (
     <List>
       {images.map((image, index) => (
-        <ImageItem
+        <ImageWrapper
           key={image}
           index={index}
           position={getPosittion(index, positionIndex)}
-          src={image}
-        />
+        >
+          <Image src={image} alt="프로젝트 배포 사이트" fill priority />
+        </ImageWrapper>
       ))}
     </List>
   );
 };
 
-const List = styled.ul`
+const List = styled.div`
   width: 100%;
-  height: auto;
   max-height: 450px;
   overflow: hidden;
   margin: 0 1rem;
   position: relative;
   display: flex;
-  @media screen and (max-width: 1500px) {
-    max-width: 600px;
-    width: 80vw;
-  }
 `;
 
-const ImageItem = styled.img<{ position: Position; index: number }>`
-  object-fit: contain;
+const ImageWrapper = styled.div<{ position: Position; index: number }>`
+  flex-shrink: 0;
   width: 100%;
+  height: 60vw;
+  position: relative;
+  border-radius: 5px;
+  max-height: 450px;
   transition: all 0.3s ease-in-out;
   opacity: ${({ position }) => (position === "current" ? 1 : 0)};
   transform: ${({ position, index }) =>
@@ -112,6 +125,11 @@ const ImageItem = styled.img<{ position: Position; index: number }>`
       : position === "prev"
       ? `translateX(${-(index * 100) - 100}%)`
       : `translateX(${-(index * 100) + 100}%)`};
+  img {
+    width: 100%;
+    border-radius: 5px;
+    object-fit: contain;
+  }
 `;
 
 export default ImageSlider;
