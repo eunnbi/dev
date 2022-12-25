@@ -40,18 +40,18 @@ const ProjectPage = ({
           <p className="project-period">⏰ {period}</p>
           <ProjectTags tags={tags} />
           <article>
-            <h3>Overview</h3>
+            <h2>Overview</h2>
             <p>{overview}</p>
           </article>
           <ProjectStacks stacks={stacks} />
           <article>
-            <h3>Member</h3>
+            <h2>Member</h2>
             <p>{participation.member}</p>
             {participation.role && <p>{participation.role}</p>}
           </article>
           {(review.text || (review.link && review.linkName)) && (
             <article>
-              <h3>Review</h3>
+              <h2>Review</h2>
               <p>{review.text}</p>
               <a href={review.link} target="_blank" rel="noreferrer">
                 🚀 <span>{review.linkName}</span>
@@ -89,7 +89,7 @@ const Section = styled.section`
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    h3 {
+    h2 {
       font-size: 1.25rem;
     }
     p {
