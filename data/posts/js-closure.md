@@ -3,7 +3,7 @@ emoji: 🧬
 title: 클로저
 date: "2022-01-04"
 category: Javascript
-preview: ""
+preview: "함수와 그 함수가 선언되었을 때의 렉시컬 환경의 조합이다. 선언될 당시의 렉시컬 환경은 실행 컨텍스트의 구성 요소 중 lexical environment의 outerEnvironmentReference에 해당한다. 외부함수의 변수를 참조하는 내부함수 outer2 변수는 outer 함수의 반환값인 inner 함수를 참조한다. inner 함수 실행 시 스코프 체이닝에 따라 변수 a를 찾는다. environmentRecord => 변수 a 발견 X outerEnvironmentReference = inner 함수가 선언된 위치의 lexical environment (참조 복사) = outer 함수의 lexical environment => 변수 a 발견 O inner 함수의 실행 시점에는 outer 함수는 이미 실행이 종료되어 실행 컨텍스트도 없을텐데 outer의 lexical environment를 어떻게 접근할 수 있을까? 가비지 컬렉터의 동작 방식 때문이다. 가비지 컬렉터는 어떤 값을 참조하는 변수가 하나라도 있다면 그 값은 수집 대상에 포함되지 않는다."
 ---
 
 > **함수와 그 함수가 선언되었을 때의 렉시컬 환경의 조합**이다.
