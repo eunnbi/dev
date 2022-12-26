@@ -16,14 +16,14 @@ preview: "Blocking vs Non-blocking - 제어권: 함수를 실행할 권리, 제�
 - A함수가 B함수를 호출하면 B에게 제어권을 넘긴다.
 - 제어권을 넘겨받는 B는 함수를 실행하고 A는 제어권을 넘겨줬기 때문에 잠시 함수 실행을 멈춘다.
 - B함수의 실행이 다 끝나면 A함수는 제어권을 돌려받아 다시 함수를 실행한다.
-  ![Blocking vs Non-blocking (1)](1.png)
+  ![Blocking Example](1.png)
 
 ## Non-blocking
 
 - 다른 함수를 호출할 때 제어권을 넘기지 않는다.
 - A함수가 B함수를 호출하면, B함수는 실행되지만, 제어권은 넘기지 않는다.
 - A함수에게 제어권이 있으므로 B함수를 실행한 이후에도 계속 함수를 실행한다.
-  ![Blocking vs Non-blocking (2)](2.png)
+  ![Non-Blocking Example](2.png)
 
 <br/>
 
@@ -62,4 +62,4 @@ preview: "Blocking vs Non-blocking - 제어권: 함수를 실행할 권리, 제�
 - 함수 A는 함수 B를 호출할 때 콜백함수를 보내고 함수 A는 함수 B에게 제어권을 넘긴다
 - 함수 A는 함수 B의 작업의 완료 여부에는 관심이 없지만 제어권을 넘겼으므로 끝날 때까지 기다려야 한다.
 
-![](3.png)
+![Sync-Blocking, Sync-Nonblocking, Async-Nonblocking,Async-Blocking ](3.png)

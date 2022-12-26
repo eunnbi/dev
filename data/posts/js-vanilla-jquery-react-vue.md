@@ -8,7 +8,7 @@ preview: "Vanilla JS - 프레임워크 또는 라이브러리가 적용되지 �
 
 # Vanilla JS
 
-![](1.png)
+![Javascript Logo](1.png)
 
 - 프레임워크 또는 라이브러리가 적용되지 않은 순수한 자바스크립트를 의미한다.
 - Vanilla : 스페인어로 콩을 뜻함 => "**핵심, 근본이 되는**"이라는 의미를 담고 있음.
@@ -25,7 +25,7 @@ preview: "Vanilla JS - 프레임워크 또는 라이브러리가 적용되지 �
 
 # jQuery
 
-![](2.png)
+![jQuery Logo](2.png)
 
 - Javascript 라이브러리
   - DOM 탐색이나 이벤트, 애니메이션, ajax 등을 활용할 때 유용하게 사용
@@ -63,7 +63,7 @@ preview: "Vanilla JS - 프레임워크 또는 라이브러리가 적용되지 �
 
 # React.js
 
-![](3.png)
+![React.js Logo](3.png)
 
 - Facebook이 제공하는 Javascript 라이브러리이다.
 - Virtual DOM을 이용해 데이터의 변화에 따라 선택적으로 UI를 렌더링한다.
@@ -74,12 +74,12 @@ preview: "Vanilla JS - 프레임워크 또는 라이브러리가 적용되지 �
 
 ## Virtual DOM
 
-1.  정의: 실제 DOM 트리를 모방한 가벼운 JS 객체
-2.  사용 이유
+1. 정의: 실제 DOM 트리를 모방한 가벼운 JS 객체
+2. 사용 이유
 
 - DOM을 반복적으로 직접 조작 → 브라우저 렌더링 횟수 증가(css의 재연산, 레이아웃 구성, 페이지 리페인트) → PC자원 소모 증가
 - BUT DOM을 최소한으로 조작하여 이슈 해결
-  ![](4.png)
+  ![Comparison of DOM and Virtual DOM](4.png)
 
 3.  React가 실제 DOM에 Virtual DOM을 반영하는 절차
 
@@ -91,13 +91,13 @@ preview: "Vanilla JS - 프레임워크 또는 라이브러리가 적용되지 �
 
 # Vue.js
 
-![](5.png)
+![Vue.js Logo](5.png)
 
 - 웹페이지 화면을 개발하기 위한 점진적인 프레임워크이다.
   - 라이브러리 기능 + 프레임워크 기능 = 점진적인 프레임워크
 - Virtual DOM으로 화면 요소를 변경 및 조작하고 최종 결과물을 실제 DOM에 반영한다.
 - MVVM 패턴을 기반한 화면단 라이브러리
-  ![](6.png)
+  ![MVVM pattern explanation](6.png)
 
   > - Model (비즈니스 규칙, 데이터, 모델 클래스), View (사용자 인터페이스), View Model (모델과 뷰 사이의 인터페이스)
   > - 뷰모델은 모델의 데이터를 뷰에 바인딩하고, 명령어를 사용하여 모든 UI의 동작들을 다룬다. MVC 패턴에서 컨트롤러 역할처럼 데이터를 관리하고 액션을 처리한다.
