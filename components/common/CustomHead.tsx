@@ -17,11 +17,12 @@ const CustomHead = ({
 }: CustomHeadProps) => {
   return (
     <Head>
-      <title>{page}</title>
-      <meta name="author" content="강은비" />
+      <title>{`${page} | eunnbi.dev`}</title>
+      <meta name="author" content="강은비" key="author" />
       <meta
         name="description"
         content={description ? description : "은비의 개발 성장 일지"}
+        key="description"
       />
       <meta
         name="keywords"
@@ -34,9 +35,10 @@ const CustomHead = ({
       <meta
         property="og:description"
         content={description ? description : "은비의 개발 성장 일지"}
+        key="og_description"
       />
-      <meta property="og:author" content="강은비" />
-      <meta property="og:title" content={page} />
+      <meta property="og:author" content="강은비" key="og_author" />
+      <meta property="og:title" content={page} key="og_title" />
       <meta property="og:type" content="website" />
       <meta
         property="og:image"
