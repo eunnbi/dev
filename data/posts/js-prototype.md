@@ -3,7 +3,7 @@ emoji: 🧩
 title: 프로토타입
 date: "2022-01-05"
 category: Javascript
-preview: ""
+preview: "자바스크립트는 프로트타입 기반 언어이다. 프로토타입 도식 constructor, prototype, instance 어떤 생성자 함수(Constructor)를 new 연산자와 함께 호출하면 생성자 함수에 정의된 내용을 바탕으로 새로운 인스턴스(instance)가 생성된다. 이때 instance에는 __proto__라는 프로퍼티가 자동으로 부여되는데, 이 프로퍼티는 생성자 함수의 prototype 속성을 참조한다. prototype는 객체이고 이를 참조하는 __proto__ 역시 객체이다. prototype 객체에는 instance가 사용할 메서드가 있다. 그러면 instance에서도 __proto__ 프로퍼티를 통해 이 메서드에 접근할 수 있다. 💡 자바스크립트는 함수에 자동으로 prototype 속성을 부여한다. 함수를 new 연산자와 함께 생성자 함수(Constructor)로 호출하여 인스턴스(instance)를 생성한다. 그리고 인스턴스에 자동으로 __proto__ 프로퍼티를 부여한다. __proto__ 프로퍼티는 생성자 함수의 prototype을 참조한다. prototype 속성은 객체로 인스턴스에서 사용한 메서드가 있다. 💡 __proto__프로퍼티는 생략 가능한 프로퍼티이기 때문에, 생성자 함수의 prototype에 어떤 메서드나 속성이 있다면 인스턴스에서도 마치 자신의 것처럼 해당 메서드나 속성에 접근할 수 있다."
 ---
 
 > 자바스크립트는 프로트타입 기반 언어이다.
