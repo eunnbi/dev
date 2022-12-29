@@ -3,7 +3,7 @@ import Filter from "@components/common/Filter";
 import { CategoriesContext } from "@contexts/projects/CategoriesContext";
 import { useSetRecoilState } from "recoil";
 import { projectFilterState } from "@stores/projectFilterState";
-import { useProjectFilterIndex } from "@hooks/common/useFilterIndex";
+import { useProjectFilterIndex } from "@hooks/useFilterIndex";
 
 const ProjectFilter = () => {
   const categories = useContext(CategoriesContext);
