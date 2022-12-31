@@ -6,6 +6,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { usePostInfo } from "@hooks/usePostInfo";
 import { useTheme } from "styled-components";
+import { BsLink45Deg } from "react-icons/bs";
 
 const Markdown = () => {
   const { current } = usePostInfo();
@@ -40,7 +41,9 @@ const Markdown = () => {
             const id = String(children[0]).replaceAll(" ", "-").toLowerCase();
             return (
               <h1 id={id}>
-                <a href={`#${id}`}>{children}</a>
+                <a href={`#${id}`}>
+                  {children} <span className="octicon-link" />
+                </a>
               </h1>
             );
           },
@@ -48,7 +51,9 @@ const Markdown = () => {
             const id = String(children[0]).replaceAll(" ", "-").toLowerCase();
             return (
               <h2 id={id}>
-                <a href={`#${id}`}>{children}</a>
+                <a href={`#${id}`}>
+                  {children} <span className="octicon-link" />
+                </a>
               </h2>
             );
           },
@@ -56,7 +61,9 @@ const Markdown = () => {
             const id = String(children[0]).replaceAll(" ", "-").toLowerCase();
             return (
               <h3 id={id}>
-                <a href={`#${id}`}>{children}</a>
+                <a href={`#${id}`}>
+                  {children} <span className="octicon-link" />
+                </a>
               </h3>
             );
           }
