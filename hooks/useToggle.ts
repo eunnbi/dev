@@ -6,7 +6,7 @@ export const useToggle = (
   const [toggle, setToggle] = useState(initialState);
 
   const onToggle = useCallback(() => {
-    setToggle((toggle) => !toggle);
+    setToggle(toggle => !toggle);
   }, []);
 
   const onClose = useCallback(() => {

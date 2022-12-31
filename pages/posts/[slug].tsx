@@ -35,7 +35,7 @@ const Main = styled.main`
   margin: 30px 0;
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 3rem;
 `;
 
 export default PostPage;
