@@ -3,7 +3,7 @@ import { CategoriesContext } from "@contexts/posts/CategoriesContext";
 import Filter from "@components/common/Filter";
 import { useSetRecoilState } from "recoil";
 import { postFilterState } from "@stores/postFilterState";
-import { usePostFilterIndex } from "@hooks/common/useFilterIndex";
+import { usePostFilterIndex } from "@hooks/useFilterIndex";
 
 const PostFilter = () => {
   const categories = useContext(CategoriesContext);

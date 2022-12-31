@@ -8,11 +8,19 @@ import { getSortedPostsData } from "@lib/posts";
 import styled from "styled-components";
 import Notice from "@components/posts/Notice";
 import PostFilter from "@components/posts/PostFilter";
+import { getSessionStorage, SCROLL_POS_KEY } from "@lib/sessionStorage";
+import { useEffect } from "react";
 
 const PostsPage = ({
   posts,
   categories
 }: InferGetServerSidePropsType<typeof getStaticProps>) => {
+  useEffect(() => {
+    const value = getSessionStorage<number>(SCROLL_POS_KEY, 0);
+    window.scrollTo({
+      top: value
+    });
+  }, []);
   return (
     <>
       <CustomHead page="Posts" />

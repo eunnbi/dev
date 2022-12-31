@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { usePosts } from "@hooks/usePosts";
 import Router from "next/router";
 import { convertDateFormat } from "@lib/date";
+import { SCROLL_POS_KEY, setSessionStorage } from "@lib/sessionStorage";
 
 const PostsSection = () => {
   const posts = usePosts();
@@ -24,8 +25,12 @@ const Section = styled.section`
 // ---------------------------------------------------
 
 const PostArticle = ({ id, title, date, category, preview, emoji }: Post) => {
+  const onClick = () => {
+    Router.push(`/posts/${id}`);
+    setSessionStorage(SCROLL_POS_KEY, window.scrollY);
+  };
   return (
-    <Article onClick={() => Router.push(`/posts/${id}`)}>
+    <Article onClick={onClick}>
       <h3>
         {emoji}
         <span>{title}</span>
