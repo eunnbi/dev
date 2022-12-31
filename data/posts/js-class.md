@@ -3,7 +3,7 @@ emoji: 🧸
 title: 클래스
 date: "2022-01-07"
 category: Javascript
-preview: ""
+preview: "class: 객체 지향 프로그래밍에서 구체적인 instance를 생성하기 위해 필드(변수)와 메서드를 정의하는 일종의 틀이다. 클래스 멤버: 필드, 메서드 (생성자 포함). instance: 클래스를 통해 만든 객체, 클래스의 속성을 지니는 실존하는 개체 (구체적인 예시). superclass: 상위 클래스, subclass: 하위 클래스. 하위 클래스는 상위 클래스의 멤버를 상속하면서 필드(변수)와 메서드가 추가 혹은 변경된다. 생성자 함수와 프로토타입, 클로저를 이용하여 클래스를 구현할 수 있다. class의 멤버는 instance가 상속하는지 (참조하는지)에 대한 여부에 따라 static member와 prototype member로 나뉜다."
 ---
 
 # 클래스

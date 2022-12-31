@@ -101,18 +101,12 @@
   word-wrap: break-word;
 }
 
-.markdown-body .octicon {
-  display: inline-block;
-  fill: currentColor;
-  vertical-align: text-bottom;
-}
-
-.markdown-body h1:hover .anchor .octicon-link:before,
-.markdown-body h2:hover .anchor .octicon-link:before,
-.markdown-body h3:hover .anchor .octicon-link:before,
-.markdown-body h4:hover .anchor .octicon-link:before,
-.markdown-body h5:hover .anchor .octicon-link:before,
-.markdown-body h6:hover .anchor .octicon-link:before {
+.markdown-body h1:hover > a .octicon-link:before,
+.markdown-body h2:hover > a .octicon-link:before,
+.markdown-body h3:hover > a .octicon-link:before,
+.markdown-body h4:hover > a .octicon-link:before,
+.markdown-body h5:hover > a .octicon-link:before,
+.markdown-body h6:hover > a .octicon-link:before {
   width: 16px;
   height: 16px;
   content: " ";
@@ -447,13 +441,6 @@
   word-wrap: normal;
 }
 
-.markdown-body .octicon {
-  display: inline-block;
-  overflow: visible !important;
-  vertical-align: text-bottom;
-  fill: currentColor;
-}
-
 .markdown-body ::placeholder {
   color: var(--color-fg-subtle);
   opacity: 1;
@@ -671,17 +658,6 @@
   content: "]";
 }
 
-.markdown-body h1 .octicon-link,
-.markdown-body h2 .octicon-link,
-.markdown-body h3 .octicon-link,
-.markdown-body h4 .octicon-link,
-.markdown-body h5 .octicon-link,
-.markdown-body h6 .octicon-link {
-  color: var(--color-fg-default);
-  vertical-align: middle;
-  visibility: hidden;
-}
-
 .markdown-body h1:hover .anchor,
 .markdown-body h2:hover .anchor,
 .markdown-body h3:hover .anchor,
@@ -689,15 +665,6 @@
 .markdown-body h5:hover .anchor,
 .markdown-body h6:hover .anchor {
   text-decoration: none;
-}
-
-.markdown-body h1:hover .anchor .octicon-link,
-.markdown-body h2:hover .anchor .octicon-link,
-.markdown-body h3:hover .anchor .octicon-link,
-.markdown-body h4:hover .anchor .octicon-link,
-.markdown-body h5:hover .anchor .octicon-link,
-.markdown-body h6:hover .anchor .octicon-link {
-  visibility: visible;
 }
 
 .markdown-body h1 tt,
