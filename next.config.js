@@ -8,6 +8,11 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
     emotion: true
+  },
+  modularizeImports: {
+    "@mui/material": {
+      transform: "@mui/material/{{member}}"
+    }
   }
 };
 
