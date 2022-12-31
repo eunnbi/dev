@@ -260,7 +260,7 @@ import ProjectForm from "./components/project-form"; // ts 확장자로 해석�
 }
 ```
 
-### DevServer
+## DevServer
 
 - `webpack.config.js`에서 설정할 수 있는 옵션으로, webpack dev server(version >= 4.0.0)의 동작에 영향을 미친다.
 - 프록시 서버, 파일 압축 여부 등을 설정할 수 있다.
