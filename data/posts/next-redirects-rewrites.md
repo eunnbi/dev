@@ -1,7 +1,7 @@
 ---
 emoji: ⚙️
 title: Redirects & Rewrites
-date: "2022-06-14"
+date: "2022-06-13"
 category: Nextjs
 preview: "프로젝트 디렉터리 루트 경로에 next.config.js 파일을 만들어 커스텀 고급 설정을 할 수 있다. next.config.js는 일반 Node.js 모듈을 export한다 Next.js 서버 및 빌드 단계에서 사용되며 브라우저 빌드에는 포함되지 않는다. next.config.js에서 redirects와 rewrites 설정을 할 수 있다. 그 밖에도 다양한 설정이 있다. redirects은 `source`, `destination`, `permanent` 속성이 있는 객체 배열을 반환하는 비동기 함수이다. source : request 경로, destination : redirect할 경로, permanent : true or false. true인 경우 클라이언트와 search 엔진에 redirect를 영구적으로 cache하도록 지시하는 `308` status code를 사용, false인 경우 일시적이고 cache되지 않은 `307` status code를 사용. source 경로를 destination 경로로 redirect하도록 설정할 수 있다."
 ---
