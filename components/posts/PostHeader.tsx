@@ -32,7 +32,7 @@ const Section = styled.section`
     gap: 0.8rem;
   }
   .emoji {
-    font-size: 5rem;
+    font-size: 4rem;
     margin-bottom: 1.5rem;
   }
   .category {
