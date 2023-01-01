@@ -65,10 +65,18 @@
   # or
   pnpm up next react react-dom eslint-config-next --latest
   ```
-  - `Link` 컴포넌트와 `Image` 컴포넌트 리팩터링 (레거시 코드 수정)
-  - `app` 디렉토리는 아직 `Beta` 버전이라서 보류
-- `babel` 대신 `swc` 사용
+  - Link 컴포넌트와 Image 컴포넌트 리팩터링 (레거시 코드 수정)
+  - app 디렉토리는 아직 beta 버전이라서 보류
+- babel 대신 SWC 사용
+  > 블로그 포스팅 : [Next.js compiler](https://www.eunnbi.dev/posts/next-compiler)
 - 자바스크립트와 타입스크립트 관련 블로그들 옮기는 중, 12월 이내로 완료 예정
+
+## 2022.01.01
+
+- 자바스크립트와 타입스크립트, web 관련 블로그 옮기기 완료
+- nextjs, react 블로그 옮기는 중
+- next 버전 13.1.1으로 업그레이트해서 `modularizeImports` 옵션 사용
+- [next.config.js](https://github.com/eunnbi/dev/blob/main/next.config.js#L4)에서 html 태그의 lang 속성 설정
 
 ## 📝 Tasks
 
