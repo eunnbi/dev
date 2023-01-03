@@ -53,14 +53,14 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
   return {
     props: {
       current: data,
-      prev:
+      next:
         index === 0
           ? null
           : {
               title: posts[index - 1].title,
               id: posts[index - 1].id
             },
-      next:
+      prev:
         index === posts.length - 1
           ? null
           : {
