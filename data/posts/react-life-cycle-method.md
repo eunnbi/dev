@@ -67,6 +67,7 @@ static getDerivedStateFromProps(nextProps, prevState){
 > - props 변경될 때
 > - state가 변경될 때 (`setState()`)
 > - `this.forceUpdate()`가 호출되었을 때
+> - 부모 컴포넌트가 리렌더링될 때
 
 ### getDerivedStateFromProps
 
