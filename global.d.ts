@@ -5,6 +5,6 @@ interface PositionIndex {
 
 type Position = "current" | "prev" | "next";
 
-type FilterIndex = number;
+type Filter = string;
 
 declare module "react-rotating-text";

@@ -6,22 +6,22 @@ import { SetterOrUpdater } from "recoil";
 
 interface FilterProps {
   filters: string[];
-  filterIndex: FilterIndex;
-  setFilterIndex: SetterOrUpdater<FilterIndex>;
+  filter: Filter;
+  setFilter: SetterOrUpdater<Filter>;
 }
 
-const Filter = ({ filters, filterIndex, setFilterIndex }: FilterProps) => {
+const Filter = ({ filters, filter, setFilter }: FilterProps) => {
   const onChange = useCallback(
-    (e: SyntheticEvent<Element, Event>, value: number) => {
-      setFilterIndex(value);
+    (e: SyntheticEvent<Element, Event>, value: Filter) => {
+      setFilter(value);
     },
     []
   );
   return (
     <Wrapper>
-      <CustomTabs value={filterIndex} onChange={onChange} variant="scrollable">
+      <CustomTabs value={filter} onChange={onChange} variant="scrollable">
         {filters.map((filter, index) => (
-          <Tab label={filter} key={index} value={index} />
+          <Tab label={filter} key={index} value={filter} />
         ))}
       </CustomTabs>
     </Wrapper>
