@@ -220,8 +220,8 @@ const mapDispatchToProps = dispatch => ({
 
 /* 
 const mapDispatchToProps = {
-  increase,
-  decrease,
+  onIncrease: increase,
+  onDecrease: decrease,
 };
 */
 
@@ -232,18 +232,13 @@ export default connect(mapStateToProps, mapDispatchToProps)(CounterContainer);
 ### useSelector
 
 ```jsx
-const result : any = useSelector(selector : Function, deps : any[])
+const result: any = useSelector(selector: Function, equalityFn?: Function)
 ```
 
 - 리덕스 스토어에 있는 상태를 조회할 때 사용된다.
-- 인자로 **selector 함수**와 **의존성 배열**을 받는다.
+- 인자로 **selector 함수**와 **equality 함수**을 받는다.
   - selector 함수는 인자로 리덕스 스토어에 있는 상태를 받고 어떤 상태값을 반환할지 정의한다.
-  - deps 배열은 어떤 값이 바뀌었을 때 selector 함수를 재정의할지 설정한다.
-  - 생략하면 렌더링될 때마다 selector 함수를 재정의한다.
-
-```jsx
-const number = useSelector(state => state.counter.number, []);
-```
+  - equality 함수는 이전 값과 다음 값을 비교하여 true/false를 반환하는 함수이다. 반환값이 true이면 리렌더링을 하지 않고 false이면 리렌더링한다.
 
 ### useDispatch
 
@@ -251,6 +246,22 @@ const number = useSelector(state => state.counter.number, []);
 
 ```jsx
 const dispatch = useDispatch();
+```
+
+#### useSelector와 useDispatch hook 사용 예시
+
+```js
+function CounterContainer() {
+  const number = useSelector(state => state.counter.number);
+  const dispatch = useDispatch();
+  const onIncrease = () => dispatch(increase());
+  const onDecrease = () => dispatch(decrease());
+  return (
+    <Counter number={number} onIncrease={onIncrease} onDecrease={onDecrease} />
+  );
+}
+
+export default CounterContainer;
 ```
 
 ### useStore
