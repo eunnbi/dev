@@ -1,6 +1,6 @@
 import { atom } from "recoil";
 
-export const postFilterState = atom<FilterIndex>({
+export const postFilterState = atom<Filter>({
   key: "postFilterState",
-  default: 0
+  default: "All"
 });
