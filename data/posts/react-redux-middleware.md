@@ -341,6 +341,12 @@ export default CounterContainer;
 
 <br/>
 
+> 미들웨어는 다음과 같은 상황에 유용하게 사용된다.
+>
+> 1. 요청을 연달아서 여러번 하게 될 때 이전 요청은 무시하도록 하고 맨 마지막의 요청만 처리하도록 할 때 (Ex. react-saga의 takeLastest)
+> 2. 특정 조건이 만족되었을 때 이전에 시작한 요청을 취소하는 경우
+> 3. 원하는 액션이 디스패치 되었을 때 특정 콜백 함수를 호출하도록 등록할 때
+
 참고
 
 - [Redux-Saga: 사이드 이펙트 관리](https://meetup.toast.com/posts/136)
