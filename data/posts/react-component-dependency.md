@@ -3,7 +3,7 @@ emoji: 🎨
 title: 컴포넌트의 의존성 관리
 date: "2022-06-29"
 category: React
-preview: ""
+preview: "👉 컴포넌트, 다시 생각하기 영상을 보고 정리한 내용입니다. React 컴포넌트의 의존성 파악하기 1. 💅 스타일: css, scss, css-in-js 등등 2. ⚓ 로직: UI 조작에 필요한 커스텀 로직, custom hook 3. 🌐 전역 상태: 현재 UI를 표현하기 위해 유저 액선을 통해 만들어진 상태 4. 👇 props: 상위 컴포넌트에 대한 의존성 5. 🚀 리모트 데이터 스키마: API 서버에서 내려주는 데이터의 모양 page 기반 라우팅을 한다면 컴포넌트들은 루트 컴포넌트에 대한 의존성을 가지게 된다. 컴포넌트에 새로운 정보를 추가할 경우 하위 컴포넌트의 props, useEffect 등을 수정해야 할 수 있다."
 ---
 
 > 👉 [컴포넌트, 다시 생각하기](https://www.youtube.com/watch?v=HYgKBvLr49c) 영상을 보고 정리한 내용입니다.
