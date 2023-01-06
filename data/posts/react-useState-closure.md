@@ -3,7 +3,7 @@ emoji: 🧀
 title: useState와 클로저
 date: "2022-02-23"
 category: React
-preview: ""
+preview: "클로저란? 자신이 선언될 당시의 Scope Chain에서 알 수 있었던 변수들 중 자신이 실행될 때 사용할 변수들만을 기억하여 참조를 유지시키는 함수이다. 모든 함수 컨텍스트에는 LexicalEnvironment 객체가 있고, environmentRecord와 outerEnvironmentReference로 구성되어 있다. environmentRecord에는 현재 함수 컨텍스트와 관련된 코드의 식별자 정보들이 저장되고 outerEnvironmentReference는 함수가 선언된 당시의 Lexical Environment 객체를 참조한다. 어떤 식별자에 참조할 때 현재 컨텍스트의 environmentRecord를 탐색해서 발견되면 그 값을 반환하고, 발견하지 못하면 outerEnvironmentReference에 담긴 LexicalEnvironment를 탐색하는 과정을 거친다. 계속 찾지 못할 경우 전역 컨텍스트의 LexicalEnvironment까지 탐색해 나간다. 즉, 변수의 Scope Chain을 따라 탐색한다."
 ---
 
 > **클로저란?**<br/>
