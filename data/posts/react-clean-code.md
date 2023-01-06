@@ -3,7 +3,7 @@ emoji: 🧹
 title: Frontend Clean Code
 date: "2022-07-05"
 category: React
-preview: ""
+preview: "👉 '토스ㅣSLASH 21 - 실무에서 바로 쓰는 Frontend Clean Code' 영상을 보고 정리한 내용입니다. 클린코드라고 하면 '명확한 이름', '중복 줄이기'를 먼저 말하지만, 실무에서의 클린코드는 좀 더 섬세하게 코드를 정리하는 스킬이 필요하다. 흐름 파악이 어렵고 도메인 맥락 표현이 안 되어 동료에게 물어봐야 알 수 있는 코드는 유지보수할 때 시간이 오래 걸리고, 추후에 기능을 추가하기도 어렵다. 실무에서의 클린 코드는 유지보수 시간을 단축시킬 수 있고, 버그가 났을 때 디버깅 시간도 단축되는 코드를 말한다."
 ---
 
 > 👉 [토스ㅣSLASH 21 - 실무에서 바로 쓰는 Frontend Clean Code](https://www.youtube.com/watch?v=edWbHp_k_9Y) 영상을 보고 정리한 내용입니다.
