@@ -3,7 +3,7 @@ emoji: 🗺️
 title: Layout & Head
 date: "2022-06-13"
 category: Nextjs
-preview: ""
+preview: "navigation이나 footer와 같은 공통 레이아*은 Layout component로 만들고 _app 파일에 import하여 렌더링한다. 1. Single Shared Layout with Custom App 2. Per-Page Layouts Head component의 children으로 들어가는 태그들이 html의 head 태그안에 보여질 것이다. Head component는 html의 head 태그와 비슷한 역할을 한다. 검색 엔진 최적화에서 head 태그를 잘 작성하는 것이 중요하다!"
 ---
 
 > NextJS 공식문서 👍
@@ -13,7 +13,7 @@ preview: ""
 
 # Layout
 
-`navigation`이나 `footer`와 같은 **공통 레이아웃**은 Layout component로 만들고 `_app.tsx`에 `import`하여 렌더링한다.
+`navigation`이나 `footer`와 같은 **공통 레이아웃**은 Layout component로 만들고 `_app` 파일에 `import`하여 렌더링한다.
 
 **1. Single Shared Layout with Custom App**
 
