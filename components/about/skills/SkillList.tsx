@@ -25,6 +25,7 @@ const SkillItem = ({ id, tech }: Skill) => {
           src={`/images/skills/${id}.png`}
           fill
           placeholder="blur"
+          sizes="100px"
           blurDataURL={`/images/skills/${id}.png`}
           alt={tech}
         />
