@@ -20,6 +20,7 @@ const HomePage: NextPage = () => {
             <Image
               src="/images/profile.png"
               alt="강은비의 프로필 미모티콘"
+              sizes="250px"
               fill
               priority
             />
