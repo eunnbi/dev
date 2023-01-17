@@ -16,7 +16,7 @@ CSR은 React, Vue 등의 SPA(Single Page Application)에서 쓰이는 기법으�
 - 그러면 JS 번들 파일을 다 다운받기 전까지는 **데이터가 없는 빈 html 파일**이 렌더링되어 사용자는 빈 화면을 보게 된다.
 - JS 번들 파일을 다운받는 시간이 오래 걸릴수록 사용자 경험이 나빠진다.
 - 하지만 Code splitting으로 어느 정도 해결이 가능하다.
-  - [[React] 코드 스플리팅](https://velog.io/@eunnbi/React-%EC%BD%94%EB%93%9C-%EC%8A%A4%ED%94%8C%EB%A6%AC%ED%8C%85)
+  - [React - 코드 스플리팅](https://www.eunnbi.dev/posts/react-code-splitting)
 
 #### 검색엔진최적화 (SEO)에 취약하다. 🔎
 

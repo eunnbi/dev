@@ -12,7 +12,7 @@ preview: "값을 읽기 전용으로 설정해주는 Typescript의 타입시스�
 - 함수에 참조형 데이터를 인수로 전달하면 주소값이 전달되기 때문에 함수 내부에서 프로퍼티 값을 마음대로 변경할 수 있다.
 - 이러한 경우, 함수 내부에서 원본 데이터를 변경하지 않기 위해서 매개변수 타입에 `readonly`를 사용한다.
 
-> 👉 참고: [pass by value vs pass by reference](https://velog.io/@eunnbi/JS-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%83%80%EC%9E%85#-pass-by-value--pass-by-reference)
+> 👉 참고: [pass by value vs pass by reference](https://www.eunnbi.dev/posts/js-data-type#%F0%9F%92%A1-pass-by-value-&-pass-by-reference)
 
 > **Example**
 >

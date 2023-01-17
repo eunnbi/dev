@@ -95,7 +95,7 @@ const PostsPage = () => {
 > };
 > ```
 
-> 👉 [React Query 공식문서 - Hydration](https://react-query-v2.tanstack.com/reference/hydration)
+> 👉 [TanStack Query 공식문서 - Hydration](https://tanstack.com/query/v4/docs/react/reference/hydration)
 
 <br/>
 
