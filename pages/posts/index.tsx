@@ -10,6 +10,7 @@ import Notice from "@components/posts/Notice";
 import PostFilter from "@components/posts/PostFilter";
 import { getSessionStorage, SCROLL_POS_KEY } from "@lib/sessionStorage";
 import { useEffect } from "react";
+import PostCount from "@components/posts/PostCount";
 
 const PostsPage = ({
   posts,
@@ -27,9 +28,9 @@ const PostsPage = ({
       <Notice />
       <Main>
         <Heading title="Posts" />
-        <p>{posts.length} posts</p>
         <CategoriesContext.Provider value={categories}>
           <PostsContext.Provider value={posts}>
+            <PostCount />
             <PostFilter />
             <PostsSection />
           </PostsContext.Provider>
@@ -43,12 +44,6 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   margin: 30px 0 60px;
-  & > p {
-    text-align: center;
-    font-weight: 500;
-    font-size: 1.1rem;
-    margin: 10px 0 2rem;
-  }
 `;
 
 export default PostsPage;

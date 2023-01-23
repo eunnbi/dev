@@ -154,9 +154,9 @@ console.log(Counter.decreaseValue()); // 0
 - 다른 함수의 인자로 전달되는 함수를 말한다.
 - 함수를 명시적으로 호출하는 방식이 아니라 특정 이벤트가 발생했을 때 호출되는 함수
 - 비동기식 처리 모델에 사용된다.
-- [참고 - 콜백함수](https://velog.io/@eunnbi/JS-%EC%BD%9C%EB%B0%B1%ED%95%A8%EC%88%98)
+- [참고 - 콜백함수](https://www.eunnbi.dev/posts/js-callback-function)
 
-이외에도 [생성자 함수](https://velog.io/@eunnbi/JS-this#-%EC%83%9D%EC%84%B1%EC%9E%90-%ED%95%A8%EC%88%98%EB%9E%80[), [클로저 함수](https://velog.io/@eunnbi/JS-%ED%81%B4%EB%A1%9C%EC%A0%80) 등이 있다.
+이외에도 [생성자 함수](https://www.eunnbi.dev/posts/js-this#%EC%83%9D%EC%84%B1%EC%9E%90-%ED%95%A8%EC%88%98), [클로저 함수](https://www.eunnbi.dev/posts/js-closure) 등이 있다.
 
 <br/>
 
@@ -185,4 +185,4 @@ console.log(sum(1, 2, 3)); // 6
 
 4. `name` 프로퍼티: 함수명, 익명함수의 경우 빈 문자열
 
-5. `__proto__`, `prototype` 프로퍼티: [참고](https://velog.io/@eunnbi/JS-%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85)
+5. `__proto__`, `prototype` 프로퍼티: [참고 - 프로토타입](https://www.eunnbi.dev/posts/js-prototype#constructor,-prototype,-instance)
