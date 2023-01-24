@@ -43,7 +43,7 @@ const ProjectArticle = ({ title, imageCnt, tags, links, id, index }: Props) => {
   return (
     <Article onClick={onClick}>
       <Header>
-        <h2>{title}</h2>
+        <h1>{title}</h1>
         <ProjectLinks links={links} />
       </Header>
       <ImageWrapper>
