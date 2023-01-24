@@ -4,8 +4,8 @@ import styled from "styled-components";
 import { getProjectData, getProjectIds } from "@lib/projects";
 import ImageSlider from "@components/projects/ImageSlider";
 import ProjectLinks from "@components/projects/ProjectLinks";
-import ProjectStacks from "@components/projects/ProjectStacks";
 import ProjectTags from "@components/projects/ProjectTags";
+import StackList from "@components/projects/StackList";
 
 const ProjectPage = ({
   project
@@ -36,30 +36,33 @@ const ProjectPage = ({
       <Main>
         <h1>{title}</h1>
         {images.length === 0 ? null : <ImageSlider images={images} />}
-        <Section>
+        <Wrapper>
           <p className="project-period">⏰ {period}</p>
           <ProjectTags tags={tags} />
-          <article>
+          <section>
             <h2>Overview</h2>
             <p>{overview}</p>
-          </article>
-          <ProjectStacks stacks={stacks} />
-          <article>
+          </section>
+          <section>
+            <h2>Stacks</h2>
+            <StackList stacks={stacks} />
+          </section>
+          <section>
             <h2>Member</h2>
             <p>{participation.member}</p>
             {participation.role && <p>{participation.role}</p>}
-          </article>
+          </section>
           {(review.text || (review.link && review.linkName)) && (
-            <article>
+            <section>
               <h2>Review</h2>
               <p>{review.text}</p>
               <a href={review.link} target="_blank" rel="noreferrer">
                 🚀 <span>{review.linkName}</span>
               </a>
-            </article>
+            </section>
           )}
           <ProjectLinks links={links} />
-        </Section>
+        </Wrapper>
       </Main>
     </>
   );
@@ -71,21 +74,22 @@ const Main = styled.main`
   align-items: center;
   gap: 3rem;
   width: 100%;
-  margin: 40px 0;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   h1 {
     font-size: 2.2rem;
     text-align: center;
   }
 `;
 
-const Section = styled.section`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
   .project-period {
     font-size: 1.05rem;
   }
-  article {
+  section {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;

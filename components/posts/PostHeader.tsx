@@ -15,7 +15,7 @@ const PostHeader = () => {
     });
   };
   return (
-    <Section>
+    <Header>
       <span className="emoji">{emoji}</span>
       <h1>{title}</h1>
       <div>
@@ -24,11 +24,11 @@ const PostHeader = () => {
           {category}
         </span>
       </div>
-    </Section>
+    </Header>
   );
 };
 
-const Section = styled.section`
+const Header = styled.header`
   display: flex;
   flex-direction: column;
   padding-bottom: 10px;

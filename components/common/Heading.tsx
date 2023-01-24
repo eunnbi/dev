@@ -7,13 +7,13 @@ interface HeadingProps {
 
 const Heading = ({ title }: HeadingProps) => {
   return (
-    <H2>
+    <H1>
       <span>{title}</span>
-    </H2>
+    </H1>
   );
 };
 
-const H2 = styled.h2`
+const H1 = styled.h1`
   display: flex;
   justify-content: center;
   align-items: center;

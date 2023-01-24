@@ -31,7 +31,6 @@ const Filter = ({ filters, filter, setFilter }: FilterProps) => {
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  width: 100%;
 `;
 
 const CustomTabs = styled(Tabs)`

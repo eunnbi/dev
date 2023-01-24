@@ -1,19 +1,24 @@
 import styled from "styled-components";
 
-const ProjectTags = ({ tags }: Pick<Project, "tags">) => {
+interface Props extends Pick<Project, "tags"> {
+  center?: boolean;
+}
+
+const ProjectTags = ({ tags, center }: Props) => {
   return (
-    <TagWrapper>
+    <TagList center={center ? "true" : ""}>
       {tags.map((tag, index) => (
         <TagItem key={index}>{tag}</TagItem>
       ))}
-    </TagWrapper>
+    </TagList>
   );
 };
 
-const TagWrapper = styled.ul`
+const TagList = styled.ul<{ center: "true" | "" }>`
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  justify-content: ${({ center }) => (center ? "center" : "flex-start")};
 `;
 
 const TagItem = styled.li`

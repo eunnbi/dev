@@ -1,16 +1,16 @@
 import { InferGetServerSidePropsType } from "next";
+import { useEffect } from "react";
 import Heading from "@components/common/Heading";
 import CustomHead from "@components/common/CustomHead";
-import PostsSection from "@components/posts/PostsSection";
+import PostCount from "@components/posts/PostCount";
+import PostList from "@components/posts/PostList";
+import Notice from "@components/posts/Notice";
+import PostFilter from "@components/posts/PostFilter";
 import { CategoriesContext } from "@contexts/posts/CategoriesContext";
 import { PostsContext } from "@contexts/posts/PostsContext";
 import { getSortedPostsData } from "@lib/posts";
-import styled from "styled-components";
-import Notice from "@components/posts/Notice";
-import PostFilter from "@components/posts/PostFilter";
 import { getSessionStorage, SCROLL_POS_KEY } from "@lib/sessionStorage";
-import { useEffect } from "react";
-import PostCount from "@components/posts/PostCount";
+import styled from "styled-components";
 
 const PostsPage = ({
   posts,
@@ -32,7 +32,7 @@ const PostsPage = ({
           <PostsContext.Provider value={posts}>
             <PostCount />
             <PostFilter />
-            <PostsSection />
+            <PostList />
           </PostsContext.Provider>
         </CategoriesContext.Provider>
       </Main>
@@ -43,7 +43,8 @@ const PostsPage = ({
 const Main = styled.main`
   display: flex;
   flex-direction: column;
-  margin: 30px 0 60px;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
 `;
 
 export default PostsPage;

@@ -18,7 +18,7 @@ const getPosittion = (index: number, positionIndex: PositionIndex) => {
 const ImageSlider = ({ images }: ImageSlierProps) => {
   const { positionIndex, moveNext, movePrev } = useSlider(images.length);
   return (
-    <SliderSection>
+    <Slider>
       <div>
         <button
           type="button"
@@ -44,11 +44,11 @@ const ImageSlider = ({ images }: ImageSlierProps) => {
           />
         ))}
       </div>
-    </SliderSection>
+    </Slider>
   );
 };
 
-const SliderSection = styled.div`
+const Slider = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
