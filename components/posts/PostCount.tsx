@@ -6,7 +6,7 @@ const PostCount = () => {
   return <Text>{posts.length} posts</Text>;
 };
 
-const Text = styled.p`
+const Text = styled.span`
   text-align: center;
   font-weight: 500;
   font-size: 1.1rem;
