@@ -38,7 +38,7 @@ const Box = styled.div`
   display: flex;
   svg {
     font-size: 1.5rem;
-    color: #a8a8a8;
+    color: #7d7d7d;
   }
 `;
 
