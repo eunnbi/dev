@@ -18,13 +18,20 @@ const Filter = ({ filters, filter, setFilter }: FilterProps) => {
     []
   );
   return (
-    <CustomTabs value={filter} onChange={onChange} variant="scrollable">
-      {filters.map((filter, index) => (
-        <Tab label={filter} key={index} value={filter} />
-      ))}
-    </CustomTabs>
+    <Wrapper>
+      <CustomTabs value={filter} onChange={onChange} variant="scrollable">
+        {filters.map((filter, index) => (
+          <Tab label={filter} key={index} value={filter} />
+        ))}
+      </CustomTabs>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 const CustomTabs = styled(Tabs)`
   .MuiTab-root {
@@ -40,9 +47,6 @@ const CustomTabs = styled(Tabs)`
     :hover {
       transition: all 200ms ease;
     }
-  }
-  .MuiTabs-flexContainer {
-    justify-content: center;
   }
   .Mui-selected {
     color: #1976d2;
