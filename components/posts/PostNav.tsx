@@ -3,12 +3,12 @@ import { usePostInfo } from "@hooks/usePostInfo";
 import { FiArrowRight, FiArrowLeft } from "react-icons/fi";
 import Link from "next/link";
 
-const PostFooter = () => {
+const PostNav = () => {
   const { prev, next } = usePostInfo();
   return (
-    <Section>
+    <Nav>
       {prev ? (
-        <Box href={`/posts/${prev.id}`}>
+        <Box href={`/posts/${prev.id}`} passHref>
           <FiArrowLeft />
           <p>{prev.title}</p>
         </Box>
@@ -16,18 +16,18 @@ const PostFooter = () => {
         <div></div>
       )}
       {next ? (
-        <Box href={`/posts/${next.id}`}>
+        <Box href={`/posts/${next.id}`} passHref>
           <p>{next.title}</p>
           <FiArrowRight />
         </Box>
       ) : (
         <div></div>
       )}
-    </Section>
+    </Nav>
   );
 };
 
-const Section = styled.section`
+const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45,4 +45,4 @@ const Box = styled(Link)`
   font-size: 0.9rem;
 `;
 
-export default PostFooter;
+export default PostNav;
