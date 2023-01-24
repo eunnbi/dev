@@ -5,18 +5,18 @@ import ProjectLinks from "./ProjectLinks";
 import styled from "styled-components";
 import Router from "next/router";
 
-const ProjectsSection = () => {
+const ProjectList = () => {
   const projects = useProjects();
   return (
-    <Section>
+    <Wrapper>
       {projects.map((project, index) => (
         <ProjectArticle {...project} index={index} key={project.id} />
       ))}
-    </Section>
+    </Wrapper>
   );
 };
 
-const Section = styled.section`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 7rem;
@@ -42,15 +42,16 @@ const ProjectArticle = ({ title, imageCnt, tags, links, id, index }: Props) => {
 
   return (
     <Article onClick={onClick}>
-      <Row>
+      <Header>
         <h2>{title}</h2>
         <ProjectLinks links={links} />
-      </Row>
+      </Header>
       <ImageWrapper>
         <Image
           src={imageSrc}
-          alt="프로젝트 썸네일"
+          alt={`${title} 썸네일`}
           fill
+          sizes="90vw"
           placeholder="blur"
           blurDataURL={imageSrc}
           priority={index === 0 ? true : false}
@@ -84,11 +85,11 @@ const ImageWrapper = styled.div`
   }
 `;
 
-const Row = styled.div`
+const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 90%;
 `;
 
-export default ProjectsSection;
+export default ProjectList;
