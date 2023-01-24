@@ -4,18 +4,18 @@ import Router from "next/router";
 import { convertDateFormat } from "@lib/date";
 import { SCROLL_POS_KEY, setSessionStorage } from "@lib/sessionStorage";
 
-const PostsSection = () => {
+const PostList = () => {
   const posts = usePosts();
   return (
-    <Section>
+    <Wrapper>
       {posts.map(post => (
         <PostArticle key={post.id} {...post} />
       ))}
-    </Section>
+    </Wrapper>
   );
 };
 
-const Section = styled.section`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -31,15 +31,15 @@ const PostArticle = ({ id, title, date, category, preview, emoji }: Post) => {
   };
   return (
     <Article onClick={onClick}>
-      <h3>
+      <h1>
         {emoji}
         <span>{title}</span>
-      </h3>
-      <Preview>{preview}</Preview>
-      <Bottom>
-        <p>{convertDateFormat(date)}</p>
-        <p>{category}</p>
-      </Bottom>
+      </h1>
+      <p>{preview}</p>
+      <div>
+        <span>{convertDateFormat(date)}</span>
+        <span>{category}</span>
+      </div>
     </Article>
   );
 };
@@ -51,7 +51,7 @@ const Article = styled.article`
   border: 1px solid #e0e0e0;
   padding: 1rem;
   border-radius: 6px;
-  h3 {
+  h1 {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -61,29 +61,26 @@ const Article = styled.article`
     font-size: 1.4rem;
     line-height: 1.4;
   }
-  p {
-    font-size: 0.9rem;
-  }
-  &:hover h3 > span {
+  &:hover h1 > span {
     text-decoration: underline;
   }
+  p {
+    margin-bottom: 10px;
+    line-height: 1.3125rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    font-size: 0.9rem;
+  }
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #7d7d7d;
+    font-size: 0.9rem;
+  }
 `;
 
-const Preview = styled.p`
-  margin-bottom: 10px;
-  line-height: 1.3125rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-`;
-
-const Bottom = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #979797;
-`;
-
-export default PostsSection;
+export default PostList;
