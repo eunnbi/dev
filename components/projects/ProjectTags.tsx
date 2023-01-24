@@ -6,15 +6,15 @@ interface Props extends Pick<Project, "tags"> {
 
 const ProjectTags = ({ tags, center }: Props) => {
   return (
-    <TagWrapper center={center ? "true" : ""}>
+    <TagList center={center ? "true" : ""}>
       {tags.map((tag, index) => (
         <TagItem key={index}>{tag}</TagItem>
       ))}
-    </TagWrapper>
+    </TagList>
   );
 };
 
-const TagWrapper = styled.ul<{ center: "true" | "" }>`
+const TagList = styled.ul<{ center: "true" | "" }>`
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
