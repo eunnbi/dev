@@ -24,5 +24,5 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   gap: 5rem;
-  margin: 2rem 0;
+  margin-top: 2rem;
 `;
