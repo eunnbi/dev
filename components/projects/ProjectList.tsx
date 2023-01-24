@@ -57,7 +57,7 @@ const ProjectArticle = ({ title, imageCnt, tags, links, id, index }: Props) => {
           priority={index === 0 ? true : false}
         />
       </ImageWrapper>
-      <ProjectTags tags={tags} />
+      <ProjectTags tags={tags} center={true} />
     </Article>
   );
 };

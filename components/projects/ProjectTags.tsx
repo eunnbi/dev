@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
-const ProjectTags = ({ tags }: Pick<Project, "tags">) => {
+interface Props extends Pick<Project, "tags"> {
+  center?: boolean;
+}
+
+const ProjectTags = ({ tags, center }: Props) => {
   return (
-    <TagWrapper>
+    <TagWrapper center={center ? "true" : ""}>
       {tags.map((tag, index) => (
         <TagItem key={index}>{tag}</TagItem>
       ))}
@@ -10,10 +14,11 @@ const ProjectTags = ({ tags }: Pick<Project, "tags">) => {
   );
 };
 
-const TagWrapper = styled.ul`
+const TagWrapper = styled.ul<{ center: "true" | "" }>`
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  justify-content: ${({ center }) => (center ? "center" : "flex-start")};
 `;
 
 const TagItem = styled.li`
