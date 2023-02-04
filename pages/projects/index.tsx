@@ -1,7 +1,7 @@
 import type { InferGetStaticPropsType } from "next";
 import CustomHead from "@components/common/CustomHead";
 import Heading from "@components/common/Heading";
-import ProjectsSection from "@components/projects/ProjectsSection";
+import ProjectList from "@components/projects/ProjectList";
 import styled from "styled-components";
 import { getSortedProjectsData } from "@lib/projects";
 import { CategoriesContext } from "@contexts/projects/CategoriesContext";
@@ -20,7 +20,7 @@ const ProjectsPage = ({
         <CategoriesContext.Provider value={categories}>
           <ProjectsContext.Provider value={projects}>
             <ProjectFilter />
-            <ProjectsSection />
+            <ProjectList />
           </ProjectsContext.Provider>
         </CategoriesContext.Provider>
       </Main>
@@ -31,10 +31,11 @@ const ProjectsPage = ({
 export default ProjectsPage;
 
 const Main = styled.main`
-  margin: 30px 0 60px;
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
 `;
 
 export const getStaticProps = async () => {

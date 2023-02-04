@@ -22,7 +22,7 @@ const KeywordsRotatingText = ({
   );
 };
 
-const Text = styled.h2<{ fontSize: string; textAlign: string }>`
+const Text = styled.h1<{ fontSize: string; textAlign: string }>`
   font-size: ${({ fontSize }) => fontSize};
   text-align: ${({ textAlign }) => textAlign};
   line-height: 1.2;

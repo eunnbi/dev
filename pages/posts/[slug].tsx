@@ -3,9 +3,8 @@ import CustomHead from "@components/common/CustomHead";
 import { PostContext } from "@contexts/posts/PostContext";
 import { getPostData, getPostSlugs, getSortedPostsData } from "@lib/posts";
 import PostHeader from "@components/posts/PostHeader";
-import PostToc from "@components/posts/PostToc";
 import Markdown from "@components/posts/Markdown";
-import PostFooter from "@components/posts/PostFooter";
+import PostNav from "@components/posts/PostNav";
 import Utterances from "@components/posts/Utterances";
 import styled from "styled-components";
 
@@ -20,10 +19,11 @@ const PostPage = (data: InferGetStaticPropsType<typeof getStaticProps>) => {
       />
       <PostContext.Provider value={data}>
         <Main>
-          <PostHeader />
-          <Markdown />
-          {/*<PostToc />*/}
-          <PostFooter />
+          <article>
+            <PostHeader />
+            <Markdown />
+          </article>
+          <PostNav />
           <Utterances />
         </Main>
       </PostContext.Provider>
@@ -32,10 +32,13 @@ const PostPage = (data: InferGetStaticPropsType<typeof getStaticProps>) => {
 };
 
 const Main = styled.main`
-  margin: 30px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  & > article {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
 `;
 
 export default PostPage;

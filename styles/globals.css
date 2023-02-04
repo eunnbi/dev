@@ -1,4 +1,4 @@
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/static/pretendard.css");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard-dynamic-subset.css");
 
 :root {
   --vh: 100%;
@@ -67,4 +67,17 @@ img {
 
 h3 {
   font-size: 1rem;
+}
+
+/* layout style */
+main {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 720px) {
+  main {
+    padding: 0 15px;
+  }
 }
