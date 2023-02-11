@@ -9,15 +9,15 @@ const SkillsSection = () => {
       <Heading title="Tech Skills" />
       <div>
         <article>
-          <h3>Language</h3>
+          <h2>Language</h2>
           <SkillList skills={SKILLS_LANG} />
         </article>
         <article>
-          <h3>Library &amp; Framework</h3>
+          <h2>Library &amp; Framework</h2>
           <SkillList skills={SKILLS_LIB} />
         </article>
         <article>
-          <h3>Dev Tools</h3>
+          <h2>Dev Tools</h2>
           <SkillList skills={SKILLS_TOOLS} />
         </article>
       </div>
@@ -26,16 +26,17 @@ const SkillsSection = () => {
 };
 
 const Section = styled.section`
-  margin-bottom: 80px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  article {
-    margin-bottom: 50px;
-    h3 {
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
-    }
+  & > div {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  h2 {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
   }
 `;
 

@@ -29,7 +29,6 @@ const Header = () => {
         </Div>
         <Nav show={show}>
           <Link href="/about">About</Link>
-          <Link href="/projects">Projects</Link>
           <Link href="/posts">Posts</Link>
         </Nav>
       </Wrapper>

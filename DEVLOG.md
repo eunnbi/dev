@@ -71,18 +71,24 @@
   > 블로그 포스팅 : [Next.js compiler](https://www.eunnbi.dev/posts/next-compiler)
 - 자바스크립트와 타입스크립트 관련 블로그들 옮기는 중, 12월 이내로 완료 예정
 
-## 2022.01.01
+## 2023.01.01
 
 - 자바스크립트와 타입스크립트, web 관련 블로그 옮기기 완료
 - nextjs, react 블로그 옮기는 중
 - next 버전 13.1.1으로 업그레이트해서 `modularizeImports` 옵션 사용
 - [next.config.js](https://github.com/eunnbi/dev/blob/main/next.config.js#L4)에서 html 태그의 lang 속성 설정
 
+## 2023.01.24
+
+- nextjs, react 블로그 옮기기 완료
+- semantic tag 관련 블로그 작성 및 프로젝트 리팩토링
+- Network 관련 블로그 옮기기 작업 예정
+
 ## 📝 Tasks
 
 - [x] 아이폰 사파리 `height: 100vh` 버그 해결
 - [x] projects data 관리 방식 개선
 - [x] meta 태그, SEO 공부
-- [ ] `semantic tag` 공부 및 적용
+- [x] `semantic tag` 공부 및 적용
 - [ ] 블로그 옮기기 (-ing)
 - [ ] nextjs 13 마이그레이션 (-ing)
