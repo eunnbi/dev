@@ -82,6 +82,7 @@
 
 - nextjs, react 블로그 옮기기 완료
 - semantic tag 관련 블로그 작성 및 프로젝트 리팩토링
+- Network 관련 블로그 옮기기 작업 예정
 
 ## 📝 Tasks
 
