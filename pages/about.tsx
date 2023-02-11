@@ -1,11 +1,16 @@
-import type { NextPage } from "next";
-import CareerSection from "../components/about/career/CareerSection";
+import type { InferGetStaticPropsType } from "next";
 import CustomHead from "@components/common/CustomHead";
-import MyInfoSection from "@components/about/myinfo/MyInfoSection";
+import CareerSection from "../components/about/CareerSection";
+import MyInfoSection from "@components/about/MyInfoSection";
+import ProjectsSection from "@components/about/ProjectsSection";
 import SkillsSection from "@components/about/skills/SkillSection";
 import styled from "styled-components";
+import { getSortedProjectsData } from "@lib/projects";
+import { ProjectsContext } from "@contexts/projects/ProjectsContext";
 
-const AboutPage: NextPage = () => {
+const AboutPage = ({
+  projects
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <CustomHead page="About" />
@@ -13,6 +18,9 @@ const AboutPage: NextPage = () => {
         <MyInfoSection />
         <CareerSection />
         <SkillsSection />
+        <ProjectsContext.Provider value={projects}>
+          <ProjectsSection />
+        </ProjectsContext.Provider>
       </Main>
     </>
   );
@@ -24,5 +32,14 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   gap: 5rem;
-  margin-top: 2rem;
+  margin: 2rem auto 6rem;
 `;
+
+export const getStaticProps = async () => {
+  const projects = getSortedProjectsData();
+  return {
+    props: {
+      projects
+    }
+  };
+};
