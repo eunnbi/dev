@@ -1,12 +1,12 @@
 import { useContext } from "react";
 import { PostsContext } from "@contexts/posts/PostsContext";
-import { useRecoilValue } from "recoil";
-import { postFilterState } from "@stores/postFilterState";
+import { useRouter } from "next/router";
 
 export const usePosts = () => {
+  const router = useRouter();
   const posts = useContext(PostsContext);
-  const filter = useRecoilValue(postFilterState);
-  return filter === "All"
-    ? posts
-    : posts.filter(post => post.category === filter);
+  const category = router.query.category as string;
+  return category && category !== "All"
+    ? posts.filter(post => post.category === category)
+    : posts;
 };

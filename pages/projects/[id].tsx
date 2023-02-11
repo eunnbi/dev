@@ -2,10 +2,10 @@ import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import CustomHead from "@components/common/CustomHead";
 import styled from "styled-components";
 import { getProjectData, getProjectIds } from "@lib/projects";
-import ImageSlider from "@components/projects/ImageSlider";
-import ProjectLinks from "@components/projects/ProjectLinks";
-import ProjectTags from "@components/projects/ProjectTags";
-import StackList from "@components/projects/StackList";
+import ImageSlider from "@components/project/ImageSlider";
+import ProjectLinks from "@components/project/ProjectLinks";
+import ProjectTags from "@components/project/ProjectTags";
+import StackList from "@components/project/StackList";
 
 const ProjectPage = ({
   project

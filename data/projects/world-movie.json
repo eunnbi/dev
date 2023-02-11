@@ -1,6 +1,6 @@
 {
   "order": 1,
-  "title": "World Movie 프로젝트",
+  "title": "World Movie",
   "period": "2022.01 (1차 완성), 2022.06 (반응형 디자인 적용)",
   "imageCnt": 4,
   "tags": ["첫 React 프로젝트", "React Query로의 전환"],

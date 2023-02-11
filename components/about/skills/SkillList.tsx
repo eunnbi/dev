@@ -4,8 +4,20 @@ import Image from "next/image";
 const SkillList = ({ skills }: { skills: Skill[] }) => {
   return (
     <List>
-      {skills.map(skill => (
-        <SkillItem key={skill.id} id={skill.id} tech={skill.tech} />
+      {skills.map(({ id, tech }) => (
+        <Item key={id}>
+          <ImageWrapper>
+            <Image
+              src={`/images/skills/${id}.png`}
+              fill
+              placeholder="blur"
+              sizes="100px"
+              blurDataURL={`/images/skills/${id}.png`}
+              alt={tech}
+            />
+          </ImageWrapper>
+          <h4>{tech}</h4>
+        </Item>
       ))}
     </List>
   );
@@ -16,24 +28,6 @@ const List = styled.ul`
   flex-wrap: wrap;
   gap: 2rem;
 `;
-
-const SkillItem = ({ id, tech }: Skill) => {
-  return (
-    <Item>
-      <ImageWrapper>
-        <Image
-          src={`/images/skills/${id}.png`}
-          fill
-          placeholder="blur"
-          sizes="100px"
-          blurDataURL={`/images/skills/${id}.png`}
-          alt={tech}
-        />
-      </ImageWrapper>
-      <h4>{tech}</h4>
-    </Item>
-  );
-};
 
 const Item = styled.li`
   display: flex;
