@@ -1,4 +1,4 @@
-import { InferGetServerSidePropsType } from "next";
+import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
 import { useEffect } from "react";
 import Heading from "@components/common/Heading";
 import CustomHead from "@components/common/CustomHead";
@@ -16,7 +16,7 @@ import { useRouter } from "next/router";
 const PostsPage = ({
   posts,
   categories
-}: InferGetServerSidePropsType<typeof getStaticProps>) => {
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   useEffect(() => {
     const value = getSessionStorage<number>(SCROLL_POS_KEY, 0);
     window.scrollTo({
@@ -29,7 +29,7 @@ const PostsPage = ({
       <CustomHead page="Posts" />
       <Notice />
       <Main>
-        <Heading title={router.query.category as string} />
+        <Heading title={(router.query.category as string) || "All"} />
         <CategoriesContext.Provider value={categories}>
           <PostsContext.Provider value={posts}>
             <PostCount />
@@ -51,9 +51,15 @@ const Main = styled.main`
 
 export default PostsPage;
 
-export const getStaticProps = async () => {
-  const posts = getSortedPostsData();
+export const getServerSideProps = async ({
+  query
+}: GetServerSidePropsContext) => {
+  const category = query.category;
   const categories = getPostCategories();
+  const posts = getSortedPostsData({
+    category: category === "All" ? undefined : (category as string)
+  });
+
   return {
     props: {
       posts,
