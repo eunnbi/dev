@@ -18,9 +18,7 @@ const Filter = ({ queryName, filters, filter }: FilterProps) => {
     const params = new URLSearchParams(splitedPath[1]);
     params.delete(queryName);
     params.append(queryName, value);
-    router.push(`${basePath}?${params}`, undefined, {
-      shallow: true
-    });
+    router.push(`${basePath}?${params}`);
   };
   return (
     <Wrapper>
