@@ -1,28 +1,17 @@
 import styled from "styled-components";
 import { convertDateFormat } from "@lib/date";
 import { usePostInfo } from "@hooks/usePostInfo";
-import { useSetRecoilState } from "recoil";
-import { postFilterState } from "@stores/postFilterState";
-import Router from "next/router";
 
 const PostHeader = () => {
   const { current } = usePostInfo();
   const { emoji, title, date, category } = current;
-  const setFilter = useSetRecoilState(postFilterState);
-  const onClick = () => {
-    Router.push("/posts").then(() => {
-      setFilter(category);
-    });
-  };
   return (
     <Header>
       <span className="emoji">{emoji}</span>
       <h1>{title}</h1>
       <div>
         <span className="date">{convertDateFormat(date)}</span>
-        <span className="category" onClick={onClick}>
-          {category}
-        </span>
+        <span className="category">{category}</span>
       </div>
     </Header>
   );
