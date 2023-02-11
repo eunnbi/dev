@@ -4,21 +4,28 @@ import matter from "gray-matter";
 
 const postsDirectory = path.join(process.cwd(), "data", "posts");
 
-export const getSortedPostsData = (options?: { size?: number }): Post[] => {
+export const getSortedPostsData = (options?: {
+  category?: string;
+  size?: number;
+}): Post[] => {
   const fileNames = fs.readdirSync(postsDirectory);
-  const allPostsData = fileNames.map(fileName => {
-    const id = fileName.replace(/\.md$/, "");
-    const fullPath = path.join(postsDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, "utf-8");
+  const allPostsData = fileNames
+    .map(fileName => {
+      const id = fileName.replace(/\.md$/, "");
+      const fullPath = path.join(postsDirectory, fileName);
+      const fileContents = fs.readFileSync(fullPath, "utf-8");
 
-    const { content, data } = matter(fileContents);
-    const metadata = data as PostMetadata;
-    return {
-      id,
-      ...metadata,
-      content
-    };
-  });
+      const { content, data } = matter(fileContents);
+      const metadata = data as PostMetadata;
+      return {
+        id,
+        ...metadata,
+        content
+      };
+    })
+    .filter(data =>
+      options && options.category ? data.category === options.category : true
+    );
 
   // Sort posts by date
   allPostsData.sort(({ date: a }, { date: b }) => {
@@ -30,7 +37,6 @@ export const getSortedPostsData = (options?: { size?: number }): Post[] => {
       return 0;
     }
   });
-
   return options && options.size
     ? allPostsData.slice(0, options.size)
     : allPostsData;
@@ -51,7 +57,6 @@ export const getPostData = (slug: string): Post => {
 
   // Use gray-matter to parse the post metadata section
   const { content, data } = matter(fileContents);
-  //console.log(matterResult);
   const metadata = data as PostMetadata;
   return {
     id: slug,
