@@ -1,22 +1,27 @@
 import { SyntheticEvent } from "react";
 import styled from "styled-components";
 import { Tabs, Tab } from "@mui/material";
-import { useCallback } from "react";
 import { SetterOrUpdater } from "recoil";
+import { useRouter } from "next/router";
 
 interface FilterProps {
+  queryName: string;
   filters: string[];
   filter: Filter;
-  setFilter: SetterOrUpdater<Filter>;
 }
 
-const Filter = ({ filters, filter, setFilter }: FilterProps) => {
-  const onChange = useCallback(
-    (e: SyntheticEvent<Element, Event>, value: Filter) => {
-      setFilter(value);
-    },
-    []
-  );
+const Filter = ({ queryName, filters, filter }: FilterProps) => {
+  const router = useRouter();
+  const onChange = (_: SyntheticEvent<Element, Event>, value: Filter) => {
+    const splitedPath = router.asPath.split("?");
+    const basePath = splitedPath[0];
+    const params = new URLSearchParams(splitedPath[1]);
+    params.delete(queryName);
+    params.append(queryName, value);
+    router.push(`${basePath}?${params}`, undefined, {
+      shallow: true
+    });
+  };
   return (
     <Wrapper>
       <CustomTabs value={filter} onChange={onChange} variant="scrollable">

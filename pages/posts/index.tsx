@@ -8,9 +8,10 @@ import Notice from "@components/posts/Notice";
 import PostFilter from "@components/posts/PostFilter";
 import { CategoriesContext } from "@contexts/posts/CategoriesContext";
 import { PostsContext } from "@contexts/posts/PostsContext";
-import { getSortedPostsData } from "@lib/posts";
+import { getPostCategories, getSortedPostsData } from "@lib/posts";
 import { getSessionStorage, SCROLL_POS_KEY } from "@lib/sessionStorage";
 import styled from "styled-components";
+import { useRouter } from "next/router";
 
 const PostsPage = ({
   posts,
@@ -22,12 +23,13 @@ const PostsPage = ({
       top: value
     });
   }, []);
+  const router = useRouter();
   return (
     <>
       <CustomHead page="Posts" />
       <Notice />
       <Main>
-        <Heading title="Posts" />
+        <Heading title={router.query.category as string} />
         <CategoriesContext.Provider value={categories}>
           <PostsContext.Provider value={posts}>
             <PostCount />
@@ -51,16 +53,11 @@ export default PostsPage;
 
 export const getStaticProps = async () => {
   const posts = getSortedPostsData();
-  const categories = posts.map(post => post.category);
+  const categories = getPostCategories();
   return {
     props: {
       posts,
-      categories: [
-        "All",
-        ...categories.filter(
-          (category, index) => categories.indexOf(category) === index
-        )
-      ]
+      categories: ["All", ...categories]
     }
   };
 };
