@@ -78,7 +78,7 @@ const Article = styled.article`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #7d7d7d;
+    color: #6c6c6c;
     font-size: 0.9rem;
   }
 `;
