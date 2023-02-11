@@ -36,9 +36,9 @@ const PostArticle = ({ id, title, date, category, preview, emoji }: Post) => {
         <span>{title}</span>
       </h1>
       <p>{preview}</p>
-      <div>
-        <span>{convertDateFormat(date)}</span>
+      <div className="bottom">
         <span>{category}</span>
+        <span>{convertDateFormat(date)}</span>
       </div>
     </Article>
   );
@@ -48,9 +48,9 @@ const Article = styled.article`
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  border: 1px solid #e0e0e0;
   padding: 1rem;
   border-radius: 6px;
+  box-shadow: ${({ theme }) => theme.color.cardShadowStyle};
   h1 {
     display: flex;
     align-items: center;
@@ -74,12 +74,12 @@ const Article = styled.article`
     -webkit-box-orient: vertical;
     font-size: 0.9rem;
   }
-  & > div {
+  .bottom {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    color: #6c6c6c;
+    justify-content: space-between;
     font-size: 0.9rem;
+    color: ${({ theme }) => theme.color.tabTextColor};
   }
 `;
 
