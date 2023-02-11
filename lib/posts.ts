@@ -59,3 +59,20 @@ export const getPostData = (slug: string): Post => {
     content
   };
 };
+
+export const getPostCategories = () => {
+  const fileNames = fs.readdirSync(postsDirectory);
+  const categories = fileNames.map(fileName => {
+    const fullPath = path.join(postsDirectory, fileName);
+    const fileContents = fs.readFileSync(fullPath, "utf-8");
+
+    const { data } = matter(fileContents);
+    const metadata = data as PostMetadata;
+    return metadata.category;
+  });
+  return [
+    ...categories.filter(
+      (category, index) => categories.indexOf(category) === index
+    )
+  ];
+};
