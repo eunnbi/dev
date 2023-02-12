@@ -4,10 +4,22 @@ import matter from "gray-matter";
 
 const postsDirectory = path.join(process.cwd(), "data", "posts");
 
+export interface PostsGetResponse {
+  posts: Post[];
+  isLastPage?: boolean;
+  page: number;
+}
+
+export interface PostCategoryItem {
+  category: string;
+  count: number;
+}
+
 export const getSortedPostsData = (options?: {
   category?: string;
-  size?: number;
-}): Post[] => {
+  size: number;
+  page: number;
+}): PostsGetResponse => {
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames
     .map(fileName => {
@@ -24,7 +36,9 @@ export const getSortedPostsData = (options?: {
       };
     })
     .filter(data =>
-      options && options.category ? data.category === options.category : true
+      options && options.category && options.category !== "All"
+        ? data.category === options.category
+        : true
     );
 
   // Sort posts by date
@@ -37,9 +51,14 @@ export const getSortedPostsData = (options?: {
       return 0;
     }
   });
-  return options && options.size
-    ? allPostsData.slice(0, options.size)
-    : allPostsData;
+  const start = options ? options.size * options.page : 0;
+  return options
+    ? {
+        posts: allPostsData.slice(start, options.size + start),
+        isLastPage: options.size + start >= allPostsData.length,
+        page: options.page
+      }
+    : { posts: allPostsData, page: 0 };
 };
 
 export const getPostSlugs = () => {
@@ -65,7 +84,7 @@ export const getPostData = (slug: string): Post => {
   };
 };
 
-export const getPostCategories = () => {
+export const getPostCategories = (): PostCategoryItem[] => {
   const fileNames = fs.readdirSync(postsDirectory);
   const categories = fileNames.map(fileName => {
     const fullPath = path.join(postsDirectory, fileName);
@@ -75,9 +94,20 @@ export const getPostCategories = () => {
     const metadata = data as PostMetadata;
     return metadata.category;
   });
+  const uniqueCategories = categories.filter(
+    (category, index) => categories.indexOf(category) === index
+  );
   return [
-    ...categories.filter(
-      (category, index) => categories.indexOf(category) === index
-    )
+    { category: "All", count: categories.length },
+    ...uniqueCategories.map(category => {
+      const count = categories.reduce(
+        (sum, item) => (item === category ? ++sum : sum),
+        0
+      );
+      return {
+        category,
+        count
+      };
+    })
   ];
 };
