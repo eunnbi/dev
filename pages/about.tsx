@@ -6,7 +6,6 @@ import ProjectsSection from "@components/about/ProjectsSection";
 import SkillsSection from "@components/about/skills/SkillSection";
 import styled from "styled-components";
 import { getSortedProjectsData } from "@lib/projects";
-import { ProjectsContext } from "@contexts/projects/ProjectsContext";
 
 const AboutPage = ({
   projects
@@ -18,9 +17,7 @@ const AboutPage = ({
         <MyInfoSection />
         <CareerSection />
         <SkillsSection />
-        <ProjectsContext.Provider value={projects}>
-          <ProjectsSection />
-        </ProjectsContext.Provider>
+        <ProjectsSection projects={projects} />
       </Main>
     </>
   );
