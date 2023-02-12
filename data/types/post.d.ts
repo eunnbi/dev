@@ -11,7 +11,7 @@ type Post = PostMetadata & {
   content: string;
 };
 
-type PostContextType = {
+type PostGetResponse = {
   current: Post;
   prev: Pick<Post, "title" | "id"> | null;
   next: Pick<Post, "title" | "id"> | null;

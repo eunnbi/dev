@@ -4,11 +4,9 @@ import rehypeRaw from "rehype-raw";
 import rehypeSlug from "rehype-slug";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
-import { usePostInfo } from "@hooks/usePostInfo";
 import { useTheme } from "styled-components";
 
-const Markdown = () => {
-  const { current } = usePostInfo();
+const Markdown = ({ post }: { post: PostGetResponse["current"] }) => {
   const { name } = useTheme();
   return (
     <ReactMarkdown
@@ -18,7 +16,7 @@ const Markdown = () => {
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[rehypeRaw, rehypeSlug]}
       linkTarget={"_blank"}
-      transformImageUri={src => `/images/posts/${current.id}/${src}`}
+      transformImageUri={src => `/images/posts/${post.id}/${src}`}
       components={{
         code({ node, inline, className, children, ...props }) {
           const match = /language-(\w+)/.exec(className || "");
@@ -67,7 +65,7 @@ const Markdown = () => {
         }
       }}
     >
-      {current.content}
+      {post.content}
     </ReactMarkdown>
   );
 };

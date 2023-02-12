@@ -1,10 +1,8 @@
 import styled from "styled-components";
 import { convertDateFormat } from "@lib/date";
-import { usePostInfo } from "@hooks/usePostInfo";
 
-const PostHeader = () => {
-  const { current } = usePostInfo();
-  const { emoji, title, date, category } = current;
+const PostHeader = ({ post }: { post: PostGetResponse["current"] }) => {
+  const { emoji, title, date, category } = post;
   return (
     <Header>
       <span className="emoji">{emoji}</span>

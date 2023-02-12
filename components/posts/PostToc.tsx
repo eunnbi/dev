@@ -1,13 +1,11 @@
 import React from "react";
-import { usePostInfo } from "@hooks/usePostInfo";
 import Toc from "react-toc";
 import styled from "styled-components";
 
-const PostToc = () => {
-  const { current } = usePostInfo();
+const PostToc = ({ post }: { post: PostGetResponse["current"] }) => {
   return (
     <Section>
-      <CustomToc markdownText={current.content} lowestHeadingLevel={3} />
+      <CustomToc markdownText={post.content} lowestHeadingLevel={3} />
     </Section>
   );
 };

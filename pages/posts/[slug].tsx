@@ -1,6 +1,5 @@
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import CustomHead from "@components/common/CustomHead";
-import { PostContext } from "@contexts/posts/PostContext";
 import { getPostData, getPostSlugs, getSortedPostsData } from "@lib/posts";
 import PostHeader from "@components/posts/PostHeader";
 import Markdown from "@components/posts/Markdown";
@@ -17,16 +16,14 @@ const PostPage = (data: InferGetStaticPropsType<typeof getStaticProps>) => {
         image={`/images/posts/thumbnail/${data.current.id}.png`}
         keywords={[data.current.category]}
       />
-      <PostContext.Provider value={data}>
-        <Main>
-          <article>
-            <PostHeader />
-            <Markdown />
-          </article>
-          <PostNav />
-          <Utterances />
-        </Main>
-      </PostContext.Provider>
+      <Main>
+        <article>
+          <PostHeader post={data.current} />
+          <Markdown post={data.current} />
+        </article>
+        <PostNav prev={data.prev} next={data.next} />
+        <Utterances />
+      </Main>
     </>
   );
 };
@@ -50,7 +47,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const slug = context.params!.slug;
-  const posts = getSortedPostsData();
+  const { posts } = getSortedPostsData();
   const index = posts.findIndex(post => post.id === slug);
   const data = getPostData(slug as string);
   return {

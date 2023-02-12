@@ -1,16 +1,64 @@
 import styled from "styled-components";
-import { usePosts } from "@hooks/usePosts";
-import Router from "next/router";
+import { useRef } from "react";
+import Router, { useRouter } from "next/router";
 import { convertDateFormat } from "@lib/date";
 import { SCROLL_POS_KEY, setSessionStorage } from "@lib/sessionStorage";
+import { PostsGetResponse } from "@lib/posts";
+import { useInfiniteQuery } from "@tanstack/react-query";
 
-const PostList = () => {
-  const posts = usePosts();
-  return (
+const PostList = ({
+  data,
+  infiniteScroll
+}: {
+  data: PostsGetResponse;
+  infiniteScroll?: boolean;
+}) => {
+  return infiniteScroll ? (
+    <PostInfiniteList data={data} />
+  ) : (
     <Wrapper>
-      {posts.map(post => (
+      {data.posts.map(post => (
         <PostArticle key={post.id} {...post} />
       ))}
+    </Wrapper>
+  );
+};
+
+const PostInfiniteList = ({ data }: { data: PostsGetResponse }) => {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const router = useRouter();
+  const category = router.query.category as string | undefined;
+  const {
+    data: postsData,
+    fetchNextPage,
+    hasNextPage
+  } = useInfiniteQuery<PostsGetResponse>(
+    ["posts", category],
+    async ({ pageParam = 0 }) => {
+      const repsonse = await fetch(
+        `/api/posts?page=${pageParam}&size=10${
+          category ? `&category=${category}` : ""
+        }`
+      );
+      const data = await repsonse.json();
+      return data;
+    },
+    {
+      getNextPageParam: lastPage =>
+        lastPage.isLastPage ? undefined : lastPage.page + 1,
+      initialData: {
+        pageParams: [0],
+        pages: [data]
+      }
+    }
+  );
+  return (
+    <Wrapper>
+      {postsData?.pages.map(({ posts }) =>
+        posts.map(post => <PostArticle key={post.id} {...post} />)
+      )}
+      <button onClick={() => fetchNextPage()}>click</button>
+      <div ref={ref}></div>
     </Wrapper>
   );
 };
@@ -21,7 +69,6 @@ const Wrapper = styled.div`
   gap: 1.2rem;
   margin-top: 2rem;
 `;
-
 // ---------------------------------------------------
 
 const PostArticle = ({ id, title, date, category, preview, emoji }: Post) => {

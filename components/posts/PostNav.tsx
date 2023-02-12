@@ -1,10 +1,8 @@
 import styled from "styled-components";
-import { usePostInfo } from "@hooks/usePostInfo";
 import { FiArrowRight, FiArrowLeft } from "react-icons/fi";
 import Link from "next/link";
 
-const PostNav = () => {
-  const { prev, next } = usePostInfo();
+const PostNav = ({ prev, next }: Pick<PostGetResponse, "prev" | "next">) => {
   return (
     <Nav>
       {prev ? (

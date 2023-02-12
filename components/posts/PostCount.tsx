@@ -1,9 +1,15 @@
-import { usePosts } from "@hooks/usePosts";
+import type { PostCategoryItem } from "@lib/posts";
+import { useRouter } from "next/router";
 import styled from "styled-components";
 
-const PostCount = () => {
-  const posts = usePosts();
-  return <Text>{posts.length} posts</Text>;
+const PostCount = ({ categories }: { categories: PostCategoryItem[] }) => {
+  const { query } = useRouter();
+  const category = (query.category as string) || "All";
+  return (
+    <Text>
+      {categories.find(item => item.category === category)?.count} posts
+    </Text>
+  );
 };
 
 const Text = styled.span`
