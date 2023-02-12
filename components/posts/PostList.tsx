@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { useRef } from "react";
 import Router, { useRouter } from "next/router";
 import { convertDateFormat } from "@lib/date";
 import { SCROLL_POS_KEY, setSessionStorage } from "@lib/sessionStorage";
 import { PostsGetResponse } from "@lib/posts";
 import { useInfiniteQuery } from "@tanstack/react-query";
+import InfiniteScrollArea from "@components/common/InfiniteScrollArea";
 
 const PostList = ({
   data,
@@ -25,7 +25,6 @@ const PostList = ({
 };
 
 const PostInfiniteList = ({ data }: { data: PostsGetResponse }) => {
-  const ref = useRef<HTMLDivElement | null>(null);
   const router = useRouter();
   const category = router.query.category as string | undefined;
   const {
@@ -33,7 +32,7 @@ const PostInfiniteList = ({ data }: { data: PostsGetResponse }) => {
     fetchNextPage,
     hasNextPage
   } = useInfiniteQuery<PostsGetResponse>(
-    ["posts", category],
+    ["posts", category || "All"],
     async ({ pageParam = 0 }) => {
       const repsonse = await fetch(
         `/api/posts?page=${pageParam}&size=10${
@@ -53,13 +52,13 @@ const PostInfiniteList = ({ data }: { data: PostsGetResponse }) => {
     }
   );
   return (
-    <Wrapper>
-      {postsData?.pages.map(({ posts }) =>
-        posts.map(post => <PostArticle key={post.id} {...post} />)
-      )}
-      <button onClick={() => fetchNextPage()}>click</button>
-      <div ref={ref}></div>
-    </Wrapper>
+    <InfiniteScrollArea hasMore={hasNextPage} next={fetchNextPage}>
+      <Wrapper>
+        {postsData?.pages.map(({ posts }) =>
+          posts.map(post => <PostArticle key={post.id} {...post} />)
+        )}
+      </Wrapper>
+    </InfiniteScrollArea>
   );
 };
 
