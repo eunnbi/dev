@@ -6,7 +6,6 @@ import { useEffect } from "react";
 import { getSortedPostsData } from "@lib/posts";
 import Heading from "@components/common/Heading";
 import PostList from "@components/posts/PostList";
-import { PostsContext } from "@contexts/posts/PostsContext";
 import Link from "next/link";
 import { Button } from "@mui/material";
 
@@ -35,12 +34,10 @@ const HomePage = ({
             <h1>👋 배운 것을 기록해두는 공간입니다!</h1>
           </SpeechBubble>
         </Section>
-        <PostsContext.Provider value={posts}>
-          <section>
-            <Heading title="Latest Posts" />
-            <PostList />
-          </section>
-        </PostsContext.Provider>
+        <section>
+          <Heading title="Latest Posts" />
+          <PostList data={posts} />
+        </section>
         <Button type="button" aria-label="포스팅 더보기 버튼">
           <Link href="/posts" passHref>
             More
@@ -107,7 +104,7 @@ const Section = styled.section`
 `;
 
 export const getStaticProps = async () => {
-  const posts = getSortedPostsData({ size: 10 });
+  const posts = getSortedPostsData({ size: 10, page: 0 });
   return {
     props: {
       posts
