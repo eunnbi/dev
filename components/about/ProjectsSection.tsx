@@ -26,7 +26,7 @@ const Section = styled.section`
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 7rem;
+  gap: 4rem;
   justify-content: center;
 `;
 
