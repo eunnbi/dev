@@ -15,7 +15,6 @@ declare module "styled-components" {
       tabTextColor: string;
       tabSelectedBgColor: string;
       chipBgColor: string;
-      speechBubbleBg: string;
       cardShadowStyle: string;
     };
     name: "light" | "dark";

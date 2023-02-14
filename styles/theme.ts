@@ -26,7 +26,6 @@ export const lightTheme = {
     tabSelectedBgColor: "#ededed",
     chipBgColor: "#f3f3f4",
     tabTextColor: "#6e6d7a",
-    speechBubbleBg: "black",
     cardShadowStyle:
       "rgb(15 15 15 / 10%) 0px 0px 0px 1px, rgb(15 15 15 / 10%) 0px 2px 4px"
   },
@@ -42,7 +41,6 @@ export const darkTheme = {
     tabSelectedBgColor: "#373e47",
     chipBgColor: "#323a42",
     tabTextColor: "#97a2ad",
-    speechBubbleBg: "#373e47",
     cardShadowStyle: "#97a2ad 0px 0px 0px 1px, #000 0px 2px 4px"
   },
   name: "dark" as const,

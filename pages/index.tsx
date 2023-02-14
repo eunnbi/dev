@@ -56,7 +56,7 @@ const Main = styled.main`
   margin-bottom: 3rem;
   & > button {
     font-weight: bold;
-    background-color: ${({ theme }) => theme.color.tabSelectedBgColor};
+    background-color: #373e47;
   }
 `;
 
@@ -65,7 +65,7 @@ const SpeechBubble = styled.div`
   color: white;
   border-radius: 0.4em;
   padding: 0.5rem 0.8rem 0.5rem 0.5rem;
-  background-color: ${({ theme }) => theme.color.speechBubbleBg};
+  background-color: #373e47;
   &:after {
     content: "";
     position: absolute;
@@ -78,7 +78,7 @@ const SpeechBubble = styled.div`
     border-bottom: 0;
     margin-top: -5px;
     margin-left: -8px;
-    border-right-color: ${({ theme }) => theme.color.speechBubbleBg};
+    border-right-color: #373e47;
   }
   & > h1 {
     font-size: 1rem;
