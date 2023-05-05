@@ -124,8 +124,8 @@ const CategoryBadge = styled.span<{ category: Props["category"] }>`
   font-size: 0.8rem;
   font-weight: 500;
   border-radius: 5px;
-  background-color: ${({ category }) =>
-    category === "Team" ? "rgb(245, 224, 233)" : "rgb(219, 237, 219)"};
+  background-color: ${({ category, theme }) =>
+    category === "Team" ?  (theme.name === 'light' ?  "rgb(245, 224, 233)" : "rgb(183, 131, 154)") : (theme.name === 'light' ?"rgb(219, 237, 219)" :  "rgb(127, 160, 127)")};
 `;
 
 export default ProjectsSection;
