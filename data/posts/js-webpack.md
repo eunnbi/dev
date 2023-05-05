@@ -59,13 +59,14 @@ module.exports = {
 };
 ```
 
-- 엔트리 포인트는 여러개가 될 수도 있다.
-- 싱글 페이지 애플리케이션이 아니라 특정 페이지로 진입했을 때 서버에 페이지를 요청하고 받는 멀티 페이지 애플리케이션에 적합하다.
+- 엔트리 포인트는 여러개가 될 수도 있다. 싱글 페이지 애플리케이션이 아니라 특정 페이지로 진입했을 때 서버에 페이지를 요청하고 받는 멀티 페이지 애플리케이션에 적합하다.
 
 ```js
 module.exports = {
-  login: "./src/LoginView.js",
-  main: "./src/MainView.js"
+  entry: {
+    login: "./src/LoginView.js",
+    main: "./src/MainView.js"
+  }
 };
 ```
 
