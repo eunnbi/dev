@@ -36,7 +36,7 @@ const HomePage = ({
         </Section>
         <section>
           <Heading title="Latest Posts" />
-          <PostList data={posts} category="All" />
+          <PostList allPostsData={posts} category="All" />
         </section>
         <MoreButton type="button" aria-label="포스팅 더보기 버튼">
           <Link href="/posts" passHref>

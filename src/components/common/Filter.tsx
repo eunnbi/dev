@@ -17,7 +17,6 @@ const Filter = ({ queryName, filters, filter, defaultFilter }: FilterProps) => {
     const basePath = splitedPath[0];
     const params = new URLSearchParams(splitedPath[1]);
     params.delete(queryName);
-    console.log(value,defaultFilter);
     if (value !== defaultFilter) {
       params.append(queryName, value);
     }

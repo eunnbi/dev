@@ -7,26 +7,35 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import InfiniteScrollArea from "@/components/common/InfiniteScrollArea";
 
 const PostList = ({
-  data,
+  allPostsData,
   category,
   infiniteScroll
 }: {
-  data: PostsGetResponse;
+  allPostsData: Post[];
   category: string;
   infiniteScroll?: boolean;
 }) => {
   return infiniteScroll ? (
-    <PostInfiniteList data={data} category={category} />
+    <PostInfiniteList allPostsData={allPostsData} category={category} />
   ) : (
     <Wrapper>
-      {data.posts.map(post => (
+      {allPostsData.map(post => (
         <PostArticle key={post.id} {...post} />
       ))}
     </Wrapper>
   );
 };
 
-const PostInfiniteList = ({ data, category }: { data: PostsGetResponse, category: string }) => {
+const PostInfiniteList = ({ allPostsData, category }: { allPostsData: Post[], category: string }) => {
+  const SIZE = 10;
+  const initialData =  {
+    pageParams: [0],
+    pages: [{
+      posts: allPostsData.slice(0, SIZE),
+      isLastPage: SIZE >= allPostsData.length,
+      page: 0
+    }]
+  }
   const {
     data: postsData,
     fetchNextPage,
@@ -34,21 +43,18 @@ const PostInfiniteList = ({ data, category }: { data: PostsGetResponse, category
   } = useInfiniteQuery<PostsGetResponse>(
     ["posts", category],
     async ({ pageParam = 0 }) => {
-      const repsonse = await fetch(
-        `/api/posts?page=${pageParam}&size=10${
-          category ? `&category=${category}` : ""
-        }`
-      );
-      const data = await repsonse.json();
-      return data;
+      const startIndex = SIZE * pageParam;
+      const lastIndex = SIZE + startIndex;
+      return {
+        posts: allPostsData.slice(startIndex, lastIndex),
+        isLastPage: lastIndex >= allPostsData.length,
+        page: pageParam
+      };
     },
     {
       getNextPageParam: lastPage =>
         lastPage.isLastPage ? undefined : lastPage.page + 1,
-      initialData: {
-        pageParams: [0],
-        pages: [data]
-      }
+      initialData
     }
   );
   return (

@@ -19,7 +19,7 @@ export const getSortedPostsData = (options: {
   category?: string;
   size: number;
   page: number;
-}): PostsGetResponse => {
+}): Post[] => {
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData: Post[] = [];
   for (let i = 0; i < fileNames.length; i++) {
@@ -39,7 +39,6 @@ export const getSortedPostsData = (options: {
       }
   }
 
-
   // Sort posts by date
   allPostsData.sort(({ date: a }, { date: b }) => {
     if (a < b) {
@@ -50,14 +49,7 @@ export const getSortedPostsData = (options: {
       return 0;
     }
   });
-  const start = options.size * options.page;
-  return options
-    ? {
-        posts: allPostsData.slice(start, options.size + start),
-        isLastPage: options.size + start >= allPostsData.length,
-        page: options.page
-      }
-    : { posts: allPostsData, page: 0 };
+  return allPostsData;
 };
 
 export const getPostSlugs = () => {

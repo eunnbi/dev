@@ -29,7 +29,7 @@ const PostsPage = ({
         <Heading title={category?.toUpperCase()} />
         <PostCount categories={categories} />
         <PostFilter categories={categories} />
-        <PostList infiniteScroll data={posts} category={category} />
+        <PostList infiniteScroll allPostsData={posts} category={category} />
       </Main>
     </>
   );
