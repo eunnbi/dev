@@ -1,11 +1,11 @@
 import type { InferGetStaticPropsType } from "next";
-import CustomHead from "@components/common/CustomHead";
-import CareerSection from "../components/about/CareerSection";
-import MyInfoSection from "@components/about/MyInfoSection";
-import ProjectsSection from "@components/about/ProjectsSection";
-import SkillsSection from "@components/about/skills/SkillSection";
+import CustomHead from "@/components/common/CustomHead";
+import CareerSection from "@/components/about/CareerSection";
+import MyInfoSection from "@/components/about/MyInfoSection";
+import ProjectsSection from "@/components/about/ProjectsSection";
+import SkillSection from "@/components/about/SkillSection";
 import styled from "styled-components";
-import { getSortedProjectsData } from "@lib/projects";
+import { getSortedProjectsData } from "@/lib/projects";
 
 const AboutPage = ({
   projects
@@ -16,7 +16,7 @@ const AboutPage = ({
       <Main>
         <MyInfoSection />
         <CareerSection />
-        <SkillsSection />
+        <SkillSection />
         <ProjectsSection projects={projects} />
       </Main>
     </>

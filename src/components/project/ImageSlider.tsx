@@ -1,5 +1,5 @@
-import { useSlider } from "@hooks/useSlider";
-import styled, { css } from "styled-components";
+import { useSlider } from "@/hooks/useSlider";
+import styled from "styled-components";
 import Image from "next/image";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
@@ -7,7 +7,7 @@ interface ImageSlierProps {
   images: string[];
 }
 
-const getPosittion = (index: number, positionIndex: PositionIndex) => {
+const getPosition = (index: number, positionIndex: PositionIndex) => {
   return index === positionIndex.current
     ? "current"
     : index === positionIndex.prev
@@ -40,7 +40,7 @@ const ImageSlider = ({ images }: ImageSlierProps) => {
         {images.map((image, index) => (
           <PageBullet
             key={image}
-            position={getPosittion(index, positionIndex)}
+            position={getPosition(index, positionIndex)}
           />
         ))}
       </div>
@@ -92,7 +92,7 @@ const ImageList = ({ positionIndex, images }: ImageListProps) => {
         <ImageWrapper
           key={image}
           index={index}
-          position={getPosittion(index, positionIndex)}
+          position={getPosition(index, positionIndex)}
         >
           <Image src={image} alt="프로젝트 배포 사이트" fill priority />
         </ImageWrapper>

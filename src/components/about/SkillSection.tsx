@@ -3,7 +3,7 @@ import SkillList from "./SkillList";
 import styled from "styled-components";
 import Heading from "@/components/common/Heading";
 
-const SkillsSection = () => {
+const SkillSection = () => {
   return (
     <Section>
       <Heading title="Tech Skills" />
@@ -40,4 +40,4 @@ const Section = styled.section`
   }
 `;
 
-export default SkillsSection;
+export default SkillSection;

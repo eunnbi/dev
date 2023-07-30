@@ -1,4 +1,4 @@
-import type { PostCategoryItem } from "@lib/posts";
+import type { PostCategoryItem } from "@/lib/posts";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 

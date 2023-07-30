@@ -1,7 +1,7 @@
-import Heading from "@components/common/Heading";
+import Heading from "@/components/common/Heading";
 import styled from "styled-components";
-import ProjectLinks from "@components/project/ProjectLinks";
-import ProjectTags from "@components/project/ProjectTags";
+import ProjectLinks from "@/components/project/ProjectLinks";
+import ProjectTags from "@/components/project/ProjectTags";
 import Router from "next/router";
 import Image from "next/image";
 

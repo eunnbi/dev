@@ -1,5 +1,5 @@
-import Heading from "@components/common/Heading";
-import { CAREER } from "@data/career";
+import Heading from "@/components/common/Heading";
+import { CAREER } from "data/career";
 import styled from "styled-components";
 
 const CareerSection = () => {

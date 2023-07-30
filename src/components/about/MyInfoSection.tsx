@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import Image from "next/image";
-import KeywordsRotatingText from "@components/common/KeywordsRotatingText";
+import KeywordsRotatingText from "@/components/common/KeywordsRotatingText";
 import { useCallback } from "react";
-import { MY_INFO_LINKS } from "@data/info";
+import { MY_INFO_LINKS } from "data/info";
 import { Tooltip, IconButton } from "@mui/material";
 import { AiOutlineMail } from "react-icons/ai";
 import { BsGithub } from "react-icons/bs";
