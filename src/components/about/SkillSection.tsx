@@ -1,7 +1,7 @@
-import { SKILLS_LANG, SKILLS_LIB, SKILLS_TOOLS } from "@data/skills";
+import { SKILLS_LANG, SKILLS_LIB, SKILLS_TOOLS } from "data/skills";
 import SkillList from "./SkillList";
 import styled from "styled-components";
-import Heading from "@components/common/Heading";
+import Heading from "@/components/common/Heading";
 
 const SkillsSection = () => {
   return (

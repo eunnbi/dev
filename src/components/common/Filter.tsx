@@ -1,23 +1,26 @@
 import { SyntheticEvent } from "react";
 import styled from "styled-components";
 import { Tabs, Tab } from "@mui/material";
-import { SetterOrUpdater } from "recoil";
 import { useRouter } from "next/router";
 
 interface FilterProps {
   queryName: string;
   filters: string[];
   filter: Filter;
+  defaultFilter: Filter;
 }
 
-const Filter = ({ queryName, filters, filter }: FilterProps) => {
+const Filter = ({ queryName, filters, filter, defaultFilter }: FilterProps) => {
   const router = useRouter();
   const onChange = (_: SyntheticEvent<Element, Event>, value: Filter) => {
     const splitedPath = router.asPath.split("?");
     const basePath = splitedPath[0];
     const params = new URLSearchParams(splitedPath[1]);
     params.delete(queryName);
-    params.append(queryName, value);
+    console.log(value,defaultFilter);
+    if (value !== defaultFilter) {
+      params.append(queryName, value);
+    }
     router.push(`${basePath}?${params}`);
   };
   return (

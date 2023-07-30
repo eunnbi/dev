@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { convertDateFormat } from "@lib/date";
+import { convertDateFormat } from "@/lib/date";
 
 const PostHeader = ({ post }: { post: PostGetResponse["current"] }) => {
   const { emoji, title, date, category } = post;
@@ -40,7 +40,6 @@ const Header = styled.header`
     color: ${({ theme }) => theme.color.tabTextColor};
     padding: 0.3rem 0.8rem;
     border-radius: 16px;
-    cursor: pointer;
     font-size: 0.9rem;
   }
   .date {

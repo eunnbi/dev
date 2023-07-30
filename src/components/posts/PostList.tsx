@@ -1,20 +1,22 @@
 import styled from "styled-components";
-import Router, { useRouter } from "next/router";
-import { convertDateFormat } from "@lib/date";
-import { SCROLL_POS_KEY, setSessionStorage } from "@lib/sessionStorage";
-import { PostsGetResponse } from "@lib/posts";
+import Router from "next/router";
+import { convertDateFormat } from "@/lib/date";
+import { SCROLL_POS_KEY, setSessionStorage } from "@/lib/sessionStorage";
+import type { PostsGetResponse } from "@/lib/posts";
 import { useInfiniteQuery } from "@tanstack/react-query";
-import InfiniteScrollArea from "@components/common/InfiniteScrollArea";
+import InfiniteScrollArea from "@/components/common/InfiniteScrollArea";
 
 const PostList = ({
   data,
+  category,
   infiniteScroll
 }: {
   data: PostsGetResponse;
+  category: string;
   infiniteScroll?: boolean;
 }) => {
   return infiniteScroll ? (
-    <PostInfiniteList data={data} />
+    <PostInfiniteList data={data} category={category} />
   ) : (
     <Wrapper>
       {data.posts.map(post => (
@@ -24,15 +26,13 @@ const PostList = ({
   );
 };
 
-const PostInfiniteList = ({ data }: { data: PostsGetResponse }) => {
-  const router = useRouter();
-  const category = router.query.category as string | undefined;
+const PostInfiniteList = ({ data, category }: { data: PostsGetResponse, category: string }) => {
   const {
     data: postsData,
     fetchNextPage,
     hasNextPage
   } = useInfiniteQuery<PostsGetResponse>(
-    ["posts", category || "All"],
+    ["posts", category],
     async ({ pageParam = 0 }) => {
       const repsonse = await fetch(
         `/api/posts?page=${pageParam}&size=10${

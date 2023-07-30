@@ -1,11 +1,11 @@
 import type { InferGetStaticPropsType } from "next";
 import Image from "next/image";
-import CustomHead from "@components/common/CustomHead";
+import CustomHead from "@/components/common/CustomHead";
 import styled from "styled-components";
 import { useEffect } from "react";
-import { getSortedPostsData } from "@lib/posts";
-import Heading from "@components/common/Heading";
-import PostList from "@components/posts/PostList";
+import { getSortedPostsData } from "@/lib/posts";
+import Heading from "@/components/common/Heading";
+import PostList from "@/components/posts/PostList";
 import Link from "next/link";
 import { Button } from "@mui/material";
 
@@ -36,13 +36,13 @@ const HomePage = ({
         </Section>
         <section>
           <Heading title="Latest Posts" />
-          <PostList data={posts} />
+          <PostList data={posts} category="All" />
         </section>
-        <Button type="button" aria-label="포스팅 더보기 버튼">
+        <MoreButton type="button" aria-label="포스팅 더보기 버튼">
           <Link href="/posts" passHref>
             More
           </Link>
-        </Button>
+        </MoreButton>
       </Main>
     </>
   );
@@ -102,6 +102,14 @@ const Section = styled.section`
     }
   }
 `;
+
+const MoreButton = styled.button`
+  background-color: black;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  box-shadow: ${({ theme }) => theme.color.shadowColor};
+`
 
 export const getStaticProps = async () => {
   const posts = getSortedPostsData({ size: 10, page: 0 });

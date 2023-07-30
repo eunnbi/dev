@@ -1,37 +1,38 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import styled from "styled-components";
-import { useToggle } from "@hooks/useToggle";
-import { useClickOutside } from "@hooks/useClickOutside";
+import { useToggle } from "@/hooks/useToggle";
 import Link from "next/link";
 import { IoMenu } from "react-icons/io5";
+import OnClickOutside from "../common/OnClickOutside";
 
 const Header = () => {
-  const router = useRouter();
-  const ref = useRef<HTMLElement | null>(null);
+  const { pathname } = useRouter();
   const [show, onToggle, onClose] = useToggle(false);
-  useClickOutside(ref, onClose);
   useEffect(() => {
     onClose();
-  }, [router.pathname]);
+  }, [pathname]);
   return (
-    <StyledHeader ref={ref}>
-      <Wrapper>
-        <Div>
-          <h1>
-            <Link href="/" passHref>
-              eunnbi.dev
-            </Link>
-          </h1>
-          <Button onClick={onToggle}>
-            <IoMenu />
-          </Button>
-        </Div>
-        <Nav show={show}>
-          <Link href="/about">About</Link>
-          <Link href="/posts">Posts</Link>
-        </Nav>
-      </Wrapper>
+    <StyledHeader>
+      <OnClickOutside trigger={onClose}>
+        <Wrapper>
+          <Div>
+            <h1>
+              <Link href="/" passHref>
+                eunnbi.dev
+              </Link>
+            </h1>
+            <Button onClick={onToggle}>
+              <IoMenu />
+            </Button>
+          </Div>
+          <Nav show={show}>
+            <Link href="/about">About</Link>
+            <Link href="/posts">Posts</Link>
+          </Nav>
+        </Wrapper>
+      </OnClickOutside>
+
     </StyledHeader>
   );
 };

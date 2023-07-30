@@ -1,13 +1,13 @@
 import { GetServerSidePropsContext, InferGetStaticPropsType } from "next";
 import { useEffect } from "react";
-import Heading from "@components/common/Heading";
-import CustomHead from "@components/common/CustomHead";
-import PostCount from "@components/posts/PostCount";
-import PostList from "@components/posts/PostList";
-import Notice from "@components/posts/Notice";
-import PostFilter from "@components/posts/PostFilter";
-import { getPostCategories, getSortedPostsData } from "@lib/posts";
-import { getSessionStorage, SCROLL_POS_KEY } from "@lib/sessionStorage";
+import Heading from "@/components/common/Heading";
+import CustomHead from "@/components/common/CustomHead";
+import PostCount from "@/components/posts/PostCount";
+import PostList from "@/components/posts/PostList";
+import Notice from "@/components/posts/Notice";
+import PostFilter from "@/components/posts/PostFilter";
+import { getPostCategories, getSortedPostsData } from "@/lib/posts";
+import { getSessionStorage, SCROLL_POS_KEY } from "@/lib/sessionStorage";
 import styled from "styled-components";
 
 const PostsPage = ({
@@ -26,10 +26,10 @@ const PostsPage = ({
       <CustomHead page="Posts" />
       <Notice />
       <Main>
-        <Heading title={category || "All"} />
+        <Heading title={category?.toUpperCase()} />
         <PostCount categories={categories} />
         <PostFilter categories={categories} />
-        <PostList infiniteScroll data={posts} />
+        <PostList infiniteScroll data={posts} category={category} />
       </Main>
     </>
   );
@@ -54,7 +54,7 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
     props: {
       categories,
       posts,
-      category
+      category: category || "All"
     }
   };
 };
