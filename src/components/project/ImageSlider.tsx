@@ -18,33 +18,35 @@ const getPosition = (index: number, positionIndex: PositionIndex) => {
 const ImageSlider = ({ images }: ImageSlierProps) => {
   const { positionIndex, moveNext, movePrev } = useSlider(images.length);
   return (
-    <Slider>
-      <div>
-        <button
-          type="button"
-          onClick={movePrev}
-          aria-label="이미지 슬라이더 이전 버튼"
-        >
-          <FiChevronLeft />
-        </button>
-        <ImageList images={images} positionIndex={positionIndex} />
-        <button
-          type="button"
-          onClick={moveNext}
-          aria-label="이미지 슬라이더 다음 버튼"
-        >
-          <FiChevronRight />
-        </button>
-      </div>
-      <div>
-        {images.map((image, index) => (
-          <PageBullet
-            key={image}
-            position={getPosition(index, positionIndex)}
-          />
-        ))}
-      </div>
-    </Slider>
+    images.length <= 1 
+    ? <ImageList images={images} positionIndex={positionIndex} />
+    : <Slider>
+        <div>
+          <button
+            type="button"
+            onClick={movePrev}
+            aria-label="이미지 슬라이더 이전 버튼"
+          >
+            <FiChevronLeft />
+          </button>
+          <ImageList images={images} positionIndex={positionIndex} />
+          <button
+            type="button"
+            onClick={moveNext}
+            aria-label="이미지 슬라이더 다음 버튼"
+          >
+            <FiChevronRight />
+          </button>
+        </div>
+        <div>
+          {images.map((image, index) => (
+            <PageBullet
+              key={image}
+              position={getPosition(index, positionIndex)}
+            />
+          ))}
+        </div>
+      </Slider>
   );
 };
 
