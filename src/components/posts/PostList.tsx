@@ -7,19 +7,19 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import InfiniteScrollArea from "@/components/common/InfiniteScrollArea";
 
 const PostList = ({
-  allPostsData,
+  posts,
   category,
   infiniteScroll
 }: {
-  allPostsData: Post[];
+  posts: Post[];
   category: string;
   infiniteScroll?: boolean;
 }) => {
   return infiniteScroll ? (
-    <PostInfiniteList allPostsData={allPostsData} category={category} />
+    <PostInfiniteList allPostsData={posts} category={category} />
   ) : (
     <Wrapper>
-      {allPostsData.map(post => (
+      {posts.map(post => (
         <PostArticle key={post.id} {...post} />
       ))}
     </Wrapper>

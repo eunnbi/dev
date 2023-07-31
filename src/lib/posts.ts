@@ -15,32 +15,30 @@ export interface PostCategoryItem {
   count: number;
 }
 
-export const getSortedPostsData = (options: {
-  category?: string;
-  size: number;
-  page: number;
+export const getSortedPostsData = (options?: {
+  category: string;
 }): Post[] => {
   const fileNames = fs.readdirSync(postsDirectory);
-  const allPostsData: Post[] = [];
+  const posts: Post[] = [];
   for (let i = 0; i < fileNames.length; i++) {
     const fileName = fileNames[i];
     const category = getCategoryFromFileName(fileName);
-      if ((options.category && options.category === category) || options.category === undefined) {
-        const id = fileName.replace(/\.md$/, "");
-        const fullPath = path.join(postsDirectory, fileName);
-        const fileContents = fs.readFileSync(fullPath, "utf-8");
-        const { content, data } = matter(fileContents);
-        const metadata = data as PostMetadata;
-        allPostsData.push({
-          id,
-          ...metadata,
-          content
-        });
-      }
+    if ((options && options.category === category) || options === undefined) {
+      const id = fileName.replace(/\.md$/, "");
+      const fullPath = path.join(postsDirectory, fileName);
+      const fileContents = fs.readFileSync(fullPath, "utf-8");
+      const { content, data } = matter(fileContents);
+      const metadata = data as PostMetadata;
+      posts.push({
+        id,
+        ...metadata,
+        content
+      });
+    }
   }
 
   // Sort posts by date
-  allPostsData.sort(({ date: a }, { date: b }) => {
+  posts.sort(({ date: a }, { date: b }) => {
     if (a < b) {
       return 1;
     } else if (a > b) {
@@ -49,7 +47,7 @@ export const getSortedPostsData = (options: {
       return 0;
     }
   });
-  return allPostsData;
+  return posts;
 };
 
 export const getPostSlugs = () => {

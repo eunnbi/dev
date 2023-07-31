@@ -7,7 +7,6 @@ import { getSortedPostsData } from "@/lib/posts";
 import Heading from "@/components/common/Heading";
 import PostList from "@/components/posts/PostList";
 import Link from "next/link";
-import { Button } from "@mui/material";
 
 const HomePage = ({
   posts
@@ -36,7 +35,7 @@ const HomePage = ({
         </Section>
         <section>
           <Heading title="Latest Posts" />
-          <PostList allPostsData={posts} category="All" />
+          <PostList posts={posts} category="All" />
         </section>
         <MoreButton type="button" aria-label="포스팅 더보기 버튼">
           <Link href="/posts" passHref>
@@ -112,10 +111,10 @@ const MoreButton = styled.button`
 `
 
 export const getStaticProps = async () => {
-  const posts = getSortedPostsData({ size: 10, page: 0 });
+  const posts = getSortedPostsData();
   return {
     props: {
-      posts
+      posts: posts.slice(0, 10)
     }
   };
 };

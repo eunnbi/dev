@@ -29,7 +29,7 @@ const PostsPage = ({
         <Heading title={category?.toUpperCase()} />
         <PostCount categories={categories} />
         <PostFilter categories={categories} />
-        <PostList infiniteScroll allPostsData={posts} category={category} />
+        <PostList infiniteScroll posts={posts} category={category} />
       </Main>
     </>
   );
@@ -45,11 +45,7 @@ const Main = styled.main`
 export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
   const category = ctx.query.category as string | undefined;
   const categories = getPostCategories();
-  const posts = getSortedPostsData({
-    category,
-    page: 0,
-    size: 10
-  });
+  const posts = getSortedPostsData(category ? { category } : undefined);
   return {
     props: {
       categories,
