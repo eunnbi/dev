@@ -19,7 +19,7 @@ preview: "4학년 1학기 끝내고 6월 29일부터 7월 28일까지 진행하�
 
 ## 서버 및 DB 기술 적응 및 응용
 
-2주차 과제는 "서버 및 DB 기술 적용 및 응용" 이다. DB로는 MongoDB를 사용했고, 서버는 NodeJS와 Express를 사용하여 개발했다. API 문서는 Thunder Client를 이용했다. 팀메이트가 Postman을 사용한적 있는데, Thunder Client는 사용해보지 않았다고 해서 Thunder Client를 추천해주었다. 실제 동아리에서 Thunder Client를 API 문서로 활용하는데 Thunder Client를 사용하는 이유에 대해서는 나중에 포스팅할 예정이다. 서버 배포는 Google Cloud Platform을 사용했다. AWS는 요금이 자동결제되는 경우가 많이 있어서 GCP를 선택했다.
+2주차 과제는 "서버 및 DB 기술 적용 및 응용" 이다. DB로는 MongoDB를 사용했고, 서버는 NodeJS와 Express를 사용하여 개발했다. API 문서는 Thunder Client를 이용했다. 팀메이트가 Postman을 사용한적 있는데, Thunder Client는 사용해보지 않았다고 해서 Thunder Client를 추천해주었다. 실제 동아리에서 Thunder Client를 API 문서로 활용하는데 Postman보다 편리한 점이 많아서 이번에도 Thunder Client로 API를 문서화했다. 서버 배포는 Google Cloud Platform을 사용했다. AWS는 요금이 자동결제되는 경우가 많이 있어서 GCP를 선택했다.
 
 이번에 Socket을 이용한 채팅 기능을 구현해보았다. npm에 있는 socket.io 라이브러리를 이용했다. 생각보다 서버 코드가 간단해서 놀랐다. 웹 서버에서 Socket 통신을 구현한 방법은 나중에 포스팅할 예정이다. Socket을 이용하여 두 사용자 모두 채팅방에 있을 때 실시간으로 채팅할 수 있도록 구현했다. 하지만, 만약 한 사용자가 채팅방에 없을 때 상대방이 채팅을 보낸 사실을 모른다는 문제점이 발생했다. 그래서 Firebase Cloud Messaging을 이용해 채팅방에 없을 때도 상대방이 채팅을 보내면 알림이 가도록 구현했다.
 
