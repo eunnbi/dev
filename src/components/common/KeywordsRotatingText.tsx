@@ -23,10 +23,10 @@ export default function KeywordsRotatingText({
 }
 
 const Text = styled.h1<{ fontSize: string; textAlign: string }>`
+  font-weight: 200;
+  line-height: 1.2;
   font-size: ${({ fontSize }) => fontSize};
   text-align: ${({ textAlign }) => textAlign};
-  line-height: 1.2;
-  font-weight: 200;
   @media ${({ theme }) => theme.device.mobile} {
     text-align: center;
   }

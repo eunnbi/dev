@@ -11,6 +11,7 @@ export default function Introduction() {
           fill
           priority
           sizes="100px"
+          className="profile-image"
         />
       </ImageWrapper>
       <SpeechBubble>
@@ -35,7 +36,7 @@ const ImageWrapper = styled.div`
   height: 20vw;
   max-width: 100px;
   max-height: 100px;
-  img {
+  .profile-image {
     object-fit: contain;
   }
 `;

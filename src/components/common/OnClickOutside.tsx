@@ -1,6 +1,6 @@
 "use client";
 
-import React, { cloneElement, isValidElement, useEffect, useRef } from "react";
+import { cloneElement, isValidElement, useEffect, useRef } from "react";
 
 interface OnClickOutsideProps {
   trigger: () => void;

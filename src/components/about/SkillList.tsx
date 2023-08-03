@@ -16,7 +16,7 @@ export default function SkillList({ skills }: { skills: Skill[] }) {
               alt={tech}
             />
           </ImageWrapper>
-          <h4>{tech}</h4>
+          <h4 className="skill-text">{tech}</h4>
         </Item>
       ))}
     </List>
@@ -34,9 +34,9 @@ const Item = styled.li`
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  h4 {
-    text-align: center;
+  .skill-text {
     margin-bottom: 5px;
+    text-align: center;
   }
 `;
 

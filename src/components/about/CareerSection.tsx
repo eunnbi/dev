@@ -28,8 +28,8 @@ const Section = styled.section`
 function CareerItem({ period, content }: Pick<Career, "content" | "period">) {
   return (
     <Item>
-      <p className="CareerItem_Period">{period}</p>
-      <p className="CareerItem_Content">{content}</p>
+      <p className="period">{period}</p>
+      <p className="content">{content}</p>
     </Item>
   );
 }
@@ -44,11 +44,11 @@ const Item = styled.li`
   h3 {
     font-size: 1.3rem;
   }
-  .CareerItem_period {
+  .period {
     font-size: 1rem;
     color: #828282;
   }
-  .CareerItem_Content {
+  .content {
     text-align: center;
     font-size: 1.2rem;
   }

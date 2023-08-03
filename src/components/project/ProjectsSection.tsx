@@ -2,7 +2,7 @@ import Heading from "@/components/common/Heading";
 import styled from "styled-components";
 import ProjectLinks from "@/components/project/ProjectLinks";
 import ProjectTags from "@/components/project/ProjectTags";
-import Router from "next/router";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 export default function ProjectsSection({ projects }: { projects: Project[] }) {
@@ -30,9 +30,7 @@ const Wrapper = styled.div`
   justify-content: center;
 `;
 
-// -----------------------------------------------
-
-interface Props extends Project {
+interface ProjectArticleProps extends Project {
   index: number;
 }
 
@@ -44,11 +42,12 @@ function ProjectArticle({
   id,
   index,
   category
-}: Props) {
+}: ProjectArticleProps) {
+  const router = useRouter();
   const onClick = (e: any) => {
     const { tagName } = e.target;
     if (tagName === "a" || tagName === "svg" || tagName === "path") return;
-    Router.push(`/projects/${id}`);
+    router.push(`/projects/${id}`);
   };
   const imageSrc =
     imageCnt === 0
@@ -57,13 +56,13 @@ function ProjectArticle({
 
   return (
     <Article onClick={onClick}>
-      <Header>
-        <div>
-          <h1>{title}</h1>
+      <ArticleHeader>
+        <div className="title-wrapper">
+          <h1 className="title-text">{title}</h1>
           <CategoryBadge category={category}>{category}</CategoryBadge>
         </div>
         <ProjectLinks links={links} />
-      </Header>
+      </ArticleHeader>
       <ImageWrapper>
         <Image
           src={imageSrc}
@@ -73,6 +72,7 @@ function ProjectArticle({
           placeholder="blur"
           blurDataURL={imageSrc}
           priority={index === 0 ? true : false}
+          className="project-thumbnail"
         />
       </ImageWrapper>
       <ProjectTags tags={tags} center={true} />
@@ -81,45 +81,47 @@ function ProjectArticle({
 }
 
 const Article = styled.article`
-  border-radius: 5px;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
 `;
 
 const ImageWrapper = styled.div`
+  position: relative;
   width: 90%;
   height: 60vw;
-  margin: 0 auto;
-  position: relative;
-  box-shadow: ${({ theme }) => `1px 5px 15px ${theme.color.shadowColor}`};
-  border-radius: 5px;
   max-height: 450px;
-  img {
+  margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: ${({ theme }) => `1px 5px 15px ${theme.color.shadowColor}`};
+  .project-thumbnail {
     border-radius: 5px;
     object-fit: cover;
   }
 `;
 
-const Header = styled.header`
+const ArticleHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 90%;
-  h1 {
-    font-size: 1.5rem;
-  }
-  & > div:first-child {
+  .title-wrapper {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 5px 0.5rem;
   }
+  .title-text {
+    font-size: 1.5rem;
+  }
 `;
 
-const CategoryBadge = styled.span<{ category: Props["category"] }>`
+const CategoryBadge = styled.span<{
+  category: ProjectArticleProps["category"];
+}>`
   display: inline-block;
   padding: 0.3rem 0.5rem;
   font-size: 0.8rem;

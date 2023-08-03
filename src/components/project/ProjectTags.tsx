@@ -7,8 +7,8 @@ interface Props extends Pick<Project, "tags"> {
 const ProjectTags = ({ tags, center }: Props) => {
   return (
     <TagList center={center ? "true" : ""}>
-      {tags.map((tag, index) => (
-        <TagItem key={index}>{tag}</TagItem>
+      {tags.map(tag => (
+        <TagItem key={tag}>{tag}</TagItem>
       ))}
     </TagList>
   );
@@ -22,10 +22,10 @@ const TagList = styled.ul<{ center: "true" | "" }>`
 `;
 
 const TagItem = styled.li`
-  background-color: ${({ theme }) => theme.color.chipBgColor};
   padding: 7px 10px;
   border-radius: 10px;
   font-weight: 500;
+  background-color: ${({ theme }) => theme.color.chipBgColor};
 `;
 
 export default ProjectTags;

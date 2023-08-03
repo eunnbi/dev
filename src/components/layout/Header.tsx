@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import styled from "styled-components";
 import { useToggle } from "@/hooks/useToggle";
@@ -24,9 +24,9 @@ export default function Header() {
                 eunnbi.dev
               </Link>
             </h1>
-            <Button onClick={onToggle}>
+            <MenuButton onClick={onToggle}>
               <IoMenu className="icon" />
-            </Button>
+            </MenuButton>
           </Div>
           <Nav show={show}>
             <Link href="/about" className="header-link">
@@ -81,7 +81,7 @@ const Div = styled.div`
   }
 `;
 
-const Button = styled.button`
+const MenuButton = styled.button`
   display: none;
   align-items: center;
   justify-content: center;
