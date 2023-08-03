@@ -137,7 +137,10 @@ class Square {
 }
 
 class Rectangle extends Square {
-  constructor(public width: number, public height: number) {
+  constructor(
+    public width: number,
+    public height: number
+  ) {
     super(width);
   }
 }

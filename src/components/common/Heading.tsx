@@ -1,27 +1,21 @@
-import React from "react";
 import styled from "styled-components";
 
-interface HeadingProps {
-  title: string;
-}
-
-const Heading = ({ title }: HeadingProps) => {
+export default function Heading({ title }: { title: string }) {
   return (
     <H1>
-      <span>{title}</span>
+      <span className="heading-text">{title}</span>
     </H1>
   );
-};
+}
 
 const H1 = styled.h1`
   display: flex;
   justify-content: center;
   align-items: center;
-  span {
+  font-weight: bold;
+  font-size: 1.8rem;
+  & > .heading-text {
     padding-bottom: 5px;
     border-bottom: ${({ theme }) => `4px solid ${theme.color.textColor}`};
-    font-size: 1.8rem;
   }
 `;
-
-export default React.memo(Heading);

@@ -10,7 +10,7 @@ const MONTHS = [
   "September",
   "October",
   "November",
-  "December",
+  "December"
 ];
 
 export const convertDateFormat = (postDate: string) => {

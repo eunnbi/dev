@@ -7,10 +7,10 @@ interface KeywordsRotatingTextProps {
   textAlign: string;
 }
 
-const KeywordsRotatingText = ({
+export default function KeywordsRotatingText({
   fontSize,
   textAlign
-}: KeywordsRotatingTextProps) => {
+}: KeywordsRotatingTextProps) {
   return (
     <Text fontSize={fontSize} textAlign={textAlign}>
       안녕하세요.
@@ -20,7 +20,7 @@ const KeywordsRotatingText = ({
       개발자 <strong>강은비</strong>입니다.
     </Text>
   );
-};
+}
 
 const Text = styled.h1<{ fontSize: string; textAlign: string }>`
   font-size: ${({ fontSize }) => fontSize};
@@ -36,5 +36,3 @@ KeywordsRotatingText.defaultProps = {
   fontSize: "2.5rem",
   textAlign: "left"
 };
-
-export default KeywordsRotatingText;

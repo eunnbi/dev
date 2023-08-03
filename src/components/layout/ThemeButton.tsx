@@ -1,9 +1,11 @@
+"use client";
+
 import { IoMoon, IoSunny } from "react-icons/io5";
 import { useTheme } from "@/hooks/useTheme";
 import styled from "styled-components";
 import React from "react";
 
-const ThemeButton = () => {
+export default function ThemeButton() {
   const { isLightTheme, changeTheme } = useTheme();
   return (
     <Button
@@ -14,7 +16,7 @@ const ThemeButton = () => {
       {isLightTheme ? <IoSunny /> : <IoMoon />}
     </Button>
   );
-};
+}
 
 const Button = styled.button`
   position: fixed;
@@ -31,5 +33,3 @@ const Button = styled.button`
     color: white;
   }
 `;
-
-export default React.memo(ThemeButton);

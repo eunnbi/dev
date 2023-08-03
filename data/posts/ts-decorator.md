@@ -176,7 +176,10 @@ function Write(able: boolean = true) {
 }
 
 class Product {
-  constructor(public title: string, private price: number) {}
+  constructor(
+    public title: string,
+    private price: number
+  ) {}
 
   @Write(false)
   getPriceWithTax(tax: number) {
@@ -211,7 +214,10 @@ function Configurable(remove: boolean) {
 class Rectangle {
   public color?: string = "#000";
 
-  constructor(private _width: number, private _height: number) {}
+  constructor(
+    private _width: number,
+    private _height: number
+  ) {}
 
   @Configurable(false)
   get width() {
@@ -299,7 +305,10 @@ function Log(target: any, name: string, index: number) {
 }
 
 class Product {
-  constructor(@Log public title: string, @Log private price: number) {}
+  constructor(
+    @Log public title: string,
+    @Log private price: number
+  ) {}
 
   getPriceWithTax(@Log tax: number) {
     return this.price * (1 + tax);

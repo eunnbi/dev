@@ -3,7 +3,7 @@ import SkillList from "./SkillList";
 import styled from "styled-components";
 import Heading from "@/components/common/Heading";
 
-const SkillSection = () => {
+export default function SkillSection() {
   return (
     <Section>
       <Heading title="Tech Skills" />
@@ -23,7 +23,7 @@ const SkillSection = () => {
       </div>
     </Section>
   );
-};
+}
 
 const Section = styled.section`
   display: flex;
@@ -39,5 +39,3 @@ const Section = styled.section`
     margin-bottom: 2rem;
   }
 `;
-
-export default SkillSection;

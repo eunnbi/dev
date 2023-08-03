@@ -115,7 +115,10 @@ class Department {
 ```ts
 // Deparment 클래스의 필드와 메서드를 상속받는다.
 class AccountingDepartment extends Department {
-  constructor(id: string, private reports: string[]) {
+  constructor(
+    id: string,
+    private reports: string[]
+  ) {
     super(id, "Accounting");
     console.log(this.id, this.employees); // ERROR
   }
@@ -146,7 +149,10 @@ class Department {
   // ...
 }
 class AccountingDepartment extends Department {
-  constructor(id: string, private reports: string[]) {
+  constructor(
+    id: string,
+    private reports: string[]
+  ) {
     super(id, "Accounting");
     console.log(this.id); // OK
   }
@@ -184,7 +190,10 @@ class AccountingDepartment extends Department {
     this.addReport(value);
   }
 
-  constructor(id: string, private reports: string[]) {
+  constructor(
+    id: string,
+    private reports: string[]
+  ) {
     super(id, "Accounting");
     this.lastReport = reports.length === 0 ? "" : reports[reports.length - 1];
   }
@@ -216,7 +225,10 @@ class Department {
   static fiscalYear = 2020; // 정적 필드
   private employees: string[] = [];
 
-  constructor(private readonly id: string, public name: string) {
+  constructor(
+    private readonly id: string,
+    public name: string
+  ) {
     console.log(this.fiscalYear); // ERROR (인스턴스에서 정적 멤버에 접근할 수 없다.)
     console.log(Department.fiscalYear); // 클래스를 통해서만 정적 멤버에 접근할 수 있다.
   }
@@ -253,7 +265,10 @@ abstract class 추상클래스 {
 abstract class Department {
   protected employees: string[] = [];
 
-  constructor(protected readonly id: string, public name: string) {}
+  constructor(
+    protected readonly id: string,
+    public name: string
+  ) {}
 
   abstract describe(): void; // 추상 메서드 선언부
 
@@ -269,7 +284,10 @@ abstract class Department {
 
 // 추상 클래스를 상속받는 하위 클래스는 추상 클래스가 아니라면 추상 메서드의 구현부를 반드시 작성해야 한다.
 class ITDepartment extends Department {
-  constructor(id: string, private admins: string[]) {
+  constructor(
+    id: string,
+    private admins: string[]
+  ) {
     super(id, "IT");
   }
 
@@ -290,7 +308,10 @@ class AccountingDepartment extends Department {
   private static instance: AccountingDepartment; // 인스턴스를 저장하는 private 정적 필드
 
   // private 생성자
-  private constructor(id: string, private reports: string[]) {
+  private constructor(
+    id: string,
+    private reports: string[]
+  ) {
     super(id, "Accounting");
   }
 
@@ -383,7 +404,10 @@ interface Greetable {
 }
 
 class Person implements Greetable {
-  constructor(public name: string, public age: number) {}
+  constructor(
+    public name: string,
+    public age: number
+  ) {}
   greet(phrase: string) {
     console.log(`${phrase} ${this.name}`);
   }
@@ -405,7 +429,10 @@ interface Greetable {
 }
 
 class Person implements Greetable {
-  constructor(public name: string, public age: number) {}
+  constructor(
+    public name: string,
+    public age: number
+  ) {}
   greet(phrase: string) {
     console.log(`${phrase} ${this.name}`);
   }

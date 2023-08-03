@@ -1,11 +1,14 @@
+"use client";
+
 import { ThemeProvider } from "styled-components";
 import { themeState } from "@/stores/themeState";
 import { useRecoilValue } from "recoil";
 import { lightTheme, darkTheme } from "../../styles/theme";
 import { createGlobalStyle } from "styled-components";
-import React from "react";
 
-const CustomThemeProvider = ({ children }: React.PropsWithChildren) => {
+export default function CustomThemeProvider({
+  children
+}: React.PropsWithChildren) {
   const { isLightTheme } = useRecoilValue(themeState);
   return (
     <ThemeProvider theme={isLightTheme ? lightTheme : darkTheme}>
@@ -13,13 +16,20 @@ const CustomThemeProvider = ({ children }: React.PropsWithChildren) => {
       {children}
     </ThemeProvider>
   );
-};
+}
 
 const GlobalStyle = createGlobalStyle`
-body, main {
+body {
     background-color: ${({ theme }) => theme.color.bgColor};
     color: ${({ theme }) => theme.color.textColor};
 }
+main {
+  width: 100%;
+  max-width: calc(720px + 15px);
+  margin: 0 auto;
+  padding: 15px;
+}
+
 ::-webkit-scrollbar {
     width: 5px; /* 세로축 스크롤바 길이 */
     height: 5px; /* 가로축 스크롤바 길이 */
@@ -39,15 +49,13 @@ body, main {
 
 @media ${({ theme }) => theme.device.mobile}{
     html {
-        font-size: 13px;
+        font-size: 14px;
     }
 }
 
 @media ${({ theme }) => theme.device.smallMobile} {
     html {
-        font-size: 11px;
+        font-size: 12px;
     }
 }
 `;
-
-export default CustomThemeProvider;

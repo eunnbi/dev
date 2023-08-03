@@ -6,13 +6,7 @@ const nextConfig = {
     defaultLocale: "ko"
   },
   compiler: {
-    styledComponents: true,
-    emotion: true
-  },
-  modularizeImports: {
-    "@mui/material": {
-      transform: "@mui/material/{{member}}"
-    }
+    styledComponents: true
   }
 };
 

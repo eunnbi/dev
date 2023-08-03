@@ -15,9 +15,7 @@ export interface PostCategoryItem {
   count: number;
 }
 
-export const getSortedPostsData = (options?: {
-  category: string;
-}): Post[] => {
+export const getSortedPostsData = (options?: { category: string }): Post[] => {
   const fileNames = fs.readdirSync(postsDirectory);
   const posts: Post[] = [];
   for (let i = 0; i < fileNames.length; i++) {
@@ -75,22 +73,26 @@ export const getPostData = (slug: string): Post => {
 
 export const getPostCategories = (): PostCategoryItem[] => {
   const fileNames = fs.readdirSync(postsDirectory);
-  const categories = fileNames.map(fileName => getCategoryFromFileName(fileName));
+  const categories = fileNames.map(fileName =>
+    getCategoryFromFileName(fileName)
+  );
   const uniqueCategories = categories.filter(
     (category, index) => categories.indexOf(category) === index
   );
   const result = [];
   result.push({ category: "All", count: categories.length });
-  result.push(...uniqueCategories.map(category => {
-    const count = categories.reduce(
-      (sum, item) => (item === category ? ++sum : sum),
-      0
-    );
-    return {
-      category,
-      count
-    };
-  }))
+  result.push(
+    ...uniqueCategories.map(category => {
+      const count = categories.reduce(
+        (sum, item) => (item === category ? ++sum : sum),
+        0
+      );
+      return {
+        category,
+        count
+      };
+    })
+  );
   return result;
 };
 

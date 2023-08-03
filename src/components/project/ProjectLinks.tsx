@@ -1,4 +1,4 @@
-import { IconButton, Tooltip } from "@mui/material";
+import Link from "next/link";
 import { BsLink45Deg, BsGithub } from "react-icons/bs";
 import styled from "styled-components";
 
@@ -7,28 +7,24 @@ const ProjectLinks = ({ links }: Pick<Project, "links">) => {
   return (
     <Box>
       {github && (
-        <Tooltip title="github">
-          <IconButton
-            href={github}
-            target="_blank"
-            rel="noreferrrer"
-            aria-label="깃허브 링크"
-          >
-            <BsGithub />
-          </IconButton>
-        </Tooltip>
+        <Link
+          href={github}
+          target="_blank"
+          rel="noreferrrer"
+          aria-label="깃허브 링크"
+        >
+          <BsGithub />
+        </Link>
       )}
       {siteUrl && (
-        <Tooltip title="website">
-          <IconButton
-            href={siteUrl}
-            target="_blank"
-            rel="noreferrrer"
-            aria-label="배포 사이트 링크"
-          >
-            <BsLink45Deg />
-          </IconButton>
-        </Tooltip>
+        <Link
+          href={siteUrl}
+          target="_blank"
+          rel="noreferrrer"
+          aria-label="배포 사이트 링크"
+        >
+          <BsLink45Deg />
+        </Link>
       )}
     </Box>
   );

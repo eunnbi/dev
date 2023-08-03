@@ -5,7 +5,7 @@ import ProjectTags from "@/components/project/ProjectTags";
 import Router from "next/router";
 import Image from "next/image";
 
-const ProjectsSection = ({ projects }: { projects: Project[] }) => {
+export default function ProjectsSection({ projects }: { projects: Project[] }) {
   return (
     <Section>
       <Heading title="Projects" />
@@ -16,7 +16,7 @@ const ProjectsSection = ({ projects }: { projects: Project[] }) => {
       </Wrapper>
     </Section>
   );
-};
+}
 
 const Section = styled.section`
   display: flex;
@@ -31,11 +31,12 @@ const Wrapper = styled.div`
 `;
 
 // -----------------------------------------------
+
 interface Props extends Project {
   index: number;
 }
 
-const ProjectArticle = ({
+function ProjectArticle({
   title,
   imageCnt,
   tags,
@@ -43,7 +44,7 @@ const ProjectArticle = ({
   id,
   index,
   category
-}: Props) => {
+}: Props) {
   const onClick = (e: any) => {
     const { tagName } = e.target;
     if (tagName === "a" || tagName === "svg" || tagName === "path") return;
@@ -77,7 +78,7 @@ const ProjectArticle = ({
       <ProjectTags tags={tags} center={true} />
     </Article>
   );
-};
+}
 
 const Article = styled.article`
   border-radius: 5px;
@@ -125,7 +126,11 @@ const CategoryBadge = styled.span<{ category: Props["category"] }>`
   font-weight: 500;
   border-radius: 5px;
   background-color: ${({ category, theme }) =>
-    category === "Team" ?  (theme.name === 'light' ?  "rgb(245, 224, 233)" : "rgb(183, 131, 154)") : (theme.name === 'light' ?"rgb(219, 237, 219)" :  "rgb(127, 160, 127)")};
+    category === "Team"
+      ? theme.name === "light"
+        ? "rgb(245, 224, 233)"
+        : "rgb(183, 131, 154)"
+      : theme.name === "light"
+      ? "rgb(219, 237, 219)"
+      : "rgb(127, 160, 127)"};
 `;
-
-export default ProjectsSection;

@@ -1,12 +1,15 @@
+"use client";
+
 import React, { cloneElement, isValidElement, useEffect, useRef } from "react";
 
-interface Props {
+interface OnClickOutsideProps {
   trigger: () => void;
 }
-const OnClickOutside = ({
+
+export default function OnClickOutside({
   trigger,
-  children,
-}: React.PropsWithChildren<Props>) => {
+  children
+}: React.PropsWithChildren<OnClickOutsideProps>) {
   const ref = useRef<HTMLElement | null>(null);
   const handleClickOutside = (e: any) => {
     if (ref.current && !ref.current.contains(e.target)) {
@@ -21,9 +24,7 @@ const OnClickOutside = ({
   }, []);
   return isValidElement(children)
     ? cloneElement(children as any, {
-        ref,
+        ref
       })
     : null;
-};
-
-export default OnClickOutside;
+}

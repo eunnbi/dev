@@ -17,9 +17,9 @@ function Utterances() {
       label: "comments",
       async: true,
       "issue-term": "pathname",
-      crossorigin: "anonymous",
+      crossorigin: "anonymous"
     };
-    Object.keys(utterancesConfig).forEach((configKey) => {
+    Object.keys(utterancesConfig).forEach(configKey => {
       // @ts-ignore
       utterances.setAttribute(configKey, utterancesConfig[configKey]);
     });
@@ -35,7 +35,7 @@ function Utterances() {
     iframe.contentWindow?.postMessage(
       {
         type: "set-theme",
-        theme: name === "dark" ? "photon-dark" : "github-light",
+        theme: name === "dark" ? "photon-dark" : "github-light"
       },
       "https://utteranc.es"
     );

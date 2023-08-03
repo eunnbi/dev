@@ -9,12 +9,12 @@ interface CustomHeadProps {
 
 const BASE_KEYWORDS = ["개발자", "웹", "프론트엔드", "블로그", "프로젝트"];
 
-const CustomHead = ({
+export default function CustomHead({
   page,
   description,
   image,
   keywords
-}: CustomHeadProps) => {
+}: CustomHeadProps) {
   return (
     <Head>
       <title>{`${page} | eunnbi.dev`}</title>
@@ -47,6 +47,4 @@ const CustomHead = ({
       <link rel="apple-touch-icon" href="/logo192.png" />
     </Head>
   );
-};
-
-export default CustomHead;
+}

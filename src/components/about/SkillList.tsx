@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Image from "next/image";
 
-const SkillList = ({ skills }: { skills: Skill[] }) => {
+export default function SkillList({ skills }: { skills: Skill[] }) {
   return (
     <List>
       {skills.map(({ id, tech }) => (
@@ -21,7 +21,7 @@ const SkillList = ({ skills }: { skills: Skill[] }) => {
       ))}
     </List>
   );
-};
+}
 
 const List = styled.ul`
   display: flex;
@@ -47,5 +47,3 @@ const ImageWrapper = styled.div`
   max-width: 100px;
   max-height: 100px;
 `;
-
-export default SkillList;

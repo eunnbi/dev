@@ -1,15 +1,15 @@
 import React, { useRef, useEffect } from "react";
 
-interface Props {
+interface InfiniteScrollAreaProps {
   hasMore?: boolean;
   next: () => Promise<any>;
 }
 
-const InfiniteScrollArea = ({
+export default function InfiniteScrollArea({
   children,
   next,
   hasMore
-}: React.PropsWithChildren<Props>) => {
+}: React.PropsWithChildren<InfiniteScrollAreaProps>) {
   const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -36,6 +36,4 @@ const InfiniteScrollArea = ({
       <div ref={ref}></div>
     </>
   );
-};
-
-export default InfiniteScrollArea;
+}

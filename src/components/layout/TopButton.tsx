@@ -1,8 +1,10 @@
+"use client";
+
 import React, { useCallback } from "react";
 import { IoChevronUpOutline } from "react-icons/io5";
 import styled from "styled-components";
 
-const TopButton = () => {
+export default function TopButton() {
   const onClick = useCallback(() => {
     window.scrollTo({
       top: 0
@@ -17,7 +19,7 @@ const TopButton = () => {
       <IoChevronUpOutline />
     </Button>
   );
-};
+}
 
 const Button = styled.button`
   position: fixed;
@@ -32,5 +34,3 @@ const Button = styled.button`
     color: ${({ theme }) => theme.color.textColor};
   }
 `;
-
-export default React.memo(TopButton);

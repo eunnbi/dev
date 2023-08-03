@@ -1,6 +1,5 @@
 import { SyntheticEvent } from "react";
 import styled from "styled-components";
-import { Tabs, Tab } from "@mui/material";
 import { useRouter } from "next/router";
 
 interface FilterProps {
@@ -10,7 +9,12 @@ interface FilterProps {
   defaultFilter: Filter;
 }
 
-const Filter = ({ queryName, filters, filter, defaultFilter }: FilterProps) => {
+export default function Filter({
+  queryName,
+  filters,
+  filter,
+  defaultFilter
+}: FilterProps) {
   const router = useRouter();
   const onChange = (_: SyntheticEvent<Element, Event>, value: Filter) => {
     const splitedPath = router.asPath.split("?");
@@ -24,49 +28,47 @@ const Filter = ({ queryName, filters, filter, defaultFilter }: FilterProps) => {
   };
   return (
     <Wrapper>
-      <CustomTabs value={filter} onChange={onChange} variant="scrollable">
+      {/* <div value={filter} onChange={onChange} variant="scrollable">
         {filters.map((filter, index) => (
-          <Tab label={filter} key={index} value={filter} />
+          <div label={filter} key={index} value={filter} />
         ))}
-      </CustomTabs>
+      </div> */}
     </Wrapper>
   );
-};
+}
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
 `;
 
-const CustomTabs = styled(Tabs)`
-  .MuiTab-root {
-    min-height: auto;
-    min-width: auto;
-    padding: 0.8rem;
-    font-weight: 500;
-    transition: all 200ms ease;
-    color: ${({ theme }) => theme.color.tabTextColor};
-    font-family: Pretendard, sans-serif;
-    font-size: 1rem;
+// const CustomTabs = styled(Tabs)`
+//   .MuiTab-root {
+//     min-height: auto;
+//     min-width: auto;
+//     padding: 0.8rem;
+//     font-weight: 500;
+//     transition: all 200ms ease;
+//     color: ${({ theme }) => theme.color.tabTextColor};
+//     font-family: Pretendard, sans-serif;
+//     font-size: 1rem;
 
-    :hover {
-      transition: all 200ms ease;
-    }
-  }
-  .Mui-selected {
-    color: #1976d2;
-    background-color: ${({ theme }) => theme.color.tabSelectedBgColor};
-    font-weight: 600;
-    border-radius: 8px;
-  }
-  .MuiTabScrollButton-root {
-    height: 40px;
-    width: 20px;
-  }
+//     :hover {
+//       transition: all 200ms ease;
+//     }
+//   }
+//   .Mui-selected {
+//     color: #1976d2;
+//     background-color: ${({ theme }) => theme.color.tabSelectedBgColor};
+//     font-weight: 600;
+//     border-radius: 8px;
+//   }
+//   .MuiTabScrollButton-root {
+//     height: 40px;
+//     width: 20px;
+//   }
 
-  .MuiTabs-indicator {
-    display: none;
-  }
-`;
-
-export default Filter;
+//   .MuiTabs-indicator {
+//     display: none;
+//   }
+// `;
