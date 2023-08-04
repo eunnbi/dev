@@ -1,15 +1,14 @@
 "use client";
 
 import { ThemeProvider } from "styled-components";
-import { themeState } from "@/stores/themeState";
-import { useRecoilValue } from "recoil";
+import { useThemeStore } from "@/stores/themeState";
 import { lightTheme, darkTheme } from "../../styles/theme";
 import { createGlobalStyle } from "styled-components";
 
 export default function CustomThemeProvider({
   children
 }: React.PropsWithChildren) {
-  const { isLightTheme } = useRecoilValue(themeState);
+  const isLightTheme = useThemeStore(state => state.isLightTheme);
   return (
     <ThemeProvider theme={isLightTheme ? lightTheme : darkTheme}>
       <GlobalStyle />
