@@ -97,7 +97,9 @@ export const getPostCategories = (): PostCategory[] => {
 
 const getCategoryFromFileName = (fileName: string) => fileName.split("-")[0];
 
-export const getCategoryFromSearchParams = (category: string | string[] | undefined) => {
+export const getCategoryFromSearchParams = (
+  category: string | string[] | undefined
+) => {
   if (typeof category === "string" || category === undefined) return category;
   else return category[0];
-}
+};

@@ -1,4 +1,4 @@
-import { create } from 'zustand'
+import { create } from "zustand";
 
 export interface ThemeState {
   isLightTheme: boolean;
@@ -6,8 +6,8 @@ export interface ThemeState {
   setTheme: (state: { isLightTheme: boolean }) => void;
 }
 
-export const useThemeStore = create<ThemeState>((set) => ({
+export const useThemeStore = create<ThemeState>(set => ({
   isLightTheme: true,
-  toggleTheme: () => set((state) => ({ isLightTheme: !state.isLightTheme })),
-  setTheme: (state) => set(state)
-}))
+  toggleTheme: () => set(state => ({ isLightTheme: !state.isLightTheme })),
+  setTheme: state => set(state)
+}));
