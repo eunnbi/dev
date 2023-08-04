@@ -29,10 +29,10 @@ export default function Header() {
             </MenuButton>
           </Div>
           <Nav show={show}>
-            <Link href="/about" className="header-link">
+            <Link href="/about" className="nav-link">
               About
             </Link>
-            <Link href="/posts" className="header-link">
+            <Link href="/posts" className="nav-link">
               Posts
             </Link>
           </Nav>
@@ -110,7 +110,7 @@ const Nav = styled.nav<{ show: boolean }>`
     flex-direction: column;
     gap: 0;
     border-bottom: 1px solid lightgray;
-    .header-link {
+    .nav-link {
       display: block;
       width: 100%;
       padding: 1rem 0;

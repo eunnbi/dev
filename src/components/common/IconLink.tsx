@@ -1,5 +1,4 @@
 import Link, { LinkProps } from "next/link";
-import { HTMLAttributeAnchorTarget } from "react";
 import styled from "styled-components";
 
 interface IconLinkProps extends LinkProps {

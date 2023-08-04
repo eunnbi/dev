@@ -7,12 +7,11 @@ export default function CareerSection() {
     <Section>
       <Heading title="Career & Experience" />
       <ol>
-        {CAREER.map(career => (
-          <CareerItem
-            key={career.id}
-            content={career.content}
-            period={career.period}
-          />
+        {CAREER.map(({ id, period, content }) => (
+          <Item key={id}>
+            <p className="period">{period}</p>
+            <p className="content">{content}</p>
+          </Item>
         ))}
       </ol>
     </Section>
@@ -25,15 +24,6 @@ const Section = styled.section`
   gap: 2rem;
 `;
 
-function CareerItem({ period, content }: Pick<Career, "content" | "period">) {
-  return (
-    <Item>
-      <p className="period">{period}</p>
-      <p className="content">{content}</p>
-    </Item>
-  );
-}
-
 const Item = styled.li`
   display: flex;
   flex-direction: column;
@@ -41,9 +31,6 @@ const Item = styled.li`
   border-bottom: 1px solid lightgray;
   padding: 1rem 0.6rem;
   gap: 15px;
-  h3 {
-    font-size: 1.3rem;
-  }
   .period {
     font-size: 1rem;
     color: #828282;

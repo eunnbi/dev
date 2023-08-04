@@ -14,7 +14,7 @@ const H1 = styled.h1`
   align-items: center;
   font-weight: bold;
   font-size: 1.8rem;
-  & > .heading-text {
+  .heading-text {
     padding-bottom: 5px;
     border-bottom: ${({ theme }) => `4px solid ${theme.color.textColor}`};
   }

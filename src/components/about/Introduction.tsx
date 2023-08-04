@@ -61,7 +61,7 @@ const SpeechBubble = styled.div`
     margin-left: -8px;
     border-right-color: #373e47;
   }
-  & > .speech-bubble-text {
+  .speech-bubble-text {
     font-size: 1rem;
     font-weight: normal;
   }
