@@ -67,6 +67,10 @@ export default function Filter({
     );
     observer.observe(nextButtonRef.current!);
     observer.observe(prevButtonRef.current!);
+    return () => {
+      observer.unobserve(nextButtonRef.current!);
+      observer.unobserve(prevButtonRef.current!);
+    };
   }, []);
   return (
     <Wrapper>

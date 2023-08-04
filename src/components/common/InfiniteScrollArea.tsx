@@ -21,15 +21,11 @@ export default function InfiniteScrollArea({
         }
       });
     });
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    observer.observe(ref.current!);
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
+      observer.unobserve(ref.current!);
     };
-  }, [hasMore, ref.current]);
+  }, [hasMore]);
   return (
     <>
       {children}

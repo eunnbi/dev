@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 
 export const useSlider = (length: number) => {
   const [positionIndex, setPositionIndex] = useState({
@@ -6,7 +6,7 @@ export const useSlider = (length: number) => {
     current: 0
   });
 
-  const movePrev = useCallback(() => {
+  const movePrev = () => {
     setPositionIndex(position => {
       const current = (position.current - 1 + length) % length;
       return {
@@ -14,9 +14,9 @@ export const useSlider = (length: number) => {
         current
       };
     });
-  }, []);
+  }
 
-  const moveNext = useCallback(() => {
+  const moveNext = () => {
     setPositionIndex(position => {
       const current = (position.current + 1) % length;
       return {
@@ -24,7 +24,7 @@ export const useSlider = (length: number) => {
         current
       };
     });
-  }, []);
+  };
 
   useEffect(() => {
     let timeId = setInterval(() => moveNext(), 5000);
