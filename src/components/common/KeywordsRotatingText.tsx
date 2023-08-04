@@ -12,7 +12,7 @@ export default function KeywordsRotatingText({
   textAlign
 }: KeywordsRotatingTextProps) {
   return (
-    <H1 fontSize={fontSize} textAlign={textAlign}>
+    <H1 $fontSize={fontSize} $textAlign={textAlign}>
       안녕하세요.
       <br />
       <ReactRotatingText items={KEYWORDS} />
@@ -22,19 +22,17 @@ export default function KeywordsRotatingText({
   );
 }
 
-const H1 = styled.h1<KeywordsRotatingTextProps>`
+const H1 = styled.h1<{
+  $fontSize?: string;
+  $textAlign?: string;
+}>`
   font-weight: 200;
   line-height: 1.2;
-  ${({ fontSize, textAlign }) => css`
-    font-size: ${fontSize};
-    text-align: ${textAlign};
+  ${({ $fontSize, $textAlign }) => css`
+    font-size: ${$fontSize || "2.5rem"};
+    text-align: ${$textAlign || "left"};
   `}
   @media ${({ theme }) => theme.device.mobile} {
     text-align: center;
   }
 `;
-
-KeywordsRotatingText.defaultProps = {
-  fontSize: "2.5rem",
-  textAlign: "left"
-};

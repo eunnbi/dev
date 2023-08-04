@@ -1,3 +1,5 @@
+"use client";
+
 import Heading from "@/components/common/Heading";
 import styled from "styled-components";
 import ProjectLinks from "@/components/project/ProjectLinks";
@@ -23,6 +25,7 @@ const Section = styled.section`
   flex-direction: column;
   gap: 3rem;
 `;
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -58,8 +61,8 @@ function ProjectArticle({
     <Article onClick={onClick}>
       <ArticleHeader>
         <div className="title-wrapper">
-          <h1 className="title-text">{title}</h1>
-          <CategoryBadge category={category}>{category}</CategoryBadge>
+          <h1 className="article-title">{title}</h1>
+          <CategoryBadge $category={category}>{category}</CategoryBadge>
         </div>
         <ProjectLinks links={links} />
       </ArticleHeader>
@@ -114,21 +117,21 @@ const ArticleHeader = styled.header`
     align-items: center;
     gap: 5px 0.5rem;
   }
-  .title-text {
+  .article-title {
     font-size: 1.5rem;
   }
 `;
 
 const CategoryBadge = styled.span<{
-  category: ProjectArticleProps["category"];
+  $category: ProjectArticleProps["category"];
 }>`
   display: inline-block;
   padding: 0.3rem 0.5rem;
   font-size: 0.8rem;
   font-weight: 500;
   border-radius: 5px;
-  background-color: ${({ category, theme }) =>
-    category === "Team"
+  background-color: ${({ $category, theme }) =>
+    $category === "Team"
       ? theme.name === "light"
         ? "rgb(245, 224, 233)"
         : "rgb(183, 131, 154)"

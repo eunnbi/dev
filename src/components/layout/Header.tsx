@@ -28,7 +28,7 @@ export default function Header() {
               <IoMenu className="icon" />
             </MenuButton>
           </Div>
-          <Nav show={show}>
+          <Nav $show={show}>
             <Link href="/about" className="nav-link">
               About
             </Link>
@@ -95,7 +95,7 @@ const MenuButton = styled.button`
   }
 `;
 
-const Nav = styled.nav<{ show: boolean }>`
+const Nav = styled.nav<{ $show: boolean }>`
   display: flex;
   align-items: center;
   gap: 1.5rem;
@@ -106,7 +106,7 @@ const Nav = styled.nav<{ show: boolean }>`
     top: 100%;
     left: 0;
     right: 0;
-    display: ${({ show }) => (show ? "flex" : "none")};
+    display: ${({ $show }) => ($show ? "flex" : "none")};
     flex-direction: column;
     gap: 0;
     border-bottom: 1px solid lightgray;
