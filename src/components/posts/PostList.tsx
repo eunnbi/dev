@@ -7,6 +7,7 @@ import type { PostsGetResponse } from "@/lib/posts";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import InfiniteScrollArea from "@/components/common/InfiniteScrollArea";
 import styled from "styled-components";
+import { usePostMetadataStore } from "@/stores/postState";
 
 export default function PostList({
   posts,
@@ -67,7 +68,14 @@ const Wrapper = styled.div`
 
 function PostArticle({ id, title, date, category, preview, emoji }: Post) {
   const router = useRouter();
+  const setPostMetadata = usePostMetadataStore(state => state.setPostMetadata);
   const onClick = () => {
+    setPostMetadata({
+      title,
+      category,
+      emoji,
+      date
+    });
     router.push(`/posts/${id}`);
     setSessionStorage(SCROLL_POS_KEY, window.scrollY);
   };
