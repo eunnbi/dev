@@ -1,7 +1,7 @@
-import { getProjectData } from "@/lib/projects";
-import ProjectPage from "./page-content";
-import type { ResolvingMetadata, Metadata } from "next";
+import type { Metadata } from "next";
 import { createMetadata } from "@/app/shared-metadata";
+import { getProjectData, getProjectIds } from "@/lib/projects";
+import ProjectPage from "./page-content";
 
 interface PageProps {
   params: {
@@ -12,6 +12,11 @@ interface PageProps {
 export default function Page({ params }: PageProps) {
   const project = getProjectData(params.id);
   return <ProjectPage project={project} />;
+}
+
+export function generateStaticParams() {
+  const projectIds = getProjectIds();
+  return projectIds;
 }
 
 export function generateMetadata({ params }: PageProps): Metadata {
