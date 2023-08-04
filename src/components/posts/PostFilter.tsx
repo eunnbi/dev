@@ -1,14 +1,14 @@
 import Filter from "@/components/common/Filter";
-import { useRouter } from "next/router";
-import type { PostCategoryItem } from "@/lib/posts";
+import type { PostCategory } from "@/lib/posts";
+import { usePostCategory } from "@/hooks/usePostCategory";
 
-const PostFilter = ({ categories }: { categories: PostCategoryItem[] }) => {
-  const router = useRouter();
+const PostFilter = ({ categories }: { categories: PostCategory[] }) => {
+  const category = usePostCategory();
   return (
     <Filter
       queryName="category"
       filters={categories.map(item => item.category)}
-      filter={(router.query.category as string) || "All"}
+      selectedFilter={category}
       defaultFilter="All"
     />
   );

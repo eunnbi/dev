@@ -10,7 +10,7 @@ export interface PostsGetResponse {
   page: number;
 }
 
-export interface PostCategoryItem {
+export interface PostCategory {
   category: string;
   count: number;
 }
@@ -71,7 +71,7 @@ export const getPostData = (slug: string): Post => {
   };
 };
 
-export const getPostCategories = (): PostCategoryItem[] => {
+export const getPostCategories = (): PostCategory[] => {
   const fileNames = fs.readdirSync(postsDirectory);
   const categories = fileNames.map(fileName =>
     getCategoryFromFileName(fileName)
@@ -97,3 +97,8 @@ export const getPostCategories = (): PostCategoryItem[] => {
 };
 
 const getCategoryFromFileName = (fileName: string) => fileName.split("-")[0];
+
+export const getCategoryFromSearchParams = (category: string | string[] | undefined) => {
+  if (typeof category === "string" || category === undefined) return category;
+  else return category[0];
+}
