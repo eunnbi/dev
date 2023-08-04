@@ -3,41 +3,39 @@ import SkillList from "./SkillList";
 import styled from "styled-components";
 import Heading from "@/components/common/Heading";
 
-const SkillSection = () => {
+export default function SkillSection() {
   return (
     <Section>
       <Heading title="Tech Skills" />
-      <div>
+      <div className="article-wrapper">
         <article>
-          <h2>Language</h2>
+          <h2 className="article-title">Language</h2>
           <SkillList skills={SKILLS_LANG} />
         </article>
         <article>
-          <h2>Library &amp; Framework</h2>
+          <h2 className="article-title">Library &amp; Framework</h2>
           <SkillList skills={SKILLS_LIB} />
         </article>
         <article>
-          <h2>Dev Tools</h2>
+          <h2 className="article-title">Dev Tools</h2>
           <SkillList skills={SKILLS_TOOLS} />
         </article>
       </div>
     </Section>
   );
-};
+}
 
 const Section = styled.section`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  & > div {
+  .article-wrapper {
     display: flex;
     flex-direction: column;
     gap: 50px;
   }
-  h2 {
+  .article-title {
     font-size: 1.25rem;
     margin-bottom: 2rem;
   }
 `;
-
-export default SkillSection;

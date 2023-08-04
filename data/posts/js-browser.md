@@ -135,7 +135,7 @@ const el = document.querySelector("div.user-panel.main input[name=login]");
 ## 클래스명 읽기
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />

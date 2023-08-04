@@ -1,19 +1,45 @@
-import { SyntheticEvent } from "react";
-import styled from "styled-components";
-import { Tabs, Tab } from "@mui/material";
-import { useRouter } from "next/router";
+import { useEffect, useRef, useState } from "react";
+import styled, { css } from "styled-components";
+import { usePathname, useRouter } from "next/navigation";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 interface FilterProps {
   queryName: string;
   filters: string[];
-  filter: Filter;
+  selectedFilter: Filter;
   defaultFilter: Filter;
 }
 
-const Filter = ({ queryName, filters, filter, defaultFilter }: FilterProps) => {
+export default function Filter({
+  queryName,
+  filters,
+  selectedFilter,
+  defaultFilter
+}: FilterProps) {
+  const pathname = usePathname();
   const router = useRouter();
-  const onChange = (_: SyntheticEvent<Element, Event>, value: Filter) => {
-    const splitedPath = router.asPath.split("?");
+  const scrollBoxRef = useRef<HTMLDivElement | null>(null);
+  const prevButtonRef = useRef<HTMLButtonElement | null>(null);
+  const nextButtonRef = useRef<HTMLButtonElement | null>(null);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const moveScroll = (type: "prev" | "next") => {
+    if (scrollBoxRef.current === null) return;
+    if (type === "prev") {
+      scrollBoxRef.current?.scrollTo({
+        left: scrollLeft - scrollBoxRef.current.clientWidth,
+        behavior: "smooth"
+      });
+      setScrollLeft(scrollLeft - scrollBoxRef.current.clientWidth);
+    } else {
+      scrollBoxRef.current?.scrollTo({
+        left: scrollLeft + scrollBoxRef.current.clientWidth,
+        behavior: "smooth"
+      });
+      setScrollLeft(scrollLeft + scrollBoxRef.current.clientWidth);
+    }
+  };
+  const changeFilter = (value: Filter) => {
+    const splitedPath = pathname!.split("?");
     const basePath = splitedPath[0];
     const params = new URLSearchParams(splitedPath[1]);
     params.delete(queryName);
@@ -22,51 +48,106 @@ const Filter = ({ queryName, filters, filter, defaultFilter }: FilterProps) => {
     }
     router.push(`${basePath}?${params}`);
   };
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            if (entry.target.classList.contains("prev-button")) {
+              setScrollLeft(0);
+            } else {
+              setScrollLeft(scrollBoxRef.current!.clientWidth);
+            }
+          }
+        });
+      },
+      {
+        threshold: 1
+      }
+    );
+    observer.observe(nextButtonRef.current!);
+    observer.observe(prevButtonRef.current!);
+    return () => {
+      observer.unobserve(nextButtonRef.current!);
+      observer.unobserve(prevButtonRef.current!);
+    };
+  }, []);
   return (
     <Wrapper>
-      <CustomTabs value={filter} onChange={onChange} variant="scrollable">
+      <ScrollButton
+        type="button"
+        onClick={() => moveScroll("prev")}
+        aria-label="탭 이전 버튼"
+        className="prev-button"
+        disabled={scrollLeft === 0}
+        ref={prevButtonRef}
+      >
+        <FiChevronLeft className="icon" />
+      </ScrollButton>
+      <ScrollableBox ref={scrollBoxRef}>
         {filters.map((filter, index) => (
-          <Tab label={filter} key={index} value={filter} />
+          <FilterButton
+            key={index}
+            onClick={() => changeFilter(filter)}
+            $selected={selectedFilter === filter ? "true" : ""}
+          >
+            {filter}
+          </FilterButton>
         ))}
-      </CustomTabs>
+      </ScrollableBox>
+      <ScrollButton
+        type="button"
+        onClick={() => moveScroll("next")}
+        aria-label="탭 다음 버튼"
+        className="next-button"
+        disabled={scrollLeft === scrollBoxRef.current?.clientWidth}
+        ref={nextButtonRef}
+      >
+        <FiChevronRight className="icon" />
+      </ScrollButton>
     </Wrapper>
   );
-};
+}
 
 const Wrapper = styled.div`
   display: flex;
+  align-items: center;
   justify-content: center;
+  gap: 0.125rem;
+  width: 100%;
 `;
 
-const CustomTabs = styled(Tabs)`
-  .MuiTab-root {
-    min-height: auto;
-    min-width: auto;
-    padding: 0.8rem;
-    font-weight: 500;
-    transition: all 200ms ease;
-    color: ${({ theme }) => theme.color.tabTextColor};
-    font-family: Pretendard, sans-serif;
-    font-size: 1rem;
+const ScrollButton = styled.button`
+  display: flex;
+  align-items: center;
+  &:disabled {
+    color: lightgray;
+  }
+`;
 
-    :hover {
-      transition: all 200ms ease;
-    }
-  }
-  .Mui-selected {
-    color: #1976d2;
-    background-color: ${({ theme }) => theme.color.tabSelectedBgColor};
-    font-weight: 600;
-    border-radius: 8px;
-  }
-  .MuiTabScrollButton-root {
-    height: 40px;
-    width: 20px;
-  }
-
-  .MuiTabs-indicator {
+const ScrollableBox = styled.div`
+  display: flex;
+  overflow-x: scroll;
+  &::-webkit-scrollbar {
     display: none;
   }
 `;
 
-export default Filter;
+const FilterButton = styled.button<{ $selected: "true" | "" }>`
+  padding: 0.8rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  transition: all 200ms ease 0s;
+  ${({ $selected }) =>
+    $selected
+      ? css`
+          color: rgb(25, 118, 210);
+          background-color: rgb(237, 237, 237);
+          font-weight: 600;
+          border-radius: 8px;
+        `
+      : css`
+          color: rgb(110, 109, 122);
+          font-weight: 500;
+        `}
+`;

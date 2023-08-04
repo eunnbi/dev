@@ -83,7 +83,7 @@ preview: "요즘 PC뿐만 아니라 스마트폰, 태블릿 등 다양한 디스
   ...;
 }
 
-/* 첫 번째 미디어 쿼리에만 not 키워드가 적용되며, 
+/* 첫 번째 미디어 쿼리에만 not 키워드가 적용되며,
 두 번째 미디어 쿼리(print)에는 영향이 없다. */
 @media not screen and (min-width: 768px), print {
   ...;

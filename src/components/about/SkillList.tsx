@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Image from "next/image";
 
-const SkillList = ({ skills }: { skills: Skill[] }) => {
+export default function SkillList({ skills }: { skills: Skill[] }) {
   return (
     <List>
       {skills.map(({ id, tech }) => (
@@ -16,12 +16,12 @@ const SkillList = ({ skills }: { skills: Skill[] }) => {
               alt={tech}
             />
           </ImageWrapper>
-          <h4>{tech}</h4>
+          <h4 className="skill-text">{tech}</h4>
         </Item>
       ))}
     </List>
   );
-};
+}
 
 const List = styled.ul`
   display: flex;
@@ -34,9 +34,9 @@ const Item = styled.li`
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  h4 {
-    text-align: center;
+  .skill-text {
     margin-bottom: 5px;
+    text-align: center;
   }
 `;
 
@@ -47,5 +47,3 @@ const ImageWrapper = styled.div`
   max-width: 100px;
   max-height: 100px;
 `;
-
-export default SkillList;

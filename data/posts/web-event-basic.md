@@ -199,7 +199,7 @@ elem.addEventListener(..., {capture: true});
 **Example**
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <body>
   <form>
     FORM
@@ -249,7 +249,7 @@ elem.addEventListener(..., {capture: true});
 **Example 1**
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <body>
     <table id="bagua-table">
@@ -323,7 +323,7 @@ elem.addEventListener(..., {capture: true});
 **Example 2**
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <link rel="stylesheet" href="messages.css" />
@@ -380,7 +380,7 @@ elem.addEventListener(..., {capture: true});
 **Example 3**
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <body>
   <div id="menu">
     <button data-action="save">저장하기</button>
@@ -425,7 +425,7 @@ elem.addEventListener(..., {capture: true});
 **Example 4**
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <body>
   첫 번째 카운터:
   <input type="button" value="1" data-counter />
@@ -445,7 +445,7 @@ elem.addEventListener(..., {capture: true});
 **Example 5**
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <body>
   <button data-toggle-id="subscribe-mail">구독 폼 보여주기</button>
   <form id="subscribe-mail" hidden>메일 주소: <input type="email" /></form>

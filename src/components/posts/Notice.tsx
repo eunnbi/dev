@@ -7,11 +7,15 @@ const Notice = () => {
   return show ? (
     <Box>
       <p>현재 블로그 이전 중입니다.</p>
-      👉<a href="https://velog.io/@eunnbi"> 전 블로그 보러가기</a>
+      👉
+      <a href="https://velog.io/@eunnbi" className="blog-link">
+        전 블로그 보러가기
+      </a>
       <button
         onClick={() => setShow(false)}
         type="button"
         aria-label="닫기 버튼"
+        className="close-button"
       >
         <IoClose />
       </button>
@@ -23,25 +27,24 @@ const Box = styled.div`
   position: fixed;
   top: 10px;
   left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  border-radius: 10px;
-  padding: 1rem;
   z-index: 10;
   width: 60vw;
   max-width: 250px;
+  padding: 1rem;
+  transform: translateX(-50%);
+  text-align: center;
+  border-radius: 10px;
   background-color: ${({ theme }) => theme.color.tabSelectedBgColor};
-  a:hover {
-    text-decoration: underline;
-  }
-  button {
-    color: ${({ theme }) => theme.color.textColor};
+
+  .close-button {
     position: absolute;
     top: 5px;
     right: 5px;
     font-size: 1.2rem;
+    color: ${({ theme }) => theme.color.textColor};
   }
-  @media ${({ theme }) => theme.device.tablet} {
+  .blog-link:hover {
+    text-decoration: underline;
   }
 `;
 

@@ -1,40 +1,38 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import ReactRotatingText from "react-rotating-text";
 import { KEYWORDS } from "data/keywords";
 
 interface KeywordsRotatingTextProps {
-  fontSize: string;
-  textAlign: string;
+  fontSize?: string;
+  textAlign?: string;
 }
 
-const KeywordsRotatingText = ({
+export default function KeywordsRotatingText({
   fontSize,
   textAlign
-}: KeywordsRotatingTextProps) => {
+}: KeywordsRotatingTextProps) {
   return (
-    <Text fontSize={fontSize} textAlign={textAlign}>
+    <H1 $fontSize={fontSize} $textAlign={textAlign}>
       안녕하세요.
       <br />
       <ReactRotatingText items={KEYWORDS} />
       <br />
       개발자 <strong>강은비</strong>입니다.
-    </Text>
+    </H1>
   );
-};
+}
 
-const Text = styled.h1<{ fontSize: string; textAlign: string }>`
-  font-size: ${({ fontSize }) => fontSize};
-  text-align: ${({ textAlign }) => textAlign};
-  line-height: 1.2;
+const H1 = styled.h1<{
+  $fontSize?: string;
+  $textAlign?: string;
+}>`
   font-weight: 200;
+  line-height: 1.2;
+  ${({ $fontSize, $textAlign }) => css`
+    font-size: ${$fontSize || "2.5rem"};
+    text-align: ${$textAlign || "left"};
+  `}
   @media ${({ theme }) => theme.device.mobile} {
     text-align: center;
   }
 `;
-
-KeywordsRotatingText.defaultProps = {
-  fontSize: "2.5rem",
-  textAlign: "left"
-};
-
-export default KeywordsRotatingText;

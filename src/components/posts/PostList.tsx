@@ -1,41 +1,31 @@
-import styled from "styled-components";
-import Router from "next/router";
+"use client";
+
+import { useRouter } from "next/navigation";
 import { convertDateFormat } from "@/lib/date";
 import { SCROLL_POS_KEY, setSessionStorage } from "@/lib/sessionStorage";
 import type { PostsGetResponse } from "@/lib/posts";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import InfiniteScrollArea from "@/components/common/InfiniteScrollArea";
+import styled from "styled-components";
 
-const PostList = ({
+export default function PostList({
   posts,
-  category,
-  infiniteScroll
+  category
 }: {
   posts: Post[];
   category: string;
-  infiniteScroll?: boolean;
-}) => {
-  return infiniteScroll ? (
-    <PostInfiniteList allPostsData={posts} category={category} />
-  ) : (
-    <Wrapper>
-      {posts.map(post => (
-        <PostArticle key={post.id} {...post} />
-      ))}
-    </Wrapper>
-  );
-};
-
-const PostInfiniteList = ({ allPostsData, category }: { allPostsData: Post[], category: string }) => {
+}) {
   const SIZE = 10;
-  const initialData =  {
+  const initialData = {
     pageParams: [0],
-    pages: [{
-      posts: allPostsData.slice(0, SIZE),
-      isLastPage: SIZE >= allPostsData.length,
-      page: 0
-    }]
-  }
+    pages: [
+      {
+        posts: posts.slice(0, SIZE),
+        isLastPage: SIZE >= posts.length,
+        page: 0
+      }
+    ]
+  };
   const {
     data: postsData,
     fetchNextPage,
@@ -46,8 +36,8 @@ const PostInfiniteList = ({ allPostsData, category }: { allPostsData: Post[], ca
       const startIndex = SIZE * pageParam;
       const lastIndex = SIZE + startIndex;
       return {
-        posts: allPostsData.slice(startIndex, lastIndex),
-        isLastPage: lastIndex >= allPostsData.length,
+        posts: posts.slice(startIndex, lastIndex),
+        isLastPage: lastIndex >= posts.length,
         page: pageParam
       };
     },
@@ -66,7 +56,7 @@ const PostInfiniteList = ({ allPostsData, category }: { allPostsData: Post[], ca
       </Wrapper>
     </InfiniteScrollArea>
   );
-};
+}
 
 const Wrapper = styled.div`
   display: flex;
@@ -74,65 +64,66 @@ const Wrapper = styled.div`
   gap: 1.2rem;
   margin-top: 2rem;
 `;
-// ---------------------------------------------------
 
-const PostArticle = ({ id, title, date, category, preview, emoji }: Post) => {
+function PostArticle({ id, title, date, category, preview, emoji }: Post) {
+  const router = useRouter();
   const onClick = () => {
-    Router.push(`/posts/${id}`);
+    router.push(`/posts/${id}`);
     setSessionStorage(SCROLL_POS_KEY, window.scrollY);
   };
   return (
     <Article onClick={onClick}>
-      <h1>
+      <Title>
         {emoji}
-        <span>{title}</span>
-      </h1>
-      <p>{preview}</p>
-      <div className="bottom">
+        <span className="title-text">{title}</span>
+      </Title>
+      <Paragraph>{preview}</Paragraph>
+      <BottomRow>
         <span>{category}</span>
         <span>{convertDateFormat(date)}</span>
-      </div>
+      </BottomRow>
     </Article>
   );
-};
+}
 
 const Article = styled.article`
   display: flex;
   flex-direction: column;
-  cursor: pointer;
   padding: 1rem;
   border-radius: 6px;
   box-shadow: ${({ theme }) => theme.color.cardShadowStyle};
-  h1 {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 5px;
-    font-weight: bold;
-    margin-bottom: 7px;
-    font-size: 1.4rem;
-    line-height: 1.4;
-  }
-  &:hover h1 > span {
+  cursor: pointer;
+  &:hover .title-text {
     text-decoration: underline;
-  }
-  p {
-    margin-bottom: 10px;
-    line-height: 1.3125rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    font-size: 0.9rem;
-  }
-  .bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 0.9rem;
-    color: ${({ theme }) => theme.color.tabTextColor};
   }
 `;
 
-export default PostList;
+const Title = styled.h1`
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  font-weight: bold;
+  margin-bottom: 7px;
+  font-size: 1.4rem;
+  line-height: 1.4;
+`;
+
+const Paragraph = styled.p`
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  line-height: 1.3125rem;
+`;
+
+const BottomRow = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: ${({ theme }) => theme.color.tabTextColor};
+`;

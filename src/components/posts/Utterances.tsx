@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from "react";
-import { useTheme } from "styled-components";
+import { useTheme } from "@/hooks/useTheme";
 
 function Utterances() {
   const rootElm = useRef<HTMLDivElement>(null);
   const isUtterancesLoaded = useRef(false);
-  const { name } = useTheme();
+  const { isLightTheme } = useTheme();
 
   useEffect(() => {
     if (!rootElm.current || isUtterancesLoaded.current) return;
@@ -13,13 +13,13 @@ function Utterances() {
     const utterancesConfig = {
       src: "https://utteranc.es/client.js",
       repo: "eunnbi/dev",
-      theme: name === "dark" ? "photon-dark" : "github-light",
+      theme: isLightTheme ? "github-light" : "photon-dark",
       label: "comments",
       async: true,
       "issue-term": "pathname",
-      crossorigin: "anonymous",
+      crossorigin: "anonymous"
     };
-    Object.keys(utterancesConfig).forEach((configKey) => {
+    Object.keys(utterancesConfig).forEach(configKey => {
       // @ts-ignore
       utterances.setAttribute(configKey, utterancesConfig[configKey]);
     });
@@ -35,13 +35,20 @@ function Utterances() {
     iframe.contentWindow?.postMessage(
       {
         type: "set-theme",
-        theme: name === "dark" ? "photon-dark" : "github-light",
+        theme: isLightTheme ? "github-light" : "photon-dark"
       },
       "https://utteranc.es"
     );
-  }, [name]);
+  }, [isLightTheme]);
 
-  return <div ref={rootElm} />;
+  return (
+    <div
+      ref={rootElm}
+      style={{
+        width: "100%"
+      }}
+    />
+  );
 }
 
 export default Utterances;

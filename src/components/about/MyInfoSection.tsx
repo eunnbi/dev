@@ -1,21 +1,20 @@
 import styled from "styled-components";
 import Image from "next/image";
 import KeywordsRotatingText from "@/components/common/KeywordsRotatingText";
-import { useCallback } from "react";
 import { MY_INFO_LINKS } from "data/info";
-import { Tooltip, IconButton } from "@mui/material";
 import { AiOutlineMail } from "react-icons/ai";
 import { BsGithub } from "react-icons/bs";
+import IconLink from "../common/IconLink";
 
-const MyInfoSection = () => {
-  const iconPicker = useCallback((type: string) => {
+export default function MyInfoSection() {
+  const iconPicker = (type: string) => {
     switch (type) {
       case "github":
         return <BsGithub />;
       case "email":
         return <AiOutlineMail />;
     }
-  }, []);
+  };
   return (
     <Section>
       <Image
@@ -24,37 +23,32 @@ const MyInfoSection = () => {
         width={100}
         height={100}
         priority
+        className="profile-image"
       />
       <KeywordsRotatingText fontSize="2rem" textAlign="center" />
-      <Links>
-        {MY_INFO_LINKS.map((link, index) => (
-          <Tooltip key={index} title={link.type}>
-            <IconButton href={link.link}>{iconPicker(link.type)}</IconButton>
-          </Tooltip>
+      <LinkBox>
+        {MY_INFO_LINKS.map(({ link, type, label }) => (
+          <IconLink key={link} href={link} aria-label={label}>
+            {iconPicker(type)}
+          </IconLink>
         ))}
-      </Links>
+      </LinkBox>
     </Section>
   );
-};
+}
 
 const Section = styled.section`
   display: flex;
   flex-direction: column;
   gap: 1rem;
   align-items: center;
-  img {
+  .profile-image {
     object-fit: contain;
   }
 `;
 
-const Links = styled.div`
+const LinkBox = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
-  a {
-    color: ${({ theme }) => (theme.name === "light" ? "gray" : "white")};
-    padding: 0;
-  }
 `;
-
-export default MyInfoSection;

@@ -129,10 +129,16 @@ function introduce(someone: Person | Developer) {
 
     ```typescript
     class Person {
-      constructor(public name: string, public age: number) {}
+      constructor(
+        public name: string,
+        public age: number
+      ) {}
     }
     class Developer {
-      constructor(public name: string, public skill: string) {}
+      constructor(
+        public name: string,
+        public skill: string
+      ) {}
     }
 
     function introduce(someone: Person | Developer) {

@@ -10,14 +10,12 @@ export interface PostsGetResponse {
   page: number;
 }
 
-export interface PostCategoryItem {
+export interface PostCategory {
   category: string;
   count: number;
 }
 
-export const getSortedPostsData = (options?: {
-  category: string;
-}): Post[] => {
+export const getSortedPostsData = (options?: { category: string }): Post[] => {
   const fileNames = fs.readdirSync(postsDirectory);
   const posts: Post[] = [];
   for (let i = 0; i < fileNames.length; i++) {
@@ -53,8 +51,7 @@ export const getSortedPostsData = (options?: {
 export const getPostSlugs = () => {
   const fileNames = fs.readdirSync(postsDirectory);
   const slugs = fileNames.map(fileName => {
-    const slug = fileName.replace(/\.md$/, "");
-    return { params: { slug } };
+    return { slug: fileName.replace(/\.md$/, "") };
   });
   return slugs;
 };
@@ -73,25 +70,36 @@ export const getPostData = (slug: string): Post => {
   };
 };
 
-export const getPostCategories = (): PostCategoryItem[] => {
+export const getPostCategories = (): PostCategory[] => {
   const fileNames = fs.readdirSync(postsDirectory);
-  const categories = fileNames.map(fileName => getCategoryFromFileName(fileName));
+  const categories = fileNames.map(fileName =>
+    getCategoryFromFileName(fileName)
+  );
   const uniqueCategories = categories.filter(
     (category, index) => categories.indexOf(category) === index
   );
   const result = [];
   result.push({ category: "All", count: categories.length });
-  result.push(...uniqueCategories.map(category => {
-    const count = categories.reduce(
-      (sum, item) => (item === category ? ++sum : sum),
-      0
-    );
-    return {
-      category,
-      count
-    };
-  }))
+  result.push(
+    ...uniqueCategories.map(category => {
+      const count = categories.reduce(
+        (sum, item) => (item === category ? ++sum : sum),
+        0
+      );
+      return {
+        category,
+        count
+      };
+    })
+  );
   return result;
 };
 
 const getCategoryFromFileName = (fileName: string) => fileName.split("-")[0];
+
+export const getCategoryFromSearchParams = (
+  category: string | string[] | undefined
+) => {
+  if (typeof category === "string" || category === undefined) return category;
+  else return category[0];
+};

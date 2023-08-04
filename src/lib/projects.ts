@@ -27,7 +27,7 @@ export const getSortedProjectsData = (): Project[] => {
 export const getProjectIds = () => {
   const fileNames = fs.readdirSync(projectsDirectory);
   const projectIds = fileNames.map(fileName => ({
-    params: { id: fileName.replace(/\.json$/, "") }
+    id: fileName.replace(/\.json$/, "")
   }));
   return projectIds;
 };
