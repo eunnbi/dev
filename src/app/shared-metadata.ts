@@ -34,7 +34,7 @@ export const generateMetadata = ({
         ? [...BASE_KEYWORDS, ...keywordList].join(", ")
         : BASE_KEYWORDS.join(", ");
     const authors = [{ name: "강은비", url: "https://github.com/eunnbi" }]
-    const metadataBase = new URL(`https://www.eunnbi.dev${path}`)
+    const metadataBase = new URL('https://www.eunnbi.dev')
     return {
         title,
         description,
@@ -43,7 +43,7 @@ export const generateMetadata = ({
         metadataBase,
         openGraph: {
             type: "website",
-            url: 'www.eunnbi.dev',
+            url: path,
             title,
             description,
             siteName: "eunnbi.dev",
