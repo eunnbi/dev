@@ -21,9 +21,10 @@ export default function InfiniteScrollArea({
         }
       });
     });
-    observer.observe(ref.current!);
+    const instance = ref.current;
+    observer.observe(instance!);
     return () => {
-      observer.unobserve(ref.current!);
+      observer.unobserve(instance!);
     };
   }, [hasMore]);
   return (

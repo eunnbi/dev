@@ -50,9 +50,9 @@ export const getSortedPostsData = (options?: { category: string }): Post[] => {
 
 export const getPostSlugs = () => {
   const fileNames = fs.readdirSync(postsDirectory);
-  const slugs = fileNames.map(fileName => {
-    return { slug: fileName.replace(/\.md$/, "") };
-  });
+  const slugs = fileNames.map(fileName => ({
+    slug: fileName.replace(/\.md$/, "")
+  }));
   return slugs;
 };
 

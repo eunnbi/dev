@@ -65,11 +65,13 @@ export default function Filter({
         threshold: 1
       }
     );
-    observer.observe(nextButtonRef.current!);
-    observer.observe(prevButtonRef.current!);
+    const nextButtonElem = nextButtonRef.current;
+    const prevButtonElem = prevButtonRef.current;
+    observer.observe(nextButtonElem!);
+    observer.observe(prevButtonElem!);
     return () => {
-      observer.unobserve(nextButtonRef.current!);
-      observer.unobserve(prevButtonRef.current!);
+      observer.unobserve(nextButtonElem!);
+      observer.unobserve(prevButtonElem!);
     };
   }, []);
   return (
