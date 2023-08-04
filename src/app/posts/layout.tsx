@@ -1,15 +1,9 @@
 "use client";
 
-import Notice from "@/components/posts/Notice";
 import styled from "styled-components";
 
 export default function Layout({ children }: React.PropsWithChildren) {
-  return (
-    <>
-      <Notice />
-      <Main>{children}</Main>
-    </>
-  );
+  return <Main>{children}</Main>;
 }
 
 const Main = styled.main`

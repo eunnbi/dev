@@ -1,6 +1,7 @@
 "use client";
 
 import Heading from "@/components/common/Heading";
+import Notice from "@/components/posts/Notice";
 import PostCount from "@/components/posts/PostCount";
 import PostFilter from "@/components/posts/PostFilter";
 import PostList from "@/components/posts/PostList";
@@ -16,6 +17,7 @@ export default function PostsPage({ categories, posts }: PostsPageProps) {
   const category = usePostCategory();
   return (
     <>
+      <Notice />
       <Heading title={category.toUpperCase()} />
       <PostCount categories={categories} />
       <PostFilter categories={categories} />

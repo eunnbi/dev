@@ -28,7 +28,11 @@ export function generateMetadata({ params }: PageProps): Metadata {
     desc: project.overview,
     keywordList: project.tags,
     images: project.imageCnt
-      ? `/images/projects/${project.id}/1.png`
+      ? [
+          {
+            url: `/images/projects/${project.id}/1.png`
+          }
+        ]
       : undefined
   });
 }

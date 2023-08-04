@@ -4,15 +4,13 @@ import rehypeRaw from "rehype-raw";
 import rehypeSlug from "rehype-slug";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
-import { useTheme } from "styled-components";
+import { useTheme } from "@/hooks/useTheme";
 
 const Markdown = ({ post }: { post: PostGetResponse["current"] }) => {
-  const { name } = useTheme();
+  const { isLightTheme } = useTheme();
   return (
     <ReactMarkdown
-      className={
-        name === "light" ? "markdown-body light" : "markdown-body dark"
-      }
+      className={isLightTheme ? "markdown-body light" : "markdown-body dark"}
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[rehypeRaw, rehypeSlug]}
       linkTarget={"_blank"}

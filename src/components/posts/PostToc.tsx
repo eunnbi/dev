@@ -1,22 +1,15 @@
-import React from "react";
 import Toc from "react-toc";
 import styled from "styled-components";
 
-const PostToc = ({ post }: { post: PostGetResponse["current"] }) => {
+const PostToc = ({ post }: { post: Post }) => {
   return (
-    <Section>
+    <section>
       <CustomToc markdownText={post.content} lowestHeadingLevel={3} />
-    </Section>
+    </section>
   );
 };
 
 export default PostToc;
-
-const Section = styled.section`
-  @media screen and (max-width: 1400px) {
-    display: none;
-  }
-`;
 
 const CustomToc = styled(Toc)`
   position: fixed;
