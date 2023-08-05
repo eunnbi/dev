@@ -12,7 +12,7 @@ export default function HomePage({ posts }: { posts: Post[] }) {
       <Introduction />
       <Section>
         <Heading title="Latest Posts" />
-        <PostList posts={posts} category="All" />
+        <PostList posts={posts} category="all" />
         <MoreLink href="/posts" aria-label="포스팅 더보기 버튼" passHref>
           More
         </MoreLink>

@@ -1,5 +1,3 @@
-"use client";
-
 import { useRouter } from "next/navigation";
 import { convertDateFormat } from "@/lib/date";
 import { SCROLL_POS_KEY, setSessionStorage } from "@/lib/sessionStorage";

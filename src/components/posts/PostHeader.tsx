@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { convertDateFormat } from "@/lib/date";
 
-const PostHeader = ({ post }: { post: PostGetResponse["current"] }) => {
+const PostHeader = ({ post }: { post: Post }) => {
   const { emoji, title, date, category } = post;
   return (
     <Header>
@@ -20,6 +20,7 @@ const Header = styled.header`
   flex-direction: column;
   padding-bottom: 10px;
   border-bottom: 1px solid lightgray;
+  width: 100%;
   .title {
     font-size: 2rem;
     line-height: 1.3;
