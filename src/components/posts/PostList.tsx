@@ -49,7 +49,7 @@ export default function PostList({
     <InfiniteScrollArea hasMore={hasNextPage} next={fetchNextPage}>
       <Wrapper>
         {postsData?.pages.map(({ posts }) =>
-          posts.map(post => <PostArticle key={post.id} {...post} />)
+          posts.map(post => <PostCard key={post.id} {...post} />)
         )}
       </Wrapper>
     </InfiniteScrollArea>
@@ -63,7 +63,7 @@ const Wrapper = styled.div`
   margin-top: 2rem;
 `;
 
-function PostArticle({ id, title, date, category, preview, emoji }: Post) {
+function PostCard({ id, title, date, category, preview, emoji }: Post) {
   const router = useRouter();
   const onClick = () => {
     router.push(`/posts/${id}`);
@@ -77,7 +77,7 @@ function PostArticle({ id, title, date, category, preview, emoji }: Post) {
       </Title>
       <Paragraph>{preview}</Paragraph>
       <BottomRow>
-        <span>{category}</span>
+        <span className="category">{category}</span>
         <span>{convertDateFormat(date)}</span>
       </BottomRow>
     </Article>
@@ -124,4 +124,7 @@ const BottomRow = styled.div`
   justify-content: space-between;
   font-size: 0.9rem;
   color: ${({ theme }) => theme.color.tabTextColor};
+  .category {
+    text-transform: uppercase;
+  }
 `;
