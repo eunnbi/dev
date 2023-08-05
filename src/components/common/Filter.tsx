@@ -1,88 +1,66 @@
 import { useEffect, useRef, useState } from "react";
 import styled, { css } from "styled-components";
-import { usePathname, useRouter } from "next/navigation";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { useScrollStore } from "@/stores/scrollState";
 
 interface FilterProps {
-  queryName: string;
   filters: string[];
   selectedFilter: Filter;
-  defaultFilter: Filter;
+  changeFilter: (filter: Filter) => void;
 }
 
 export default function Filter({
-  queryName,
   filters,
   selectedFilter,
-  defaultFilter
+  changeFilter
 }: FilterProps) {
-  const pathname = usePathname();
-  const router = useRouter();
   const scrollBoxRef = useRef<HTMLDivElement | null>(null);
-  const prevButtonRef = useRef<HTMLButtonElement | null>(null);
-  const nextButtonRef = useRef<HTMLButtonElement | null>(null);
-  const [scrollLeft, setScrollLeft] = useState(0);
-  const moveScroll = (type: "prev" | "next") => {
+  const [prevDisabled, setPrevDisabled] = useState(false);
+  const [nextDisabled, setNextDisabled] = useState(false);
+  const { scrollLeft, setScrollState } = useScrollStore();
+  const onClickScrollButton = (type: "prev" | "next") => {
     if (scrollBoxRef.current === null) return;
     if (type === "prev") {
-      scrollBoxRef.current?.scrollTo({
-        left: scrollLeft - scrollBoxRef.current.clientWidth,
-        behavior: "smooth"
+      setScrollState({
+        scrollLeft: scrollLeft - scrollBoxRef.current.clientWidth
       });
-      setScrollLeft(scrollLeft - scrollBoxRef.current.clientWidth);
     } else {
-      scrollBoxRef.current?.scrollTo({
-        left: scrollLeft + scrollBoxRef.current.clientWidth,
-        behavior: "smooth"
+      setScrollState({
+        scrollLeft: scrollLeft + scrollBoxRef.current.clientWidth
       });
-      setScrollLeft(scrollLeft + scrollBoxRef.current.clientWidth);
     }
   };
-  const changeFilter = (value: Filter) => {
-    const splitedPath = pathname!.split("?");
-    const basePath = splitedPath[0];
-    const params = new URLSearchParams(splitedPath[1]);
-    params.delete(queryName);
-    if (value !== defaultFilter) {
-      params.append(queryName, value);
-    }
-    router.push(`${basePath}?${params}`);
+  const onClickFilterButton = (filter: Filter) => {
+    changeFilter(filter);
+    setScrollState({ scrollLeft: scrollBoxRef.current!.scrollLeft });
   };
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            if (entry.target.classList.contains("prev-button")) {
-              setScrollLeft(0);
-            } else {
-              setScrollLeft(scrollBoxRef.current!.clientWidth);
-            }
-          }
-        });
-      },
-      {
-        threshold: 1
-      }
-    );
-    const nextButtonElem = nextButtonRef.current;
-    const prevButtonElem = prevButtonRef.current;
-    observer.observe(nextButtonElem!);
-    observer.observe(prevButtonElem!);
-    return () => {
-      observer.unobserve(nextButtonElem!);
-      observer.unobserve(prevButtonElem!);
-    };
-  }, []);
+    if (scrollLeft <= 0) {
+      setPrevDisabled(true);
+    } else {
+      setPrevDisabled(false);
+    }
+    if (
+      Math.ceil(scrollLeft + scrollBoxRef.current!.clientWidth) >=
+      scrollBoxRef.current!.scrollWidth
+    ) {
+      setNextDisabled(true);
+    } else {
+      setNextDisabled(false);
+    }
+    scrollBoxRef.current!.scrollTo({
+      left: scrollLeft,
+      behavior: "smooth"
+    });
+  }, [scrollLeft]);
   return (
     <Wrapper>
       <ScrollButton
         type="button"
-        onClick={() => moveScroll("prev")}
+        onClick={() => onClickScrollButton("prev")}
         aria-label="탭 이전 버튼"
         className="prev-button"
-        disabled={scrollLeft === 0}
-        ref={prevButtonRef}
+        disabled={prevDisabled}
       >
         <FiChevronLeft className="icon" />
       </ScrollButton>
@@ -90,7 +68,7 @@ export default function Filter({
         {filters.map((filter, index) => (
           <FilterButton
             key={index}
-            onClick={() => changeFilter(filter)}
+            onClick={() => onClickFilterButton(filter)}
             $selected={selectedFilter === filter ? "true" : ""}
           >
             {filter}
@@ -99,11 +77,10 @@ export default function Filter({
       </ScrollableBox>
       <ScrollButton
         type="button"
-        onClick={() => moveScroll("next")}
+        onClick={() => onClickScrollButton("next")}
         aria-label="탭 다음 버튼"
         className="next-button"
-        disabled={scrollLeft === scrollBoxRef.current?.clientWidth}
-        ref={nextButtonRef}
+        disabled={nextDisabled}
       >
         <FiChevronRight className="icon" />
       </ScrollButton>
@@ -122,8 +99,13 @@ const Wrapper = styled.div`
 const ScrollButton = styled.button`
   display: flex;
   align-items: center;
+  color: ${({ theme }) => theme.color.textColor};
   &:disabled {
-    color: lightgray;
+    color: #919191;
+    cursor: auto;
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+    display: none;
   }
 `;
 
@@ -140,16 +122,16 @@ const FilterButton = styled.button<{ $selected: "true" | "" }>`
   font-size: 1rem;
   text-transform: uppercase;
   transition: all 200ms ease 0s;
-  ${({ $selected }) =>
+  ${({ $selected, theme }) =>
     $selected
       ? css`
           color: rgb(25, 118, 210);
-          background-color: rgb(237, 237, 237);
+          background-color: ${theme.color.tabSelectedBgColor};
           font-weight: 600;
           border-radius: 8px;
         `
       : css`
-          color: rgb(110, 109, 122);
+          color: ${theme.color.tabTextColor};
           font-weight: 500;
         `}
 `;
