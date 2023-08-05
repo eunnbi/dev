@@ -22,4 +22,5 @@ const Article = styled.article`
   flex-direction: column;
   gap: 3rem;
   margin-bottom: 3rem;
+  width: 100%;
 `;

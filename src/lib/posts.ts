@@ -28,8 +28,9 @@ export const getSortedPostsData = (options?: { category: string }): Post[] => {
       const { content, data } = matter(fileContents);
       const metadata = data as PostMetadata;
       posts.push({
-        id,
         ...metadata,
+        id,
+        category,
         content
       });
     }
@@ -79,7 +80,7 @@ export const getPostCategories = (): PostCategory[] => {
     (category, index) => categories.indexOf(category) === index
   );
   const result = [];
-  result.push({ category: "All", count: categories.length });
+  result.push({ category: "all", count: categories.length });
   result.push(
     ...uniqueCategories.map(category => {
       const count = categories.reduce(

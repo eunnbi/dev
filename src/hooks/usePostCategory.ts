@@ -4,7 +4,7 @@ export const usePostCategory = () => {
   const searchParams = useSearchParams();
   let category = "All";
   if (searchParams !== null) {
-    category = searchParams.get("category") || "All";
+    category = searchParams.get("category") || "all";
   }
   return category;
 };
