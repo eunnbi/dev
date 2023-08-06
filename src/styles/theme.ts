@@ -1,9 +1,3 @@
-const color = {
-  lightPurple: "#dcc9fc",
-  darkPurple: "#6b4ba3",
-  purple: "#936aa7"
-};
-
 const deviceSizes = {
   smallMobile: "300px",
   mobile: "500px",
@@ -22,10 +16,10 @@ export const lightTheme = {
   color: {
     bgColor: "#fff",
     textColor: "#000",
+    primaryBlue: "#1976d2",
+    primaryGray: "#6e6d7a",
+    primaryLightGrayBlue: "#ededed",
     shadowColor: "rgba(0, 0, 0, 0.5)",
-    tabSelectedBgColor: "#ededed",
-    chipBgColor: "#f3f3f4",
-    tabTextColor: "#6e6d7a",
     cardShadowStyle:
       "rgb(15 15 15 / 10%) 0px 0px 0px 1px, rgb(15 15 15 / 10%) 0px 2px 4px"
   },
@@ -37,11 +31,11 @@ export const darkTheme = {
   color: {
     bgColor: "#252525",
     textColor: "#fff",
+    primaryBlue: "#95b0e7",
+    primaryGray: "#acabb3",
+    primaryLightGrayBlue: "#373e47",
     shadowColor: "#000",
-    tabSelectedBgColor: "#373e47",
-    chipBgColor: "#323a42",
-    tabTextColor: "#97a2ad",
-    cardShadowStyle: "#97a2ad 0px 0px 0px 1px, #000 0px 2px 4px"
+    cardShadowStyle: "#97a2ad 0px 0px 0px 1px, rgba(0, 0, 0, 0.4) 0px 2px 4px"
   },
   name: "dark" as const,
   device

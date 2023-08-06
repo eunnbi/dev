@@ -38,8 +38,8 @@ const BottomRow = styled.div`
   gap: 0.8rem;
   margin-top: 0.5rem;
   .category-badge {
-    background-color: ${({ theme }) => theme.color.chipBgColor};
-    color: ${({ theme }) => theme.color.tabTextColor};
+    background-color: ${({ theme }) => theme.color.primaryLightGrayBlue};
+    color: ${({ theme }) => theme.color.primaryGray};
     padding: 0.3rem 0.8rem;
     border-radius: 16px;
     font-size: 0.9rem;

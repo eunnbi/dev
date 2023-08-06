@@ -11,10 +11,10 @@ declare module "styled-components" {
     color: {
       bgColor: string;
       textColor: string;
+      primaryBlue: string;
+      primaryGray: string;
+      primaryLightGrayBlue: string;
       shadowColor: string;
-      tabTextColor: string;
-      tabSelectedBgColor: string;
-      chipBgColor: string;
       cardShadowStyle: string;
     };
     name: "light" | "dark";

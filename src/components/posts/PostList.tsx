@@ -123,7 +123,7 @@ const BottomRow = styled.div`
   align-items: center;
   justify-content: space-between;
   font-size: 0.9rem;
-  color: ${({ theme }) => theme.color.tabTextColor};
+  color: ${({ theme }) => theme.color.primaryGray};
   .category {
     text-transform: uppercase;
   }

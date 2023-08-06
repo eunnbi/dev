@@ -1,14 +1,21 @@
 "use client";
 
+import { useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 import { useThemeStore } from "@/stores/themeState";
 import { lightTheme, darkTheme } from "../../styles/theme";
 import { createGlobalStyle } from "styled-components";
 
 export default function CustomThemeProvider({
-  children
-}: React.PropsWithChildren) {
-  const isLightTheme = useThemeStore(state => state.isLightTheme);
+  children,
+  theme
+}: React.PropsWithChildren<{ theme: string }>) {
+  const { isLightTheme = theme === "light", setTheme } = useThemeStore();
+  useEffect(() => {
+    setTheme({
+      isLightTheme: theme === "light" ? true : false
+    });
+  }, []);
   return (
     <ThemeProvider theme={isLightTheme ? lightTheme : darkTheme}>
       <GlobalStyle />

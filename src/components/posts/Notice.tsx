@@ -34,7 +34,7 @@ const Box = styled.div`
   transform: translateX(-50%);
   text-align: center;
   border-radius: 10px;
-  background-color: ${({ theme }) => theme.color.tabSelectedBgColor};
+  background-color: ${({ theme }) => theme.color.primaryLightGrayBlue};
 
   .close-button {
     position: absolute;

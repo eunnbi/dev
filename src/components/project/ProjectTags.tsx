@@ -25,7 +25,7 @@ const TagItem = styled.li`
   padding: 7px 10px;
   border-radius: 10px;
   font-weight: 500;
-  background-color: ${({ theme }) => theme.color.chipBgColor};
+  background-color: ${({ theme }) => theme.color.primaryLightGrayBlue};
 `;
 
 export default ProjectTags;

@@ -1,16 +1,14 @@
 import { create } from "zustand";
 
 export interface ThemeState {
-  isLightTheme: boolean;
+  isLightTheme?: boolean;
 }
 
 export interface ThemeStore extends ThemeState {
-  toggleTheme: () => void;
   setTheme: (state: ThemeState) => void;
 }
 
 export const useThemeStore = create<ThemeStore>(set => ({
-  isLightTheme: true,
-  toggleTheme: () => set(state => ({ isLightTheme: !state.isLightTheme })),
+  isLightTheme: undefined,
   setTheme: state => set(state)
 }));
