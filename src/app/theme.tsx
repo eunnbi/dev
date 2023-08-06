@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 import { useThemeStore } from "@/stores/themeState";
-import { lightTheme, darkTheme } from "../../styles/theme";
+import { lightTheme, darkTheme } from "../styles/theme";
 import { createGlobalStyle } from "styled-components";
 
 export default function CustomThemeProvider({
@@ -15,7 +15,7 @@ export default function CustomThemeProvider({
     setTheme({
       isLightTheme: theme === "light" ? true : false
     });
-  }, []);
+  }, [theme]);
   return (
     <ThemeProvider theme={isLightTheme ? lightTheme : darkTheme}>
       <GlobalStyle />

@@ -84,13 +84,18 @@
 - semantic tag 관련 블로그 작성 및 프로젝트 리팩토링
 - Network 관련 블로그 옮기기 작업 예정
 
+## 2023.08.05
+
+- Page Router에서 App Router로 마이그레이션 완료
+- 전역 상태 라이브러리로 Recoil에서 Zustand로 마이그레이션 완료
+- Top Loader 컴포넌트 추가
+
 ## 📝 Tasks
 
 - [x] 아이폰 사파리 `height: 100vh` 버그 해결
 - [x] projects data 관리 방식 개선
 - [x] meta 태그, SEO 공부
 - [x] `semantic tag` 공부 및 적용
+- [x] nextjs 13 마이그레이션 (-ing)
 - [ ] 블로그 옮기기 (-ing)
-- [ ] nextjs 13 마이그레이션 (-ing)
 - [ ] 페이지 렌더링 최적화 (페이지 전환이 느림)
-- [x] 페이지 이동 시 스크롤 유지 (about page) => 뒤로 가기 시 스크롤 유지됨

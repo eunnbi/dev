@@ -55,6 +55,13 @@ export default function Filter({
     };
     const filterButtonObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
+        if (!entry.isIntersecting && entry.target.ariaSelected === "true") {
+          scrollBoxRef.current!.scrollTo({
+            left:
+              entry.boundingClientRect.x -
+              (entry.rootBounds!.right - entry.rootBounds!.left) / 2
+          });
+        }
         if (entry.target.classList.contains("0")) {
           if (entry.isIntersecting) {
             setPrevDisabled(true);

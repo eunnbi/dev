@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import CustomThemeProvider from "@/components/common/CustomThemeProvider";
+import CustomThemeProvider from "./theme";
 import StyledComponentsRegistry from "./registry";
 
 export default function Providers({
